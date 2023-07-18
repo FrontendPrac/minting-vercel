@@ -25,7 +25,7 @@ const Layout = ({ children, pageTitle }) => {
   return (
     <Fragment>
       <Head>
-        <title>MetaPortal | {pageTitle}</title>
+        <title>a:rzmeta | {pageTitle}</title>
       </Head>
       <ImageView />
       <VideoPopup />

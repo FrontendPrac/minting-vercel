@@ -85,6 +85,7 @@ const WalletPopUp = ({ walletToggle, wallet }) => {
                   <span className="text">Metamask</span>
                 </div>
               </li>
+              {/*
               <li>
                 <div className="item">
                   <a href="#" />
@@ -112,6 +113,7 @@ const WalletPopUp = ({ walletToggle, wallet }) => {
                   <span className="text">Venly</span>
                 </div>
               </li>
+              */}
             </ul>
           </div>
         </div>
