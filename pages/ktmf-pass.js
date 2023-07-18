@@ -43,14 +43,15 @@ const NftSingle = () => {
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
         // Estimate the gas limit for the transaction
-        const gasLimit = await contract.estimateGas.publicMint(quantity);
+        //const gasLimit = await contract.estimateGas.publicMint(quantity);
+        const gasLimit = 300000;
 
         // Get the current gas price from the Ethereum network
         const gasPrice = await provider.getGasPrice();
 
         // Mint NFTs using the contract's publicMint function with specified gas limit and gas price
         const tx = await contract.publicMint(quantity, { gasLimit, gasPrice });
-        
+
         const receipt = await tx.wait();
         console.log("NFTs minted:", receipt);
       } else {
