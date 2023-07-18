@@ -43,8 +43,8 @@ const NftSingle = () => {
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
         // Estimate the gas limit for the transaction
-        const gasLimit = await contract.estimateGas.publicMint(quantity);
-        //const gasLimit = 800000;
+        //const gasLimit = await contract.estimateGas.publicMint(quantity);
+        const gasLimit = 800000;
 
         // Get the current gas price from the Ethereum network
         const gasPrice = await provider.getGasPrice();
