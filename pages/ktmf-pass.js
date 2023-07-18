@@ -43,7 +43,7 @@ const NftSingle = () => {
 
         // Estimate the gas limit for the transaction
         //const gasLimit = await contract.estimateGas.publicMint(quantity);
-        const gasLimit = 800000;
+        const gasLimit = 1500000;
 
         // Get the current gas price from the Ethereum network
         const gasPrice = await provider.getGasPrice();
@@ -56,6 +56,7 @@ const NftSingle = () => {
         if (balance.lt(estimatedCost)) {
           throw new Error("Insufficient funds. Please ensure you have enough Ether to cover the transaction cost.");
         }
+        console.log(">>> quantity : ", quantity);
 
         // Mint NFTs using the contract's publicMint function with specified gas limit and gas price
         const tx = await contract.publicMint(quantity, { gasLimit, gasPrice });
