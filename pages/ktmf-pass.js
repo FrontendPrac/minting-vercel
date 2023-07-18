@@ -36,15 +36,15 @@ const NftSingle = () => {
 
         // Replace 'contractAddress' and 'contractABI' with your contract address and ABI 
         //const contractAddress = "0xEA484E73dFbf26C9df58eF1003D1EFc523D7bdB4";
-        const contractAddress = "0xE8b963F6E50ccFdA50F75c3937a4369fDb7ff877";
+        const contractAddress = "0xA4921e75E1BFD32BD76eeC6365e89258Fa5F2950";
         const contractABI = contract_abi; // Replace with your contract ABI
 
         // Create an instance of the smart contract
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
         // Estimate the gas limit for the transaction
-        //const gasLimit = await contract.estimateGas.publicMint(quantity);
-        const gasLimit = 800000;
+        const gasLimit = await contract.estimateGas.publicMint(quantity);
+        //const gasLimit = 800000;
 
         // Get the current gas price from the Ethereum network
         const gasPrice = await provider.getGasPrice();
