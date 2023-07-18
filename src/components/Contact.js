@@ -14,15 +14,7 @@ const Contact = () => {
             <li>
               <div className="item">
                 <p>
-                  Duis suscipit egestas ullamcorper. Cras porta nulla et
-                  tristique pellentesque. Praesent finibus mauris eu
-                  sollicitudin interdum. Morbi et blandit quam. Donec vitae
-                  massa purus. Curabitur nunc mauris, iaculis a nibh at,
-                  ultricies sodales dolor.
-                </p>
-                <p>
-                  Curabitur pharetra velit eget dignissim varius. In vulputate
-                  elit at tortor pellentesque, non pulvinar neque consequat.
+                  (주)한컴프론티스는 2001년에 설립, 메타버스(Metaverse) 및 AIoT 플랫폼 개발기술로 2020년 과기부 ICT 유니콘으로 선정된 글로벌 유망중소기업입니다. 2001년 설립 이래, 국내외 2,000개 이상 B2B, B2G 고객처를 확보하였으며, 국방, 자동차, 건설, 해양, 우주항공, 교육산업 등 다양한 산업분야에서 차별화된 ICT 기술력과 사업화 능력으로 괄목할만한 성장을 이루고 있습니다.
                 </p>
               </div>
             </li>
@@ -30,12 +22,12 @@ const Contact = () => {
               <div className="item">
                 <h4 className="label">Phone</h4>
                 <h3>
-                  <a href="tel:+770221770505">+77 022 177 05 05</a>
+                  <a href="tel:+820316277950">+82 031 627 7950</a>
                 </h3>
                 <h4 className="lable">Email</h4>
                 <h3>
-                  <a href="mailto:frenifyteam@gmail.com">
-                    frenifyteam@gmail.com
+                  <a href="mailto:help.arzmeta@hancomfro.com">
+                    help.arzmeta@hancomfro.com
                   </a>
                 </h3>
               </div>
@@ -43,7 +35,7 @@ const Contact = () => {
             <li>
               <div className="item">
                 <h4 className="label">Office</h4>
-                <h3>124 S Main St, Scottville, MI 49454, United States</h3>
+                <h3>경기도 성남시 분당구 대왕판교로 644번길 49, 한컴타워 2층</h3>
               </div>
             </li>
           </ul>
@@ -99,7 +91,7 @@ const Contact = () => {
                   <div className="mw300">
                     <a
                       id="send_message"
-                      href="#"
+                      href="mailto:help.arzmeta@hancomfro.com"
                       className="metaportal_fn_button full"
                     >
                       <span>Send Message</span>
