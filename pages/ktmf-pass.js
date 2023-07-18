@@ -4,7 +4,8 @@ import SectionDivider from "../src/components/SectionDivider";
 import RoadMapSlider from "../src/components/RoadMapStep";
 import { ethers } from "ethers";
 import React, { useState, useEffect } from "react";
-import contract_abi from "../src/abis/dbp_abi.json"
+//import contract_abi from "../src/abis/dbp_abi.json"
+import contract_abi from "../src/abis/ArzNFT.json"
 
 const NftSingle = () => {
   // State variables for quantity and total price
@@ -33,8 +34,9 @@ const NftSingle = () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
 
-        // Replace 'contractAddress' and 'contractABI' with your contract address and ABI
-        const contractAddress = "0xEA484E73dFbf26C9df58eF1003D1EFc523D7bdB4";
+        // Replace 'contractAddress' and 'contractABI' with your contract address and ABI 
+        //const contractAddress = "0xEA484E73dFbf26C9df58eF1003D1EFc523D7bdB4";
+        const contractAddress = "0xE8b963F6E50ccFdA50F75c3937a4369fDb7ff877";
         const contractABI = contract_abi; // Replace with your contract ABI
 
         // Create an instance of the smart contract
