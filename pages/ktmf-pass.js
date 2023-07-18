@@ -46,7 +46,7 @@ const NftSingle = () => {
         const gasLimit = await contract.estimateGas.Mint(quantity);
 
         // Mint NFTs using the contract's Mint function
-        const tx = await contract.Mint(quantity, { gasLimit });
+        const tx = await contract.publicMint(quantity, { gasLimit });
         const receipt = await tx.wait();
         console.log("NFTs minted:", receipt);
       } else {
