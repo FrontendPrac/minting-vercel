@@ -81,9 +81,9 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
         <div className="mob_bot" style={{ display: toggle ? "block" : "none" }}>
           <ul>
             <li>
-              <a className="creative_link" href="/ktmf-pass">
-                NFTs
-              </a>
+              <Link href="/ktmf-pass">
+                <a className="creative_link">NFTs</a>
+              </Link>
             </li>
             <li>
               <a className="creative_link" href="#home2">
