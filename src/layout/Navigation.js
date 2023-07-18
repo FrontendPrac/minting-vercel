@@ -55,6 +55,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
               <img src="/svg/down.svg" alt="" className="fn__svg" />
             </span>
             {/* For JS */}
+            {/*
             <ul
               style={{
                 transform: `translateX(${subMenu !== null ? "-100" : "0"}%)`,
@@ -250,18 +251,12 @@ const Navigation = ({ navigation, navigationToggle }) => {
                 </Link>
               </li>
             </ul>
+            */}
           </div>
           <div className="info_holder">
             <div className="copyright">
               <p>
-                Copyright 2022 - Designed &amp; Developed by{" "}
-                <a
-                  href="https://themeforest.net/user/codeefly/portfolio"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  CodeeFly
-                </a>
+                Copyright 2023 - Hancom Frontis
               </p>
             </div>
             <div className="social_icons">
