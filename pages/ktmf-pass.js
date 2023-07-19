@@ -62,8 +62,8 @@ const NftSingle = () => {
         alert("Please install a Web3-enabled browser like MetaMask.");
       }
     };
-    handleQuantityChange(1);
     initializeEthers();
+    handleQuantityChange(1);
   }, []);
 
   // Mint function to interact with the smart contract and mint NFTs
