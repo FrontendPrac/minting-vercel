@@ -43,34 +43,25 @@ const NftSingle = () => {
           newProvider.getSigner() // Use the signer to send transactions
         );
         setContract(newContract);
+
+        try {
+          // Call the publicPrice function in the smart contract to get the value
+          const publicPrice = await contract.publicPrice();
+          // Convert the BigNumber to a floating-point number (wei to ether)
+          const publicPriceInEther = ethers.utils.formatEther(publicPrice);
+          // Update the cost value with the loaded public_Price value
+          setCost(parseFloat(publicPriceInEther));
+        } catch (error) {
+          console.error("Error loading public_Price:", error);
+          alert("Error loading public_Price. Please check the console for details.");
+        }
       } else {
         alert("Please install a Web3-enabled browser like MetaMask.");
       }
     };
     handleQuantityChange(1);
     initializeEthers();
-    loadPublicPrice();
   }, []);
-
-  // Function to load the public_Price value from the contract
-  const loadPublicPrice = async () => {
-    if (!provider || !contract) {
-      alert("Ethers provider or contract not initialized.");
-      return;
-    }
-
-    try {
-      // Call the publicPrice function in the smart contract to get the value
-      const publicPrice = await contract.publicPrice();
-      // Convert the BigNumber to a floating-point number (wei to ether)
-      const publicPriceInEther = ethers.utils.formatEther(publicPrice);
-      // Update the cost value with the loaded public_Price value
-      setCost(parseFloat(publicPriceInEther));
-    } catch (error) {
-      console.error("Error loading public_Price:", error);
-      alert("Error loading public_Price. Please check the console for details.");
-    }
-  };
 
   // Mint function to interact with the smart contract and mint NFTs
   const mintNFTs = async () => {
@@ -230,7 +221,9 @@ const NftSingle = () => {
                   <li>
                     <div className="item">
                       <h4>Price</h4>
-                      <h3>2.25 ETH</h3>
+                      <h3>
+                        <span className="cost">{cost}</span> ETH
+                      </h3>
                     </div>
                   </li>
                   <li>
@@ -249,7 +242,7 @@ const NftSingle = () => {
                         >
                           -
                         </span>
-                        <span className="summ" data-price={cost}>
+                        <span className="quantity">
                           {quantity}
                         </span>
                         <span
