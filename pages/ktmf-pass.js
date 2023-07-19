@@ -28,6 +28,7 @@ const NftSingle = () => {
   const getPublicPrice = async () => {
     if (!provider || !contract) {
       alert("getPublicPrice: Ethers provider or contract not initialized.");
+      console.log("getPublicPrice ", provider, contract);
       return;
     }
 
