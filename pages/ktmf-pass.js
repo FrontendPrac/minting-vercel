@@ -24,27 +24,6 @@ const NftSingle = () => {
     setTotalPrice(newTotalPrice);
   };
 
-  // Function to load the public_Price value from the contract
-  const getPublicPrice = async () => {
-    if (!provider || !contract) {
-      alert("getPublicPrice: Ethers provider or contract not initialized.");
-      console.log("getPublicPrice ", provider, contract);
-      return;
-    }
-
-    try {
-      // Call the public_Price function in the smart contract to get the value
-      const publicPrice = await contract.public_Price();
-      // Convert the BigNumber to a floating-point number (wei to ether)
-      const publicPriceInEther = ethers.utils.formatEther(publicPrice);
-      // Update the cost2 value with the loaded public_Price value
-      setCost(parseFloat(publicPriceInEther));
-    } catch (error) {
-      console.error("Error loading public_Price:", error);
-      alert("Error loading public_Price. Please check the console for details.");
-    }
-  };
-
   useEffect(() => {
     const initializeEthers = async () => {
       // Check if the window.ethereum object is available
@@ -66,8 +45,19 @@ const NftSingle = () => {
         );
         setContract(newContract);
         console.log("setContract Completed!", contract, newContract);
-
-        getPublicPrice();
+        
+        // Function to load the public_Price value from the contract
+        try {
+          // Call the public_Price function in the smart contract to get the value
+          const publicPrice = await newContract.public_Price();
+          // Convert the BigNumber to a floating-point number (wei to ether)
+          const publicPriceInEther = ethers.utils.formatEther(publicPrice);
+          // Update the cost2 value with the loaded public_Price value
+          setCost(parseFloat(publicPriceInEther));
+        } catch (error) {
+          console.error("Error loading public_Price:", error);
+          alert("Error loading public_Price. Please check the console for details.");
+        }
       } else {
         alert("Please install a Web3-enabled browser like MetaMask.");
       }
