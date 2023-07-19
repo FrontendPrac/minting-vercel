@@ -180,7 +180,7 @@ const NftSingle = () => {
                   <b>KTMF PASS NFT COLLECTION</b>
                 </p>
                 <p>
-                  "한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in Metaverse"
+                  &quot;한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in Metaverse&quot;
                   아즈메타가 선보이는 온·오프라인 융합 하이브리드 콘테스트와 특별 한정판 NFT는 KPOP COVER SONG CONTEST에 새로운 전환점과 패러다임을 제시합니다.
                   이더리움(ETH) 블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션으로, 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된 유틸리티 성격의 NFT입니다.
                   KTMF PASS NFT는 2009년 아시아의 별 보아가 미국 데뷔 동시에 빌보드 200에서 127위에 올라 한국인 최초로 빌보드 메인차트 입성한 순간부터 KTMF KPOP COVER SONG CONTEST의 스타 탄생까지 KPOP과 한류의 15년을 기록한 15K 프로젝트로, 이더리움(ETH) 블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션입니다.
