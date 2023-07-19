@@ -442,7 +442,7 @@ const NftSingle = () => {
                   <div className="nft__item">
                     <div className="img_holder">
                       <img src="/img/drops/1.jpg" alt="" />
-                      <Link href="/ktmf-pass">
+                      <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
                     </div>
@@ -457,7 +457,7 @@ const NftSingle = () => {
                   <div className="nft__item">
                     <div className="img_holder">
                       <img src="/img/drops/2.jpg" alt="" />
-                      <Link href="/ktmf-pass">
+                      <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
                     </div>
@@ -472,7 +472,7 @@ const NftSingle = () => {
                   <div className="nft__item">
                     <div className="img_holder">
                       <img src="/img/drops/3.jpg" alt="" />
-                      <Link href="/ktmf-pass">
+                      <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
                     </div>
@@ -487,7 +487,7 @@ const NftSingle = () => {
                   <div className="nft__item">
                     <div className="img_holder">
                       <img src="/img/drops/4.jpg" alt="" />
-                      <Link href="/ktmf-pass">
+                      <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
                     </div>
@@ -502,7 +502,7 @@ const NftSingle = () => {
                   <div className="nft__item">
                     <div className="img_holder">
                       <img src="/img/drops/5.jpg" alt="" />
-                      <Link href="/ktmf-pass">
+                      <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
                     </div>
@@ -517,7 +517,7 @@ const NftSingle = () => {
                   <div className="nft__item">
                     <div className="img_holder">
                       <img src="/img/drops/6.jpg" alt="" />
-                      <Link href="/ktmf-pass">
+                      <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
                     </div>
