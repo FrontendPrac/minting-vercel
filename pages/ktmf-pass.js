@@ -34,7 +34,7 @@ const NftSingle = () => {
         const signer = provider.getSigner();
 
         // Replace 'contractAddress' and 'contractABI' with your contract address and ABI 
-        const contractAddress = "0x2dEEb2Ae6682dF3239066b08c84F8290a03b75A0";
+        const contractAddress = "0x2D3fFA304E5160E15be55386d23b996514718E74";
         const contractABI = contract_abi; // Replace with your contract ABI
 
         // Create an instance of the smart contract
