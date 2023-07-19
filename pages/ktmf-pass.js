@@ -54,7 +54,7 @@ const NftSingle = () => {
         // Create an ethers provider using the window.ethereum object
         const newProvider = new ethers.providers.Web3Provider(window.ethereum);
         setProvider(newProvider);
-        console.log("setProvider Completed!");
+        console.log("setProvider Completed!", provider);
 
         // Create an ethers contract instance using the contract address and ABI
         const contractAddress = "0x2D3fFA304E5160E15be55386d23b996514718E74"; // Replace with the actual contract address
@@ -65,7 +65,7 @@ const NftSingle = () => {
           newProvider.getSigner() // Use the signer to send transactions
         );
         setContract(newContract);
-        console.log("setContract Completed!");
+        console.log("setContract Completed!", contract);
 
         getPublicPrice();
       } else {
