@@ -19,7 +19,7 @@ const NftSingle = () => {
   // Update total price when quantity changes
   const handleQuantityChange = (value) => {
     setQuantity(value);
-    // Calculate total price using the cost2 value from the smart contract
+    // Calculate total price using the cost value from the smart contract
     const newTotalPrice = value * cost;
     setTotalPrice(newTotalPrice);
   };
@@ -36,7 +36,7 @@ const NftSingle = () => {
       const publicPrice = await contract.publicPrice();
       // Convert the BigNumber to a floating-point number (wei to ether)
       const publicPriceInEther = ethers.utils.formatEther(publicPrice);
-      // Update the cost2 value with the loaded public_Price value
+      // Update the cost value with the loaded public_Price value
       setCost(parseFloat(publicPriceInEther));
     } catch (error) {
       console.error("Error loading public_Price:", error);
@@ -248,7 +248,7 @@ const NftSingle = () => {
                         >
                           -
                         </span>
-                        <span className="summ" data-price={cost2}>
+                        <span className="summ" data-price={cost}>
                           {quantity}
                         </span>
                         <span
