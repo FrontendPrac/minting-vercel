@@ -448,7 +448,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">KTMF #4588</a>
+                        <a href="#">Meta Legends #4588</a>
                       </h3>
                     </div>
                   </div>
@@ -463,7 +463,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">KTMF #4587</a>
+                        <a href="#">Meta Legends #4587</a>
                       </h3>
                     </div>
                   </div>
@@ -478,7 +478,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">KTMF #4586</a>
+                        <a href="#">Meta Legends #4586</a>
                       </h3>
                     </div>
                   </div>
@@ -493,7 +493,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">KTMF #4585</a>
+                        <a href="#">Meta Legends #4585</a>
                       </h3>
                     </div>
                   </div>
@@ -508,7 +508,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">KTMF #4584</a>
+                        <a href="#">Meta Legends #4584</a>
                       </h3>
                     </div>
                   </div>
@@ -523,7 +523,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">KTMF #4583</a>
+                        <a href="#">Meta Legends #4583</a>
                       </h3>
                     </div>
                   </div>
