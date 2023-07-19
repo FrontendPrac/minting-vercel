@@ -46,6 +46,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
 
   useEffect(() => {
     stickyNav();
+    updateEthers();
   }, []);
 
   return (
