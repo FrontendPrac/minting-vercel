@@ -35,7 +35,7 @@ const NftSingle = () => {
         setProvider(newProvider);
 
         // Create an ethers contract instance using the contract address and ABI
-        const contractAddress = "CONTRACT_ADDRESS"; // Replace with the actual contract address
+        const contractAddress = "0x2D3fFA304E5160E15be55386d23b996514718E74"; // Replace with the actual contract address
         const contractAbi = contract_abi.abi;
         const newContract = new ethers.Contract(
           contractAddress,
