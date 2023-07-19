@@ -299,11 +299,7 @@ const NftSingle = () => {
                   <h3
                     className="metaportal_fn_countdown"
                     data-type="due_date"
-                    data-date="October 13, 2023 12:30:00"
-                    data-days={34}
-                    data-hours={10}
-                    data-minutes={20}
-                    data-seconds={0}
+                    data-date="October 11, 2023 00:00:00"
                   >
                     34d: 10h: 20m: 0s
                   </h3>
