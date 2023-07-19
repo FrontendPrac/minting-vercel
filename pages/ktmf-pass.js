@@ -305,7 +305,7 @@ const NftSingle = () => {
                     data-minutes={20}
                     data-seconds={0}
                   >
-                    {data-days}d: {data-hours}h: {data-minutes}m: {data-seconds}s
+                    34d: 10h: 20m: 0s
                   </h3>
                 </div>
                 <div className="mint_checked">
