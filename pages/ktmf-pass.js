@@ -58,12 +58,13 @@ const NftSingle = () => {
           console.error("Error loading public_Price:", error);
           alert("Error loading public_Price. Please check the console for details.");
         }
+
+        handleQuantityChange(1);
       } else {
         alert("Please install a Web3-enabled browser like MetaMask.");
       }
     };
     initializeEthers();
-    handleQuantityChange(1);
   }, []);
 
   // Mint function to interact with the smart contract and mint NFTs
