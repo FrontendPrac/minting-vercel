@@ -36,7 +36,7 @@ const NftSingle = () => {
         console.log("setProvider Completed!", provider, newProvider);
 
         // Create an ethers contract instance using the contract address and ABI
-        const contractAddress = "0x2D3fFA304E5160E15be55386d23b996514718E74"; // Replace with the actual contract address
+        const contractAddress = "0x1E133e65F06Bb3625CBc9cCC8dD392d065c32f67"; // Replace with the actual contract address
         const contractAbi = contract_abi;
         const newContract = new ethers.Contract(
           contractAddress,
@@ -49,7 +49,7 @@ const NftSingle = () => {
         // Function to load the public_Price value from the contract
         try {
           // Call the public_Price function in the smart contract to get the value
-          const publicPrice = await newContract.public_Price();
+          const publicPrice = await newContract.getPublicPrice();
           // Convert the BigNumber to a floating-point number (wei to ether)
           const publicPriceInEther = ethers.utils.formatEther(publicPrice);
           // Update the cost2 value with the loaded public_Price value
