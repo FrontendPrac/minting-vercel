@@ -76,7 +76,8 @@ const NftSingle = () => {
     try {
       // Call the publicMint function in the smart contract
       const transaction = await contract.publicMint(quantity, {
-        gasLimit: 500000
+        gasLimit: 500000,
+        value: ethers.utils.parseEther("0.0001") * quantity
       });
 
       // Wait for the transaction to be mined
