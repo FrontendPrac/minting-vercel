@@ -176,21 +176,16 @@ const NftSingle = () => {
               </h3>
               <div className="desc">
                 <p>
-                  Suspendisse eu velit est. Cras nec vestibulum quam. Donec
-                  tincidunt purus nec enim tincidunt, sit amet facilisis massa
-                  laoreet. Integer mollis nec sapien eu lacinia. Nunc eu massa
-                  dictum, vulputate neque ac, porta mauris. Sed sollicitudin
-                  nisi augue, a gravida turpis elementum vel. Curabitur sagittis
-                  quis diam et rhoncus. Nam pellentesque imperdiet aliquet. Sed
-                  non ante malesuada, ultrices sem at, tempus libero.
+                  미주 한국일보 KPOP COVER SONG CONTEST와 함께하는 아즈메타 생태계 특별 한정판 NFT: 
+                  <b>KTMF PASS NFT COLLECTION</b>
                 </p>
                 <p>
-                  Duis eu lorem ut mauris pulvinar auctor. Maecenas et dapibus
-                  orci, eleifend euismod justo. Quisque luctus turpis eu
-                  tristique feugiat. Praesent ac magna feugiat, interdum lacus
-                  ac, interdum dui. Pellentesque id quam quis enim malesuada
-                  rutrum. Orci varius natoque penatibus et magnis dis
-                  parturient.
+                  "한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in Metaverse"
+                  아즈메타가 선보이는 온·오프라인 융합 하이브리드 콘테스트와 특별 한정판 NFT는 KPOP COVER SONG CONTEST에 새로운 전환점과 패러다임을 제시합니다.
+                  이더리움(ETH) 블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션으로, 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된 유틸리티 성격의 NFT입니다.
+                  KTMF PASS NFT는 2009년 아시아의 별 보아가 미국 데뷔 동시에 빌보드 200에서 127위에 올라 한국인 최초로 빌보드 메인차트 입성한 순간부터 KTMF KPOP COVER SONG CONTEST의 스타 탄생까지 KPOP과 한류의 15년을 기록한 15K 프로젝트로, 이더리움(ETH) 블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션입니다.
+                  KTMF PASS NFT는 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된 유틸리티 성격의 NFT로, 각각의 NFT에는 아즈메타 KTMF 독점 커뮤니티에 입장할 수 있는 PASS 티켓과 아즈메타 메타버스 내 아바타가 착용할 수 있는 코스튬 파츠가 결합되어있습니다.
+                  KTMF PASS NFT와 함께 아즈메타 얼리 엑세스가 시작됩니다. KTMF PASS NFT를 구매하여 커뮤니티에 가입하고 홀더들만의 다양한 특전과 놀라운 혜택을 누려보세요!
                 </p>
               </div>
               <div className="view_on">
@@ -232,7 +227,7 @@ const NftSingle = () => {
                   <li>
                     <div className="item">
                       <h4>Remaining</h4>
-                      <h3>344/999</h3>
+                      <h3>344/999(Not working)</h3>
                     </div>
                   </li>
                   <li>
@@ -310,7 +305,7 @@ const NftSingle = () => {
                     data-minutes={20}
                     data-seconds={0}
                   >
-                    0d: 0h: 0m: 0s
+                    {data-days}d: {data-hours}h: {data-minutes}m: {data-seconds}s
                   </h3>
                 </div>
                 <div className="mint_checked">
@@ -357,64 +352,64 @@ const NftSingle = () => {
               <li>
                 <div className="item">
                   <h4 className="parent_category">Clothing</h4>
-                  <h3 className="child_category" title="Black Yukata">
-                    Black Yukata
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Eyes</h4>
-                  <h3 className="child_category" title="Daydreaming">
-                    Daydreaming
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Special</h4>
-                  <h3 className="child_category" title="Fireflies, Smoke">
-                    Fireflies, Smoke
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Type</h4>
-                  <h3 className="child_category" title="Human, Sand">
-                    Human, Sand
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Mouth</h4>
-                  <h3 className="child_category" title="Not Bad">
-                    Not Bad
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Neck</h4>
-                  <h3 className="child_category" title="Zen Headphones">
-                    Zen Headphones
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Eyes</h4>
-                  <h3 className="child_category" title="Striking">
-                    Striking
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
                   <h4 className="parent_category">Neck</h4>
-                  <h3 className="child_category" title="Zen Headphones">
-                    Zen Headphones
+                  <h3 className="child_category" title="Not Working">
+                    Not Working
                   </h3>
                 </div>
               </li>
@@ -453,7 +448,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">Meta Legends #4588</a>
+                        <a href="#">KTMF #4588</a>
                       </h3>
                     </div>
                   </div>
@@ -468,7 +463,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">Meta Legends #4587</a>
+                        <a href="#">KTMF #4587</a>
                       </h3>
                     </div>
                   </div>
@@ -483,7 +478,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">Meta Legends #4586</a>
+                        <a href="#">KTMF #4586</a>
                       </h3>
                     </div>
                   </div>
@@ -498,7 +493,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">Meta Legends #4585</a>
+                        <a href="#">KTMF #4585</a>
                       </h3>
                     </div>
                   </div>
@@ -513,7 +508,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">Meta Legends #4584</a>
+                        <a href="#">KTMF #4584</a>
                       </h3>
                     </div>
                   </div>
@@ -528,7 +523,7 @@ const NftSingle = () => {
                     </div>
                     <div className="title_holder">
                       <h3 className="fn_title">
-                        <a href="#">Meta Legends #4583</a>
+                        <a href="#">KTMF #4583</a>
                       </h3>
                     </div>
                   </div>
