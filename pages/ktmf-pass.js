@@ -24,26 +24,6 @@ const NftSingle = () => {
     setTotalPrice(newTotalPrice);
   };
 
-  // Function to load the public_Price value from the contract
-  const loadPublicPrice = async () => {
-    if (!provider || !contract) {
-      alert("Ethers provider or contract not initialized.");
-      return;
-    }
-
-    try {
-      // Call the publicPrice function in the smart contract to get the value
-      const publicPrice = await contract.publicPrice();
-      // Convert the BigNumber to a floating-point number (wei to ether)
-      const publicPriceInEther = ethers.utils.formatEther(publicPrice);
-      // Update the cost value with the loaded public_Price value
-      setCost(parseFloat(publicPriceInEther));
-    } catch (error) {
-      console.error("Error loading public_Price:", error);
-      alert("Error loading public_Price. Please check the console for details.");
-    }
-  };
-
   useEffect(() => {
     const initializeEthers = async () => {
       // Check if the window.ethereum object is available
@@ -72,6 +52,26 @@ const NftSingle = () => {
     loadPublicPrice();
   }, []);
 
+  // Function to load the public_Price value from the contract
+  const loadPublicPrice = async () => {
+    if (!provider || !contract) {
+      alert("Ethers provider or contract not initialized.");
+      return;
+    }
+
+    try {
+      // Call the publicPrice function in the smart contract to get the value
+      const publicPrice = await contract.publicPrice();
+      // Convert the BigNumber to a floating-point number (wei to ether)
+      const publicPriceInEther = ethers.utils.formatEther(publicPrice);
+      // Update the cost value with the loaded public_Price value
+      setCost(parseFloat(publicPriceInEther));
+    } catch (error) {
+      console.error("Error loading public_Price:", error);
+      alert("Error loading public_Price. Please check the console for details.");
+    }
+  };
+
   // Mint function to interact with the smart contract and mint NFTs
   const mintNFTs = async () => {
     if (!provider || !contract) {
@@ -82,6 +82,7 @@ const NftSingle = () => {
     try {
       // Call the publicMint function in the smart contract
       const transaction = await contract.publicMint(quantity, {
+        gasLimit: 500000,
         value: ethers.utils.parseEther(totalPrice.toString()), // Convert totalPrice to Wei
       });
 
