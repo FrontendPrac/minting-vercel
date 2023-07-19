@@ -9,7 +9,7 @@ import contract_abi from "../src/abis/KTMF_PASS_NFT.json"
 const NftSingle = () => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(1);
-  const [cost2, setCost2] = useState(2.25);
+  const [cost, setCost] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
   // State variables for ethers provider and contract
@@ -20,8 +20,28 @@ const NftSingle = () => {
   const handleQuantityChange = (value) => {
     setQuantity(value);
     // Calculate total price using the cost2 value from the smart contract
-    const newTotalPrice = value * cost2;
+    const newTotalPrice = value * cost;
     setTotalPrice(newTotalPrice);
+  };
+
+  // Function to load the public_Price value from the contract
+  const loadPublicPrice = async () => {
+    if (!provider || !contract) {
+      alert("Ethers provider or contract not initialized.");
+      return;
+    }
+
+    try {
+      // Call the publicPrice function in the smart contract to get the value
+      const publicPrice = await contract.publicPrice();
+      // Convert the BigNumber to a floating-point number (wei to ether)
+      const publicPriceInEther = ethers.utils.formatEther(publicPrice);
+      // Update the cost2 value with the loaded public_Price value
+      setCost(parseFloat(publicPriceInEther));
+    } catch (error) {
+      console.error("Error loading public_Price:", error);
+      alert("Error loading public_Price. Please check the console for details.");
+    }
   };
 
   useEffect(() => {
@@ -49,8 +69,10 @@ const NftSingle = () => {
     };
     handleQuantityChange(1);
     initializeEthers();
+    loadPublicPrice();
   }, []);
 
+  // Mint function to interact with the smart contract and mint NFTs
   const mintNFTs = async () => {
     if (!provider || !contract) {
       alert("Ethers provider or contract not initialized.");
