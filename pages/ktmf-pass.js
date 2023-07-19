@@ -37,7 +37,7 @@ const NftSingle = () => {
       // Convert the BigNumber to a floating-point number (wei to ether)
       const publicPriceInEther = ethers.utils.formatEther(publicPrice);
       // Update the cost2 value with the loaded public_Price value
-      setCost2(parseFloat(publicPriceInEther));
+      setCost(parseFloat(publicPriceInEther));
     } catch (error) {
       console.error("Error loading public_Price:", error);
       alert("Error loading public_Price. Please check the console for details.");
@@ -53,6 +53,7 @@ const NftSingle = () => {
         // Create an ethers provider using the window.ethereum object
         const newProvider = new ethers.providers.Web3Provider(window.ethereum);
         setProvider(newProvider);
+        console.log("setProvider Completed!");
 
         // Create an ethers contract instance using the contract address and ABI
         const contractAddress = "0x2D3fFA304E5160E15be55386d23b996514718E74"; // Replace with the actual contract address
@@ -63,6 +64,7 @@ const NftSingle = () => {
           newProvider.getSigner() // Use the signer to send transactions
         );
         setContract(newContract);
+        console.log("setContract Completed!");
 
         getPublicPrice();
       } else {
