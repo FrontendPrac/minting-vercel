@@ -46,7 +46,7 @@ const NftSingle = () => {
 
         try {
           // Call the publicPrice function in the smart contract to get the value
-          const publicPrice = await contract.publicPrice();
+          const publicPrice = await contract.public_Price();
           // Convert the BigNumber to a floating-point number (wei to ether)
           const publicPriceInEther = ethers.utils.formatEther(publicPrice);
           // Update the cost value with the loaded public_Price value
@@ -73,8 +73,7 @@ const NftSingle = () => {
     try {
       // Call the publicMint function in the smart contract
       const transaction = await contract.publicMint(quantity, {
-        gasLimit: 500000,
-        value: ethers.utils.parseEther(totalPrice.toString()), // Convert totalPrice to Wei
+        gasLimit: 500000
       });
 
       // Wait for the transaction to be mined
