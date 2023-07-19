@@ -8,7 +8,7 @@ import contract_abi from "../src/abis/KTMF_PASS_NFT.json"
 
 const NftSingle = () => {
   // State variables for quantity and total price
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
   const [cost, setCost] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -58,13 +58,12 @@ const NftSingle = () => {
           console.error("Error loading public_Price:", error);
           alert("Error loading public_Price. Please check the console for details.");
         }
-
-        handleQuantityChange(1);
       } else {
         alert("Please install a Web3-enabled browser like MetaMask.");
       }
     };
     initializeEthers();
+    handleQuantityChange(0);
   }, []);
 
   // Mint function to interact with the smart contract and mint NFTs
