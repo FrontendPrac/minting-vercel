@@ -12,6 +12,10 @@ const NftSingle = () => {
   const [cost2, setCost2] = useState(2.25);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  // State variables for ethers provider and contract
+  const [provider, setProvider] = useState(null);
+  const [contract, setContract] = useState(null);
+
   // Update total price when quantity changes
   const handleQuantityChange = (value) => {
     setQuantity(value);
@@ -21,52 +25,51 @@ const NftSingle = () => {
   };
 
   useEffect(() => {
+    const initializeEthers = async () => {
+      // Check if the window.ethereum object is available
+      if (window.ethereum) {
+        // Request access to the user's Ethereum account
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        // Create an ethers provider using the window.ethereum object
+        const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+        setProvider(newProvider);
+
+        // Create an ethers contract instance using the contract address and ABI
+        const contractAddress = "CONTRACT_ADDRESS"; // Replace with the actual contract address
+        const contractAbi = contract_abi.abi;
+        const newContract = new ethers.Contract(
+          contractAddress,
+          contractAbi,
+          newProvider.getSigner() // Use the signer to send transactions
+        );
+        setContract(newContract);
+      } else {
+        alert("Please install a Web3-enabled browser like MetaMask.");
+      }
+    };
     handleQuantityChange(1);
+    initializeEthers();
   }, []);
 
-  // Mint function to interact with the smart contract and mint NFTs
   const mintNFTs = async () => {
+    if (!provider || !contract) {
+      alert("Ethers provider or contract not initialized.");
+      return;
+    }
+
     try {
-      // Connect to the Ethereum network using MetaMask
-      if (window.ethereum) {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
+      // Call the publicMint function in the smart contract
+      const transaction = await contract.publicMint(quantity, {
+        value: ethers.utils.parseEther(totalPrice.toString()), // Convert totalPrice to Wei
+      });
 
-        // Replace 'contractAddress' and 'contractABI' with your contract address and ABI 
-        const contractAddress = "0x2D3fFA304E5160E15be55386d23b996514718E74";
-        const contractABI = contract_abi; // Replace with your contract ABI
+      // Wait for the transaction to be mined
+      await transaction.wait();
 
-        // Create an instance of the smart contract
-        const contract = new ethers.Contract(contractAddress, contractABI, signer);
-
-        // Estimate the gas limit for the transaction
-        //const gasLimit = await contract.estimateGas.publicMint(quantity);
-        const gasLimit = 800000;
-
-        // Get the current gas price from the Ethereum network
-        const gasPrice = await provider.getGasPrice();
-
-        // Calculate the estimated transaction cost
-        const estimatedCost = gasPrice.mul(gasLimit);
-
-        // Check if the user has enough Ether to cover the transaction cost
-        const balance = await provider.getBalance(signer.getAddress());
-        if (balance.lt(estimatedCost)) {
-          throw new Error("Insufficient funds. Please ensure you have enough Ether to cover the transaction cost.");
-        }
-        console.log(">>> quantity : ", quantity);
-
-        // Mint NFTs using the contract's publicMint function with specified gas limit and gas price
-        const tx = await contract.publicMint(quantity, { gasLimit, gasPrice });
-
-        const receipt = await tx.wait();
-        console.log("NFTs minted:", receipt);
-      } else {
-        alert("Please install MetaMask to mint NFTs.");
-      }
+      alert("NFTs minted successfully!");
     } catch (error) {
-      console.error("Error minting NFT:", error);
+      console.error("Error minting NFTs:", error);
+      alert("Error minting NFTs. Please check the console for details.");
     }
   };
 
