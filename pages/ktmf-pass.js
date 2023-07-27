@@ -4,7 +4,11 @@ import SectionDivider from "../src/components/SectionDivider";
 import RoadMapSlider from "../src/components/RoadMapStep";
 import { ethers } from "ethers";
 import React, { useState, useEffect } from "react";
-import contract_abi from "../src/abis/KTMF_PASS_NFT.json"
+// import contract_abi from "../src/abis/KTMF_PASS_NFT.json";
+import {
+  contractABI,
+  contractAddress,
+} from "../src/components/utils/constants";
 
 const NftSingle = () => {
   // State variables for quantity and total price
@@ -16,7 +20,10 @@ const NftSingle = () => {
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
 
-  // Update total price when quantity changes
+  // State variables for user type
+  const [isPublic, setIsPublic] = useState(false);
+
+  // // Update total price when quantity changes
   const handleQuantityChange = (value) => {
     setQuantity(value);
     // Calculate total price using the cost value from the smart contract
@@ -33,30 +40,34 @@ const NftSingle = () => {
         // Create an ethers provider using the window.ethereum object
         const newProvider = new ethers.providers.Web3Provider(window.ethereum);
         setProvider(newProvider);
-        console.log("setProvider Completed!", provider, newProvider);
+        // console.log("setProvider Completed!", provider, newProvider);
 
         // Create an ethers contract instance using the contract address and ABI
-        const contractAddress = "0x1E133e65F06Bb3625CBc9cCC8dD392d065c32f67"; // Replace with the actual contract address
-        const contractAbi = contract_abi;
+        const contractAbi = contractABI;
+
         const newContract = new ethers.Contract(
           contractAddress,
           contractAbi,
           newProvider.getSigner() // Use the signer to send transactions
         );
         setContract(newContract);
-        console.log("setContract Completed!", contract, newContract);
-        
+        // console.log("setContract Completed!", contract, newContract);
+
         // Function to load the public_Price value from the contract
         try {
           // Call the public_Price function in the smart contract to get the value
           const publicPrice = await newContract.getPublicPrice();
+          const publicActive = await newContract.getPublicActive();
+          console.log("publicActive: ", publicActive);
           // Convert the BigNumber to a floating-point number (wei to ether)
           const publicPriceInEther = ethers.utils.formatEther(publicPrice);
           // Update the cost2 value with the loaded public_Price value
           setCost(parseFloat(publicPriceInEther));
         } catch (error) {
           console.error("Error loading public_Price:", error);
-          alert("Error loading public_Price. Please check the console for details.");
+          alert(
+            "Error loading public_Price. Please check the console for details."
+          );
         }
       } else {
         alert("Please install a Web3-enabled browser like MetaMask.");
@@ -66,29 +77,29 @@ const NftSingle = () => {
     handleQuantityChange(0);
   }, []);
 
-  // Mint function to interact with the smart contract and mint NFTs
-  const mintNFTs = async () => {
-    if (!provider || !contract) {
-      alert("Ethers provider or contract not initialized.");
-      return;
-    }
+  // // Mint function to interact with the smart contract and mint NFTs
+  // const mintNFTs = async () => {
+  //   if (!provider || !contract) {
+  //     alert("Ethers provider or contract not initialized.");
+  //     return;
+  //   }
 
-    try {
-      // Call the publicMint function in the smart contract
-      const transaction = await contract.publicMint(quantity, {
-        gasLimit: 500000,
-        value: ethers.utils.parseEther(cost) * quantity
-      });
+  //   try {
+  //     // Call the publicMint function in the smart contract
+  //     const transaction = await contract.publicMint(quantity, {
+  //       gasLimit: 500000,
+  //       value: ethers.utils.parseEther(cost) * quantity,
+  //     });
 
-      // Wait for the transaction to be mined
-      await transaction.wait();
+  //     // Wait for the transaction to be mined
+  //     await transaction.wait();
 
-      alert("NFTs minted successfully!");
-    } catch (error) {
-      console.error("Error minting NFTs:", error);
-      alert("Error minting NFTs. Please check the console for details.");
-    }
-  };
+  //     alert("NFTs minted successfully!");
+  //   } catch (error) {
+  //     console.error("Error minting NFTs:", error);
+  //     alert("Error minting NFTs. Please check the console for details.");
+  //   }
+  // };
 
   return (
     <Layout pageTitle={"Minting"}>
@@ -98,7 +109,10 @@ const NftSingle = () => {
           <div className="metaportal_fn_mint_top">
             <div className="mint_left">
               <div className="img">
-                <div className="img_in" data-bg-img="/img/about/KTMF_Pass_1x1.jpg">
+                <div
+                  className="img_in"
+                  data-bg-img="/img/about/KTMF_Pass_1x1.jpg"
+                >
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
               </div>
@@ -176,16 +190,31 @@ const NftSingle = () => {
               </h3>
               <div className="desc">
                 <p>
-                  미주 한국일보 KPOP COVER SONG CONTEST와 함께하는 아즈메타 생태계 특별 한정판 NFT: 
+                  미주 한국일보 KPOP COVER SONG CONTEST와 함께하는 아즈메타
+                  생태계 특별 한정판 NFT:
                   <b>KTMF PASS NFT COLLECTION</b>
                 </p>
                 <p>
-                  &quot;한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in Metaverse&quot;
-                  아즈메타가 선보이는 온·오프라인 융합 하이브리드 콘테스트와 특별 한정판 NFT는 KPOP COVER SONG CONTEST에 새로운 전환점과 패러다임을 제시합니다.
-                  이더리움(ETH) 블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션으로, 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된 유틸리티 성격의 NFT입니다.
-                  KTMF PASS NFT는 2009년 아시아의 별 보아가 미국 데뷔 동시에 빌보드 200에서 127위에 올라 한국인 최초로 빌보드 메인차트 입성한 순간부터 KTMF KPOP COVER SONG CONTEST의 스타 탄생까지 KPOP과 한류의 15년을 기록한 15K 프로젝트로, 이더리움(ETH) 블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션입니다.
-                  KTMF PASS NFT는 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된 유틸리티 성격의 NFT로, 각각의 NFT에는 아즈메타 KTMF 독점 커뮤니티에 입장할 수 있는 PASS 티켓과 아즈메타 메타버스 내 아바타가 착용할 수 있는 코스튬 파츠가 결합되어있습니다.
-                  KTMF PASS NFT와 함께 아즈메타 얼리 엑세스가 시작됩니다. KTMF PASS NFT를 구매하여 커뮤니티에 가입하고 홀더들만의 다양한 특전과 놀라운 혜택을 누려보세요!
+                  &quot;한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어
+                  메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in
+                  Metaverse&quot; 아즈메타가 선보이는 온·오프라인 융합
+                  하이브리드 콘테스트와 특별 한정판 NFT는 KPOP COVER SONG
+                  CONTEST에 새로운 전환점과 패러다임을 제시합니다. 이더리움(ETH)
+                  블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스
+                  생태계 NFT 컬렉션으로, 멤버십 서비스와 제너레이티브 아이템
+                  NFT가 결합된 유틸리티 성격의 NFT입니다. KTMF PASS NFT는 2009년
+                  아시아의 별 보아가 미국 데뷔 동시에 빌보드 200에서 127위에
+                  올라 한국인 최초로 빌보드 메인차트 입성한 순간부터 KTMF KPOP
+                  COVER SONG CONTEST의 스타 탄생까지 KPOP과 한류의 15년을 기록한
+                  15K 프로젝트로, 이더리움(ETH) 블록체인상에서 창작된 유니크한
+                  15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션입니다. KTMF
+                  PASS NFT는 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된
+                  유틸리티 성격의 NFT로, 각각의 NFT에는 아즈메타 KTMF 독점
+                  커뮤니티에 입장할 수 있는 PASS 티켓과 아즈메타 메타버스 내
+                  아바타가 착용할 수 있는 코스튬 파츠가 결합되어있습니다. KTMF
+                  PASS NFT와 함께 아즈메타 얼리 엑세스가 시작됩니다. KTMF PASS
+                  NFT를 구매하여 커뮤니티에 가입하고 홀더들만의 다양한 특전과
+                  놀라운 혜택을 누려보세요!
                 </p>
               </div>
               <div className="view_on">
@@ -240,9 +269,7 @@ const NftSingle = () => {
                         >
                           -
                         </span>
-                        <span className="quantity">
-                          {quantity}
-                        </span>
+                        <span className="quantity">{quantity}</span>
                         <span
                           className="increase"
                           onClick={() => handleQuantityChange(quantity + 1)}
@@ -256,7 +283,8 @@ const NftSingle = () => {
                     <div className="item">
                       <h4>Total Price</h4>
                       <h3>
-                        <span className="total_price">{totalPrice}</span> ETH + GAS
+                        <span className="total_price">{totalPrice}</span> ETH +
+                        GAS
                       </h3>
                     </div>
                   </li>

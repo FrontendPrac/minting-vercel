@@ -19,6 +19,7 @@ const Faq = () => {
       dec: "A handcrafted collection of 10,000 characters developed by artist Frenify. In its purest form, RENGA is art and the art of storytelling.",
     },
   ];
+
   const faqs2 = [
     {
       title: "How can I mint my character?",
@@ -37,7 +38,9 @@ const Faq = () => {
       dec: "A handcrafted collection of 10,000 characters developed by artist Frenify. In its purest form, RENGA is art and the art of storytelling.",
     },
   ];
+
   const [active, setActive] = useState(`a0`);
+
   const faqMap = (arr, index) => {
     return arr.map((data, i) => (
       <div className="fn_cs_accordion" key={i}>
@@ -67,6 +70,7 @@ const Faq = () => {
       </div>
     ));
   };
+
   return (
     <section id="faq">
       <div className="container">

@@ -3,6 +3,7 @@ import WaterWave from "react-water-wave";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Hero4Slider } from "../sliderProps";
 import { dataBgImg } from "../utilits";
+
 const WaterHero = () => {
   useEffect(() => {
     dataBgImg();
@@ -19,9 +20,11 @@ const WaterHero = () => {
                 Dream Bridge
               </h3>
               <p>
-                Dream Bridge Project는 메타버스라는 꿈과 현실을 이어주는 역할을 하는 NFT 프로젝트입니다.
-                우리 프로젝트는 다수의 NFT 컬렉션으로 구성되어 있으며, 각 NFT 컬렉션마다 메타버스로 가는 로드맵을 보여줍니다.
-                하나의 컬렉션에서 수백 개에서 수천 개의 NFT 아이템이 생성되며, 희귀성 수준에 따라 가치가 달라지기도 합니다.
+                Dream Bridge Project는 메타버스라는 꿈과 현실을 이어주는 역할을
+                하는 NFT 프로젝트입니다. 우리 프로젝트는 다수의 NFT 컬렉션으로
+                구성되어 있으며, 각 NFT 컬렉션마다 메타버스로 가는 로드맵을
+                보여줍니다. 하나의 컬렉션에서 수백 개에서 수천 개의 NFT 아이템이
+                생성되며, 희귀성 수준에 따라 가치가 달라지기도 합니다.
               </p>
               <a
                 href="https://opensea.io/"

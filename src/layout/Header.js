@@ -4,15 +4,15 @@ import { connect } from "react-redux";
 import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
 import { stickyNav } from "../utilits";
 import { contractABI, contractAddress } from "../components/utils/constants";
-import { ethers } from 'ethers';
+import { ethers } from "ethers";
 
 const Header = ({ walletToggle, navigationToggle }) => {
-
   // state management of provider , signer and contract
   const [provider, setProvider] = useState(null);
   const [signer, setSigner] = useState(null);
   const [contract, setContract] = useState(null);
-  const [connectWalletText, setConnectWalletText] = useState('CONNECT TO WALLET');
+  const [connectWalletText, setConnectWalletText] =
+    useState("CONNECT TO WALLET");
 
   // this function lets you update your provider and signer , and initialize contract
   const updateEthers = async () => {
@@ -22,12 +22,12 @@ const Header = ({ walletToggle, navigationToggle }) => {
 
     let accounts = await provider.send("eth_requestAccounts", []);
     let account = accounts[0];
-    setConnectWalletText(account.slice(0,6) + "..." + account.slice(-4));
-    provider.on('accountsChanged', function (accounts) {
-        account = accounts[0];
-        setConnectWalletText(account.slice(0,6) + "..." + account.slice(-4));
-        console.log(address); // Print new address
-        location.reload();
+    setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
+    provider.on("accountsChanged", function (accounts) {
+      account = accounts[0];
+      setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
+      console.log(address); // Print new address
+      location.reload();
     });
 
     const signer = provider.getSigner();
