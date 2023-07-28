@@ -221,7 +221,17 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
           </div>
           <div className="mint_checked">
             <p>
-              <span className="text">Whitelist:</span>
+              <span className="text">Guarantee Whitelist:</span>
+              <span className="status">
+                {publicActive === 1 && "SOLD OUT"}
+                {/* Soldout{" "} */}
+                <span className="icon">
+                  <img src="/svg/checked.svg" alt="" className="fn__svg" />
+                </span>
+              </span>
+            </p>
+            <p>
+              <span className="text">Competitive Whitelist:</span>
               <span className="status">
                 {publicActive === 1 && "SOLD OUT"}
                 {/* Soldout{" "} */}
