@@ -1,4 +1,4 @@
-export const contractAddress = `0xCdd85204a36eF616406A473232775D181F472061`;
+export const contractAddress = `0xb5bA12849B838Ae4f507a4135a0eec003bF659c9`;
 export const contractABI = [
   {
     inputs: [
@@ -21,11 +21,6 @@ export const contractABI = [
         internalType: "string",
         name: "_nonReveal",
         type: "string",
-      },
-      {
-        internalType: "uint256",
-        name: "_MAX_SUPPLY",
-        type: "uint256",
       },
       {
         internalType: "uint32",
@@ -227,19 +222,6 @@ export const contractABI = [
     type: "event",
   },
   {
-    inputs: [],
-    name: "MAX_SUPPLY",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address[]",
@@ -307,6 +289,19 @@ export const contractABI = [
     outputs: [
       {
         internalType: "contract ArzRaffle",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "arzStaking",
+    outputs: [
+      {
+        internalType: "contract ArzStaking",
         name: "",
         type: "address",
       },
@@ -453,9 +448,9 @@ export const contractABI = [
     name: "getCompetitiveWhitelistActive",
     outputs: [
       {
-        internalType: "bool",
+        internalType: "uint256",
         name: "",
-        type: "bool",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -502,12 +497,25 @@ export const contractABI = [
   },
   {
     inputs: [],
+    name: "getCompetitiveWhitelistSupply",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getGuaranteeWhitelistActive",
     outputs: [
       {
-        internalType: "bool",
+        internalType: "uint256",
         name: "",
-        type: "bool",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -554,12 +562,25 @@ export const contractABI = [
   },
   {
     inputs: [],
+    name: "getGuaranteeWhitelistSupply",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getPublicActive",
     outputs: [
       {
-        internalType: "bool",
+        internalType: "uint256",
         name: "",
-        type: "bool",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -606,7 +627,33 @@ export const contractABI = [
   },
   {
     inputs: [],
+    name: "getPublicSupply",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getTotalMinted",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getTotalSupply",
     outputs: [
       {
         internalType: "uint256",
@@ -1295,69 +1342,3 @@ export const contractABI = [
     type: "function",
   },
 ];
-// export const contractAddress = `0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0`;
-// export const contractABI = [
-//   {
-//     inputs: [
-//       {
-//         internalType: "uint8",
-//         name: "_maxWhitelistedAddresses",
-//         type: "uint8",
-//       },
-//     ],
-//     stateMutability: "nonpayable",
-//     type: "constructor",
-//   },
-//   {
-//     inputs: [],
-//     name: "addAddressToWhitelist",
-//     outputs: [],
-//     stateMutability: "nonpayable",
-//     type: "function",
-//   },
-//   {
-//     inputs: [],
-//     name: "maxWhitelistedAddresses",
-//     outputs: [
-//       {
-//         internalType: "uint8",
-//         name: "",
-//         type: "uint8",
-//       },
-//     ],
-//     stateMutability: "view",
-//     type: "function",
-//   },
-//   {
-//     inputs: [],
-//     name: "numAddressesWhitelisted",
-//     outputs: [
-//       {
-//         internalType: "uint8",
-//         name: "",
-//         type: "uint8",
-//       },
-//     ],
-//     stateMutability: "view",
-//     type: "function",
-//   },
-//   {
-//     inputs: [
-//       {
-//         internalType: "address",
-//         name: "",
-//         type: "address",
-//       },
-//     ],
-//     name: "whitelistedAddresses",
-//     outputs: [
-//       {
-//         internalType: "bool",
-//         name: "",
-//         type: "bool",
-//       },
-//     ],
-//     stateMutability: "view",
-//     type: "function",
-//   },
-// ];

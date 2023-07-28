@@ -1,5 +1,44 @@
+import { useEffect, useState } from "react";
 import Layout from "../src/layout/Layout";
 const ComingSoon = () => {
+  const [diffTime, setDiffTime] = useState();
+  const [days, setDays] = useState();
+  const [hours, setHours] = useState();
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState();
+
+  const showCountdown = () => {
+    const intervalId = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const targetTime = new Date("2023/09/07 19:00:00").getTime();
+
+      const diffTime = targetTime - currentTime;
+
+      if (diffTime <= 0) {
+        setDiffTime(0);
+        clearInterval(intervalId);
+        console.log("타이머 종료");
+      } else {
+        const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diffTime % (1000 * 60)) / 1000);
+
+        setDays(days);
+        setHours(hours);
+        setMinutes(minutes);
+        setSeconds(seconds);
+        setDiffTime(diffTime);
+      }
+    }, 1000);
+  };
+
+  useEffect(() => {
+    showCountdown();
+  }, []);
+
   return (
     <Layout pageTitle={"Coming Soon"}>
       <div className="metaportal_fn_coming_soon">
@@ -30,7 +69,9 @@ const ComingSoon = () => {
               data-minutes={20}
               data-seconds={10}
             >
-              0d: 0h: 0m: 0s
+              {diffTime <= 0
+                ? "카운트다운 종료"
+                : `${days}d: ${hours}h: ${minutes}m: ${seconds}s`}
             </h3>
           </div>
           <div className="soon_title">

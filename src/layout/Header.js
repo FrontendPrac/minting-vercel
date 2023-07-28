@@ -37,11 +37,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
 
     setContract(contract);
 
-    console.log({
-      provider,
-      signer,
-      contract,
-    });
+    // console.log({
+    //   provider,
+    //   signer,
+    //   contract,
+    // });
   };
 
   useEffect(() => {

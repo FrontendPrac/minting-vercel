@@ -9,97 +9,82 @@ import {
   contractABI,
   contractAddress,
 } from "../src/components/utils/constants";
+import PublicMintBox from "../src/components/ktmf-pass/PublicMintBox";
+import GuaranteedMintBox from "../src/components/ktmf-pass/GuaranteedMintBox";
+import CompetitiveMintBox from "../src/components/ktmf-pass/CompetitiveMintBox";
+import { redirect } from "next/dist/server/api-utils";
 
 const NftSingle = () => {
-  // State variables for quantity and total price
-  const [quantity, setQuantity] = useState(0);
-  const [cost, setCost] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
-
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
 
-  // State variables for user type
-  const [isPublic, setIsPublic] = useState(false);
+  // State variables for user status
+  const [publicActive, setPublicActive] = useState(false);
+  const [guaranteeActive, setGuaranteeActive] = useState(false);
+  const [competitiveActive, setCompetitiveActive] = useState(false);
 
-  // // Update total price when quantity changes
-  const handleQuantityChange = (value) => {
-    setQuantity(value);
-    // Calculate total price using the cost value from the smart contract
-    const newTotalPrice = value * cost;
-    setTotalPrice(newTotalPrice);
+  const initializeEthers = async () => {
+    // Request access to the user's Ethereum account
+    await window.ethereum.request({ method: "eth_requestAccounts" });
+
+    // Create an ethers provider using the window.ethereum object
+    const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+    console.log("newProvider: ", newProvider);
+    setProvider(newProvider);
+
+    // Create an ethers contract instance using the contract address and ABI
+    const contractAbi = contractABI;
+
+    const newContract = new ethers.Contract(
+      contractAddress,
+      contractAbi,
+      newProvider.getSigner() // Use the signer to send transactions
+    );
+    console.log("newContract: ", newContract);
+    setContract(newContract);
+
+    // Function to load the public_Price value from the contract
+    try {
+      // Call the public_Price function in the smart contract to get the value
+      const publicActive = await newContract.getPublicActive();
+      console.log("publicActive: ", parseInt(publicActive));
+      setPublicActive(parseInt(publicActive));
+
+      const guaranteeActive = await newContract.getGuaranteeWhitelistActive();
+      console.log("guaranteeActive: ", parseInt(guaranteeActive));
+      setGuaranteeActive(parseInt(guaranteeActive));
+
+      const competitiveActive =
+        await newContract.getCompetitiveWhitelistActive();
+      console.log("competitiveActive: ", parseInt(competitiveActive));
+      setCompetitiveActive(parseInt(competitiveActive));
+
+      // go to coming-soon page
+      if (!publicActive && !guaranteeActive && !competitiveActive) {
+        window.location.href = "/coming-soon";
+      }
+    } catch (error) {
+      console.error("Error loading public_Price:", error);
+      alert(
+        "Error loading public_Price. Please check the console for details."
+      );
+    }
   };
 
   useEffect(() => {
-    const initializeEthers = async () => {
-      // Check if the window.ethereum object is available
-      if (window.ethereum) {
-        // Request access to the user's Ethereum account
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        // Create an ethers provider using the window.ethereum object
-        const newProvider = new ethers.providers.Web3Provider(window.ethereum);
-        setProvider(newProvider);
-        // console.log("setProvider Completed!", provider, newProvider);
-
-        // Create an ethers contract instance using the contract address and ABI
-        const contractAbi = contractABI;
-
-        const newContract = new ethers.Contract(
-          contractAddress,
-          contractAbi,
-          newProvider.getSigner() // Use the signer to send transactions
-        );
-        setContract(newContract);
-        // console.log("setContract Completed!", contract, newContract);
-
-        // Function to load the public_Price value from the contract
-        try {
-          // Call the public_Price function in the smart contract to get the value
-          const publicPrice = await newContract.getPublicPrice();
-          const publicActive = await newContract.getPublicActive();
-          console.log("publicActive: ", publicActive);
-          // Convert the BigNumber to a floating-point number (wei to ether)
-          const publicPriceInEther = ethers.utils.formatEther(publicPrice);
-          // Update the cost2 value with the loaded public_Price value
-          setCost(parseFloat(publicPriceInEther));
-        } catch (error) {
-          console.error("Error loading public_Price:", error);
-          alert(
-            "Error loading public_Price. Please check the console for details."
-          );
-        }
+    // Check if the window.ethereum object is available
+    if (window.ethereum) {
+      // Check if the connect to metamask
+      if (window.ethereum.selectedAddress) {
+        initializeEthers();
       } else {
-        alert("Please install a Web3-enabled browser like MetaMask.");
+        alert("Please connect to MetaMask.");
       }
-    };
-    initializeEthers();
-    handleQuantityChange(0);
+    } else {
+      alert("Please install a Web3-enabled browser like MetaMask.");
+    }
   }, []);
-
-  // // Mint function to interact with the smart contract and mint NFTs
-  // const mintNFTs = async () => {
-  //   if (!provider || !contract) {
-  //     alert("Ethers provider or contract not initialized.");
-  //     return;
-  //   }
-
-  //   try {
-  //     // Call the publicMint function in the smart contract
-  //     const transaction = await contract.publicMint(quantity, {
-  //       gasLimit: 500000,
-  //       value: ethers.utils.parseEther(cost) * quantity,
-  //     });
-
-  //     // Wait for the transaction to be mined
-  //     await transaction.wait();
-
-  //     alert("NFTs minted successfully!");
-  //   } catch (error) {
-  //     console.error("Error minting NFTs:", error);
-  //     alert("Error minting NFTs. Please check the console for details.");
-  //   }
-  // };
 
   return (
     <Layout pageTitle={"Minting"}>
@@ -238,137 +223,15 @@ const NftSingle = () => {
           </div>
           {/* !Mint Top */}
           {/* Mint Box */}
-          <div className="metaportal_fn_mintbox">
-            <div className="mint_left">
-              <div className="mint_title">
-                <span>Public Mint is Live</span>
-              </div>
-              <div className="mint_list">
-                <ul>
-                  <li>
-                    <div className="item">
-                      <h4>Price</h4>
-                      <h3>
-                        <span className="cost">{cost}</span> ETH
-                      </h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="item">
-                      <h4>Remaining</h4>
-                      <h3>344/999 - Not working</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="item">
-                      <h4>Quantity</h4>
-                      <div className="qnt">
-                        <span
-                          className="decrease"
-                          onClick={() => handleQuantityChange(quantity - 1)}
-                        >
-                          -
-                        </span>
-                        <span className="quantity">{quantity}</span>
-                        <span
-                          className="increase"
-                          onClick={() => handleQuantityChange(quantity + 1)}
-                        >
-                          +
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="item">
-                      <h4>Total Price</h4>
-                      <h3>
-                        <span className="total_price">{totalPrice}</span> ETH +
-                        GAS
-                      </h3>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="mint_desc">
-                <a
-                  href="#"
-                  className="metaportal_fn_button"
-                  onClick={() => mintNFTs()}
-                >
-                  <span>Mint Now</span>
-                </a>
-                <p>
-                  By clicking “MINT NOW” button, you agree to our{" "}
-                  <a href="#">Terms of Service</a> and our{" "}
-                  <a href="#">Privacy Policy</a>.
-                </p>
-              </div>
-            </div>
-            <div className="mint_right">
-              <div className="mright">
-                <div className="mint_time">
-                  <h4>Public Mint Ends In</h4>
-                  {/* 
-									There is two types of countdown: due_date (Due Date), ever (Evergreen timer)
-										1. 	data-type="due_date"
-											In this case you have to change value of data-date. For example:
-											data-date="October 13, 2022 12:30:00"
-											It will mean that mint will finished at this time
-
-										2. 	data-type="ever"
-											In this case you have to change values of data-days, data-hours, data-minutes and data-seconds. For example:
-											data-days="34"
-											data-hours="10"
-											data-minutes="20"
-											data-seconds="0"
-											It will mean that the time expires after this time, but when the page is refreshed, the value will return again. It means, it won't end.
-								*/}
-                  <h3
-                    className="metaportal_fn_countdown"
-                    data-type="due_date"
-                    data-date="October 11, 2023 00:00:00"
-                  >
-                    34d: 10h: 20m: 0s
-                  </h3>
-                </div>
-                <div className="mint_checked">
-                  <p>
-                    <span className="text">Whitelist:</span>
-                    <span className="status">
-                      Soldout{" "}
-                      <span className="icon">
-                        <img
-                          src="/svg/checked.svg"
-                          alt=""
-                          className="fn__svg"
-                        />
-                      </span>
-                    </span>
-                  </p>
-                  <p>
-                    <span className="text">Presale:</span>
-                    <span className="status">
-                      Soldout{" "}
-                      <span className="icon">
-                        <img
-                          src="/svg/checked.svg"
-                          alt=""
-                          className="fn__svg"
-                        />
-                      </span>
-                    </span>
-                  </p>
-                </div>
-                <div className="mint_info">
-                  <p>
-                    You need to pay a GAS fee during minting. We allow max 5
-                    mints per wallet.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {publicActive === 1 && (
+            <PublicMintBox
+              provider={provider}
+              contract={contract}
+              publicActive={publicActive}
+            />
+          )}
+          {guaranteeActive === 1 && <GuaranteedMintBox />}
+          {competitiveActive === 1 && <CompetitiveMintBox />}
           {/* !Mint Box */}
           {/* NFT Categories */}
           <div className="metaportal_fn_nft_cats">
