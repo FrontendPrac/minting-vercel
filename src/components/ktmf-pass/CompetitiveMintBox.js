@@ -28,7 +28,7 @@ const CompetitiveMintBox = ({ provider, contract, competitiveActive }) => {
       const supply = await newContract.getCompetitiveWhitelistSupply(); // 총 갯수
 
       // Convert the BigNumber to a floating-point number (wei to ether)
-      // Update the cost2 value with the loaded guarantee_Price value
+      // Update the cost2 value with the loaded competitive_Price value
       setCompetitivePrice(
         parseFloat(ethers.utils.formatEther(parseFloat(price)))
       );
@@ -78,10 +78,12 @@ const CompetitiveMintBox = ({ provider, contract, competitiveActive }) => {
       return;
     }
 
-    setQuantity(value);
-    // Calculate total price using the cost value from the smart contract
-    const newTotalPrice = value * competitivePrice;
-    setTotalPrice(newTotalPrice);
+    if (value > 0) {
+      setQuantity(value);
+      // Calculate total price using the cost value from the smart contract
+      const newTotalPrice = value * competitivePrice;
+      setTotalPrice(newTotalPrice);
+    }
   };
 
   // Get remaining time

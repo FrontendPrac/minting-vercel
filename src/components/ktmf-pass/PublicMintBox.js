@@ -76,10 +76,12 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
       return;
     }
 
-    setQuantity(value);
-    // Calculate total price using the cost value from the smart contract
-    const newTotalPrice = value * publicPrice;
-    setTotalPrice(newTotalPrice);
+    if (value > 0) {
+      setQuantity(value);
+      // Calculate total price using the cost value from the smart contract
+      const newTotalPrice = value * publicPrice;
+      setTotalPrice(newTotalPrice);
+    }
   };
 
   // Get remaining time

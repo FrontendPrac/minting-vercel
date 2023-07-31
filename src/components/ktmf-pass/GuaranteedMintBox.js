@@ -78,10 +78,12 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
       return;
     }
 
-    setQuantity(value);
-    // Calculate total price using the cost value from the smart contract
-    const newTotalPrice = value * guaranteePrice;
-    setTotalPrice(newTotalPrice);
+    if (value > 0) {
+      setQuantity(value);
+      // Calculate total price using the cost value from the smart contract
+      const newTotalPrice = value * guaranteePrice;
+      setTotalPrice(newTotalPrice);
+    }
   };
 
   // Get remaining time

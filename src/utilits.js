@@ -204,3 +204,5 @@ export const heroSlider2 = () => {
     floww_start_autoplay(element);
   });
 };
+
+
