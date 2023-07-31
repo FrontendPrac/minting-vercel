@@ -1,42 +1,92 @@
 import { useEffect, useState } from "react";
 import Layout from "../src/layout/Layout";
 const ComingSoon = () => {
-  const [diffTime, setDiffTime] = useState();
-  const [days, setDays] = useState();
-  const [hours, setHours] = useState();
-  const [minutes, setMinutes] = useState();
-  const [seconds, setSeconds] = useState();
+  // Get Kor remaining time
+  const [korDiffTime, setKorDiffTime] = useState();
+  const [korDays, setKorDays] = useState();
+  const [korHours, setKorHours] = useState();
+  const [korMinutes, setKorMinutes] = useState();
+  const [korSeconds, setKorSeconds] = useState();
 
-  const showCountdown = () => {
+  // Get UTC remaining time
+  const [utcDiffTime, setUTCDiffTime] = useState();
+  const [utcDays, setUTCDays] = useState();
+  const [utcHours, setUTCHours] = useState();
+  const [utcMinutes, setUTCMinutes] = useState();
+  const [utcSeconds, setUTCSeconds] = useState();
+
+  const showKorCountdown = () => {
     const intervalId = setInterval(() => {
-      const currentTime = new Date().getTime();
-      const targetTime = new Date("2023/09/07 19:00:00").getTime();
+      const korCurrentTime = new Date();
 
-      const diffTime = targetTime - currentTime;
+      const korTargetTime = new Date("2023/09/07 19:00:00"); // KST 입력
 
-      if (diffTime <= 0) {
-        setDiffTime(0);
+      const korDiffTime = korTargetTime - korCurrentTime;
+
+      if (korDiffTime <= 0) {
+        setKorDiffTime(0);
         clearInterval(intervalId);
-        console.log("타이머 종료");
+        console.log("한국 타이머 종료");
       } else {
-        const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const days = Math.floor(korDiffTime / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (korDiffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
-        const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diffTime % (1000 * 60)) / 1000);
+        const minutes = Math.floor(
+          (korDiffTime % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((korDiffTime % (1000 * 60)) / 1000);
 
-        setDays(days);
-        setHours(hours);
-        setMinutes(minutes);
-        setSeconds(seconds);
-        setDiffTime(diffTime);
+        setKorDays(days);
+        setKorHours(hours);
+        setKorMinutes(minutes);
+        setKorSeconds(seconds);
+        setKorDiffTime(korDiffTime);
+      }
+    }, 1000);
+  };
+
+  const showUTCCountDown = () => {
+    const intervalId = setInterval(() => {
+      const korCurrentTime = new Date();
+      const utcCurrentTime = new Date(
+        korCurrentTime.getTime() +
+          korCurrentTime.getTimezoneOffset() * 60 * 1000
+      );
+
+      const korTargetTime = new Date("2023/09/07 10:00:00"); // UTC 입력
+      const utcTargetTime = new Date(
+        korTargetTime.getTime() + korTargetTime.getTimezoneOffset() * 60 * 1000
+      );
+
+      const utcDiffTime = utcTargetTime - utcCurrentTime;
+
+      if (utcDiffTime <= 0) {
+        setUTCDiffTime(0);
+        clearInterval(intervalId);
+        console.log("미국 타이머 종료");
+      } else {
+        const days = Math.floor(utcDiffTime / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (utcDiffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (utcDiffTime % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((utcDiffTime % (1000 * 60)) / 1000);
+
+        setUTCDays(days);
+        setUTCHours(hours);
+        setUTCMinutes(minutes);
+        setUTCSeconds(seconds);
+        setUTCDiffTime(utcDiffTime);
       }
     }, 1000);
   };
 
   useEffect(() => {
-    showCountdown();
+    showKorCountdown();
+    showUTCCountDown();
   }, []);
 
   return (
@@ -69,9 +119,13 @@ const ComingSoon = () => {
               data-minutes={20}
               data-seconds={10}
             >
-              {diffTime <= 0
-                ? "카운트다운 종료"
-                : `${days}d: ${hours}h: ${minutes}m: ${seconds}s`}
+              {korDiffTime <= 0
+                ? "한국 타이머 종료"
+                : `KST : ${korDays}d: ${korHours}h: ${korMinutes}m: ${korSeconds}s`}
+              <br />
+              {utcDiffTime <= 0
+                ? "미국 타이머 종료"
+                : `UTC : ${utcDays}d: ${utcHours}h: ${utcMinutes}m: ${utcSeconds}s`}
             </h3>
           </div>
           <div className="soon_title">
