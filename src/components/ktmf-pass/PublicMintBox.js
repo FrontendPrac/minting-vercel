@@ -19,6 +19,56 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
 
+  // Get smart contract data
+  const getPublicData = async (newContract) => {
+    try {
+      const price = await newContract.getPublicPrice(); // 가격
+      const limit = await newContract.getPublicLimit(); // 갯수 제한 (화면에는 필요 X)
+      const numMinted = await newContract.getPublicNumMinted(); // 민팅된 갯수
+      const supply = await newContract.getPublicSupply(); // 총 갯수
+
+      // Convert the BigNumber to a floating-point number (wei to ether)
+      // Update the cost2 value with the loaded public_Price value
+      setPublicPrice(parseFloat(ethers.utils.formatEther(parseFloat(price))));
+      setPublicLimit(parseFloat(limit));
+      setPublicNumMinted(parseFloat(numMinted));
+      setPublicSupply(parseFloat(supply));
+    } catch (error) {
+      console.error("Error loading public_Price:", error);
+      alert(
+        "Error loading public_Price. Please check the console for details."
+      );
+    }
+  };
+
+  // Mint function to interact with the smart contract and mint NFTs
+  const mintNFTs = async (totalPrice, quantity) => {
+    if (!provider || !contract) {
+      alert("Ethers provider or contract not initialized.");
+      return;
+    }
+
+    console.log("quantity: ", quantity);
+    console.log("totalPrice: ", totalPrice);
+
+    try {
+      // Call the publicMint function in the smart contract
+      const transaction = await contract.publicMint(quantity, {
+        gasLimit: 500000,
+        value: ethers.utils.parseEther(totalPrice.toFixed(5).toString()),
+      });
+
+      // Wait for the transaction to be mined
+      await transaction.wait();
+
+      alert("NFTs minted successfully!");
+      location.reload();
+    } catch (error) {
+      console.error("Error minting NFTs:", error);
+      alert("Error minting NFTs. Please check the console for details.");
+    }
+  };
+
   // Update total price when quantity changes
   const handleQuantityChange = async (value) => {
     if (!window.ethereum) {
@@ -61,63 +111,14 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
     }, 1000);
   };
 
-  // Get smart contract data
-  const getPublicData = async (newContract) => {
-    try {
-      const price = await newContract.getPublicPrice(); // 가격
-      const limit = await newContract.getPublicLimit(); // 갯수 제한 (화면에는 필요 X)
-      const numMinted = await newContract.getPublicNumMinted(); // 민팅된 갯수
-      const supply = await newContract.getPublicSupply(); // 총 갯수
-
-      // Convert the BigNumber to a floating-point number (wei to ether)
-      // Update the cost2 value with the loaded public_Price value
-      setPublicPrice(parseFloat(ethers.utils.formatEther(parseFloat(price))));
-      setPublicLimit(parseFloat(limit));
-      setPublicNumMinted(parseFloat(numMinted));
-      setPublicSupply(parseFloat(supply));
-    } catch (error) {
-      console.error("Error loading public_Price:", error);
-      alert(
-        "Error loading public_Price. Please check the console for details."
-      );
-    }
-  };
-
-  // Mint function to interact with the smart contract and mint NFTs
-  const mintNFTs = async (totalPrice, quantity) => {
-    if (!provider || !contract) {
-      alert("Ethers provider or contract not initialized.");
-      return;
-    }
-
-    console.log("quantity: ", quantity);
-    console.log("totalPrice: ", totalPrice);
-
-    try {
-      // Call the publicMint function in the smart contract
-      const transaction = await contract.publicMint(quantity, {
-        gasLimit: 500000,
-        value: ethers.utils.parseEther(totalPrice.toFixed(4).toString()),
-      });
-
-      // Wait for the transaction to be mined
-      await transaction.wait();
-
-      alert("NFTs minted successfully!");
-      location.reload();
-    } catch (error) {
-      console.error("Error minting NFTs:", error);
-      alert("Error minting NFTs. Please check the console for details.");
-    }
-  };
-
   useEffect(() => {
     showCountdown();
     getPublicData(contract);
     handleQuantityChange(0);
   }, []);
 
-  console.log("publicNumMinted: ", publicNumMinted);
+  // console.log("quantity: ", quantity);
+  // console.log("totalPrice: ", totalPrice);
 
   return (
     <div className="metaportal_fn_mintbox">
@@ -167,7 +168,7 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(4)}</span>{" "}
+                  <span className="total_price">{totalPrice.toFixed(5)}</span>{" "}
                   ETH + GAS
                 </h3>
               </div>

@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={"../src/components/FunFacts.js -> ./Counter":{"id":"../src/components/FunFacts.js -> ./Counter","files":["static/chunks/src_components_Counter_js.js"]},"index.js -> ../src/components/WaterHero":{"id":"index.js -> ../src/components/WaterHero","files":["static/chunks/src_components_WaterHero_js.js"]}}
+self.__REACT_LOADABLE_MANIFEST={}

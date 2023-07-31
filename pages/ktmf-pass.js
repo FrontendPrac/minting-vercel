@@ -4,7 +4,6 @@ import SectionDivider from "../src/components/SectionDivider";
 import RoadMapSlider from "../src/components/RoadMapStep";
 import { ethers } from "ethers";
 import React, { useState, useEffect } from "react";
-// import contract_abi from "../src/abis/KTMF_PASS_NFT.json";
 import {
   contractABI,
   contractAddress,
@@ -12,7 +11,6 @@ import {
 import PublicMintBox from "../src/components/ktmf-pass/PublicMintBox";
 import GuaranteedMintBox from "../src/components/ktmf-pass/GuaranteedMintBox";
 import CompetitiveMintBox from "../src/components/ktmf-pass/CompetitiveMintBox";
-import { redirect } from "next/dist/server/api-utils";
 
 const NftSingle = () => {
   // State variables for ethers provider and contract
@@ -230,8 +228,20 @@ const NftSingle = () => {
               publicActive={publicActive}
             />
           )}
-          {guaranteeActive === 1 && <GuaranteedMintBox />}
-          {competitiveActive === 1 && <CompetitiveMintBox />}
+          {guaranteeActive === 1 && (
+            <GuaranteedMintBox
+              provider={provider}
+              contract={contract}
+              guaranteeActive={guaranteeActive}
+            />
+          )}
+          {competitiveActive === 1 && (
+            <CompetitiveMintBox
+              provider={provider}
+              contract={contract}
+              competitiveActive={competitiveActive}
+            />
+          )}
           {/* !Mint Box */}
           {/* NFT Categories */}
           <div className="metaportal_fn_nft_cats">
