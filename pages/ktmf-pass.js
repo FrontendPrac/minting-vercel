@@ -242,7 +242,6 @@ const NftSingle = () => {
               competitiveActive={competitiveActive}
             />
           )}
-          <button>스테이킹</button>
           {/* !Mint Box */}
           {/* NFT Categories */}
           <div className="metaportal_fn_nft_cats">
