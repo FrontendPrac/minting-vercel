@@ -79,7 +79,11 @@ const ComingSoon = () => {
       tokenIds.push(parsedLog.args.tokenId);
     });
 
-    // console.log("TokenIds: ", TokenIds);
+    console.log("tokenIds: ", tokenIds);
+    tokenIds
+      .filter((item, index) => tokenIds.indexOf(index) === index)
+      .filter((item) => item !== null);
+
     setTokenIds(tokenIds);
   };
 
@@ -109,10 +113,11 @@ const ComingSoon = () => {
       provider.getSigner()
     );
 
-    console.log("tokenIds[5]: ", tokenIds[5]);
-    stakingContract.stake(tokenIds[5], {
-      gasLimit: 500000,
-    });
+    console.log("tokenIds: ", tokenIds);
+
+    // stakingContract.stake(tokenIds[0], {
+    //   gasLimit: 500000,
+    // });
   };
 
   // UnStaking Function
@@ -141,10 +146,10 @@ const ComingSoon = () => {
       provider.getSigner()
     );
 
-    console.log("tokenIds[5]: ", tokenIds[5]);
-    stakingContract.unstake(tokenIds[5], 1, {
-      gasLimit: 500000,
-    });
+    console.log("tokenIds: ", tokenIds);
+    // await stakingContract.unstake(tokenIds[0], 1, {
+    //   gasLimit: 500000,
+    // });
   };
 
   const showKorCountdown = () => {

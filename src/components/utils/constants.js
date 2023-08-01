@@ -1426,19 +1426,6 @@ export const stakingContractABI = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "durationUnit",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -1456,7 +1443,33 @@ export const stakingContractABI = [
         type: "uint256",
       },
     ],
-    name: "getReward",
+    name: "calculateReward",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "claimReward",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "durationUnit",
     outputs: [
       {
         internalType: "uint256",
