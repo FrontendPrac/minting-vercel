@@ -34,7 +34,7 @@ const Index = () => {
       <About />
       {/* !Section About #2 */}
       {/* Section Divider */}
-      <SectionDivider />
+      {/* <SectionDivider /> */}
       {/* !Section Divider */}
       {/* Collection Section */}
       <Collection />

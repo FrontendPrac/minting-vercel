@@ -255,9 +255,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
           </div>
           <div className="info_holder">
             <div className="copyright">
-              <p>
-                Copyright 2023 - Hancom Frontis
-              </p>
+              <p>Copyright 2023 - Hancom Frontis</p>
             </div>
             <div className="social_icons">
               <ul>

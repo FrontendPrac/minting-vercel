@@ -1,12 +1,13 @@
 import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { walletToggle } from "../redux/actions/siteSettings";
-import { ethers } from 'ethers';
+import { ethers } from "ethers";
 import { contractABI, contractAddress } from "../components/utils/constants";
 
 const WalletPopUp = ({ walletToggle, wallet }) => {
-
-  const [errorMessage, setErrorMessage] = useState("You are not connected to a wallet");
+  const [errorMessage, setErrorMessage] = useState(
+    "You are not connected to a wallet"
+  );
   const [joinWhiteListText, setJoinWhiteListText] =
     useState("Join the Whitelist");
 
@@ -24,29 +25,34 @@ const WalletPopUp = ({ walletToggle, wallet }) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     setProvider(provider);
     console.log(provider.getCode(contractAddress));
+    // console.log("provider: ", provider);
 
     const signer = provider.getSigner();
     setSigner(signer);
+    // console.log("signer: ", signer);
 
     const contract = new ethers.Contract(contractAddress, contractABI, signer);
-
     setContract(contract);
+    // console.log("contract: ", contract);
 
     console.log({
       provider,
       signer,
       contract,
     });
-    
+
     location.reload();
   };
 
   // this function lets you connect the frontend to the blockchain using metamask
   const connectWalletHandler = () => {
+    // console.log("ethereum: ", ethereum);
+    // console.log("window.ethereum: ", window.ethereum);
     if (ethereum) {
       window.ethereum
         .request({ method: "eth_requestAccounts" })
         .then((result) => {
+          // console.log("result: ", result);
           setConnectedAddress(result[0]);
           setConnetButtonText("Wallet Connected!");
           updateEthers();

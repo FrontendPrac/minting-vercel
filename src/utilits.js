@@ -133,6 +133,7 @@ export const heroSlider2 = () => {
     prev2.style.top = `240px`;
     prev2.style.transform = "scale(1) translateZ(0) rotate(-30deg)";
   };
+
   const floww_start_autoplay = (element) => {
     let length = element.getElementsByTagName("li").length;
     let i = 0;
@@ -203,3 +204,5 @@ export const heroSlider2 = () => {
     floww_start_autoplay(element);
   });
 };
+
+

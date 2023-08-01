@@ -20,8 +20,6 @@ const Layout = ({ children, pageTitle }) => {
     dataBgImg();
   }, []);
 
-
-
   return (
     <Fragment>
       <Head>
