@@ -13,6 +13,7 @@
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
     "@nomiclabs/hardhat-waffle": "^2.0.6",
     "@openzeppelin/contracts": "^4.9.2",
+    "babel-plugin-styled-components": "^2.1.4",
     "chai": "^4.3.7",
     "create-react-app": "^5.0.1",
     "dotenv": "^16.3.1",
@@ -31,6 +32,7 @@
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "styled-components": "^6.0.5",
     "swiper": "^8.4.4",
     "tsparticles": "^2.3.4"
   },

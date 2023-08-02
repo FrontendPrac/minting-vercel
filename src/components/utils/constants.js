@@ -1,4 +1,5 @@
 export const contractAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS;
+
 export const contractABI = [
   {
     inputs: [
@@ -1488,15 +1489,15 @@ export const stakingContractABI = [
         type: "address",
       },
     ],
-    name: "getTokensStaked",
+    name: "getStakedTokens",
     outputs: [
       {
         internalType: "uint256[]",
-        name: "",
+        name: "tokenIds",
         type: "uint256[]",
       },
     ],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
   },
   {

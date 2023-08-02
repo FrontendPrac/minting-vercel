@@ -7,6 +7,10 @@ import {
   stakingContractABI,
   stakingContractAddress,
 } from "../src/components/utils/constants";
+import * as S from "../styles/coming-soon.style";
+import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
+import UTCTimeout from "../src/components/coming-soon/UTCTimeout";
+
 const ComingSoon = () => {
   // Get Kor remaining time
   const [korDiffTime, setKorDiffTime] = useState();
@@ -80,9 +84,11 @@ const ComingSoon = () => {
     });
 
     console.log("tokenIds: ", tokenIds);
-    tokenIds
-      .filter((item, index) => tokenIds.indexOf(index) === index)
-      .filter((item) => item !== null);
+    //! 배열에서 중복된 값을 제거하는 테스트 중입니다!!
+    // const unDuplicatedArr = tokenIds.filter(
+    //   (item, index) => tokenIds.indexOf(index) === index
+    // );
+    // console.log("unDuplicatedArr: ", unDuplicatedArr);
 
     setTokenIds(tokenIds);
   };
@@ -115,7 +121,14 @@ const ComingSoon = () => {
 
     console.log("tokenIds: ", tokenIds);
 
-    // stakingContract.stake(tokenIds[0], {
+    // const response = await stakingContract.getTokensStaked(signerAddress);
+    // console.log("response: ", response);
+
+    stakingContract.stake(tokenIds[2], {
+      gasLimit: 500000,
+    });
+
+    // stakingContract.stakeBatch([tokenIds[1], tokenIds[2]], {
     //   gasLimit: 500000,
     // });
   };
@@ -146,10 +159,13 @@ const ComingSoon = () => {
       provider.getSigner()
     );
 
+    // const response = await stakingContract.getTokensStaked(signerAddress);
+    // console.log("response: ", response);
+
     console.log("tokenIds: ", tokenIds);
-    // await stakingContract.unstake(tokenIds[0], 1, {
-    //   gasLimit: 500000,
-    // });
+    await stakingContract.unstake(tokenIds[2], 1, {
+      gasLimit: 500000,
+    });
   };
 
   const showKorCountdown = () => {
@@ -242,41 +258,21 @@ const ComingSoon = () => {
     <Layout pageTitle={"Coming Soon"}>
       <div className="metaportal_fn_coming_soon">
         <div className="container">
-          <div className="soon_countdown">
-            {/* 
-						There is two types of countdown: due_date (Due Date), ever (Evergreen timer)
-							1. 	data-type="due_date"
-								In this case you have to change value of data-date. For example:
-								data-date="October 13, 2022 12:30:00"
-								It will mean that mint will finished at this time
+          {/* 타임아웃 */}
+          <KSTTimeout
+            korDays={korDays}
+            korHours={korHours}
+            korMinutes={korMinutes}
+            korSeconds={korSeconds}
+          />
 
-							2. 	data-type="ever"
-								In this case you have to change values of data-days, data-hours, data-minutes and data-seconds. For example:
-								data-days="34"
-								data-hours="10"
-								data-minutes="20"
-								data-seconds="0"
-								It will mean that the time expires after this time, but when the page is refreshed, the value will return again. It means, it won't end.
-						Add boxed class to get #1 type of countdown
-					*/}
-            <h3
-              className="metaportal_fn_countdown boxed"
-              data-type="ever"
-              data-date="October 13, 2022 12:30:00"
-              data-days={34}
-              data-hours={9}
-              data-minutes={20}
-              data-seconds={10}
-            >
-              {korDiffTime <= 0
-                ? "한국 타이머 종료"
-                : `KST : ${korDays}d: ${korHours}h: ${korMinutes}m: ${korSeconds}s`}
-              <br />
-              {utcDiffTime <= 0
-                ? "미국 타이머 종료"
-                : `UTC : ${utcDays}d: ${utcHours}h: ${utcMinutes}m: ${utcSeconds}s`}
-            </h3>
-          </div>
+          <UTCTimeout
+            utcDays={utcDays}
+            utcHours={utcHours}
+            utcMinutes={utcMinutes}
+            utcSeconds={utcSeconds}
+          />
+          {/* 타임아웃 */}
           <div className="soon_title">
             <h3
               className="fn__maintitle"
@@ -295,6 +291,7 @@ const ComingSoon = () => {
       <button onClick={onClickStaking}>스테이킹</button>
       <br />
       <button onClick={onClickUnStaking}>언스테이킹</button>
+      <br />
     </Layout>
   );
 };
