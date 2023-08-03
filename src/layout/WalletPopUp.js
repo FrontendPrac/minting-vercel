@@ -58,6 +58,7 @@ const WalletPopUp = ({ walletToggle, wallet }) => {
           updateEthers();
         });
     } else {
+      alert("메타마스크를 설치해주세요.");
       setConnectedAddress("Please Install Metamask Extension!");
     }
   };
@@ -84,7 +85,7 @@ const WalletPopUp = ({ walletToggle, wallet }) => {
             <ul className="metaportal_fn_items">
               <li>
                 <div className="item">
-                  <a href="#" onClick={() => connectWalletHandler()} />
+                  <a href="#" onClick={connectWalletHandler} />
                   <span className="icon">
                     <img src="/img/wallet/metamask.png" alt="" />
                   </span>

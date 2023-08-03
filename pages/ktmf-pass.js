@@ -77,7 +77,7 @@ const NftSingle = () => {
       if (window.ethereum.selectedAddress) {
         initializeEthers();
       } else {
-        alert("Please connect to MetaMask.");
+        alert("메타마스크를 연결해주세요.");
       }
     }
   }, []);

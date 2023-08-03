@@ -17,7 +17,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
   // this function lets you update your provider and signer , and initialize contract
   const updateEthers = async () => {
     const provider =
-      typeof window !== "undefined" && window.etherum
+      typeof window !== "undefined" && window.ethereum
         ? new ethers.providers.Web3Provider(window.ethereum)
         : null;
 
