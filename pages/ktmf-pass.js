@@ -79,8 +79,6 @@ const NftSingle = () => {
       } else {
         alert("Please connect to MetaMask.");
       }
-    } else {
-      alert("Please install a Web3-enabled browser like MetaMask.");
     }
   }, []);
 

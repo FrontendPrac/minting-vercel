@@ -16,32 +16,37 @@ const Header = ({ walletToggle, navigationToggle }) => {
 
   // this function lets you update your provider and signer , and initialize contract
   const updateEthers = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    setProvider(provider);
-    console.log(provider.getCode(contractAddress));
+    const provider =
+      typeof window !== "undefined" && window.etherum
+        ? new ethers.providers.Web3Provider(window.ethereum)
+        : null;
 
-    let accounts = await provider.send("eth_requestAccounts", []);
-    let account = accounts[0];
-    setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
-    provider.on("accountsChanged", function (accounts) {
-      account = accounts[0];
+    if (provider) {
+      setProvider(provider);
+      console.log(provider.getCode(contractAddress));
+
+      let accounts = await provider.send("eth_requestAccounts", []);
+      let account = accounts[0];
       setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
-      console.log(address); // Print new address
-      location.reload();
-    });
+      provider.on("accountsChanged", function (accounts) {
+        account = accounts[0];
+        setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
+        console.log(address); // Print new address
+        location.reload();
+      });
 
-    const signer = provider.getSigner();
-    setSigner(signer);
+      const signer = provider.getSigner();
+      setSigner(signer);
 
-    const contract = new ethers.Contract(contractAddress, contractABI, signer);
-
-    setContract(contract);
-
-    // console.log({
-    //   provider,
-    //   signer,
-    //   contract,
-    // });
+      const contract = new ethers.Contract(
+        contractAddress,
+        contractABI,
+        signer
+      );
+      setContract(contract);
+    } else {
+      alert("메타마스크를 설치해주세요");
+    }
   };
 
   useEffect(() => {
