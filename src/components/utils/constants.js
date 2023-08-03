@@ -243,7 +243,7 @@ export const contractABI = [
         type: "address[]",
       },
     ],
-    name: "addGuaranteeUser",
+    name: "addGuaranteedUser",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -353,7 +353,7 @@ export const contractABI = [
       },
       {
         internalType: "uint256",
-        name: "LIMIT",
+        name: "LIMIT_PER_ADDRESS",
         type: "uint256",
       },
       {
@@ -498,7 +498,7 @@ export const contractABI = [
   },
   {
     inputs: [],
-    name: "getGuaranteeWhitelistActive",
+    name: "getGuaranteedWhitelistActive",
     outputs: [
       {
         internalType: "uint256",
@@ -511,7 +511,7 @@ export const contractABI = [
   },
   {
     inputs: [],
-    name: "getGuaranteeWhitelistLimit",
+    name: "getGuaranteedWhitelistLimit",
     outputs: [
       {
         internalType: "uint256",
@@ -524,7 +524,7 @@ export const contractABI = [
   },
   {
     inputs: [],
-    name: "getGuaranteeWhitelistNumMinted",
+    name: "getGuaranteedWhitelistNumMinted",
     outputs: [
       {
         internalType: "uint256",
@@ -537,7 +537,7 @@ export const contractABI = [
   },
   {
     inputs: [],
-    name: "getGuaranteeWhitelistPrice",
+    name: "getGuaranteedWhitelistPrice",
     outputs: [
       {
         internalType: "uint256",
@@ -550,7 +550,7 @@ export const contractABI = [
   },
   {
     inputs: [],
-    name: "getGuaranteeWhitelistSupply",
+    name: "getGuaranteedWhitelistSupply",
     outputs: [
       {
         internalType: "uint256",
@@ -653,19 +653,6 @@ export const contractABI = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "quantity",
-        type: "uint256",
-      },
-    ],
-    name: "guaranteeWhitelistMint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
     inputs: [],
     name: "guaranteedWhitelistInfo",
     outputs: [
@@ -676,7 +663,7 @@ export const contractABI = [
       },
       {
         internalType: "uint256",
-        name: "LIMIT",
+        name: "LIMIT_PER_ADDRESS",
         type: "uint256",
       },
       {
@@ -701,6 +688,19 @@ export const contractABI = [
       },
     ],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "quantity",
+        type: "uint256",
+      },
+    ],
+    name: "guaranteedWhitelistMint",
+    outputs: [],
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -848,7 +848,7 @@ export const contractABI = [
       },
       {
         internalType: "uint256",
-        name: "LIMIT",
+        name: "LIMIT_PER_ADDRESS",
         type: "uint256",
       },
       {
@@ -909,7 +909,7 @@ export const contractABI = [
         type: "address",
       },
     ],
-    name: "removeGuaranteeUser",
+    name: "removeGuaranteedUser",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1080,7 +1080,7 @@ export const contractABI = [
       },
       {
         internalType: "uint256",
-        name: "_LIMIT",
+        name: "_LIMIT_PER_ADDRESS",
         type: "uint256",
       },
       {
@@ -1113,7 +1113,7 @@ export const contractABI = [
       },
       {
         internalType: "uint256",
-        name: "_LIMIT",
+        name: "_LIMIT_PER_ADDRESS",
         type: "uint256",
       },
       {
@@ -1158,7 +1158,7 @@ export const contractABI = [
         type: "string",
       },
     ],
-    name: "setNotRevealedURI",
+    name: "setPreRevealURI",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1185,7 +1185,7 @@ export const contractABI = [
       },
       {
         internalType: "uint256",
-        name: "_LIMIT",
+        name: "_LIMIT_PER_ADDRESS",
         type: "uint256",
       },
       {
@@ -1374,6 +1374,25 @@ export const stakingContractABI = [
     anonymous: false,
     inputs: [
       {
+        indexed: true,
+        internalType: "address",
+        name: "user",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "reward",
+        type: "uint256",
+      },
+    ],
+    name: "RewardPaid",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
         indexed: false,
         internalType: "address",
         name: "owner",
@@ -1409,55 +1428,8 @@ export const stakingContractABI = [
     type: "event",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_user",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "_stake",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_user",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "ranking",
-        type: "uint256",
-      },
-    ],
-    name: "calculateReward",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_user",
-        type: "address",
-      },
-    ],
-    name: "claimReward",
+    inputs: [],
+    name: "commissionPer",
     outputs: [
       {
         internalType: "uint256",
@@ -1465,7 +1437,20 @@ export const stakingContractABI = [
         type: "uint256",
       },
     ],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "downtime",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -1489,11 +1474,49 @@ export const stakingContractABI = [
         type: "address",
       },
     ],
-    name: "getStakedTokens",
+    name: "getCurrentBalance",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getRewardsReleased",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getTokensStaked",
     outputs: [
       {
         internalType: "uint256[]",
-        name: "tokenIds",
+        name: "",
         type: "uint256[]",
       },
     ],
@@ -1511,6 +1534,19 @@ export const stakingContractABI = [
     name: "initStaking",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "mustTime",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -1597,11 +1633,50 @@ export const stakingContractABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_durationUnit",
+        name: "_percentage",
+        type: "uint256",
+      },
+    ],
+    name: "setCommissionPercentage",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_downtime_in_hours",
+        type: "uint256",
+      },
+    ],
+    name: "setDowntime",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_durationUnit_days",
         type: "uint256",
       },
     ],
     name: "setDurationUnit",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_musttime_in_hours",
+        type: "uint256",
+      },
+    ],
+    name: "setMusttime",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1661,6 +1736,25 @@ export const stakingContractABI = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "stakingRightCheck",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "address",
         name: "newOwner",
         type: "address",
@@ -1685,6 +1779,249 @@ export const stakingContractABI = [
       },
     ],
     name: "unstake",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];
+
+export const raffleContractAddress =
+  process.env.NEXT_PUBLIC_RAFFLE_CONTRACT_ADDRESS;
+
+export const raffleContactABI = [
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_tokenAddress",
+        type: "address",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "enterRaffle",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getEntranceState",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getRafflePrice",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "raffleInfo",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "START_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "END_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "RESET_DURATION",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "SLOT_PRICE",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "NUM_ENTERED",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "MAX_COMP_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "MAX_GUARANTEED_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "MAX_AIRDROP",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "TOTAL_PRIZES",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "resetCheck",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_START_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_END_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_RESET_DURATION_IN_HOURS",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_SLOT_PRICE_WEI",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_MAX_COMP_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_MAX_GUARANTEED_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_MAX_AIRDROP",
+        type: "uint256",
+      },
+    ],
+    name: "setRaffleParams",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "spin",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "raffleResult",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "tokenAddress",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

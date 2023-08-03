@@ -4,12 +4,17 @@ import { ethers } from "ethers";
 import {
   contractABI,
   contractAddress,
+  raffleContactABI,
+  raffleContractAddress,
   stakingContractABI,
   stakingContractAddress,
 } from "../src/components/utils/constants";
-import * as S from "../styles/coming-soon.style";
 import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
 import UTCTimeout from "../src/components/coming-soon/UTCTimeout";
+import Button from "../src/components/modal/Button";
+import Confirm from "../src/components/modal/comfirm/confirm";
+import Portal from "../src/components/modal/portal/Portal";
+import useModal from "../src/hooks/useModal";
 
 const ComingSoon = () => {
   // Get Kor remaining time
@@ -28,11 +33,13 @@ const ComingSoon = () => {
 
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState(null);
-  // const [contract, setContract] = useState(null);
 
   // State variables for user status
   const [tokenIds, setTokenIds] = useState([]);
   const [signerAddress, setSignerAddress] = useState("");
+
+  // Custom Hook to Modal
+  const { isOpen, open, close } = useModal();
 
   const initializeEthers = async () => {
     // Request access to the user's Ethereum account
@@ -58,7 +65,6 @@ const ComingSoon = () => {
       newProvider
     );
     // console.log("newContract: ", newContract);
-    // setContract(newContract);
 
     // event filter
     const transferEventFilter = newContract.filters.Transfer();
@@ -124,7 +130,7 @@ const ComingSoon = () => {
     // const response = await stakingContract.getTokensStaked(signerAddress);
     // console.log("response: ", response);
 
-    stakingContract.stake(tokenIds[2], {
+    stakingContract.stake(tokenIds[1], {
       gasLimit: 500000,
     });
 
@@ -163,9 +169,11 @@ const ComingSoon = () => {
     // console.log("response: ", response);
 
     console.log("tokenIds: ", tokenIds);
-    await stakingContract.unstake(tokenIds[2], 1, {
+    const response = await stakingContract.unstake(tokenIds[1], 1, {
       gasLimit: 500000,
     });
+
+    console.log("response: ", response);
   };
 
   const showKorCountdown = () => {
@@ -237,6 +245,38 @@ const ComingSoon = () => {
     }, 1000);
   };
 
+  // Raffle Test
+  const onClickRaffle = async () => {
+    // Approve Wallet to Staking Contract
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider.getSigner()
+    );
+
+    const isApprovedForAll = await contract.isApprovedForAll(
+      signerAddress,
+      raffleContractAddress
+    );
+    // console.log("isApprovedForAll: ", isApprovedForAll);
+    if (!isApprovedForAll) {
+      await contract.setApprovalForAll(raffleContractAddress, true);
+      console.log("isApprovedForAll: ", isApprovedForAll);
+    }
+    const raffleContractAbi = raffleContactABI;
+
+    const raffleContract = new ethers.Contract(
+      raffleContractAddress,
+      raffleContractAbi,
+      provider.getSigner()
+    );
+
+    console.log("tokenIds: ", tokenIds);
+
+    const response = await raffleContract.resetCheck();
+    console.log("response: ", response);
+  };
+
   useEffect(() => {
     showKorCountdown();
     showUTCCountDown();
@@ -266,12 +306,12 @@ const ComingSoon = () => {
             korSeconds={korSeconds}
           />
 
-          <UTCTimeout
+          {/* <UTCTimeout
             utcDays={utcDays}
             utcHours={utcHours}
             utcMinutes={utcMinutes}
             utcSeconds={utcSeconds}
-          />
+          /> */}
           {/* 타임아웃 */}
           <div className="soon_title">
             <h3
@@ -291,6 +331,21 @@ const ComingSoon = () => {
       <button onClick={onClickStaking}>스테이킹</button>
       <br />
       <button onClick={onClickUnStaking}>언스테이킹</button>
+      <br />
+      <Button onClick={open}>Confirm 모달</Button>
+      <br />
+      <button onClick={onClickRaffle}>래플 테스트</button>
+      {/* 코드 처리하는 중  */}
+      {isOpen && (
+        <Portal>
+          <Confirm
+            title="Confirm"
+            message="confirm 하시겠습니까?"
+            close={close}
+            confirm={confirm}
+          ></Confirm>
+        </Portal>
+      )}
       <br />
     </Layout>
   );
