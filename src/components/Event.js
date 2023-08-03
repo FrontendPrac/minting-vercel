@@ -25,31 +25,31 @@ const Event = () => {
           <Image
             src="/../public/img/event/nft_ticket.png"
             alt="nft_ticket"
-            width={320}
+            width={300}
             height={500}
           />
           <Image
             src="/../public/img/event/nft_ticket.png"
             alt="nft_ticket"
-            width={320}
+            width={300}
             height={500}
           />
           <Image
             src="/../public/img/event/nft_ticket.png"
             alt="nft_ticket"
-            width={320}
+            width={300}
             height={500}
           />
           <Image
             src="/../public/img/event/nft_ticket.png"
             alt="nft_ticket"
-            width={320}
+            width={300}
             height={500}
           />
           <Image
             src="/../public/img/event/nft_ticket.png"
             alt="nft_ticket"
-            width={320}
+            width={300}
             height={500}
           />
         </div>

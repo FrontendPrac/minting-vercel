@@ -102,6 +102,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
                   <a className="creative_link">Contact</a>
                 </Link>
               </li>
+              <li>
+                <Link href="/event">
+                  <a className="creative_link">Event</a>
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="wallet">

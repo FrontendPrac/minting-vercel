@@ -1367,19 +1367,6 @@ export const raffleContactABI = [
   },
   {
     inputs: [],
-    name: "accessReset",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
     name: "enterRaffle",
     outputs: [],
     stateMutability: "nonpayable",
@@ -1862,6 +1849,19 @@ export const stakingContractABI = [
   {
     inputs: [],
     name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "resetReward",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./Confirm.style";
+import * as S from "./Alert.style";
 
 const Alert = ({ title, message, btnText, close }) => {
   return (
