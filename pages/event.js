@@ -79,18 +79,27 @@ const EventPage = () => {
       provider.getSigner()
     );
 
-    await raffleContract.setRaffleParams(
-      1691054137,
-      1690884996,
-      0,
-      0,
-      3,
-      3,
-      0,
-      {
-        gasLimit: 500000,
+    try {
+      await raffleContract.setRaffleParams(
+        1691054137,
+        1690884996,
+        0,
+        0,
+        3,
+        3,
+        0,
+        {
+          gasLimit: 500000,
+        }
+      );
+      console.log("트랜젝션 성공");
+    } catch (error) {
+      if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
+        console.log("트랜젝션 거절");
+      } else {
+        console.log("트랜잭션 실패");
       }
-    );
+    }
   };
 
   useEffect(() => {
