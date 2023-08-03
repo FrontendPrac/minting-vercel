@@ -3,7 +3,7 @@ const About = () => {
   return (
     <section id="about">
       {/* About Shortcode */}
-      <div className="fn_cs_about">
+      {/* <div className="fn_cs_about">
         <div className="left_part">
           <div className="img">
             <div className="img_in" data-bg-img="/img/about/contents.jpg">
@@ -66,7 +66,7 @@ const About = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* !About Shortcode */}
       <div className="container">
         {/* Mint Shortcode */}

@@ -1331,6 +1331,256 @@ export const contractABI = [
   },
 ];
 
+export const raffleContractAddress =
+  process.env.NEXT_PUBLIC_RAFFLE_CONTRACT_ADDRESS;
+
+export const raffleContactABI = [
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_tokenAddress",
+        type: "address",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "accessReset",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "enterRaffle",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getEntranceState",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getRafflePrice",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "raffleInfo",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "START_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "END_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "RESET_DURATION",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "SLOT_PRICE",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "NUM_ENTERED",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "MAX_COMP_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "MAX_GUARANTEED_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "MAX_AIRDROP",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "TOTAL_PRIZES",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_START_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_END_TIME",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_RESET_DURATION_IN_HOURS",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_SLOT_PRICE_WEI",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_MAX_COMP_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_MAX_GUARANTEED_WHITELIST",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_MAX_AIRDROP",
+        type: "uint256",
+      },
+    ],
+    name: "setRaffleParams",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "spin",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "raffleResult",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "tokenAddress",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "updateReset",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];
+
 export const stakingContractAddress =
   process.env.NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS;
 
@@ -1672,11 +1922,11 @@ export const stakingContractABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_musttime_in_hours",
+        name: "_mustTime_in_hours",
         type: "uint256",
       },
     ],
-    name: "setMusttime",
+    name: "setMustTime",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1779,249 +2029,6 @@ export const stakingContractABI = [
       },
     ],
     name: "unstake",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-];
-
-export const raffleContractAddress =
-  process.env.NEXT_PUBLIC_RAFFLE_CONTRACT_ADDRESS;
-
-export const raffleContactABI = [
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_tokenAddress",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "previousOwner",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
-    name: "OwnershipTransferred",
-    type: "event",
-  },
-  {
-    inputs: [],
-    name: "enterRaffle",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_user",
-        type: "address",
-      },
-    ],
-    name: "getEntranceState",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "getRafflePrice",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "owner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "raffleInfo",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "START_TIME",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "END_TIME",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "RESET_DURATION",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "SLOT_PRICE",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "NUM_ENTERED",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "MAX_COMP_WHITELIST",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "MAX_GUARANTEED_WHITELIST",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "MAX_AIRDROP",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "TOTAL_PRIZES",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "renounceOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "resetCheck",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_START_TIME",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_END_TIME",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_RESET_DURATION_IN_HOURS",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_SLOT_PRICE_WEI",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_MAX_COMP_WHITELIST",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_MAX_GUARANTEED_WHITELIST",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_MAX_AIRDROP",
-        type: "uint256",
-      },
-    ],
-    name: "setRaffleParams",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "spin",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "raffleResult",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "tokenAddress",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
-    name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

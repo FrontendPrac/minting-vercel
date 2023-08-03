@@ -273,8 +273,13 @@ const ComingSoon = () => {
 
     console.log("tokenIds: ", tokenIds);
 
-    const response = await raffleContract.resetCheck();
-    console.log("response: ", response);
+    // await raffleContract.updateReset();
+
+    // const response_1 = await raffleContract.accessReset();
+    // console.log("response_1: ", response_1);
+
+    // const response_2 = await raffleContract.resetCheck();
+    // console.log("response_2: ", response_2);
   };
 
   useEffect(() => {
