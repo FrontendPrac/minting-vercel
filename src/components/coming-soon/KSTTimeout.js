@@ -4,8 +4,8 @@ import * as S from "../../../styles/coming-soon.style";
 const KSTTimeout = ({ korDays, korHours, korMinutes, korSeconds }) => {
   return (
     <>
-      <h3 className="fn__maintitle" data-text="KST" data-align="center">
-        KST
+      <h3 className="fn__maintitle" data-text="KST(GMT +9)" data-align="center">
+        KST(GMT +9)
       </h3>
       <br />
       <S.CountdownBox>

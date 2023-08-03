@@ -1,0 +1,132 @@
+import React, { useEffect, useState } from "react";
+import Layout from "../src/layout/Layout";
+import { ethers } from "ethers";
+import {
+  contractABI,
+  contractAddress,
+  raffleContactABI,
+  raffleContractAddress,
+} from "../src/components/utils/constants";
+import EventPicker from "../src/components/eventpage/EventPicker";
+import Portal from "../src/components/modal/portal/Portal";
+import Alert from "../src/components/modal/alert/Alert";
+import useModal from "../src/hooks/useModal";
+
+const EventPage = () => {
+  // State variables for ethers provider and contract
+  const [provider, setProvider] = useState("");
+  // const [contract, setContract] = useState("");
+
+  // State variables for user status
+  const [signerAddress, setSignerAddress] = useState("");
+  const [isRaffle, setIsRaffle] = useState("");
+  const [result, setResult] = useState("");
+
+  // Custom Hook to Modal
+  const { isOpen, open, close } = useModal();
+
+  // Get Raffle Data
+  const initializeEthers = async () => {
+    // Request access to the user's Ethereum account
+    await window.ethereum.request({ method: "eth_requestAccounts" });
+
+    // Create an ethers provider using the window.ethereum object
+    const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+    console.log("newProvider: ", newProvider);
+    setProvider(newProvider);
+
+    // Wallet Address
+    const accounts = await newProvider.listAccounts();
+    console.log("accounts[0]: ", accounts[0]);
+    setSignerAddress(accounts[0]);
+
+    // Create an ethers contract instance using the contract address and ABI
+    const newRaffleContract = new ethers.Contract(
+      raffleContractAddress,
+      raffleContactABI,
+      newProvider.getSigner()
+    );
+    console.log("newRaffleContract: ", newRaffleContract);
+    // setContract(newRaffleContract);
+
+    const response = await newRaffleContract.getEntranceState(accounts[0]);
+    setIsRaffle(response);
+    console.log("response: ", response);
+  };
+
+  // Setting initial Raffle
+  const onClickRaffleSetting = async () => {
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider.getSigner()
+    );
+
+    const isApprovedForAll = await contract.isApprovedForAll(
+      signerAddress,
+      raffleContractAddress
+    );
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
+    if (!isApprovedForAll) {
+      await contract.setApprovalForAll(raffleContractAddress, true);
+      console.log("isApprovedForAll: ", isApprovedForAll);
+    }
+
+    const raffleContract = new ethers.Contract(
+      raffleContractAddress,
+      raffleContactABI,
+      provider.getSigner()
+    );
+
+    await raffleContract.setRaffleParams(
+      1691054137,
+      1690884996,
+      0,
+      0,
+      3,
+      3,
+      0,
+      {
+        gasLimit: 500000,
+      }
+    );
+  };
+
+  useEffect(() => {
+    // Check if the window.ethereum object is available
+    if (window.ethereum) {
+      // Check if the connect to metamask
+      if (window.ethereum.selectedAddress) {
+        initializeEthers();
+      } else {
+        alert("Please connect to MetaMask.");
+      }
+    } else {
+      alert("Please install a Web3-enabled browser like MetaMask.");
+    }
+  }, []);
+
+  return (
+    <Layout pageTitle={"Event"}>
+      <div className="metaportal_fn_event">
+        <div className="container">
+          <button onClick={onClickRaffleSetting}>세팅</button>
+          <EventPicker open={open} result={result} setResult={setResult} />
+        </div>
+      </div>
+      {isOpen && (
+        <Portal>
+          <Alert
+            title={result}
+            message="축하드립니다."
+            btnText="확인"
+            close={close}
+          />
+        </Portal>
+      )}
+    </Layout>
+  );
+};
+
+export default EventPage;

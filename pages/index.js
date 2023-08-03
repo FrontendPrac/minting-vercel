@@ -10,6 +10,7 @@ import Layout from "../src/layout/Layout";
 import { heroSlider2 } from "../src/utilits";
 
 import dynamic from "next/dynamic";
+import Event from "../src/components/Event";
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
@@ -30,6 +31,9 @@ const Index = () => {
       {/* Fun Facts */}
       <FunFacts />
       {/* !Fun Facts */}
+      {/* Event */}
+      <Event />
+      {/* Event */}
       {/* Section About #2 */}
       <About />
       {/* !Section About #2 */}
