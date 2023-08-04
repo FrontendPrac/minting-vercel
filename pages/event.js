@@ -84,10 +84,10 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691113026,
-        1691115042,
-        0,
-        0,
+        1691115693,
+        1691117693,
+        1,
+        1,
         3,
         3,
         0,
