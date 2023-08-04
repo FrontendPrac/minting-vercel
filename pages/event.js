@@ -15,7 +15,7 @@ import useModal from "../src/hooks/useModal";
 const EventPage = () => {
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState("");
-  // const [contract, setContract] = useState("");
+  const [contract, setContract] = useState("");
 
   // State variables for user status
   const [signerAddress, setSignerAddress] = useState("");
@@ -47,11 +47,11 @@ const EventPage = () => {
       newProvider.getSigner()
     );
     console.log("newRaffleContract: ", newRaffleContract);
-    // setContract(newRaffleContract);
+    setContract(newRaffleContract);
 
-    // const response = await newRaffleContract.getEntranceState(accounts[0]);
-    // setIsRaffle(response);
-    // console.log("response: ", response);
+    const response = await newRaffleContract.getEntranceState(accounts[0]);
+    setIsRaffle(response);
+    console.log("response: ", response);
 
     // const response_2 = await newRaffleContract.getRafflePrice();
     // console.log("response_2: ", response_2);
@@ -84,10 +84,10 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691115693,
-        1691117693,
-        1,
-        1,
+        1691128636,
+        1691129636,
+        0,
+        0,
         3,
         3,
         0,
@@ -95,6 +95,7 @@ const EventPage = () => {
           gasLimit: 500000,
         }
       );
+      await raffleContract.enterRaffle();
       console.log("트랜젝션 성공");
     } catch (error) {
       if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
@@ -104,6 +105,13 @@ const EventPage = () => {
       }
     }
   };
+
+  // const onClickSpin = async () => {
+  //   const response_2 = await contract.spin({
+  //     gasLimit: 500000,
+  //   });
+  //   console.log("response_2: ", response_2);
+  // };
 
   useEffect(() => {
     // Check if the window.ethereum object is available
@@ -125,6 +133,7 @@ const EventPage = () => {
         <div className="container">
           <button onClick={onClickRaffleSetting}>세팅</button>
           <EventPicker open={open} result={result} setResult={setResult} />
+          {/* <button onClick={onClickSpin}>스핀</button> */}
         </div>
       </div>
       {isOpen && (
