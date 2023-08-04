@@ -52,6 +52,9 @@ const EventPage = () => {
     const response = await newRaffleContract.getEntranceState(accounts[0]);
     setIsRaffle(response);
     console.log("response: ", response);
+
+    const response_2 = await newRaffleContract.getRafflePrice();
+    console.log("response_2: ", response_2);
   };
 
   // Setting initial Raffle
@@ -84,7 +87,7 @@ const EventPage = () => {
         1691054137,
         1690884996,
         0,
-        0,
+        3,
         3,
         3,
         0,
@@ -118,6 +121,7 @@ const EventPage = () => {
 
   return (
     <Layout pageTitle={"Event"}>
+      <div>테스트 1</div>
       <div className="metaportal_fn_event">
         <div className="container">
           <button onClick={onClickRaffleSetting}>세팅</button>
