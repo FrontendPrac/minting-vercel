@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
 import { stickyNav } from "../utilits";
-import { contractABI, contractAddress } from "../components/utils/constants";
+import {
+  contractABI,
+  contractAddress,
+  raffleContactABI,
+  raffleContractAddress,
+} from "../components/utils/constants";
 import { ethers } from "ethers";
 
 const Header = ({ walletToggle, navigationToggle }) => {
@@ -28,6 +33,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
       let accounts = await provider.send("eth_requestAccounts", []);
       let account = accounts[0];
       setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
+
       provider.on("accountsChanged", function (accounts) {
         account = accounts[0];
         setConnectWalletText(account.slice(0, 6) + "..." + account.slice(-4));
@@ -44,6 +50,16 @@ const Header = ({ walletToggle, navigationToggle }) => {
         signer
       );
       setContract(contract);
+
+      // const raffleContract = new ethers.Contract(
+      //   raffleContractAddress,
+      //   raffleContactABI,
+      //   signer
+      // );
+      // console.log("raffleContract: ", raffleContract);
+
+      //! 지갑 연결될때마다 체크해야하는 것
+      // await raffleContract.resetCheck();
     } else {
       alert("메타마스크를 설치해주세요");
     }
@@ -108,9 +124,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </Link>
               </li> */}
               <li>
-                <Link href="/event">
+                {/* <Link href="/event"> */}
+                <Link href="/coming-soon">
                   <a className="creative_link">Event</a>
                 </Link>
+                {/* </Link> */}
               </li>
             </ul>
           </div>
