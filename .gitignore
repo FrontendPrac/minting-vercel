@@ -1,5 +1,7 @@
 node_modules
+webpack
 .env
+.next
 coverage
 coverage.json
 typechain

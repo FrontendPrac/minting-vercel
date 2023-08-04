@@ -52,6 +52,9 @@ const EventPage = () => {
     const response = await newRaffleContract.getEntranceState(accounts[0]);
     setIsRaffle(response);
     console.log("response: ", response);
+
+    const response_2 = await newRaffleContract.getRafflePrice();
+    console.log("response_2: ", response_2);
   };
 
   // Setting initial Raffle
@@ -79,18 +82,27 @@ const EventPage = () => {
       provider.getSigner()
     );
 
-    await raffleContract.setRaffleParams(
-      1691054137,
-      1690884996,
-      0,
-      0,
-      3,
-      3,
-      0,
-      {
-        gasLimit: 500000,
+    try {
+      await raffleContract.setRaffleParams(
+        1691054137,
+        1690884996,
+        0,
+        3,
+        3,
+        3,
+        0,
+        {
+          gasLimit: 500000,
+        }
+      );
+      console.log("트랜젝션 성공");
+    } catch (error) {
+      if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
+        console.log("트랜젝션 거절");
+      } else {
+        console.log("트랜잭션 실패");
       }
-    );
+    }
   };
 
   useEffect(() => {
