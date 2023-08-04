@@ -970,7 +970,6 @@ a.full_link {
 }
 .header .nav {
   opacity: 0;
-  width: 80%;
 }
 .header .trigger_logo {
   display: -webkit-flex;
