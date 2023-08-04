@@ -49,12 +49,12 @@ const EventPage = () => {
     console.log("newRaffleContract: ", newRaffleContract);
     // setContract(newRaffleContract);
 
-    const response = await newRaffleContract.getEntranceState(accounts[0]);
-    setIsRaffle(response);
-    console.log("response: ", response);
+    // const response = await newRaffleContract.getEntranceState(accounts[0]);
+    // setIsRaffle(response);
+    // console.log("response: ", response);
 
-    const response_2 = await newRaffleContract.getRafflePrice();
-    console.log("response_2: ", response_2);
+    // const response_2 = await newRaffleContract.getRafflePrice();
+    // console.log("response_2: ", response_2);
   };
 
   // Setting initial Raffle
@@ -84,10 +84,10 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691054137,
-        1690884996,
+        1691113026,
+        1691115042,
         0,
-        3,
+        0,
         3,
         3,
         0,
