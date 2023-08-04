@@ -180,7 +180,7 @@ const ComingSoon = () => {
     const intervalId = setInterval(() => {
       const korCurrentTime = new Date();
 
-      const korTargetTime = new Date("2023/09/07 19:00:00"); // KST 입력
+      const korTargetTime = new Date("2023/08/08 00:00:00"); // KST 입력
 
       const korDiffTime = korTargetTime - korCurrentTime;
 
@@ -333,13 +333,13 @@ const ComingSoon = () => {
           </div>
         </div>
       </div>
-      <button onClick={onClickStaking}>스테이킹</button>
+      {/* <button onClick={onClickStaking}>스테이킹</button>
       <br />
       <button onClick={onClickUnStaking}>언스테이킹</button>
       <br />
       <Button onClick={open}>Confirm 모달</Button>
       <br />
-      <button onClick={onClickRaffle}>래플 테스트</button>
+      <button onClick={onClickRaffle}>래플 테스트</button> */}
       {/* 코드 처리하는 중  */}
       {isOpen && (
         <Portal>
