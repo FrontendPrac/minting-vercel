@@ -432,6 +432,25 @@ export const contractABI = [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getCompetitiveWhitelist",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "getCompetitiveWhitelistActive",
     outputs: [
@@ -556,6 +575,25 @@ export const contractABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getOnGuaranteedWhitelist",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
       },
     ],
     stateMutability: "view",
@@ -1433,7 +1471,7 @@ export const raffleContactABI = [
       },
       {
         internalType: "uint256",
-        name: "RESET_DURATION",
+        name: "RESET_DURATION_HOURS",
         type: "uint256",
       },
       {
@@ -1478,6 +1516,19 @@ export const raffleContactABI = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "resetCheck",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "uint256",
@@ -1491,7 +1542,7 @@ export const raffleContactABI = [
       },
       {
         internalType: "uint256",
-        name: "_RESET_DURATION_IN_HOURS",
+        name: "_RESET_DURATION_HOURS",
         type: "uint256",
       },
       {
@@ -1555,13 +1606,6 @@ export const raffleContactABI = [
       },
     ],
     name: "transferOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "updateReset",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

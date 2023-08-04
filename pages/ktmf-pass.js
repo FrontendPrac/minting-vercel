@@ -64,9 +64,6 @@ const NftSingle = () => {
       }
     } catch (error) {
       console.error("Error loading public_Price:", error);
-      alert(
-        "Error loading public_Price. Please check the console for details."
-      );
     }
   };
 

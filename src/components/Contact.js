@@ -1,24 +1,61 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const phoneRef = useRef("");
   const titleRef = useRef("");
-  const contentRef = useRef("");
+  const messageRef = useRef("");
   const checkboxRef = useRef(false);
 
+  // const onClickSendEmail = (event) => {
+  //   setTitle(titleRef.current.value);
+  //   setMessage(messageRef.current.value);
+
+  //   const isChecked = checkboxRef.current.checked;
+
+  //   if (!isChecked) {
+  //     const anchorDiv = document.getElementById("send_message");
+  //     anchorDiv.href = "";
+  //     event.preventDefault();
+  //     alert("Please agree to send the email");
+  //   }
+  // };
+
   const onClickSendEmail = (event) => {
-    setTitle(titleRef.current.value);
-    setContent(contentRef.current.value);
+    event.preventDefault();
 
     const isChecked = checkboxRef.current.checked;
 
-    if (!isChecked) {
-      const anchorDiv = document.getElementById("send_message");
-      anchorDiv.href = "";
-      event.preventDefault();
-      alert("Please agree to send the email");
+    if (isChecked) {
+      const templateParams = {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        phone: phoneRef.current.value,
+        title: titleRef.current.value,
+        message: messageRef.current.value,
+      };
+
+      emailjs
+        .send(
+          "service_7xqn1cp",
+          "template_s0hzvht",
+          templateParams,
+          "AjIHDvbqIaFWEYxuL"
+        )
+        .then(
+          function (response) {
+            console.log("Success Send Email", response.status, response.text);
+            alert("메일 전송에 성공했습니다.");
+          },
+          function (error) {
+            console.log("Failed Send Email", error);
+            alert("메일 전송에 실패했습니다.");
+          }
+        );
+    } else {
+      alert("개인정보 수집에 동의해주세요.");
     }
   };
 
@@ -80,24 +117,35 @@ const Contact = () => {
           > */}
           <div className="input_list">
             <ul>
-              {/* <li>
-                <input id="name" type="text" placeholder="Your Name *" />
+              <li>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Your Name *"
+                  ref={nameRef}
+                />
               </li>
               <li>
-                <input id="email" type="text" placeholder="Your Email *" />
+                <input
+                  id="email"
+                  type="text"
+                  placeholder="Your Email *"
+                  ref={emailRef}
+                />
               </li>
               <li>
                 <input
                   id="tel"
                   type="text"
                   placeholder="Your Phone (optional)"
+                  ref={phoneRef}
                 />
-              </li> */}
+              </li>
               <li>
                 <input
                   id="subject"
                   type="text"
-                  placeholder="Title *"
+                  placeholder="Your Title *"
                   ref={titleRef}
                 />
               </li>
@@ -106,7 +154,7 @@ const Contact = () => {
                   id="message"
                   placeholder="Your Message *"
                   defaultValue={""}
-                  ref={contentRef}
+                  ref={messageRef}
                 />
               </li>
               <li className="full">
@@ -123,7 +171,7 @@ const Contact = () => {
                 <div className="mw300" onClick={onClickSendEmail}>
                   <a
                     id="send_message"
-                    href={`mailto:dlrlehd7@daum.net?subject=${title}&body=${content}`}
+                    // href={`mailto:dlrlehd7@daum.net?subject=${title}&body=${message}`}
                     className="metaportal_fn_button full"
                   >
                     <span>Send Message</span>
