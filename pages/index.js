@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import About from "../src/components/About";
 import Collection from "../src/components/Collection";
 import Contact from "../src/components/Contact";
@@ -18,9 +18,7 @@ const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
 
 const Index = () => {
   useEffect(() => {
-    return () => {
-      heroSlider2();
-    };
+    heroSlider2();
   }, []);
 
   return (
