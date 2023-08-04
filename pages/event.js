@@ -121,7 +121,6 @@ const EventPage = () => {
 
   return (
     <Layout pageTitle={"Event"}>
-      <div>테스트 1</div>
       <div className="metaportal_fn_event">
         <div className="container">
           <button onClick={onClickRaffleSetting}>세팅</button>
@@ -138,7 +137,6 @@ const EventPage = () => {
           />
         </Portal>
       )}
-      <div>테스트 4</div>
     </Layout>
   );
 };
