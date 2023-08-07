@@ -52,9 +52,9 @@ const EventPage = () => {
     console.log("newRaffleContract: ", newRaffleContract);
     setContract(newRaffleContract);
 
-    const response = await newRaffleContract.getEntranceState(accounts[0]);
-    setIsRaffle(response);
-    console.log("response: ", response);
+    // const response = await newRaffleContract.getEntranceState(accounts[0]);
+    // setIsRaffle(response);
+    // console.log("response: ", response);
 
     // const response_2 = await newRaffleContract.getRafflePrice();
     // console.log("response_2: ", response_2);
