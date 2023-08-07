@@ -2,5 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/coming-soon": "pages/coming-soon.js"
+  "/event": "pages/event.js",
+  "/coming-soon": "pages/coming-soon.js",
+  "/": "pages/index.js",
+  "/ktmf-pass": "pages/ktmf-pass.js"
 }
