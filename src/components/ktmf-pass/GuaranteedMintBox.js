@@ -59,19 +59,28 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
 
     console.log("quantity: ", quantity);
     console.log("totalPrice: ", totalPrice);
+    console.log(
+      "totalPrice.toFixed(4).toString(): ",
+      totalPrice.toFixed(4).toString()
+    );
+    console.log(
+      "ethers.utils.parseEther(totalPrice.toFixed(4).toString()): ",
+      ethers.utils.parseEther(totalPrice.toFixed(4).toString())
+    );
 
     try {
       // Call the guaranteeMint function in the smart contract
       const transaction = await contract.guaranteedWhitelistMint(quantity, {
         gasLimit: 500000,
-        value: ethers.utils.parseEther(totalPrice.toFixed(5).toString()),
+        value: ethers.utils.parseEther(totalPrice.toFixed(4).toString()),
       });
 
       // Wait for the transaction to be mined
-      await transaction.wait();
+      const receipt = await transaction.wait();
+      console.log("receipt: ", receipt);
 
       alert("NFTs minted successfully!");
-      location.reload();
+      // location.reload();
     } catch (error) {
       console.error("Error minting NFTs:", error);
       alert("Error minting NFTs. Please check the console for details.");
@@ -221,7 +230,7 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(5)}</span>{" "}
+                  <span className="total_price">{totalPrice.toFixed(4)}</span>{" "}
                   ETH + GAS
                 </h3>
               </div>

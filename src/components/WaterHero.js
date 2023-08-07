@@ -11,7 +11,7 @@ const WaterHero = () => {
 
   return (
     <section id="hero">
-      <WaterWave id="ripple" imageUrl="/img/bg_home_3.jpg">
+      <WaterWave id="ripple" imageUrl="/img/bg_home_3.png">
         {(methods) => (
           <div className="fn_cs_hero_slider">
             <div className="bg_overlay" />

@@ -50,11 +50,10 @@ const EventPage = () => {
     setContract(newRaffleContract);
 
     const response = await newRaffleContract.getEntranceState(accounts[0]);
-    setIsRaffle(response);
     console.log("response: ", response);
 
-    // const response_2 = await newRaffleContract.getRafflePrice();
-    // console.log("response_2: ", response_2);
+    const response_2 = await newRaffleContract.getPrize(accounts[0]);
+    console.log("response_2: ", response_2);
   };
 
   // Setting initial Raffle
@@ -84,10 +83,10 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691128636,
-        1691129636,
+        1691383857,
+        1691384421,
         0,
-        0,
+        100000000000000,
         3,
         3,
         0,
@@ -95,12 +94,19 @@ const EventPage = () => {
           gasLimit: 500000,
         }
       );
-      await raffleContract.enterRaffle();
+
+      // 래플 시작하기
+      await raffleContract.enterRaffle({
+        gasLimit: 500000,
+        value: ethers.utils.parseEther((0.0001).toString()),
+      });
+
       console.log("트랜젝션 성공");
     } catch (error) {
       if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
         console.log("트랜젝션 거절");
       } else {
+        console.log("error: ", error);
         console.log("트랜잭션 실패");
       }
     }
@@ -131,7 +137,7 @@ const EventPage = () => {
     <Layout pageTitle={"Event"}>
       <div className="metaportal_fn_event">
         <div className="container">
-          <button onClick={onClickRaffleSetting}>세팅</button>
+          <button onClick={onClickRaffleSetting}>setRaffleSetting</button>
           <EventPicker open={open} result={result} setResult={setResult} />
           {/* <button onClick={onClickSpin}>스핀</button> */}
         </div>

@@ -52,7 +52,7 @@ const NftSingle = () => {
       const guaranteeActive = await newContract.getGuaranteedWhitelistActive();
       console.log("guaranteeActive: ", parseInt(guaranteeActive));
       setGuaranteeActive(parseInt(guaranteeActive));
-
+  
       const competitiveActive =
         await newContract.getCompetitiveWhitelistActive();
       console.log("competitiveActive: ", parseInt(competitiveActive));
