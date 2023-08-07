@@ -140,8 +140,8 @@ const EventPage = () => {
     <Layout pageTitle={"Event"}>
       <div className="metaportal_fn_event">
         <div className="container">
-          <button onClick={onClickRaffleSetting}>setRaffleSetting</button>
-          <EventPicker open={open} result={result} setResult={setResult} />
+          {/* <button onClick={onClickRaffleSetting}>setRaffleSetting</button> */}
+          {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
           <div class="mint_modal">
             <div class="modal_bg">
               <div class="modal">
