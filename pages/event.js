@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../src/layout/Layout";
+import cardMockup from "../public/img/NFT_POPUP_ticket.png";
 import { ethers } from "ethers";
 import {
   contractABI,
@@ -11,6 +12,8 @@ import EventPicker from "../src/components/eventpage/EventPicker";
 import Portal from "../src/components/modal/portal/Portal";
 import Alert from "../src/components/modal/alert/Alert";
 import useModal from "../src/hooks/useModal";
+import Image from "next/image";
+import Link from "next/link";
 
 const EventPage = () => {
   // State variables for ethers provider and contract
@@ -139,9 +142,236 @@ const EventPage = () => {
         <div className="container">
           <button onClick={onClickRaffleSetting}>setRaffleSetting</button>
           <EventPicker open={open} result={result} setResult={setResult} />
+          <div class="mint_modal">
+            <div class="modal_bg">
+              <div class="modal">
+                <ul>
+                  <li class="modal_esc">
+                    <a href=""></a>
+                  </li>
+                  <li
+                    class="mo_text"
+                    data-text="CONGRATULATIONS"
+                    data-align="left"
+                  >
+                    CONGRATULATIONS
+                  </li>
+                  <li>
+                    <img src="/img/NFT_POPUP_ticket.png" alt="" />
+                  </li>
+                  <li class="pass_name">KTMF PASS NFT</li>
+                  <li class="pass_nft">경쟁 화이트리스트 획득!</li>
+                </ul>
+                <div class="modal_chec">
+                  <a href="">확인</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="metaportal_fn_mintpage">
+            <div class="container small mtp">
+              <div class="metaportal_fn_mint_top">
+                <div class="mint_right">
+                  <div class="metaportal_fn_share">
+                    <h5 class="label">23.08.04MON - 23.09.02THU</h5>
+                  </div>
+                  <h3
+                    class="fn__maintitle mintT"
+                    data-text="KTMF Pass NFT Draw Event"
+                    data-align="left"
+                  >
+                    KTMF Pass NFT Draw Event
+                  </h3>
+                  <div class="desc">
+                    <p>
+                      드로우에 참여하고 혜택을 받아보세요! 원하는 카드를
+                      선택하면 바로 당첨 확인 가능! 이벤트 기간 동안 24시간에 한
+                      번씩 누구나 참여할 수 있어요 과연 어떤 혜택이 기다리고
+                      있을까요?
+                    </p>
+                  </div>
+                  <div class="view_on">
+                    <ul class="textC">
+                      <li>
+                        <span>현재 획득 혜택</span>
+                      </li>
+                      <li>
+                        <span>
+                          아직 받은 혜택이 없어요. 이벤트에 참여해보세요!
+                        </span>
+                      </li>
+                    </ul>
+                    <ul class="counT">
+                      <li>
+                        <span>오늘 참여 가능 횟수</span>
+                      </li>
+                      <li>
+                        <span>0/1</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mint_left">
+                  <div class="img">
+                    <ul class="mint_grid">
+                      <li>
+                        <div class="mint__item">
+                          <span class="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div class="img_holder">
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <Link href="/nft-single">
+                              <a class="full_link" />
+                            </Link>
+                          </div>
+                          <div class="title_holder">
+                            <h3 class="fn_title">
+                              <a href="#">Click</a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mint__item">
+                          <span class="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div class="img_holder">
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <Link href="/nft-single">
+                              <a class="full_link" />
+                            </Link>
+                          </div>
+                          <div class="title_holder">
+                            <h3 class="fn_title">
+                              <a href="#">Click</a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mint__item">
+                          <span class="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div class="img_holder">
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <Link href="/nft-single">
+                              <a class="full_link" />
+                            </Link>
+                          </div>
+                          <div class="title_holder">
+                            <h3 class="fn_title">
+                              <a href="#">Click</a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mint__item">
+                          <span class="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div class="img_holder">
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <Link href="/nft-single">
+                              <a class="full_link" />
+                            </Link>
+                          </div>
+                          <div class="title_holder">
+                            <h3 class="fn_title">
+                              <a href="#">Click</a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mint__item">
+                          <span class="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div class="img_holder">
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <Link href="/nft-single">
+                              <a class="full_link" />
+                            </Link>
+                          </div>
+                          <div class="title_holder">
+                            <h3 class="fn_title">
+                              <a href="#">Click</a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mint__item">
+                          <span class="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div class="img_holder">
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <Link href="/nft-single">
+                              <a class="full_link" />
+                            </Link>
+                          </div>
+                          <div class="title_holder">
+                            <h3 class="fn_title">
+                              <a href="#">Click</a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <button onClick={onClickRaffleSetting}>세팅</button>
+          <EventPicker open={open} result={result} setResult={setResult} /> */}
           {/* <button onClick={onClickSpin}>스핀</button> */}
         </div>
       </div>
+
       {isOpen && (
         <Portal>
           <Alert
