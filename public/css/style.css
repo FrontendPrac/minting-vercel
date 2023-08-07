@@ -569,7 +569,7 @@ a.full_link {
 }
 .metaportal_fn_mobnav .mob_bot {
   display: none;
-  background: rgb(27, 18, 29);
+  background: rgb(29, 22, 18);
   padding: 21px 20px;
   overflow: hidden;
 }
@@ -3394,7 +3394,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  /* padding: 180px 0 80px; */
+  padding: 180px 0 80px;
   justify-content: space-between;
 }
 
@@ -5348,7 +5348,7 @@ h3.mintT {
 }
 
 .metaportal_fn_event {
-  padding: 260px 0;
+  padding: 0px 0;
 }
 
 /* Coming Soon Page */
