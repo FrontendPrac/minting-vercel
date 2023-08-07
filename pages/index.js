@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import About from "../src/components/About";
 import Collection from "../src/components/Collection";
 import Contact from "../src/components/Contact";
@@ -18,9 +18,7 @@ const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
 
 const Index = () => {
   useEffect(() => {
-    return () => {
-      heroSlider2();
-    };
+    heroSlider2();
   }, []);
 
   return (
@@ -34,6 +32,105 @@ const Index = () => {
       {/* Event */}
       <Event />
       {/* Event */}
+      {/* Card Slider */}
+      <div
+        className="frenify_cards_gallery"
+        data-initial-width={400}
+        data-ratio="0.925"
+      >
+        <ul>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="img_holder">
+              <div className="item_in">
+                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <img src="/img/1x1.jpg" alt="" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      {/* !Card Slider */}
+      {/* !Home Section #2 */}
       {/* Section About #2 */}
       <About />
       {/* !Section About #2 */}

@@ -22,46 +22,8 @@ const Event = () => {
         <div className="button">Get Started !</div>
       </Link>
       {/* </Link> */}
-      {/* <div className="img_box">
-        <div className="img">
-          <Image
-            src="/../public/img/event/nft_ticket.png"
-            alt="nft_ticket"
-            width={300}
-            height={500}
-            style={{ transform: "rotate(-5deg)", zIndex: 1 }}
-          />
-          <Image
-            src="/../public/img/event/nft_ticket.png"
-            alt="nft_ticket"
-            width={300}
-            height={500}
-            style={{ transform: "rotate(-5deg)", zIndex: 5 }}
-          />
-          <Image
-            src="/../public/img/event/nft_ticket.png"
-            alt="nft_ticket"
-            width={300}
-            height={500}
-            style={{ zIndex: 10 }}
-          />
-          <Image
-            src="/../public/img/event/nft_ticket.png"
-            alt="nft_ticket"
-            width={300}
-            height={500}
-            style={{ transform: "rotate(5deg)", zIndex: 5 }}
-          />
-          <Image
-            src="/../public/img/event/nft_ticket.png"
-            alt="nft_ticket"
-            width={300}
-            height={500}
-            style={{ transform: "rotate(10deg)", zIndex: 1 }}
-          />
-        </div>
-      </div> */}
     </div>
+    
   );
 };
 
