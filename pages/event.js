@@ -23,6 +23,7 @@ const EventPage = () => {
   // State variables for user status
   const [signerAddress, setSignerAddress] = useState("");
   const [isRaffle, setIsRaffle] = useState("");
+  const [prize, setPrize] = useState("");
   const [result, setResult] = useState("");
 
   // Custom Hook to Modal
@@ -52,12 +53,15 @@ const EventPage = () => {
     console.log("newRaffleContract: ", newRaffleContract);
     setContract(newRaffleContract);
 
-    // const response = await newRaffleContract.getEntranceState(accounts[0]);
-    // setIsRaffle(response);
-    // console.log("response: ", response);
+    const response = await newRaffleContract.getEntranceState(accounts[0]);
+    console.log("EntranceState: ", response);
+    setIsRaffle(response);
 
-    // const response_2 = await newRaffleContract.getRafflePrice();
-    // console.log("response_2: ", response_2);
+    const response_2 = await newRaffleContract.getPrize(accounts[0]);
+    console.log("Prize: ", response_2);
+    const _prize = parseInt(response_2);
+    // console.log("_prize: ", _prize);
+    setPrize(_prize);
   };
 
   // Setting initial Raffle
@@ -87,10 +91,10 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691128636,
-        1691129636,
+        1691392742,
+        1691394742,
         0,
-        0,
+        100000000000000,
         3,
         3,
         0,
@@ -98,23 +102,89 @@ const EventPage = () => {
           gasLimit: 500000,
         }
       );
-      await raffleContract.enterRaffle();
-      console.log("트랜젝션 성공");
+      alert("래플 설정 성공");
     } catch (error) {
       if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
         console.log("트랜젝션 거절");
       } else {
+        console.log("error: ", error);
         console.log("트랜잭션 실패");
       }
     }
   };
 
-  // const onClickSpin = async () => {
-  //   const response_2 = await contract.spin({
-  //     gasLimit: 500000,
-  //   });
-  //   console.log("response_2: ", response_2);
-  // };
+  const onClickResetRaffleSetting = async () => {
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider.getSigner()
+    );
+
+    const isApprovedForAll = await contract.isApprovedForAll(
+      signerAddress,
+      raffleContractAddress
+    );
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
+    if (!isApprovedForAll) {
+      await contract.setApprovalForAll(raffleContractAddress, true);
+      console.log("isApprovedForAll: ", isApprovedForAll);
+    }
+
+    const raffleContract = new ethers.Contract(
+      raffleContractAddress,
+      raffleContactABI,
+      provider.getSigner()
+    );
+
+    try {
+      await raffleContract.resetCheck();
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+
+  const onClickEnterAndSpin = async () => {
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider.getSigner()
+    );
+
+    const isApprovedForAll = await contract.isApprovedForAll(
+      signerAddress,
+      raffleContractAddress
+    );
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
+    if (!isApprovedForAll) {
+      await contract.setApprovalForAll(raffleContractAddress, true);
+      console.log("isApprovedForAll: ", isApprovedForAll);
+    }
+
+    const raffleContract = new ethers.Contract(
+      raffleContractAddress,
+      raffleContactABI,
+      provider.getSigner()
+    );
+
+    try {
+      // 래플 시작하기
+      await raffleContract.enterRaffle({
+        gasLimit: 500000,
+        value: ethers.utils.parseEther((0.0001).toString()),
+      });
+
+      alert("화이트리스트 부여 성공");
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+
+  const isOpenModal = () => {
+    console.log("모달");
+    open();
+  };
 
   useEffect(() => {
     // Check if the window.ethereum object is available
@@ -134,18 +204,24 @@ const EventPage = () => {
     <Layout pageTitle={"Event"}>
       <div className="metaportal_fn_event">
         <div className="container">
-          <div class="mint_modal">
+          {/* <button onClick={onClickRaffleSetting}>setRaffleSetting</button> */}
+          {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
+          {/* <div class="mint_modal">
             <div class="modal_bg">
               <div class="modal">
                 <ul>
                   <li class="modal_esc">
                     <a href=""></a>
                   </li>
-                  <li class="mo_text" data-text="CONGRATULATIONS"
-                  data-align="left">
-                    CONGRATULATIONS</li>
+                  <li
+                    class="mo_text"
+                    data-text="CONGRATULATIONS"
+                    data-align="left"
+                  >
+                    CONGRATULATIONS
+                  </li>
                   <li>
-                    <img src="/img/NFT_POPUP_ticket.png" alt=""/>
+                    <img src="/img/NFT_POPUP_ticket.png" alt="" />
                   </li>
                   <li class="pass_name">KTMF PASS NFT</li>
                   <li class="pass_nft">경쟁 화이트리스트 획득!</li>
@@ -155,9 +231,8 @@ const EventPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
-    
           <div class="metaportal_fn_mintpage">
             <div class="container small mtp">
               <div class="metaportal_fn_mint_top">
@@ -168,14 +243,16 @@ const EventPage = () => {
                   <h3
                     class="fn__maintitle mintT"
                     data-text="KTMF Pass NFT Draw Event"
-                    data-align="left">
+                    data-align="left"
+                  >
                     KTMF Pass NFT Draw Event
                   </h3>
                   <div class="desc">
                     <p>
-                      드로우에 참여하고 혜택을 받아보세요!
-                      원하는 카드를 선택하면 바로 당첨 확인 가능!
-                      이벤트 기간 동안 24시간에 한 번씩 누구나 참여할 수 있어요 과연 어떤 혜택이 기다리고 있을까요?
+                      드로우에 참여하고 혜택을 받아보세요! 원하는 카드를
+                      선택하면 바로 당첨 확인 가능! 이벤트 기간 동안 24시간에 한
+                      번씩 누구나 참여할 수 있어요 과연 어떤 혜택이 기다리고
+                      있을까요?
                     </p>
                   </div>
                   <div class="view_on">
@@ -184,15 +261,22 @@ const EventPage = () => {
                         <span>현재 획득 혜택</span>
                       </li>
                       <li>
-                        <span>아직 받은 혜택이 없어요. 이벤트에 참여해보세요!</span>
+                        <span>
+                          {!prize &&
+                            "아직 받은 혜택이 없어요. 이벤트에 참여해보세요! "}
+                          {prize === 1 && "경쟁 화이트리스트"}
+                          {prize === 2 && "확정 화이트리스트"}
+                          {prize === [1, 2] &&
+                            "확정 화이트리스트 & 경쟁 화이트리스트"}
+                        </span>
                       </li>
                     </ul>
                     <ul class="counT">
                       <li>
-                        <span>오늘 참여 가능 횟수</span>
+                        <span>참여 가능 횟수</span>
                       </li>
                       <li>
-                        <span>0/1</span>
+                        <span>{isRaffle ? 1 : 0}/1</span>
                       </li>
                     </ul>
                   </div>
@@ -206,15 +290,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a class="full_link" />
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#">Click</a>
+                              <a a href="#" onClick={isOpenModal}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -225,15 +314,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a class="full_link" />
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={isOpenModal}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -244,15 +338,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a class="full_link" />
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={isOpenModal}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -263,15 +362,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a class="full_link" />
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={isOpenModal}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -282,15 +386,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a class="full_link" />
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={isOpenModal}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -301,15 +410,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                            <video
+                              autoplay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a class="full_link" />
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={isOpenModal}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -318,33 +432,23 @@ const EventPage = () => {
                   </div>
                 </div>
               </div>
-
-
-
+            </div>
           </div>
-        </div>
-          
 
-
-
-          {/* <button onClick={onClickRaffleSetting}>세팅</button>
-          <EventPicker open={open} result={result} setResult={setResult} /> */}
-          {/* <button onClick={onClickSpin}>스핀</button> */}
+          <button onClick={onClickRaffleSetting}>세팅 & 참여</button>
+          <button onClick={onClickEnterAndSpin}>스핀</button>
+          <button onClick={onClickResetRaffleSetting}>초기화</button>
+          {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
         </div>
       </div>
 
-      
-       {isOpen && (
+      {isOpen && (
         <Portal>
-           <Alert
-            title={result}
-           message="축하드립니다."
-             btnText="확인"
-             close={close}/>
+          <Alert prize="확정 화이트리스트" close={close} />
         </Portal>
-        )}
-  </Layout>
-   );
- };
+      )}
+    </Layout>
+  );
+};
 
 export default EventPage;

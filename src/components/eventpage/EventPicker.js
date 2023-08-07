@@ -22,7 +22,6 @@ const EventPicker = ({ open, result, setResult }) => {
   return (
     <div>
       <button onClick={pickReward}>뽑기</button>
-      {result && <p>당첨 결과 : {result}</p>}
     </div>
   );
 };

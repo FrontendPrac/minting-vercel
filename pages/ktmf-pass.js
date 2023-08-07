@@ -49,17 +49,21 @@ const NftSingle = () => {
       console.log("publicActive: ", parseInt(publicActive));
       setPublicActive(parseInt(publicActive));
 
-      const guaranteeActive = await newContract.getGuaranteeWhitelistActive();
+      const guaranteeActive = await newContract.getGuaranteedWhitelistActive();
       console.log("guaranteeActive: ", parseInt(guaranteeActive));
       setGuaranteeActive(parseInt(guaranteeActive));
-
+  
       const competitiveActive =
         await newContract.getCompetitiveWhitelistActive();
       console.log("competitiveActive: ", parseInt(competitiveActive));
       setCompetitiveActive(parseInt(competitiveActive));
 
       // go to coming-soon page
-      if (!publicActive && !guaranteeActive && !competitiveActive) {
+      if (
+        parseInt(publicActive) === 2 &&
+        parseInt(guaranteeActive) === 2 &&
+        parseInt(competitiveActive) === 2
+      ) {
         window.location.href = "/coming-soon";
       }
     } catch (error) {
