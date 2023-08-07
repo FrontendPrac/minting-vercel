@@ -29,10 +29,10 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
   // Get smart contract data
   const getGuaranteeData = async (newContract) => {
     try {
-      const price = await newContract.getGuaranteeWhitelistPrice(); // 가격
-      const limit = await newContract.getGuaranteeWhitelistLimit(); // 갯수 제한 (화면에는 필요 X)
-      const numMinted = await newContract.getGuaranteeWhitelistNumMinted(); // 민팅된 갯수
-      const supply = await newContract.getGuaranteeWhitelistSupply(); // 총 갯수
+      const price = await newContract.getGuaranteedWhitelistPrice(); // 가격
+      const limit = await newContract.getGuaranteedWhitelistLimit(); // 갯수 제한 (화면에는 필요 X)
+      const numMinted = await newContract.getGuaranteedWhitelistNumMinted(); // 민팅된 갯수
+      const supply = await newContract.getGuaranteedWhitelistSupply(); // 총 갯수
 
       // Convert the BigNumber to a floating-point number (wei to ether)
       // Update the cost2 value with the loaded guarantee_Price value
@@ -62,7 +62,7 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
 
     try {
       // Call the guaranteeMint function in the smart contract
-      const transaction = await contract.guaranteeWhitelistMint(quantity, {
+      const transaction = await contract.guaranteedWhitelistMint(quantity, {
         gasLimit: 500000,
         value: ethers.utils.parseEther(totalPrice.toFixed(5).toString()),
       });

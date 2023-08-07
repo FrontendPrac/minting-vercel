@@ -284,7 +284,7 @@ const ComingSoon = () => {
 
   useEffect(() => {
     showKorCountdown();
-    showUTCCountDown();
+    // showUTCCountDown();
 
     // Check if the window.ethereum object is available
     if (window.ethereum) {
