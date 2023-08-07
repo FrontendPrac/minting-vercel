@@ -3,9 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/404": "pages/404.js",
   "/event": "pages/event.js",
-  "/nft-single": "pages/nft-single.js",
-  "/ktmf-pass": "pages/ktmf-pass.js",
-  "/coming-soon": "pages/coming-soon.js"
+  "/404": "pages/404.js"
 }
