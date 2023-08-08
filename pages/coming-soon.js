@@ -174,7 +174,7 @@ const ComingSoon = () => {
     const intervalId = setInterval(() => {
       const korCurrentTime = new Date();
 
-      const korTargetTime = new Date("2023/08/08 00:00:00"); // KST 입력
+      const korTargetTime = new Date("2023/09/06 00:00:00"); // KST 입력
 
       const korDiffTime = korTargetTime - korCurrentTime;
 

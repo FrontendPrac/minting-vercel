@@ -49,6 +49,7 @@ const EventPage = () => {
       raffleContactABI,
       newProvider.getSigner()
     );
+    console.log("Depoly Test");
     console.log("newRaffleContract: ", newRaffleContract);
     setContract(newRaffleContract);
 
@@ -439,9 +440,9 @@ const EventPage = () => {
             </div>
           </div>
 
-          {/* <button onClick={onClickRaffleSetting}>세팅</button> */}
-          {/* <button onClick={onClickEnterAndSpin}>스핀</button> */}
-          {/* <button onClick={onClickResetRaffleSetting}>초기화</button> */}
+          <button onClick={onClickRaffleSetting}>세팅</button>
+          <button onClick={onClickEnterAndSpin}>스핀</button>
+          <button onClick={onClickResetRaffleSetting}>초기화</button>
           {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
         </div>
       </div>
