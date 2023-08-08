@@ -31,27 +31,31 @@ const Alert = ({ contract, signerAddress, close }) => {
     //     <S.ConfirmBtn onClick={close}>{btnText}</S.ConfirmBtn>
     //   </S.Content>
     // </S.Wrapper>
-    <div class="mint_modal">
-      <div class="modal_overlay" onClick={close}></div>
-      <div class="modal_bg">
-        <div class="modal">
+    <div className="mint_modal">
+      <div className="modal_overlay" onClick={close}></div>
+      <div className="modal_bg">
+        <div className="modal">
           <ul>
-            <li class="modal_esc">
+            <li className="modal_esc">
               <a href=""></a>
             </li>
-            <li class="mo_text" data-text="CONGRATULATIONS" data-align="left">
+            <li
+              className="mo_text"
+              data-text="CONGRATULATIONS"
+              data-align="left"
+            >
               CONGRATULATIONS
             </li>
             <li>
-              <img src="/img/NFT_POPUP_ticket.png" alt="" />
+              <img src="/img/NFT_POPUP_ticket.png" alt="img" />
             </li>
-            <li class="pass_name">KTMF PASS NFT</li>
-            <li class="pass_nft">
+            <li className="pass_name">KTMF PASS NFT</li>
+            <li className="pass_nft">
               {prize === 1 && "경쟁 화이트리스트"}{" "}
               {prize === 2 && "확정 화이트리스트"}획득!
             </li>
           </ul>
-          <div class="modal_chec">
+          <div className="modal_chec">
             <a href="" onClick={onClickBtn}>
               확인
             </a>
