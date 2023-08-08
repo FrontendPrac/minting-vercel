@@ -3331,7 +3331,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a4300",endColorstr="#8a4300",GradientType=1);
   transition: all 0.5s ease;
   padding: 0px 85px;
-  display: none;
+  /* display: none; */
 }
 
 .mint_modal .modal_overlay {
@@ -3362,9 +3362,6 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
-
-
 
 
 .mint_modal .modal_bg .modal ul {

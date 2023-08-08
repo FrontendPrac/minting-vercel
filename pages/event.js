@@ -84,55 +84,6 @@ const EventPage = () => {
     setIsGuaranteeWhiteList(response_4);
   };
 
-  // Setting initial Raffle
-  const onClickRaffleSetting = async () => {
-    const contract = new ethers.Contract(
-      contractAddress,
-      contractABI,
-      provider.getSigner()
-    );
-
-    const isApprovedForAll = await contract.isApprovedForAll(
-      signerAddress,
-      raffleContractAddress
-    );
-
-    console.log("isApprovedForAll: ", isApprovedForAll);
-    if (!isApprovedForAll) {
-      await contract.setApprovalForAll(raffleContractAddress, true);
-      console.log("isApprovedForAll: ", isApprovedForAll);
-    }
-
-    const raffleContract = new ethers.Contract(
-      raffleContractAddress,
-      raffleContactABI,
-      provider.getSigner()
-    );
-
-    try {
-      await raffleContract.setRaffleParams(
-        1691461808,
-        1691462808,
-        0,
-        100000000000000,
-        3,
-        3,
-        0,
-        {
-          gasLimit: 500000,
-        }
-      );
-      console.log("래플 설정 성공");
-    } catch (error) {
-      if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
-        console.log("트랜젝션 거절");
-      } else {
-        console.log("error: ", error);
-        console.log("트랜잭션 실패");
-      }
-    }
-  };
-
   // Join Raffle
   const onClickEnterAndSpin = async () => {
     const contract = new ethers.Contract(
@@ -173,39 +124,6 @@ const EventPage = () => {
     }
   };
 
-  // Reset Raffle
-  const onClickResetRaffleSetting = async () => {
-    const contract = new ethers.Contract(
-      contractAddress,
-      contractABI,
-      provider.getSigner()
-    );
-
-    const isApprovedForAll = await contract.isApprovedForAll(
-      signerAddress,
-      raffleContractAddress
-    );
-
-    console.log("isApprovedForAll: ", isApprovedForAll);
-    if (!isApprovedForAll) {
-      await contract.setApprovalForAll(raffleContractAddress, true);
-      console.log("isApprovedForAll: ", isApprovedForAll);
-    }
-
-    const raffleContract = new ethers.Contract(
-      raffleContractAddress,
-      raffleContactABI,
-      provider.getSigner()
-    );
-
-    try {
-      await raffleContract.resetCheck();
-      console.log("래플 초기화");
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
-
   useEffect(() => {
     // Check if the window.ethereum object is available
     if (window.ethereum) {
@@ -222,35 +140,6 @@ const EventPage = () => {
 
   return (
     <Layout pageTitle={"Event"}>
-      {/* <div className="metaportal_fn_event">
-        <div className="container"> */}
-      {/* <div className="mint_modal">
-        <div className="modal_bg">
-          <div className="modal">
-            <ul>
-              <li className="modal_esc">
-                <a href=""></a>
-              </li>
-              <li
-                className="mo_text"
-                data-text="CONGRATULATIONS"
-                data-align="left"
-              >
-                CONGRATULATIONS
-              </li>
-              <li>
-                <img src="/img/NFT_POPUP_ticket.png" alt="" />
-              </li>
-              <li className="pass_name">KTMF PASS NFT</li>
-              <li className="pass_nft">경쟁 화이트리스트 획득 !</li>
-            </ul>
-            <div className="modal_chec">
-              <a href="">확인</a>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <div className="metaportal_fn_mintpage">
         <div className="container small mtp">
           <div className="metaportal_fn_mint_top">
@@ -282,9 +171,13 @@ const EventPage = () => {
                       {!isCompetitiveWhiteList &&
                         !isGuaranteeWhiteList &&
                         "아직 받은 혜택이 없어요. 이벤트에 참여해보세요! "}
-                      {isCompetitiveWhiteList && "경쟁 화이트리스트"}
-                      <br />
-                      {isGuaranteeWhiteList && "확정 화이트리스트"}
+                      {isCompetitiveWhiteList &&
+                        !isGuaranteeWhiteList &&
+                        "경쟁 화이트리스트"}
+                      {!isCompetitiveWhiteList &&
+                        isGuaranteeWhiteList &&
+                        "확정 화이트리스트"}
+                        {isCompetitiveWhiteList && isGuaranteeWhiteList && "확정 화이트리스트 & 경쟁 화이트리스트"}
                     </span>
                   </li>
                 </ul>
@@ -449,31 +342,18 @@ const EventPage = () => {
               </div>
             </div>
           </div>
-          {/* </div>
-          </div> */}
-          <button onClick={() => open()}>버튼</button>
-          <button onClick={() => close()}>버튼</button>
-          {/* <button onClick={onClickRaffleSetting}>세팅</button> */}
-          {/* <button onClick={onClickEnterAndSpin}>스핀</button> */}
-          {/* <button onClick={onClickResetRaffleSetting}>초기화</button> */}
+        </div>
+      </div>
 
+      {isOpen && (
+        <Portal>
           <Alert
             contract={contract}
             signerAddress={signerAddress}
             close={close}
           />
-
-          {isOpen && (
-            <Portal>
-              <Alert
-                contract={contract}
-                signerAddress={signerAddress}
-                close={close}
-              />
-            </Portal>
-          )}
-        </div>
-      </div>
+        </Portal>
+      )}
     </Layout>
   );
 };
