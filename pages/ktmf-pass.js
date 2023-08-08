@@ -27,14 +27,16 @@ const NftSingle = () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
 
     // Create an ethers provider using the window.ethereum object
-    const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+    const newProvider = await new ethers.providers.Web3Provider(
+      window.ethereum
+    );
     console.log("newProvider: ", newProvider);
     setProvider(newProvider);
 
     // Create an ethers contract instance using the contract address and ABI
     const contractAbi = contractABI;
 
-    const newContract = new ethers.Contract(
+    const newContract = await new ethers.Contract(
       contractAddress,
       contractAbi,
       newProvider.getSigner() // Use the signer to send transactions

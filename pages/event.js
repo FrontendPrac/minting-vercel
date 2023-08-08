@@ -34,7 +34,9 @@ const EventPage = () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
 
     // Create an ethers provider using the window.ethereum object
-    const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+    const newProvider = await new ethers.providers.Web3Provider(
+      window.ethereum
+    );
     console.log("newProvider: ", newProvider);
     setProvider(newProvider);
 
@@ -94,8 +96,8 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691455008,
-        1691456008,
+        1691460185,
+        1691461185,
         0,
         100000000000000,
         3,
@@ -438,9 +440,9 @@ const EventPage = () => {
             </div>
           </div>
 
-          <button onClick={onClickRaffleSetting}>세팅</button>
-          <button onClick={onClickEnterAndSpin}>스핀</button>
-          <button onClick={onClickResetRaffleSetting}>초기화</button>
+          {/* <button onClick={onClickRaffleSetting}>세팅</button> */}
+          {/* <button onClick={onClickEnterAndSpin}>스핀</button> */}
+          {/* <button onClick={onClickResetRaffleSetting}>초기화</button> */}
           {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
         </div>
       </div>
