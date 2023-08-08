@@ -31,6 +31,7 @@ const Alert = ({ contract, signerAddress, close }) => {
     //     <S.ConfirmBtn onClick={close}>{btnText}</S.ConfirmBtn>
     //   </S.Content>
     // </S.Wrapper>
+
     <div className="mint_modal">
       <div className="modal_overlay" onClick={close}></div>
       <div className="modal_bg">

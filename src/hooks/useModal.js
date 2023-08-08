@@ -12,6 +12,8 @@ const useModal = () => {
     location.reload();
   };
 
+  console.log("isOpen: ", isOpen);
+
   return { isOpen, open, close };
 };
 

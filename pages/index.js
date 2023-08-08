@@ -42,7 +42,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -50,7 +53,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -58,7 +64,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -66,7 +75,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -74,7 +86,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -82,7 +97,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -90,7 +108,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -98,7 +119,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -106,7 +130,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -114,7 +141,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
@@ -122,7 +152,10 @@ const Index = () => {
           <li>
             <div className="img_holder">
               <div className="item_in">
-                <div className="o_img" data-bg-img="/img/event/nft_ticket.png" />
+                <div
+                  className="o_img"
+                  data-bg-img="/img/event/nft_ticket.png"
+                />
                 <img src="/img/1x1.jpg" alt="" />
               </div>
             </div>
