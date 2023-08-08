@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./Alert.style";
 
-const Alert = ({ prize, close }) => {
+const Alert = ({ contract, signerAddress, close }) => {
+  const [prize, setPrize] = useState("");
+
+  // Get Prize
+  const getMyWhitelist = async () => {
+    const response = await contract.getPrize(signerAddress);
+    const _prize = parseInt(response);
+    console.log("Prize: ", _prize);
+    setPrize(_prize);
+  };
+
+  // Close Modal Button
   const onClickBtn = (event) => {
     event.preventDefault();
     close();
+    location.reload();
   };
+
+  useEffect(() => {
+    getMyWhitelist();
+  }, []);
 
   return (
     // <S.Wrapper>
@@ -31,7 +47,10 @@ const Alert = ({ prize, close }) => {
               <img src="/img/NFT_POPUP_ticket.png" alt="" />
             </li>
             <li class="pass_name">KTMF PASS NFT</li>
-            <li class="pass_nft">{prize} 획득!</li>
+            <li class="pass_nft">
+              {prize === 1 && "경쟁 화이트리스트"}{" "}
+              {prize === 2 && "확정 화이트리스트"}획득!
+            </li>
           </ul>
           <div class="modal_chec">
             <a href="" onClick={onClickBtn}>

@@ -24,7 +24,6 @@ const EventPage = () => {
   const [signerAddress, setSignerAddress] = useState("");
   const [isRaffle, setIsRaffle] = useState("");
   const [prize, setPrize] = useState("");
-  const [result, setResult] = useState("");
 
   // Custom Hook to Modal
   const { isOpen, open, close } = useModal();
@@ -91,8 +90,8 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691392742,
-        1691394742,
+        1691455008,
+        1691456008,
         0,
         100000000000000,
         3,
@@ -102,7 +101,7 @@ const EventPage = () => {
           gasLimit: 500000,
         }
       );
-      alert("래플 설정 성공");
+      console.log("래플 설정 성공");
     } catch (error) {
       if (error.code === ethers.utils.Logger.errors.ACTION_REJECTED) {
         console.log("트랜젝션 거절");
@@ -113,37 +112,7 @@ const EventPage = () => {
     }
   };
 
-  const onClickResetRaffleSetting = async () => {
-    const contract = new ethers.Contract(
-      contractAddress,
-      contractABI,
-      provider.getSigner()
-    );
-
-    const isApprovedForAll = await contract.isApprovedForAll(
-      signerAddress,
-      raffleContractAddress
-    );
-
-    console.log("isApprovedForAll: ", isApprovedForAll);
-    if (!isApprovedForAll) {
-      await contract.setApprovalForAll(raffleContractAddress, true);
-      console.log("isApprovedForAll: ", isApprovedForAll);
-    }
-
-    const raffleContract = new ethers.Contract(
-      raffleContractAddress,
-      raffleContactABI,
-      provider.getSigner()
-    );
-
-    try {
-      await raffleContract.resetCheck();
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
-
+  // Join Raffle
   const onClickEnterAndSpin = async () => {
     const contract = new ethers.Contract(
       contractAddress,
@@ -170,12 +139,47 @@ const EventPage = () => {
 
     try {
       // 래플 시작하기
-      await raffleContract.enterRaffle({
+      const transaction = await raffleContract.enterRaffle({
         gasLimit: 500000,
         value: ethers.utils.parseEther((0.0001).toString()),
       });
 
-      alert("화이트리스트 부여 성공");
+      await transaction.wait();
+      console.log("화이트리스트 부여 성공");
+      open();
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+
+  // Reset Raffle
+  const onClickResetRaffleSetting = async () => {
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider.getSigner()
+    );
+
+    const isApprovedForAll = await contract.isApprovedForAll(
+      signerAddress,
+      raffleContractAddress
+    );
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
+    if (!isApprovedForAll) {
+      await contract.setApprovalForAll(raffleContractAddress, true);
+      console.log("isApprovedForAll: ", isApprovedForAll);
+    }
+
+    const raffleContract = new ethers.Contract(
+      raffleContractAddress,
+      raffleContactABI,
+      provider.getSigner()
+    );
+
+    try {
+      await raffleContract.resetCheck();
+      console.log("래플 초기화");
     } catch (error) {
       console.log("error: ", error);
     }
@@ -301,7 +305,7 @@ const EventPage = () => {
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a a href="#" onClick={isOpenModal}>
+                              <a a href="#" onClick={onClickEnterAndSpin}>
                                 Click
                               </a>
                             </h3>
@@ -325,7 +329,7 @@ const EventPage = () => {
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#" onClick={isOpenModal}>
+                              <a href="#" onClick={onClickEnterAndSpin}>
                                 Click
                               </a>
                             </h3>
@@ -349,7 +353,7 @@ const EventPage = () => {
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#" onClick={isOpenModal}>
+                              <a href="#" onClick={onClickEnterAndSpin}>
                                 Click
                               </a>
                             </h3>
@@ -373,7 +377,7 @@ const EventPage = () => {
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#" onClick={isOpenModal}>
+                              <a href="#" onClick={onClickEnterAndSpin}>
                                 Click
                               </a>
                             </h3>
@@ -397,7 +401,7 @@ const EventPage = () => {
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#" onClick={isOpenModal}>
+                              <a href="#" onClick={onClickEnterAndSpin}>
                                 Click
                               </a>
                             </h3>
@@ -421,7 +425,7 @@ const EventPage = () => {
                           </div>
                           <div class="title_holder">
                             <h3 class="fn_title">
-                              <a href="#" onClick={isOpenModal}>
+                              <a href="#" onClick={onClickEnterAndSpin}>
                                 Click
                               </a>
                             </h3>
@@ -435,16 +439,20 @@ const EventPage = () => {
             </div>
           </div>
 
-          <button onClick={onClickRaffleSetting}>세팅 & 참여</button>
-          <button onClick={onClickEnterAndSpin}>스핀</button>
-          <button onClick={onClickResetRaffleSetting}>초기화</button>
+          {/* <button onClick={onClickRaffleSetting}>세팅</button> */}
+          {/* <button onClick={onClickEnterAndSpin}>스핀</button> */}
+          {/* <button onClick={onClickResetRaffleSetting}>초기화</button> */}
           {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
         </div>
       </div>
 
       {isOpen && (
         <Portal>
-          <Alert prize="확정 화이트리스트" close={close} />
+          <Alert
+            contract={contract}
+            signerAddress={signerAddress}
+            close={close}
+          />
         </Portal>
       )}
     </Layout>
