@@ -1,4 +1,4 @@
-import{ useState } from "react";
+import { useState } from "react";
 
 const useModal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +9,10 @@ const useModal = () => {
 
   const close = () => {
     setIsOpen(false);
+    location.reload();
   };
 
-  return {isOpen, open, close}
+  return { isOpen, open, close };
 };
 
 export default useModal;

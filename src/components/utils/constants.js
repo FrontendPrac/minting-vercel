@@ -1,4 +1,4 @@
-export const contractAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS;
+export const contractAddress = "0xC1d86D54BbD470B7921448f5961fE7B707411b54";
 
 export const contractABI = [
   {
@@ -714,7 +714,7 @@ export const contractABI = [
 ];
 
 export const raffleContractAddress =
-  process.env.NEXT_PUBLIC_RAFFLE_CONTRACT_ADDRESS;
+  "0x68C1F17791A08DE67C43D3FCd2F0Da765c183424";
 
 export const raffleContactABI = [
   {
@@ -857,7 +857,7 @@ export const raffleContactABI = [
 ];
 
 export const stakingContractAddress =
-  process.env.NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS;
+  "0x67D5967170883C5B94DF314A18d417588ee3D27E";
 
 export const stakingContractABI = [
   {

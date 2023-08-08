@@ -16,7 +16,6 @@ const Alert = ({ contract, signerAddress, close }) => {
   const onClickBtn = (event) => {
     event.preventDefault();
     close();
-    location.reload();
   };
 
   useEffect(() => {
