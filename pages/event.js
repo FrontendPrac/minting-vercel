@@ -20,6 +20,8 @@ const EventPage = () => {
   const [signerAddress, setSignerAddress] = useState("");
   const [isRaffle, setIsRaffle] = useState("");
   const [prize, setPrize] = useState("");
+  const [isCompetitiveWhiteList, setIsCompetitiveWhiteList] = useState(false);
+  const [isGuaranteeWhiteList, setIsGuaranteeWhiteList] = useState(false);
 
   // Custom Hook to Modal
   const { isOpen, open, close } = useModal();
@@ -58,11 +60,24 @@ const EventPage = () => {
     console.log("EntranceState: ", response);
     setIsRaffle(response);
 
-    const response_2 = await newRaffleContract.getPrize(accounts[0]);
-    console.log("Prize: ", response_2);
-    const _prize = parseInt(response_2);
+    // const response_2 = await newRaffleContract.getPrize(accounts[0]);
+    // console.log("Prize: ", response_2);
+    // const _prize = parseInt(response_2);
     // console.log("_prize: ", _prize);
-    setPrize(_prize);
+    // setPrize(_prize);
+
+    // Create an ethers contract instance using the contract address and ABI
+    const newContract = await new ethers.Contract(
+      contractAddress,
+      contractABI,
+      newProvider.getSigner()
+    );
+
+    const response_3 = await newContract.getOnCompetitiveWhitelist(accounts[0]);
+    const response_4 = await newContract.getOnGuaranteedWhitelist(accounts[0]);
+
+    setIsCompetitiveWhiteList(response_3);
+    setIsGuaranteeWhiteList(response_4);
   };
 
   // Setting initial Raffle
@@ -234,11 +249,13 @@ const EventPage = () => {
                       </li>
                       <li>
                         <span>
-                          {!prize &&
+                          {!isCompetitiveWhiteList &&
+                            !isGuaranteeWhiteList &&
                             "아직 받은 혜택이 없어요. 이벤트에 참여해보세요! "}
-                          {prize === 1 && "경쟁 화이트리스트"}
-                          {prize === 2 && "확정 화이트리스트"}
-                          {prize === [1, 2] &&
+                          {isCompetitiveWhiteList && "경쟁 화이트리스트"}
+                          {isGuaranteeWhiteList && "확정 화이트리스트"}
+                          {isCompetitiveWhiteList &&
+                            isGuaranteeWhiteList &&
                             "확정 화이트리스트 & 경쟁 화이트리스트"}
                         </span>
                       </li>
