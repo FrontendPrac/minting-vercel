@@ -43,8 +43,11 @@ const EventPage = () => {
     console.log("accounts[0]: ", accounts[0]);
     setSignerAddress(accounts[0]);
 
+    console.log("raffleContractAddress: ", raffleContractAddress);
+    console.log("raffleContactABI: ", raffleContactABI);
+
     // Create an ethers contract instance using the contract address and ABI
-    const newRaffleContract = new ethers.Contract(
+    const newRaffleContract = await new ethers.Contract(
       raffleContractAddress,
       raffleContactABI,
       newProvider.getSigner()
@@ -184,11 +187,6 @@ const EventPage = () => {
     } catch (error) {
       console.log("error: ", error);
     }
-  };
-
-  const isOpenModal = () => {
-    console.log("모달");
-    open();
   };
 
   useEffect(() => {
