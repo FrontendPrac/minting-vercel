@@ -4,14 +4,11 @@ import { ethers } from "ethers";
 import {
   contractABI,
   contractAddress,
-  raffleContactABI,
-  raffleContractAddress,
   stakingContractABI,
   stakingContractAddress,
 } from "../src/components/utils/constants";
 import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
 import UTCTimeout from "../src/components/coming-soon/UTCTimeout";
-import Button from "../src/components/modal/Button";
 import Confirm from "../src/components/modal/confirm/Confirm";
 import Portal from "../src/components/modal/portal/Portal";
 import useModal from "../src/hooks/useModal";

@@ -1,9 +1,15 @@
 import React from "react";
 import * as S from "../../../styles/coming-soon.style";
 
-const KSTTimeout = ({ korDays, korHours, korMinutes, korSeconds }) => {
+const KSTTimeout = ({
+  korDays,
+  korHours,
+  korMinutes,
+  korSeconds,
+  marginTop,
+}) => {
   return (
-    <>
+    <div style={{ marginTop: marginTop }}>
       <h3 className="fn__maintitle" data-text="KST(GMT +9)" data-align="center">
         KST(GMT +9)
       </h3>
@@ -44,7 +50,7 @@ const KSTTimeout = ({ korDays, korHours, korMinutes, korSeconds }) => {
           </S.Li>
         </S.Ul>
       </S.CountdownBox>
-    </>
+    </div>
   );
 };
 
