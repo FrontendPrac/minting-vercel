@@ -124,11 +124,9 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </Link>
               </li> */}
               <li>
-                {/* <Link href="/event"> */}
-                <Link href="/coming-soon">
+                <Link href="/event">
                   <a className="creative_link">Event</a>
                 </Link>
-                {/* </Link> */}
               </li>
             </ul>
           </div>

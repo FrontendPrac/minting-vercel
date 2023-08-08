@@ -11,6 +11,7 @@ import {
 import PublicMintBox from "../src/components/ktmf-pass/PublicMintBox";
 import GuaranteedMintBox from "../src/components/ktmf-pass/GuaranteedMintBox";
 import CompetitiveMintBox from "../src/components/ktmf-pass/CompetitiveMintBox";
+import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
 
 const NftSingle = () => {
   // State variables for ethers provider and contract
@@ -22,19 +23,28 @@ const NftSingle = () => {
   const [guaranteeActive, setGuaranteeActive] = useState(false);
   const [competitiveActive, setCompetitiveActive] = useState(false);
 
+  // Get Kor remaining time
+  const [korDiffTime, setKorDiffTime] = useState();
+  const [korDays, setKorDays] = useState();
+  const [korHours, setKorHours] = useState();
+  const [korMinutes, setKorMinutes] = useState();
+  const [korSeconds, setKorSeconds] = useState();
+
   const initializeEthers = async () => {
     // Request access to the user's Ethereum account
     await window.ethereum.request({ method: "eth_requestAccounts" });
 
     // Create an ethers provider using the window.ethereum object
-    const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+    const newProvider = await new ethers.providers.Web3Provider(
+      window.ethereum
+    );
     console.log("newProvider: ", newProvider);
     setProvider(newProvider);
 
     // Create an ethers contract instance using the contract address and ABI
     const contractAbi = contractABI;
 
-    const newContract = new ethers.Contract(
+    const newContract = await new ethers.Contract(
       contractAddress,
       contractAbi,
       newProvider.getSigner() // Use the signer to send transactions
@@ -49,7 +59,7 @@ const NftSingle = () => {
       console.log("publicActive: ", parseInt(publicActive));
       setPublicActive(parseInt(publicActive));
 
-      const guaranteeActive = await newContract.getGuaranteeWhitelistActive();
+      const guaranteeActive = await newContract.getGuaranteedWhitelistActive();
       console.log("guaranteeActive: ", parseInt(guaranteeActive));
       setGuaranteeActive(parseInt(guaranteeActive));
 
@@ -57,14 +67,40 @@ const NftSingle = () => {
         await newContract.getCompetitiveWhitelistActive();
       console.log("competitiveActive: ", parseInt(competitiveActive));
       setCompetitiveActive(parseInt(competitiveActive));
-
-      // go to coming-soon page
-      if (!publicActive && !guaranteeActive && !competitiveActive) {
-        window.location.href = "/coming-soon";
-      }
     } catch (error) {
-      console.error("Error loading public_Price:", error);
+      console.error("Error loading:", error);
     }
+  };
+
+  const showKorCountdown = () => {
+    const intervalId = setInterval(() => {
+      const korCurrentTime = new Date();
+
+      const korTargetTime = new Date("2023/09/06 00:00:00"); // KST 입력
+
+      const korDiffTime = korTargetTime - korCurrentTime;
+
+      if (korDiffTime <= 0) {
+        setKorDiffTime(0);
+        clearInterval(intervalId);
+        console.log("한국 타이머 종료");
+      } else {
+        const days = Math.floor(korDiffTime / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (korDiffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (korDiffTime % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((korDiffTime % (1000 * 60)) / 1000);
+
+        setKorDays(days);
+        setKorHours(hours);
+        setKorMinutes(minutes);
+        setKorSeconds(seconds);
+        setKorDiffTime(korDiffTime);
+      }
+    }, 1000);
   };
 
   useEffect(() => {
@@ -77,14 +113,23 @@ const NftSingle = () => {
         alert("메타마스크를 연결해주세요.");
       }
     }
+    showKorCountdown();
   }, []);
 
   return (
     <Layout pageTitle={"Minting"}>
       <div className="metaportal_fn_mintpage">
         <div className="container small">
+          {/* Count Down */}
+          <KSTTimeout
+            korDays={korDays}
+            korHours={korHours}
+            korMinutes={korMinutes}
+            korSeconds={korSeconds}
+            marginTop={180}
+          />
           {/* Mint Top */}
-          <div className="metaportal_fn_mint_top">
+          <div className="metaportal_fn_mint_top" style={{ paddingTop: 0 }}>
             <div className="mint_left">
               <div className="img">
                 <div

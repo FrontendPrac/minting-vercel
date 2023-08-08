@@ -4,14 +4,11 @@ import { ethers } from "ethers";
 import {
   contractABI,
   contractAddress,
-  raffleContactABI,
-  raffleContractAddress,
   stakingContractABI,
   stakingContractAddress,
 } from "../src/components/utils/constants";
 import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
 import UTCTimeout from "../src/components/coming-soon/UTCTimeout";
-import Button from "../src/components/modal/Button";
 import Confirm from "../src/components/modal/confirm/Confirm";
 import Portal from "../src/components/modal/portal/Portal";
 import useModal from "../src/hooks/useModal";
@@ -112,7 +109,8 @@ const ComingSoon = () => {
       signerAddress,
       stakingContractAddress
     );
-    // console.log("isApprovedForAll: ", isApprovedForAll);
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
     if (!isApprovedForAll) {
       await contract.setApprovalForAll(stakingContractAddress, true);
       console.log("isApprovedForAll: ", isApprovedForAll);
@@ -127,10 +125,7 @@ const ComingSoon = () => {
 
     console.log("tokenIds: ", tokenIds);
 
-    // const response = await stakingContract.getTokensStaked(signerAddress);
-    // console.log("response: ", response);
-
-    stakingContract.stake(tokenIds[1], {
+    await stakingContract.stake(tokenIds[1], {
       gasLimit: 500000,
     });
 
@@ -152,7 +147,8 @@ const ComingSoon = () => {
       signerAddress,
       stakingContractAddress
     );
-    // console.log("isApprovedForAll: ", isApprovedForAll);
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
     if (!isApprovedForAll) {
       await contract.setApprovalForAll(stakingContractAddress, true);
       console.log("isApprovedForAll: ", isApprovedForAll);
@@ -165,22 +161,17 @@ const ComingSoon = () => {
       provider.getSigner()
     );
 
-    // const response = await stakingContract.getTokensStaked(signerAddress);
-    // console.log("response: ", response);
-
     console.log("tokenIds: ", tokenIds);
-    const response = await stakingContract.unstake(tokenIds[1], 1, {
+    await stakingContract.unstake(tokenIds[1], 1, {
       gasLimit: 500000,
     });
-
-    console.log("response: ", response);
   };
 
   const showKorCountdown = () => {
     const intervalId = setInterval(() => {
       const korCurrentTime = new Date();
 
-      const korTargetTime = new Date("2023/08/08 00:00:00"); // KST 입력
+      const korTargetTime = new Date("2023/09/06 00:00:00"); // KST 입력
 
       const korDiffTime = korTargetTime - korCurrentTime;
 
@@ -245,46 +236,9 @@ const ComingSoon = () => {
     }, 1000);
   };
 
-  // Raffle Test
-  const onClickRaffle = async () => {
-    // Approve Wallet to Staking Contract
-    const contract = new ethers.Contract(
-      contractAddress,
-      contractABI,
-      provider.getSigner()
-    );
-
-    const isApprovedForAll = await contract.isApprovedForAll(
-      signerAddress,
-      raffleContractAddress
-    );
-    // console.log("isApprovedForAll: ", isApprovedForAll);
-    if (!isApprovedForAll) {
-      await contract.setApprovalForAll(raffleContractAddress, true);
-      console.log("isApprovedForAll: ", isApprovedForAll);
-    }
-    const raffleContractAbi = raffleContactABI;
-
-    const raffleContract = new ethers.Contract(
-      raffleContractAddress,
-      raffleContractAbi,
-      provider.getSigner()
-    );
-
-    console.log("tokenIds: ", tokenIds);
-
-    // await raffleContract.updateReset();
-
-    // const response_1 = await raffleContract.accessReset();
-    // console.log("response_1: ", response_1);
-
-    // const response_2 = await raffleContract.resetCheck();
-    // console.log("response_2: ", response_2);
-  };
-
   useEffect(() => {
     showKorCountdown();
-    showUTCCountDown();
+    // showUTCCountDown();
 
     // Check if the window.ethereum object is available
     if (window.ethereum) {
@@ -337,10 +291,8 @@ const ComingSoon = () => {
       <br />
       <button onClick={onClickUnStaking}>언스테이킹</button>
       <br />
-      <Button onClick={open}>Confirm 모달</Button>
-      <br />
-      <button onClick={onClickRaffle}>래플 테스트</button> */}
-      {/* 코드 처리하는 중  */}
+      <Button onClick={open}>Confirm 모달</Button> */}
+      {/* 코드 처리하는 중 */}
       {isOpen && (
         <Portal>
           <Confirm
