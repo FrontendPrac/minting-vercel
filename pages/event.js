@@ -132,25 +132,25 @@ const EventPage = () => {
 
   return (
     <Layout pageTitle={"Event"}>
-      <div className="metaportal_fn_event">
-        <div className="container">
-          <div class="mint_modal">
-            <div class="modal_bg">
-              <div class="modal">
+      {/* <div className="metaportal_fn_event"> */}
+        {/* <div className="container"> */}
+          <div className="mint_modal">
+            <div className="modal_bg">
+              <div className="modal">
                 <ul>
-                  <li class="modal_esc">
+                  <li className="modal_esc">
                     <a href=""></a>
                   </li>
-                  <li class="mo_text" data-text="CONGRATULATIONS"
+                  <li className="mo_text" data-text="CONGRATULATIONS"
                   data-align="left">
                     CONGRATULATIONS</li>
                   <li>
                     <img src="/img/NFT_POPUP_ticket.png" alt=""/>
                   </li>
-                  <li class="pass_name">KTMF PASS NFT</li>
-                  <li class="pass_nft">경쟁 화이트리스트 획득!</li>
+                  <li className="pass_name">KTMF PASS NFT</li>
+                  <li className="pass_nft">경쟁 화이트리스트 획득 !</li>
                 </ul>
-                <div class="modal_chec">
+                <div className="modal_chec">
                   <a href="">확인</a>
                 </div>
               </div>
@@ -158,28 +158,28 @@ const EventPage = () => {
           </div>
 
     
-          <div class="metaportal_fn_mintpage">
-            <div class="container small mtp">
-              <div class="metaportal_fn_mint_top">
-                <div class="mint_right">
-                  <div class="metaportal_fn_share">
-                    <h5 class="label">23.08.04MON - 23.09.02THU</h5>
+          <div className="metaportal_fn_mintpage">
+            <div className="container small mtp">
+              <div className="metaportal_fn_mint_top">
+                <div className="mint_right">
+                  <div className="metaportal_fn_share">
+                    <h5 className="label">08.08.MON - 09.01.FRI</h5>
                   </div>
                   <h3
-                    class="fn__maintitle mintT"
+                    className="fn__maintitle mintT"
                     data-text="KTMF Pass NFT Draw Event"
                     data-align="left">
                     KTMF Pass NFT Draw Event
                   </h3>
-                  <div class="desc">
+                  <div className="desc">
                     <p>
                       드로우에 참여하고 혜택을 받아보세요!
                       원하는 카드를 선택하면 바로 당첨 확인 가능!
                       이벤트 기간 동안 24시간에 한 번씩 누구나 참여할 수 있어요 과연 어떤 혜택이 기다리고 있을까요?
                     </p>
                   </div>
-                  <div class="view_on">
-                    <ul class="textC">
+                  <div className="view_on">
+                    <ul className="textC">
                       <li>
                         <span>현재 획득 혜택</span>
                       </li>
@@ -187,7 +187,7 @@ const EventPage = () => {
                         <span>아직 받은 혜택이 없어요. 이벤트에 참여해보세요!</span>
                       </li>
                     </ul>
-                    <ul class="counT">
+                    <ul className="counT">
                       <li>
                         <span>오늘 참여 가능 횟수</span>
                       </li>
@@ -197,118 +197,106 @@ const EventPage = () => {
                     </ul>
                   </div>
                 </div>
-                <div class="mint_left">
-                  <div class="img">
-                    <ul class="mint_grid">
+                <div className="mint_left">
+                  <div className="img">
+                    <ul className="mint_grid">
                       <li>
-                        <div class="mint__item">
-                          <span class="nft_title">
+                        <div className="mint__item">
+                          <span className="nft_title">
                             <b>KTMF</b> PASS NFT
                           </span>
-                          <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
+                          <div className="img_holder">
+                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
                             </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                              <a className="full_link2" />
                           </div>
-                          <div class="title_holder">
-                            <h3 class="fn_title">
+                          <div className="title_holder">
+                            <h3 className="fn_title">
                               <a href="#">Click</a>
                             </h3>
                           </div>
                         </div>
                       </li>
                       <li>
-                        <div class="mint__item">
-                          <span class="nft_title">
+                        <div className="mint__item">
+                          <span className="nft_title">
                             <b>KTMF</b> PASS NFT
                           </span>
-                          <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
+                          <div className="img_holder">
+                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
                             </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                              <a className="full_link2" />
                           </div>
-                          <div class="title_holder">
-                            <h3 class="fn_title">
+                          <div className="title_holder">
+                            <h3 className="fn_title">
                               <a href="#">Click</a>
                             </h3>
                           </div>
                         </div>
                       </li>
                       <li>
-                        <div class="mint__item">
-                          <span class="nft_title">
+                        <div className="mint__item">
+                          <span className="nft_title">
                             <b>KTMF</b> PASS NFT
                           </span>
-                          <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
+                          <div className="img_holder">
+                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
                             </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                              <a className="full_link2" />
                           </div>
-                          <div class="title_holder">
-                            <h3 class="fn_title">
+                          <div className="title_holder">
+                            <h3 className="fn_title">
                               <a href="#">Click</a>
                             </h3>
                           </div>
                         </div>
                       </li>
                       <li>
-                        <div class="mint__item">
-                          <span class="nft_title">
+                        <div className="mint__item">
+                          <span className="nft_title">
                             <b>KTMF</b> PASS NFT
                           </span>
-                          <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
+                          <div className="img_holder">
+                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
                             </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                              <a className="full_link2" />
                           </div>
-                          <div class="title_holder">
-                            <h3 class="fn_title">
+                          <div className="title_holder">
+                            <h3 className="fn_title">
                               <a href="#">Click</a>
                             </h3>
                           </div>
                         </div>
                       </li>
                       <li>
-                        <div class="mint__item">
-                          <span class="nft_title">
+                        <div className="mint__item">
+                          <span className="nft_title">
                             <b>KTMF</b> PASS NFT
                           </span>
-                          <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
+                          <div className="img_holder">
+                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
                             </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                              <a className="full_link2" />
                           </div>
-                          <div class="title_holder">
-                            <h3 class="fn_title">
+                          <div className="title_holder">
+                            <h3 className="fn_title">
                               <a href="#">Click</a>
                             </h3>
                           </div>
                         </div>
                       </li>
                       <li>
-                        <div class="mint__item">
-                          <span class="nft_title">
+                        <div className="mint__item">
+                          <span className="nft_title">
                             <b>KTMF</b> PASS NFT
                           </span>
-                          <div class="img_holder">
-                            <video autoplay muted loop src="/img/video/mint.mp4" type="video/mp4">
+                          <div className="img_holder">
+                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
                             </video>
-                            <Link href="/nft-single">
-                              <a class="full_link" />
-                            </Link>
+                              <a className="full_link2" />
                           </div>
-                          <div class="title_holder">
-                            <h3 class="fn_title">
+                          <div className="title_holder">
+                            <h3 className="fn_title">
                               <a href="#">Click</a>
                             </h3>
                           </div>
@@ -319,10 +307,7 @@ const EventPage = () => {
                 </div>
               </div>
 
-
-
-          </div>
-        </div>
+        {/* </div> */}
           
 
 
