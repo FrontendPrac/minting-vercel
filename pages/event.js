@@ -56,15 +56,15 @@ const EventPage = () => {
     console.log("newRaffleContract: ", newRaffleContract);
     setContract(newRaffleContract);
 
-    // const response = await newRaffleContract.getEntranceState(accounts[0]);
-    // console.log("EntranceState: ", response);
-    // setIsRaffle(response);
+    const response = await newRaffleContract.getEntranceState(accounts[0]);
+    console.log("EntranceState: ", response);
+    setIsRaffle(response);
 
-    // const response_2 = await newRaffleContract.getPrize(accounts[0]);
-    // console.log("Prize: ", response_2);
-    // const _prize = parseInt(response_2);
-    // console.log("_prize: ", _prize);
-    // setPrize(_prize);
+    const response_2 = await newRaffleContract.getPrize(accounts[0]);
+    console.log("Prize: ", response_2);
+    const _prize = parseInt(response_2);
+    console.log("_prize: ", _prize);
+    setPrize(_prize);
 
     // Create an ethers contract instance using the contract address and ABI
     const newContract = await new ethers.Contract(
@@ -73,11 +73,11 @@ const EventPage = () => {
       newProvider.getSigner()
     );
 
-    // const response_3 = await newContract.getOnCompetitiveWhitelist(accounts[0]);
-    // const response_4 = await newContract.getOnGuaranteedWhitelist(accounts[0]);
+    const response_3 = await newContract.getOnCompetitiveWhitelist(accounts[0]);
+    const response_4 = await newContract.getOnGuaranteedWhitelist(accounts[0]);
 
-    // setIsCompetitiveWhiteList(response_3);
-    // setIsGuaranteeWhiteList(response_4);
+    setIsCompetitiveWhiteList(response_3);
+    setIsGuaranteeWhiteList(response_4);
   };
 
   // Setting initial Raffle
@@ -218,8 +218,8 @@ const EventPage = () => {
 
   return (
     <Layout pageTitle={"Event"}>
-      {/* <div className="metaportal_fn_event"> */}
-        {/* <div className="container"> */}
+      <div className="metaportal_fn_event">
+        <div className="container">
           <div className="mint_modal">
             <div className="modal_bg">
               <div className="modal">
@@ -227,11 +227,15 @@ const EventPage = () => {
                   <li className="modal_esc">
                     <a href=""></a>
                   </li>
-                  <li className="mo_text" data-text="CONGRATULATIONS"
-                  data-align="left">
-                    CONGRATULATIONS</li>
+                  <li
+                    className="mo_text"
+                    data-text="CONGRATULATIONS"
+                    data-align="left"
+                  >
+                    CONGRATULATIONS
+                  </li>
                   <li>
-                    <img src="/img/NFT_POPUP_ticket.png" alt=""/>
+                    <img src="/img/NFT_POPUP_ticket.png" alt="" />
                   </li>
                   <li className="pass_name">KTMF PASS NFT</li>
                   <li className="pass_nft">경쟁 화이트리스트 획득 !</li>
@@ -243,7 +247,6 @@ const EventPage = () => {
             </div>
           </div>
 
-    
           <div className="metaportal_fn_mintpage">
             <div className="container small mtp">
               <div className="metaportal_fn_mint_top">
@@ -303,13 +306,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div className="img_holder">
-                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                              <a className="full_link2" />
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a className="full_link2" />
                           </div>
                           <div className="title_holder">
                             <h3 className="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -320,13 +330,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div className="img_holder">
-                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                              <a className="full_link2" />
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a className="full_link2" />
                           </div>
                           <div className="title_holder">
                             <h3 className="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -337,13 +354,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div className="img_holder">
-                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                              <a className="full_link2" />
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a className="full_link2" />
                           </div>
                           <div className="title_holder">
                             <h3 className="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -354,13 +378,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div className="img_holder">
-                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                              <a className="full_link2" />
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a className="full_link2" />
                           </div>
                           <div className="title_holder">
                             <h3 className="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -371,13 +402,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div className="img_holder">
-                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                              <a className="full_link2" />
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a className="full_link2" />
                           </div>
                           <div className="title_holder">
                             <h3 className="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -388,13 +426,20 @@ const EventPage = () => {
                             <b>KTMF</b> PASS NFT
                           </span>
                           <div className="img_holder">
-                            <video autoPlay muted loop src="/img/video/mint.mp4" type="video/mp4">
-                            </video>
-                              <a className="full_link2" />
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                            ></video>
+                            <a className="full_link2" />
                           </div>
                           <div className="title_holder">
                             <h3 className="fn_title">
-                              <a href="#">Click</a>
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
                             </h3>
                           </div>
                         </div>
@@ -403,10 +448,9 @@ const EventPage = () => {
                   </div>
                 </div>
               </div>
-
-        {/* </div> */}
-          
-
+            </div>
+          </div>
+          <button onClick={() => open()}>버튼</button>
           {/* <button onClick={onClickRaffleSetting}>세팅</button> */}
           {/* <button onClick={onClickEnterAndSpin}>스핀</button> */}
           {/* <button onClick={onClickResetRaffleSetting}>초기화</button> */}
