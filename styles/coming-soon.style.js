@@ -73,3 +73,7 @@ export const Span = styled.span`
     font-size: 14px;
   }
 `;
+
+export const Container = styled.div`
+  /* margin-top: 180px; */
+`;

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../src/layout/Layout";
-import cardMockup from "../public/img/NFT_POPUP_ticket.png";
 import { ethers } from "ethers";
 import {
   contractABI,
@@ -8,12 +7,9 @@ import {
   raffleContactABI,
   raffleContractAddress,
 } from "../src/components/utils/constants";
-import EventPicker from "../src/components/eventpage/EventPicker";
 import Portal from "../src/components/modal/portal/Portal";
 import Alert from "../src/components/modal/alert/Alert";
 import useModal from "../src/hooks/useModal";
-import Image from "next/image";
-import Link from "next/link";
 
 const EventPage = () => {
   // State variables for ethers provider and contract
@@ -96,8 +92,8 @@ const EventPage = () => {
 
     try {
       await raffleContract.setRaffleParams(
-        1691460185,
-        1691461185,
+        1691461808,
+        1691462808,
         0,
         100000000000000,
         3,
@@ -209,35 +205,6 @@ const EventPage = () => {
     <Layout pageTitle={"Event"}>
       <div className="metaportal_fn_event">
         <div className="container">
-          {/* <button onClick={onClickRaffleSetting}>setRaffleSetting</button> */}
-          {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
-          {/* <div class="mint_modal">
-            <div class="modal_bg">
-              <div class="modal">
-                <ul>
-                  <li class="modal_esc">
-                    <a href=""></a>
-                  </li>
-                  <li
-                    class="mo_text"
-                    data-text="CONGRATULATIONS"
-                    data-align="left"
-                  >
-                    CONGRATULATIONS
-                  </li>
-                  <li>
-                    <img src="/img/NFT_POPUP_ticket.png" alt="" />
-                  </li>
-                  <li class="pass_name">KTMF PASS NFT</li>
-                  <li class="pass_nft">경쟁 화이트리스트 획득!</li>
-                </ul>
-                <div class="modal_chec">
-                  <a href="">확인</a>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
           <div class="metaportal_fn_mintpage">
             <div class="container small mtp">
               <div class="metaportal_fn_mint_top">
@@ -443,7 +410,6 @@ const EventPage = () => {
           {/* <button onClick={onClickRaffleSetting}>세팅</button> */}
           {/* <button onClick={onClickEnterAndSpin}>스핀</button> */}
           {/* <button onClick={onClickResetRaffleSetting}>초기화</button> */}
-          {/* <EventPicker open={open} result={result} setResult={setResult} /> */}
         </div>
       </div>
 
