@@ -62,7 +62,7 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
       // Call the publicMint function in the smart contract
       const transaction = await contract.publicMint(quantity, {
         gasLimit: 500000,
-        value: ethers.utils.parseEther(totalPrice.toFixed(5).toString()),
+        value: ethers.utils.parseEther(totalPrice.toFixed(4).toString()),
       });
 
       // Wait for the transaction to be mined
@@ -220,7 +220,7 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(5)}</span>{" "}
+                  <span className="total_price">{totalPrice.toFixed(4)}</span>{" "}
                   ETH + GAS
                 </h3>
               </div>
