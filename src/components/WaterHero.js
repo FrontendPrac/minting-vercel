@@ -16,12 +16,12 @@ const WaterHero = () => {
           <div className="fn_cs_hero_slider">
             <div className="bg_overlay" />
             <div className="left_part">
-              <h3 className="fn__maintitle big" data-text="Dream Bridge">
-                Dream Bridge
+              <h3 className="fn__maintitle big" data-text="ARZ PASS">
+                ARZ PASS
               </h3>
               <p>
-                Dream Bridge Project는 메타버스라는 꿈과 현실을 이어주는 역할을
-                하는 NFT 프로젝트입니다. 우리 프로젝트는 다수의 NFT 컬렉션으로
+                ARZ PASS Project는 메타버스라는 꿈과 현실을 이어주는 역할을 하는
+                NFT 프로젝트입니다. 우리 프로젝트는 다수의 NFT 컬렉션으로
                 구성되어 있으며, 각 NFT 컬렉션마다 메타버스로 가는 로드맵을
                 보여줍니다. 하나의 컬렉션에서 수백 개에서 수천 개의 NFT 아이템이
                 생성되며, 희귀성 수준에 따라 가치가 달라지기도 합니다.
@@ -43,7 +43,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/1.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -55,7 +55,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/2.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -67,7 +67,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/3.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -85,7 +85,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/4.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -97,7 +97,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/5.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -109,7 +109,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/6.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -121,7 +121,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/7.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -133,7 +133,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/8.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -145,7 +145,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/9.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -157,7 +157,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/drops/10.jpg"
+                          data-bg-img="/img/event/nft_ticket.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />

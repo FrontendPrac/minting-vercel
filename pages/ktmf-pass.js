@@ -288,65 +288,65 @@ const NftSingle = () => {
             <ul>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Clothing</h4>
+                  <h4 className="parent_category">헤어</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    빨강
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Eyes</h4>
+                  <h4 className="parent_category">상의</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    빨강
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Special</h4>
+                  <h4 className="parent_category">하의</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    빨강
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Type</h4>
+                  <h4 className="parent_category">신발</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    빨강
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Mouth</h4>
+                  <h4 className="parent_category">모자</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    빨강
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Neck</h4>
+                  <h4 className="parent_category">배경</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    빨강
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Eyes</h4>
+                  <h4 className="parent_category">액세서리</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    마이크
                   </h3>
                 </div>
               </li>
               <li>
                 <div className="item">
-                  <h4 className="parent_category">Neck</h4>
+                  <h4 className="parent_category">피부색</h4>
                   <h3 className="child_category" title="Not Working">
-                    Not Working
+                    흰색
                   </h3>
                 </div>
               </li>
@@ -378,7 +378,7 @@ const NftSingle = () => {
                 <li>
                   <div className="nft__item">
                     <div className="img_holder">
-                      <img src="/img/drops/1.jpg" alt="" />
+                      <img src="/img/event/nft_ticket.png" alt="" />
                       <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
@@ -393,7 +393,7 @@ const NftSingle = () => {
                 <li>
                   <div className="nft__item">
                     <div className="img_holder">
-                      <img src="/img/drops/2.jpg" alt="" />
+                      <img src="/img/event/nft_ticket.png" alt="" />
                       <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
@@ -408,7 +408,7 @@ const NftSingle = () => {
                 <li>
                   <div className="nft__item">
                     <div className="img_holder">
-                      <img src="/img/drops/3.jpg" alt="" />
+                      <img src="/img/event/nft_ticket.png" alt="" />
                       <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
@@ -423,7 +423,7 @@ const NftSingle = () => {
                 <li>
                   <div className="nft__item">
                     <div className="img_holder">
-                      <img src="/img/drops/4.jpg" alt="" />
+                      <img src="/img/event/nft_ticket.png" alt="" />
                       <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
@@ -438,7 +438,7 @@ const NftSingle = () => {
                 <li>
                   <div className="nft__item">
                     <div className="img_holder">
-                      <img src="/img/drops/5.jpg" alt="" />
+                      <img src="/img/event/nft_ticket.png" alt="" />
                       <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
@@ -453,7 +453,7 @@ const NftSingle = () => {
                 <li>
                   <div className="nft__item">
                     <div className="img_holder">
-                      <img src="/img/drops/6.jpg" alt="" />
+                      <img src="/img/event/nft_ticket.png" alt="" />
                       <Link href="/nft-single">
                         <a className="full_link" />
                       </Link>
