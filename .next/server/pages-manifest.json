@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/ktmf-pass": "pages/ktmf-pass.js",
-  "/event": "pages/event.js"
+  "/ktmf-pass": "pages/ktmf-pass.js"
 }
