@@ -19,7 +19,7 @@ const Faq = () => {
       dec: "거버넌스 토큰은 아즈메타 생태계 내에서 투표할 수 있는 의결권의 성격올 가진토큰입니다. 아즈메타에는 $META라는 거버넌스 토큰이 존재하며 이를 통해 아즈메타 생태계의 방향성을 결정하는 투표에 참여할 수 있습니다.",
     },
     {
-      title: "유즈(가침)가 무엇인가요?",
+      title: "유즈(가칭)가 무엇인가요?",
       dec: "아즈메타에는 '유즈(가칭)'라는 재화가 존재하며, 아즈메타 플랫폼 내 여러 활동들올 통해 획득할 수 있습니다.",
     },
   ];
@@ -93,7 +93,7 @@ const Faq = () => {
                 <span />
               </div>
             </div>
-            <div className="desc">
+            {/* <div className="desc">
               <p>
                 Pellentesque eu ex iaculis, tempus ex eu, consectetur lectus.
                 Aenean nec iaculis est, a mattis turpis. Morbi posuere lorem id
@@ -105,7 +105,7 @@ const Faq = () => {
                 pulvinar odio ac suscipit. Quisque pretium, est id facilisis
                 luctus, magna lorem posuere velit.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="faq_col">
             <div className="fn_cs_accordion">{faqMap(faqs1, "a")}</div>
