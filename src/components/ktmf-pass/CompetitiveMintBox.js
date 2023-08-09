@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { ethers, logger } from "ethers";
 import React, { useEffect, useState } from "react";
 
 const CompetitiveMintBox = ({ provider, contract, competitiveActive }) => {
@@ -36,16 +36,17 @@ const CompetitiveMintBox = ({ provider, contract, competitiveActive }) => {
 
       // Convert the BigNumber to a floating-point number (wei to ether)
       // Update the cost2 value with the loaded competitive_Price value
+
       setCompetitivePrice(
-        parseFloat(ethers.utils.formatEther(parseFloat(price)))
+        parseFloat(ethers.utils.formatEther(parseFloat(price).toString()))
       );
-      setCompetitiveLimit(parseFloat(limit));
-      setCompetitiveNumMinted(parseFloat(numMinted));
-      setCompetitiveSupply(parseFloat(supply));
+      setCompetitiveLimit(parseFloat(limit).toString());
+      setCompetitiveNumMinted(parseFloat(numMinted).toString());
+      setCompetitiveSupply(parseFloat(supply).toString());
     } catch (error) {
       console.error("Error loading guarantee_Price:", error);
       alert(
-        "Error loading guarantee_Price. Please check the console for details."
+        "Error loading competitiveData_Price. Please check the console for details."
       );
     }
   };
@@ -80,7 +81,7 @@ const CompetitiveMintBox = ({ provider, contract, competitiveActive }) => {
       console.log("receipt: ", receipt);
 
       alert("NFTs minted successfully!");
-      // location.reload();
+      location.reload();
     } catch (error) {
       console.error("Error minting NFTs:", error);
       alert("Error minting NFTs. Please check the console for details.");
@@ -227,7 +228,7 @@ const CompetitiveMintBox = ({ provider, contract, competitiveActive }) => {
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(4)}</span>{" "}
+                  <span className="total_price">{totalPrice.toFixed(2)}</span>{" "}
                   ETH + GAS
                 </h3>
               </div>

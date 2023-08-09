@@ -36,10 +36,13 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
 
       // Convert the BigNumber to a floating-point number (wei to ether)
       // Update the cost2 value with the loaded public_Price value
-      setPublicPrice(parseFloat(ethers.utils.formatEther(parseFloat(price))));
-      setPublicLimit(parseFloat(limit));
-      setPublicNumMinted(parseFloat(numMinted));
-      setPublicSupply(parseFloat(supply));
+
+      setPublicPrice(
+        parseFloat(ethers.utils.formatEther(parseFloat(price).toString()))
+      );
+      setPublicLimit(parseFloat(limit).toString());
+      setPublicNumMinted(parseFloat(numMinted).toString());
+      setPublicSupply(parseFloat(supply).toString());
     } catch (error) {
       console.error("Error loading public_Price:", error);
       alert(
@@ -220,7 +223,7 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(4)}</span>{" "}
+                  <span className="total_price">{totalPrice.toFixed(2)}</span>{" "}
                   ETH + GAS
                 </h3>
               </div>

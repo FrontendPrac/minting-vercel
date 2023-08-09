@@ -37,11 +37,11 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
       // Convert the BigNumber to a floating-point number (wei to ether)
       // Update the cost2 value with the loaded guarantee_Price value
       setGuaranteePrice(
-        parseFloat(ethers.utils.formatEther(parseFloat(price)))
+        parseFloat(ethers.utils.formatEther(parseFloat(price).toString()))
       );
-      setGuaranteeLimit(parseFloat(limit));
-      setGuaranteeNumMinted(parseFloat(numMinted));
-      setGuaranteeSupply(parseFloat(supply));
+      setGuaranteeLimit(parseFloat(limit).toString());
+      setGuaranteeNumMinted(parseFloat(numMinted).toString());
+      setGuaranteeSupply(parseFloat(supply).toString());
     } catch (error) {
       console.error("Error loading guarantee_Price:", error);
       alert(
@@ -80,7 +80,7 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
       console.log("receipt: ", receipt);
 
       alert("NFTs minted successfully!");
-      // location.reload();
+      location.reload();
     } catch (error) {
       console.error("Error minting NFTs:", error);
       alert("Error minting NFTs. Please check the console for details.");
@@ -230,7 +230,7 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(4)}</span>{" "}
+                  <span className="total_price">{totalPrice.toFixed(2)}</span>{" "}
                   ETH + GAS
                 </h3>
               </div>
