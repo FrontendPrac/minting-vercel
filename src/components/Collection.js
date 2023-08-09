@@ -54,7 +54,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/1.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -66,7 +66,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/2.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -78,7 +78,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/3.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -90,7 +90,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/4.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -104,7 +104,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/5.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -116,7 +116,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/6.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -128,7 +128,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/7.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
@@ -140,7 +140,7 @@ const Collection = () => {
                 <div className="img">
                   <div
                     className="abs_img"
-                    data-bg-img="/img/collection/8.jpg"
+                    data-bg-img="/img/event/nft_ticket.png"
                   />
                   <img src="/img/1x1.jpg" alt="" />
                 </div>
