@@ -2,40 +2,40 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 const Collection = () => {
-  useEffect(() => {
-    const collection = document.querySelector(".fn_cs_collection");
-    var items = collection.querySelectorAll(".item");
-    var itemsLength = items.length;
-    setInterval(function () {
-      var numberOne = Math.floor(Math.random() * itemsLength);
-      var numberTwo = Math.floor(Math.random() * itemsLength);
+  // useEffect(() => {
+  //   const collection = document.querySelector(".fn_cs_collection");
+  //   var items = collection.querySelectorAll(".item");
+  //   var itemsLength = items.length;
+  //   setInterval(function () {
+  //     var numberOne = Math.floor(Math.random() * itemsLength);
+  //     var numberTwo = Math.floor(Math.random() * itemsLength);
 
-      while (numberTwo === numberOne) {
-        numberTwo = Math.floor(Math.random() * itemsLength);
-      }
-      var firstDiv = items[numberOne];
-      var secondDiv = items[numberTwo];
-      var firstImage = firstDiv.querySelector("input").value;
-      var secondImage = secondDiv.querySelector("input").value;
-      firstDiv.classList.add("ready");
-      secondDiv.classList.add("ready");
-      // console.log(firstDiv.querySelector("input").value == firstDiv);
-      setTimeout(function () {
-        // console.log(secondDiv.querySelector("input").value == firstDiv);
-        // firstDiv.querySelector("input").value == secondImage;
-        // firstDiv.querySelector(".abs_img").style.backgroundImage =
-        //   "url(" + secondImage + ")";
-        // // secondDiv.querySelector("input").val(firstImage);
-        // secondDiv.querySelector("input").value == firstDiv;
-        // console.log(secondDiv.querySelector("input").value);
-        // secondDiv.querySelector(".abs_img").style.backgroundImage =
-        //   "url(" + firstImage + ")";
+  //     while (numberTwo === numberOne) {
+  //       numberTwo = Math.floor(Math.random() * itemsLength);
+  //     }
+  //     var firstDiv = items[numberOne];
+  //     var secondDiv = items[numberTwo];
+  //     var firstImage = firstDiv.querySelector("input").value;
+  //     var secondImage = secondDiv.querySelector("input").value;
+  //     firstDiv.classList.add("ready");
+  //     secondDiv.classList.add("ready");
+  //     // console.log(firstDiv.querySelector("input").value == firstDiv);
+  //     setTimeout(function () {
+  //       // console.log(secondDiv.querySelector("input").value == firstDiv);
+  //       // firstDiv.querySelector("input").value == secondImage;
+  //       // firstDiv.querySelector(".abs_img").style.backgroundImage =
+  //       //   "url(" + secondImage + ")";
+  //       // // secondDiv.querySelector("input").val(firstImage);
+  //       // secondDiv.querySelector("input").value == firstDiv;
+  //       // console.log(secondDiv.querySelector("input").value);
+  //       // secondDiv.querySelector(".abs_img").style.backgroundImage =
+  //       //   "url(" + firstImage + ")";
 
-        firstDiv.classList.remove("ready");
-        secondDiv.classList.remove("ready");
-      }, 500);
-    }, 2000);
-  }, []);
+  //       firstDiv.classList.remove("ready");
+  //       secondDiv.classList.remove("ready");
+  //     }, 500);
+  //   }, 2000);
+  // }, []);
 
   return (
     <section id="collection">
@@ -47,7 +47,32 @@ const Collection = () => {
         >
           Our Collection
         </h3>
-        <div className="fn_cs_collection">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src="/img/event/nft_ticket.png"
+            style={{ width: "300px", marginBottom: "100px" }}
+          />
+          <div>
+            {" "}
+            <div className="soon_title">
+              <h3
+                className="fn__maintitle"
+                data-text="Collection is Coming Soon"
+                data-align="center"
+              >
+                Collection is Coming Soon
+              </h3>
+            </div>
+          </div>
+        </div>
+        {/* <div className="fn_cs_collection">
           <div className="collection_top">
             <div className="item">
               <div className="item_in">
@@ -161,7 +186,7 @@ const Collection = () => {
               <span>See All Collection</span>
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

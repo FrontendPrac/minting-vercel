@@ -291,7 +291,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">헤어</h4>
                   <h3 className="child_category" title="Not Working">
-                    빨강
+                    7종
                   </h3>
                 </div>
               </li>
@@ -299,7 +299,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">상의</h4>
                   <h3 className="child_category" title="Not Working">
-                    빨강
+                    7종
                   </h3>
                 </div>
               </li>
@@ -307,7 +307,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">하의</h4>
                   <h3 className="child_category" title="Not Working">
-                    빨강
+                    7종
                   </h3>
                 </div>
               </li>
@@ -315,7 +315,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">신발</h4>
                   <h3 className="child_category" title="Not Working">
-                    빨강
+                    7종
                   </h3>
                 </div>
               </li>
@@ -323,7 +323,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">모자</h4>
                   <h3 className="child_category" title="Not Working">
-                    빨강
+                    7종
                   </h3>
                 </div>
               </li>
@@ -331,7 +331,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">배경</h4>
                   <h3 className="child_category" title="Not Working">
-                    빨강
+                    7종
                   </h3>
                 </div>
               </li>
@@ -339,7 +339,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">액세서리</h4>
                   <h3 className="child_category" title="Not Working">
-                    마이크
+                    7종
                   </h3>
                 </div>
               </li>
@@ -347,7 +347,7 @@ const NftSingle = () => {
                 <div className="item">
                   <h4 className="parent_category">피부색</h4>
                   <h3 className="child_category" title="Not Working">
-                    흰색
+                    4종
                   </h3>
                 </div>
               </li>

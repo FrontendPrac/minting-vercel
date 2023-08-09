@@ -21,19 +21,19 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>August 09, 2022 / MetaVerse / 4 Comments</p>
+                  <p>July 09, 2023 / MetaVerse</p>
                 </div>
                 <div className="title">
                   <h3>
-                    <Link href="/blog-single">
-                      <a>Reasons Why People Use Discord</a>
+                    <Link href="http://www.koreatimes.com/article/1472541">
+                      <a>2023 Koreatimes Music Festival K POP 경연대회</a>
                     </Link>
                   </h3>
                 </div>
                 <div className="image">
                   <Link href="/blog-single">
                     <a>
-                      <img src="/img/blog/discord.jpg" alt="" />
+                      <img src="/img/NFT_POPUP_ticket.png" alt="" />
                     </a>
                   </Link>
                 </div>
@@ -54,12 +54,14 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>August 09, 2022 / MetaVerse / 4 Comments</p>
+                  <p>July 09, 2023 / MetaVerse</p>
                 </div>
                 <div className="title">
                   <h3>
-                    <Link href="/blog-single">
-                      <a>Trial-By-Combat: The Death Cup</a>
+                    <Link href="https://m.sedaily.com/NewsView/29S39CBPC7#cb">
+                      <a>
+                        K팝 함성, 시공간 뛰어넘는다 ··· KTMF K팝 커버 콘테스트
+                      </a>
                     </Link>
                   </h3>
                 </div>
@@ -78,12 +80,15 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>August 09, 2022 / NFT / 4 Comments</p>
+                  <p>July 22, 2023 / NFT </p>
                 </div>
                 <div className="title">
                   <h3>
-                    <Link href="/blog-single">
-                      <a>Graffiti Racer Research Center #10</a>
+                    <Link href="https://v.daum.net/v/20230722204611292">
+                      <a>
+                        KTMF K팝 커버 콘테스트, 전 세계 지원자 몰려들어 흥행
+                        예감
+                      </a>
                     </Link>
                   </h3>
                 </div>
@@ -102,10 +107,10 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>August 09, 2022 / MetaVerse / 4 Comments</p>
+                  <p>July 09, 2023 / MetaVerse</p>
                 </div>
                 <div className="read_more">
-                  <Link href="/blog-single">
+                  <Link href="/">
                     <a>
                       <span>Read More</span>
                     </a>

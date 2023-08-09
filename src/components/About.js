@@ -72,8 +72,8 @@ const About = () => {
         {/* Mint Shortcode */}
         <div className="fn_cs_mint">
           <div className="left_part">
-            <h3 className="fn__maintitle" data-text="How to Mint">
-              How to Mint
+            <h3 className="fn__maintitle" data-text="NFT란?">
+              NFT란?
             </h3>
             <div className="fn_cs_divider">
               <div className="divider">
@@ -83,11 +83,49 @@ const About = () => {
             </div>
             <div className="desc">
               <p>
-                As the first hero of the Meta Legends, collection has over 9,999
-                unique skins drawn from the different missions and challenges he
-                faced throughout his life.
+                NFT(Non-Fungible Token)는 블록체인 기술을 이용하여 디지털 자산을
+                표현한 것입니다. 각 NFT는 고유한 정보를 가지고 있어 서로 구분
+                가능하며, 이러한 특성 덕분에 디지털 아트, 뮤직, 동영상, 게임
+                아이템 등 다양한 자산을 표현하고 거래할 수 있습니다.
+              </p>
+              <div className="fn_cs_divider">
+                <div className="divider">
+                  <span />
+                  <span />
+                </div>
+              </div>
+              <p>
+                웹사이트 연결: 우측 상단에 [Connect Wallet] 버튼을 클릭하여
+                지갑을 연결하세요.
               </p>
               <p>
+                연결 수락: 지갑 앱을 열어 연결 요청을 확인하고, 연결을
+                수락하세요.
+              </p>
+              <p>민팅할 NFT 선택: 웹사이트에서 원하는 NFT를 찾아 선택하세요.</p>
+              <p>
+                수량 설정: 민팅하고자 하는 NFT의 수량을 설정하세요. 일부 NFT는
+                한번에 여러 개를 민팅하는 것이 가능하므로 원하는 수량을 지정해
+                주세요.
+              </p>
+              <p>
+                트랜잭션 확인: 지갑 앱에서 트랜잭션의 세부 정보와 Gas Fee를
+                확인한 후, 트랜잭션을 승인하세요. Gas Fee는 블록체인의 혼잡도에
+                따라 달라질 수 있으니 주의깊게 확인하세요.
+              </p>
+              <p>
+                트랜잭션 대기: 트랜잭션이 블록체인에 기록되기를 기다립니다.
+                혼잡도에 따라 시간이 걸릴 수 있습니다.
+              </p>
+              <p>
+                지갑 확인: 트랜잭션이 완료되면 연결된 지갑에서 민팅된 NFT를
+                확인할 수 있습니다.
+              </p>
+              <p>
+                마켓플레이스 및 웹사이트에서의 보기: NFT는 OpenSea를 통해 직접
+                확인할 수 있습니다.
+              </p>
+              {/* <p>
                 The artwork has been hand-drawned by Robert Green in the
                 traditional anime style and composited by Layla Efiyo.
               </p>
@@ -109,9 +147,9 @@ const About = () => {
                 sollicitudin neque. Etiam ac lacus quam. Vivamus suscipit nisl
                 tellus, at congue odio commodo at. Cras ante enim, sodales at
                 pretium et, tempus at libero.
-              </p>
+              </p> */}
             </div>
-            <Link href="/nft-single">
+            <Link href="/ktmf-pass">
               <a className="metaportal_fn_button">
                 <span>How to Mint</span>
               </a>
@@ -125,7 +163,7 @@ const About = () => {
                   <div className="item">
                     <div className="item_in">
                       <h3 className="fn__gradient_title">01</h3>
-                      <p>Connect your Wallet</p>
+                      <p>지갑 연결</p>
                     </div>
                   </div>
                 </li>
@@ -133,7 +171,7 @@ const About = () => {
                   <div className="item">
                     <div className="item_in">
                       <h3 className="fn__gradient_title">02</h3>
-                      <p>Select Your Quantity</p>
+                      <p>수량 선택</p>
                     </div>
                   </div>
                 </li>
@@ -141,7 +179,7 @@ const About = () => {
                   <div className="item">
                     <div className="item_in">
                       <h3 className="fn__gradient_title">03</h3>
-                      <p>Confirm The Transaction</p>
+                      <p>민팅 완료</p>
                     </div>
                   </div>
                 </li>
@@ -149,7 +187,7 @@ const About = () => {
                   <div className="item">
                     <div className="item_in">
                       <h3 className="fn__gradient_title">04</h3>
-                      <p>Receive Your NFT’s</p>
+                      <p>NFT 수령</p>
                     </div>
                   </div>
                 </li>
