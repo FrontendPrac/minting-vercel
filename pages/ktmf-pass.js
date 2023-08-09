@@ -69,6 +69,7 @@ const NftSingle = () => {
       setCompetitiveActive(parseInt(competitiveActive));
     } catch (error) {
       console.error("Error loading:", error);
+      alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
     }
   };
 
