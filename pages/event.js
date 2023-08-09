@@ -47,7 +47,7 @@ const EventPage = () => {
     console.log("raffleContactABI: ", raffleContactABI);
 
     // Create an ethers contract instance using the contract address and ABI
-    const newRaffleContract = await new ethers.Contract(
+    const newRaffleContract = new ethers.Contract(
       raffleContractAddress,
       raffleContactABI,
       newProvider.getSigner()
@@ -60,28 +60,33 @@ const EventPage = () => {
       const response = await newRaffleContract.getEntranceState(accounts[0]);
       console.log("EntranceState: ", response);
       setIsRaffle(response);
+
+      const response_2 = await newRaffleContract.getPrize(accounts[0]);
+      console.log("Prize: ", response_2);
+      const _prize = parseInt(response_2);
+      console.log("_prize: ", _prize);
+      setPrize(_prize);
+
+      // Create an ethers contract instance using the contract address and ABI
+      const newContract = new ethers.Contract(
+        contractAddress,
+        contractABI,
+        newProvider.getSigner()
+      );
+
+      const response_3 = await newContract.getOnCompetitiveWhitelist(
+        accounts[0]
+      );
+      const response_4 = await newContract.getOnGuaranteedWhitelist(
+        accounts[0]
+      );
+
+      setIsCompetitiveWhiteList(response_3);
+      setIsGuaranteeWhiteList(response_4);
     } catch (error) {
       console.log("error: ", error);
+      alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
     }
-
-    const response_2 = await newRaffleContract.getPrize(accounts[0]);
-    console.log("Prize: ", response_2);
-    const _prize = parseInt(response_2);
-    console.log("_prize: ", _prize);
-    setPrize(_prize);
-
-    // Create an ethers contract instance using the contract address and ABI
-    const newContract = await new ethers.Contract(
-      contractAddress,
-      contractABI,
-      newProvider.getSigner()
-    );
-
-    const response_3 = await newContract.getOnCompetitiveWhitelist(accounts[0]);
-    const response_4 = await newContract.getOnGuaranteedWhitelist(accounts[0]);
-
-    setIsCompetitiveWhiteList(response_3);
-    setIsGuaranteeWhiteList(response_4);
   };
 
   // Join Raffle
@@ -177,7 +182,9 @@ const EventPage = () => {
                       {!isCompetitiveWhiteList &&
                         isGuaranteeWhiteList &&
                         "확정 화이트리스트"}
-                        {isCompetitiveWhiteList && isGuaranteeWhiteList && "확정 화이트리스트 & 경쟁 화이트리스트"}
+                      {isCompetitiveWhiteList &&
+                        isGuaranteeWhiteList &&
+                        "확정 화이트리스트 & 경쟁 화이트리스트"}
                     </span>
                   </li>
                 </ul>
