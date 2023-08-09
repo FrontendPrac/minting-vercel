@@ -37,13 +37,13 @@ const News = () => {
                     </a>
                   </Link>
                 </div>
-                <div className="read_more">
+                {/* <div className="read_more">
                   <Link href="/blog-single">
                     <a>
                       <span>Read More</span>
                     </a>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="right_items">
@@ -65,13 +65,13 @@ const News = () => {
                     </Link>
                   </h3>
                 </div>
-                <div className="read_more">
+                {/* <div className="read_more">
                   <Link href="/blog-single">
                     <a>
                       <span>Read More</span>
                     </a>
                   </Link>
-                </div>
+                </div> */}
               </div>
               <div className="blog__item">
                 <div className="counter">
@@ -92,13 +92,13 @@ const News = () => {
                     </Link>
                   </h3>
                 </div>
-                <div className="read_more">
+                {/* <div className="read_more">
                   <Link href="/blog-single">
                     <a>
                       <span>Read More</span>
                     </a>
                   </Link>
-                </div>
+                </div> */}
               </div>
               <div className="blog__item">
                 <div className="counter">
@@ -109,19 +109,19 @@ const News = () => {
                 <div className="meta">
                   <p>July 09, 2023 / MetaVerse</p>
                 </div>
-                <div className="read_more">
+                {/* <div className="read_more">
                   <Link href="/">
                     <a>
                       <span>Read More</span>
                     </a>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           <div className="bottom_part">
             <div className="left_bot">
-              <Link href="/blog">
+              <Link href="http://www.koreatimes.com/article/1472541">
                 <a className="metaportal_fn_button full">
                   <span>Read All Articles</span>
                 </a>
