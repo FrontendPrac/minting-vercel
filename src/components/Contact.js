@@ -91,8 +91,8 @@ const Contact = () => {
                 </h3>
                 <h4 className="lable">Email</h4>
                 <h3>
-                  <a href="mailto:help.arzmeta@hancomfro.com">
-                    help.arzmeta@hancomfro.com
+                  <a href="mailto:arzmeta.official@hancomfro.com">
+                    arzmeta.official@hancomfro.com
                   </a>
                 </h3>
               </div>
