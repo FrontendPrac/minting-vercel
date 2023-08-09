@@ -85,7 +85,7 @@ const About = () => {
               <p>
                 As the first hero of the Meta Legends, collection has over 9,999
                 unique skins drawn from the different missions and challenges he
-                faced throughout his life.
+                faced throughout his life..
               </p>
               <p>
                 The artwork has been hand-drawned by Robert Green in the
