@@ -21,144 +21,144 @@ const RoadMapSlider = () => {
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 01</span>
+                    <span className="phase">로드맵 01</span>
                     <div className="item_in">
-                      <p className="date">October 09, 2022</p>
-                      <h3 className="title">Mini Game Lounch For Community</h3>
-                      <p className="desc">
+                      <p className="date">2023년 09월 06일 19시(KST)</p>
+                      <h3 className="title">확정 화이트리스트</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 02</span>
+                    <span className="phase">로드맵 02</span>
                     <div className="item_in">
-                      <p className="date">October 17, 2022</p>
-                      <h3 className="title">New Set #12 is Coming Up</h3>
-                      <p className="desc">
+                      <p className="date">2023년 09월 06일 20시(KST)</p>
+                      <h3 className="title">경쟁 화이트리스트</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 03</span>
+                    <span className="phase">로드맵 03</span>
                     <div className="item_in">
-                      <p className="date">October 28, 2022</p>
-                      <h3 className="title">Metaverse 3.0 Launch</h3>
-                      <p className="desc">
+                      <p className="date">2023년 09월 07일 19시(KST)</p>
+                      <h3 className="title">퍼블릭 세일 1차</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 04</span>
+                    <span className="phase">로드맵 04</span>
                     <div className="item_in">
-                      <p className="date">November 11, 2022</p>
-                      <h3 className="title">Female Set #20 is Coming Up</h3>
-                      <p className="desc">
+                      <p className="date">2023년 09월 08일 19시(KST)</p>
+                      <h3 className="title">퍼블릭 세일 2차</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 05</span>
+                    <span className="phase">로드맵 05</span>
                     <div className="item_in">
-                      <p className="date">November 23, 2022</p>
-                      <h3 className="title">Mini Game Lounch For Community</h3>
-                      <p className="desc">
+                      <p className="date">2023년 09월 15일(KST)</p>
+                      <h3 className="title">코스튬 아이템 리빌</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 06</span>
+                    <span className="phase">로드맵 06</span>
                     <div className="item_in">
-                      <p className="date">December 02, 2022</p>
-                      <h3 className="title">Mini Game Lounch For Community</h3>
-                      <p className="desc">
+                      <p className="date">2023년 09월 15일 ~ 10월 19일(KST)</p>
+                      <h3 className="title">리워드 지급</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 07</span>
+                    <span className="phase">로드맵 07</span>
                     <div className="item_in">
-                      <p className="date">January 14, 2023</p>
-                      <h3 className="title">Mini Game Lounch For Community</h3>
-                      <p className="desc">
+                      <p className="date">2023년 10월 23일 ~ 10월 25일(KST)</p>
+                      <h3 className="title">KTMF CD 민팅</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 08</span>
+                    <span className="phase">로드맵 08</span>
                     <div className="item_in">
-                      <p className="date">January 28, 2023</p>
-                      <h3 className="title">Mini Game Lounch For Community</h3>
-                      <p className="desc">
+                      <p className="date">미정</p>
+                      <h3 className="title">KTMF CD 리빌</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <div className="item">
                     <span className="icon" />
-                    <span className="phase">Phase 09</span>
+                    <span className="phase">로드맵 09</span>
                     <div className="item_in">
-                      <p className="date">February 12, 2023</p>
-                      <h3 className="title">Mini Game Lounch For Community</h3>
-                      <p className="desc">
+                      <p className="date">미정</p>
+                      <h3 className="title">메타버스</h3>
+                      {/* <p className="desc">
                         Morbi non dignissim erat, a blandit felis. Suspendisse
                         nec lorem vel orci varius congue ut vitae est. Nam quis
                         tempus nisl. Fusce posuere nibh a mi molestie, sit amet
                         ornare lectus interdum.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>
