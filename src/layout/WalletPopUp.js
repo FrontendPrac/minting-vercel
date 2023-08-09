@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { walletToggle } from "../redux/actions/siteSettings";
 import { ethers } from "ethers";
 import { contractABI, contractAddress } from "../components/utils/constants";
+import Image from "next/image";
 
 const WalletPopUp = ({ walletToggle, wallet }) => {
   const [errorMessage, setErrorMessage] = useState(
@@ -87,7 +88,12 @@ const WalletPopUp = ({ walletToggle, wallet }) => {
                 <div className="item">
                   <a href="#" onClick={connectWalletHandler} />
                   <span className="icon">
-                    <img src="/img/wallet/metamask.png" alt="" />
+                    <Image
+                      src="/img/wallet/metamask.png"
+                      alt="metamask"
+                      width={23}
+                      height={23}
+                    />
                   </span>
                   <span className="text">Metamask</span>
                 </div>

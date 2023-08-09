@@ -10,6 +10,7 @@ import {
   raffleContractAddress,
 } from "../components/utils/constants";
 import { ethers } from "ethers";
+import Image from "next/image";
 
 const Header = ({ walletToggle, navigationToggle }) => {
   // state management of provider , signer and contract
@@ -81,7 +82,12 @@ const Header = ({ walletToggle, navigationToggle }) => {
             <div className="logo">
               <Link href="/">
                 <a>
-                  <img src="/img/logo.png" alt="" />
+                  <Image
+                    src="/img/logo.png"
+                    alt="logo"
+                    width={200}
+                    height={50}
+                  />
                 </a>
               </Link>
             </div>

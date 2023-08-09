@@ -26,13 +26,15 @@ const News = () => {
                 <div className="title">
                   <h3>
                     <Link href="http://www.koreatimes.com/article/1472541">
-                      <a>2023 Koreatimes Music Festival K POP 경연대회</a>
+                      <a target="_blank" rel="noreferrer">
+                        2023 Koreatimes Music Festival K POP 경연대회
+                      </a>
                     </Link>
                   </h3>
                 </div>
                 <div className="image">
                   <Link href="/blog-single">
-                    <a>
+                    <a target="_blank" rel="noreferrer">
                       <img src="/img/NFT_POPUP_ticket.png" alt="" />
                     </a>
                   </Link>
@@ -59,7 +61,7 @@ const News = () => {
                 <div className="title">
                   <h3>
                     <Link href="https://m.sedaily.com/NewsView/29S39CBPC7#cb">
-                      <a>
+                      <a target="_blank" rel="noreferrer">
                         K팝 함성, 시공간 뛰어넘는다 ··· KTMF K팝 커버 콘테스트
                       </a>
                     </Link>
@@ -85,7 +87,7 @@ const News = () => {
                 <div className="title">
                   <h3>
                     <Link href="https://v.daum.net/v/20230722204611292">
-                      <a>
+                      <a target="_blank" rel="noreferrer">
                         KTMF K팝 커버 콘테스트, 전 세계 지원자 몰려들어 흥행
                         예감
                       </a>
@@ -107,7 +109,7 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>July 09, 2023 / MetaVerse</p>
+                  <p>July 30, 2023 / MetaVerse</p>
                 </div>
                 {/* <div className="read_more">
                   <Link href="/">
@@ -122,7 +124,11 @@ const News = () => {
           <div className="bottom_part">
             <div className="left_bot">
               <Link href="http://www.koreatimes.com/article/1472541">
-                <a className="metaportal_fn_button full">
+                <a
+                  className="metaportal_fn_button full"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <span>Read All Articles</span>
                 </a>
               </Link>

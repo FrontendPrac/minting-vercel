@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { navigationToggle } from "../redux/actions/siteSettings";
+import Image from "next/image";
 const Navigation = ({ navigation, navigationToggle }) => {
   const [subMenu, setSubMenu] = useState(null);
   return (
@@ -29,7 +30,13 @@ const Navigation = ({ navigation, navigationToggle }) => {
                     rel="noreferrer"
                   />
                   <span className="icon">
-                    <img src="/img/market/opensea.png" alt="" />
+                    {/* <img src="/img/market/opensea.png" alt="" /> */}
+                    <Image
+                      src="/img/market/opensea.png"
+                      alt="opensea"
+                      width={23}
+                      height={23}
+                    />
                   </span>
                   <span className="text">Opensea</span>
                 </div>
@@ -42,7 +49,13 @@ const Navigation = ({ navigation, navigationToggle }) => {
                     rel="noreferrer"
                   />
                   <span className="icon">
-                    <img src="/img/market/discord.png" alt="" />
+                    {/* <img src="/img/market/discord.png" alt="" /> */}
+                    <Image
+                      src="/img/market/discord.png"
+                      alt="discord"
+                      width={23}
+                      height={23}
+                    />
                   </span>
                   <span className="text">Discord</span>
                 </div>

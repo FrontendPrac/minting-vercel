@@ -213,6 +213,7 @@ const EventPage = () => {
                           loop
                           src="/img/video/mint.mp4"
                           type="video/mp4"
+                          poster="/img/mint.png"
                         ></video>
                         <a className="full_link2" />
                       </div>
@@ -237,6 +238,7 @@ const EventPage = () => {
                           loop
                           src="/img/video/mint.mp4"
                           type="video/mp4"
+                          poster="/img/mint.png"
                         ></video>
                         <a className="full_link2" />
                       </div>
@@ -261,6 +263,7 @@ const EventPage = () => {
                           loop
                           src="/img/video/mint.mp4"
                           type="video/mp4"
+                          poster="/img/mint.png"
                         ></video>
                         <a className="full_link2" />
                       </div>
@@ -285,6 +288,7 @@ const EventPage = () => {
                           loop
                           src="/img/video/mint.mp4"
                           type="video/mp4"
+                          poster="/img/mint.png"
                         ></video>
                         <a className="full_link2" />
                       </div>
@@ -309,6 +313,7 @@ const EventPage = () => {
                           loop
                           src="/img/video/mint.mp4"
                           type="video/mp4"
+                          poster="/img/mint.png"
                         ></video>
                         <a className="full_link2" />
                       </div>
@@ -333,6 +338,7 @@ const EventPage = () => {
                           loop
                           src="/img/video/mint.mp4"
                           type="video/mp4"
+                          poster="/img/mint.png"
                         ></video>
                         <a className="full_link2" />
                       </div>
