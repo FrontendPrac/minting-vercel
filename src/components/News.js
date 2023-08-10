@@ -39,13 +39,6 @@ const News = () => {
                     </a>
                   </Link>
                 </div>
-                {/* <div className="read_more">
-                  <Link href="/blog-single">
-                    <a>
-                      <span>Read More</span>
-                    </a>
-                  </Link>
-                </div> */}
               </div>
             </div>
             <div className="right_items">
@@ -67,13 +60,6 @@ const News = () => {
                     </Link>
                   </h3>
                 </div>
-                {/* <div className="read_more">
-                  <Link href="/blog-single">
-                    <a>
-                      <span>Read More</span>
-                    </a>
-                  </Link>
-                </div> */}
               </div>
               <div className="blog__item">
                 <div className="counter">
@@ -94,13 +80,6 @@ const News = () => {
                     </Link>
                   </h3>
                 </div>
-                {/* <div className="read_more">
-                  <Link href="/blog-single">
-                    <a>
-                      <span>Read More</span>
-                    </a>
-                  </Link>
-                </div> */}
               </div>
               <div className="blog__item">
                 <div className="counter">
@@ -111,13 +90,6 @@ const News = () => {
                 <div className="meta">
                   <p>July 30, 2023 / MetaVerse</p>
                 </div>
-                {/* <div className="read_more">
-                  <Link href="/">
-                    <a>
-                      <span>Read More</span>
-                    </a>
-                  </Link>
-                </div> */}
               </div>
             </div>
           </div>
@@ -132,13 +104,6 @@ const News = () => {
                   <span>Read All Articles</span>
                 </a>
               </Link>
-            </div>
-            <div className="right_bot">
-              <p>
-                We’re a team of creatives who are excited about unique ideas and
-                create consectetur adipiscing elit. Etiam vitae purus a lectus
-                semper.
-              </p>
             </div>
           </div>
         </div>

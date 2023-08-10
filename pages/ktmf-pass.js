@@ -128,11 +128,8 @@ const NftSingle = () => {
           <div className="metaportal_fn_mint_top" style={{ paddingTop: 0 }}>
             <div className="mint_left">
               <div className="img">
-                <div
-                  className="img_in"
-                  data-bg-img="/img/about/KTMF_Pass_1x1.jpg"
-                >
-                  <img src="/img/1x1.jpg" alt="" />
+                <div className="img_in" data-bg-img="/img/event/nft_ticket.png">
+                  <img src="/img/event/nft_ticket.png" alt="" />
                 </div>
               </div>
             </div>
@@ -280,7 +277,7 @@ const NftSingle = () => {
           )}
           {/* !Mint Box */}
           {/* NFT Categories */}
-          <div className="metaportal_fn_nft_cats">
+          {/* <div className="metaportal_fn_nft_cats">
             <ul>
               <li>
                 <div className="item">
@@ -347,7 +344,7 @@ const NftSingle = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </div> */}
           {/* !NFT Categories */}
           {/* Section Divider */}
           <SectionDivider />
@@ -359,7 +356,7 @@ const NftSingle = () => {
           <SectionDivider />
           {/* !Section Divider */}
           {/* Similar Items */}
-          <div className="metaportal_fn_similar">
+          {/* <div className="metaportal_fn_similar">
             <h3 className="fn__maintitle" data-text="Similar Items">
               Similar Items
             </h3>
@@ -463,7 +460,7 @@ const NftSingle = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           {/* !Similar Items */}
         </div>
       </div>

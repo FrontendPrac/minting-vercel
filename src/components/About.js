@@ -2,71 +2,6 @@ import Link from "next/link";
 const About = () => {
   return (
     <section id="about">
-      {/* About Shortcode */}
-      {/* <div className="fn_cs_about">
-        <div className="left_part">
-          <div className="img">
-            <div className="img_in" data-bg-img="/img/about/contents.jpg">
-              <img src="/img/1x1.jpg" alt="" />
-            </div>
-          </div>
-          <div className="bg_overlay">
-            <div className="bg_color" />
-            <div className="bg_image" data-bg-img="/img/about/bg.jpg" />
-          </div>
-        </div>
-        <div className="right_part">
-          <div className="right_in">
-            <h3 className="fn__maintitle" data-text="The Rise of Legends">
-              The Rise of Legends
-            </h3>
-            <div className="fn_cs_divider">
-              <div className="divider">
-                <span />
-                <span />
-              </div>
-            </div>
-            <div className="desc">
-              <p>
-                As the first hero of the Meta Legends, collection has over 9,999
-                unique skins drawn from the different missions and challenges he
-                faced throughout his life.
-              </p>
-              <p>
-                The artwork has been hand-drawned by Robert Green in the
-                traditional anime style and composited by Layla Efiyo.
-              </p>
-              <p>
-                Curabitur pharetra velit eget dignissim varius. In vulputate
-                elit at tortor pellentesque, non pulvinar neque consequat.
-                Aenean tristique odio in libero tincidunt maximus. Nulla
-                pharetra viverra dolor ut blandit. Cras finibus vel tortor eget
-                lacinia. Pellentesque interdum elit non lacinia faucibus. Morbi
-                nec felis auctor, tincidunt lacus sit amet, iaculis ipsum.
-                Phasellus tempus sit amet justo et feugiat. Duis blandit semper
-                lorem, egestas euismod ligula pharetra ac. Sed porta lorem eget
-                neque bibendum, eget euismod justo mollis.
-              </p>
-              <p>
-                Donec tristique porttitor sem, eget fermentum elit varius nec.
-                Donec ut orci ipsum. Morbi efficitur felis eget dapibus
-                fermentum. Phasellus sed tellus volutpat, hendrerit leo non,
-                sollicitudin neque. Etiam ac lacus quam. Vivamus suscipit nisl
-                tellus, at congue odio commodo at. Cras ante enim, sodales at
-                pretium et, tempus at libero.
-              </p>
-            </div>
-            <a
-              href="https://discord.com/"
-              className="metaportal_fn_button"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>Find us On Discord</span>
-            </a>
-          </div>
-        </div>
-      </div> */}
       {/* !About Shortcode */}
       <div className="container">
         {/* Mint Shortcode */}
@@ -95,63 +30,42 @@ const About = () => {
                 </div>
               </div>
               <p>
-                웹사이트 연결: 우측 상단에 [Connect Wallet] 버튼을 클릭하여
+                1. 웹사이트 연결: 우측 상단에 [Connect Wallet] 버튼을 클릭하여
                 지갑을 연결하세요.
               </p>
               <p>
-                연결 수락: 지갑 앱을 열어 연결 요청을 확인하고, 연결을
+                2. 연결 수락: 지갑 앱을 열어 연결 요청을 확인하고, 연결을
                 수락하세요.
               </p>
-              <p>민팅할 NFT 선택: 웹사이트에서 원하는 NFT를 찾아 선택하세요.</p>
               <p>
-                수량 설정: 민팅하고자 하는 NFT의 수량을 설정하세요. 일부 NFT는
-                한번에 여러 개를 민팅하는 것이 가능하므로 원하는 수량을 지정해
-                주세요.
+                3. 민팅할 NFT 선택: 웹사이트에서 원하는 NFT를 찾아 선택하세요.
               </p>
               <p>
-                트랜잭션 확인: 지갑 앱에서 트랜잭션의 세부 정보와 Gas Fee를
+                4. 수량 설정: 민팅하고자 하는 NFT의 수량을 설정하세요. 일부
+                NFT는 한번에 여러 개를 민팅하는 것이 가능하므로 원하는 수량을
+                지정해 주세요.
+              </p>
+              <p>
+                5. 트랜잭션 확인: 지갑 앱에서 트랜잭션의 세부 정보와 Gas Fee를
                 확인한 후, 트랜잭션을 승인하세요. Gas Fee는 블록체인의 혼잡도에
                 따라 달라질 수 있으니 주의깊게 확인하세요.
               </p>
               <p>
-                트랜잭션 대기: 트랜잭션이 블록체인에 기록되기를 기다립니다.
+                6. 트랜잭션 대기: 트랜잭션이 블록체인에 기록되기를 기다립니다.
                 혼잡도에 따라 시간이 걸릴 수 있습니다.
               </p>
               <p>
-                지갑 확인: 트랜잭션이 완료되면 연결된 지갑에서 민팅된 NFT를
+                7. 지갑 확인: 트랜잭션이 완료되면 연결된 지갑에서 민팅된 NFT를
                 확인할 수 있습니다.
               </p>
               <p>
-                마켓플레이스 및 웹사이트에서의 보기: NFT는 OpenSea를 통해 직접
-                확인할 수 있습니다.
+                8. 마켓플레이스 및 웹사이트에서의 보기: NFT는 OpenSea를 통해
+                직접 확인할 수 있습니다.
               </p>
-              {/* <p>
-                The artwork has been hand-drawned by Robert Green in the
-                traditional anime style and composited by Layla Efiyo.
-              </p>
-              <p>
-                Curabitur pharetra velit eget dignissim varius. In vulputate
-                elit at tortor pellentesque, non pulvinar neque consequat.
-                Aenean tristique odio in libero tincidunt maximus. Nulla
-                pharetra viverra dolor ut blandit. Cras finibus vel tortor eget
-                lacinia. Pellentesque interdum elit non lacinia faucibus. Morbi
-                nec felis auctor, tincidunt lacus sit amet, iaculis ipsum.
-                Phasellus tempus sit amet justo et feugiat. Duis blandit semper
-                lorem, egestas euismod ligula pharetra ac. Sed porta lorem eget
-                neque bibendum, eget euismod justo mollis.
-              </p>
-              <p>
-                Donec tristique porttitor sem, eget fermentum elit varius nec.
-                Donec ut orci ipsum. Morbi efficitur felis eget dapibus
-                fermentum. Phasellus sed tellus volutpat, hendrerit leo non,
-                sollicitudin neque. Etiam ac lacus quam. Vivamus suscipit nisl
-                tellus, at congue odio commodo at. Cras ante enim, sodales at
-                pretium et, tempus at libero.
-              </p> */}
             </div>
             <Link href="/ktmf-pass">
               <a className="metaportal_fn_button">
-                <span>How to Mint</span>
+                <span>Mint</span>
               </a>
             </Link>
           </div>
@@ -195,7 +109,7 @@ const About = () => {
             </div>
             {/* !Steps Shortcode */}
             {/* Video Shortcode */}
-            <div className="fn_cs_video">
+            {/* <div className="fn_cs_video">
               <img src="/img/ktmf.jpg" alt="" />
               <a
                 className="popup-youtube"
@@ -203,7 +117,7 @@ const About = () => {
               >
                 <img src="/svg/play.svg" alt="" className="fn__svg" />
               </a>
-            </div>
+            </div> */}
             {/* /Video Shortcode */}
           </div>
         </div>

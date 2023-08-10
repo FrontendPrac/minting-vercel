@@ -93,19 +93,6 @@ const Faq = () => {
                 <span />
               </div>
             </div>
-            {/* <div className="desc">
-              <p>
-                Pellentesque eu ex iaculis, tempus ex eu, consectetur lectus.
-                Aenean nec iaculis est, a mattis turpis. Morbi posuere lorem id
-                risus luctus, luctus tristique enim luctus. Vivamus ut tincidunt
-                erat.
-              </p>
-              <p>
-                Nunc nec sollicitudin elit, ut pretium dui. Nulla facilisis
-                pulvinar odio ac suscipit. Quisque pretium, est id facilisis
-                luctus, magna lorem posuere velit.
-              </p>
-            </div> */}
           </div>
           <div className="faq_col">
             <div className="fn_cs_accordion">{faqMap(faqs1, "a")}</div>

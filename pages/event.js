@@ -148,10 +148,10 @@ const EventPage = () => {
               </div>
               <h3
                 className="fn__maintitle mintT"
-                data-text="KTMF Pass NFT Draw Event"
+                data-text="KTMF PASS NFT DRAW EVENT"
                 data-align="left"
               >
-                KTMF Pass NFT Draw Event
+                KTMF PASS NFT DRAW EVENT
               </h3>
               <div className="desc">
                 <p>

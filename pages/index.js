@@ -39,7 +39,7 @@ const Index = () => {
       {/* <SectionDivider /> */}
       {/* !Section Divider */}
       {/* Collection Section */}
-      <Collection />
+      {/* <Collection /> */}
       {/* !Collection Section */}
       {/* Section Divider */}
       <SectionDivider />
