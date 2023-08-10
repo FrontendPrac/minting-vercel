@@ -43,7 +43,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -55,7 +55,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -67,7 +67,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -87,7 +87,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -99,7 +99,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -111,7 +111,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -123,7 +123,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -135,7 +135,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -147,7 +147,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />
@@ -159,7 +159,7 @@ const WaterHero = () => {
                       <div className="img_holder">
                         <div
                           className="abs_img"
-                          data-bg-img="/img/event/nft_ticket.png"
+                          data-bg-img="/img/NFT_POPUP_TICKET.png"
                           style={{}}
                         />
                         <img src="/img/1x1.jpg" alt="" />

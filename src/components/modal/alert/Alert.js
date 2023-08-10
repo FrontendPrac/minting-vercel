@@ -48,7 +48,7 @@ const Alert = ({ contract, signerAddress, close }) => {
               CONGRATULATIONS
             </li>
             <li>
-              <img src="/img/NFT_POPUP_ticket.png" alt="img" />
+              <img src="/img/NFT_ALERT.png" alt="img" />
             </li>
             <li className="pass_name">KTMF PASS NFT</li>
             <li className="pass_nft">
