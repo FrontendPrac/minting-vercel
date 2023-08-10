@@ -31,45 +31,48 @@ const NftSingle = () => {
   const [korSeconds, setKorSeconds] = useState();
 
   const initializeEthers = async () => {
-    // Request access to the user's Ethereum account
-    await window.ethereum.request({ method: "eth_requestAccounts" });
+    if (
+      typeof window.ethereum !== "undefined" &&
+      window.ethereum.selectedAddress
+    ) {
+      // Create an ethers provider using the window.ethereum object
+      const newProvider = await new ethers.providers.Web3Provider(
+        window.ethereum
+      );
+      console.log("newProvider: ", newProvider);
+      setProvider(newProvider);
 
-    // Create an ethers provider using the window.ethereum object
-    const newProvider = await new ethers.providers.Web3Provider(
-      window.ethereum
-    );
-    console.log("newProvider: ", newProvider);
-    setProvider(newProvider);
+      // Create an ethers contract instance using the contract address and ABI
+      const contractAbi = contractABI;
 
-    // Create an ethers contract instance using the contract address and ABI
-    const contractAbi = contractABI;
+      const newContract = await new ethers.Contract(
+        contractAddress,
+        contractAbi,
+        newProvider.getSigner() // Use the signer to send transactions
+      );
+      console.log("newContract: ", newContract);
+      setContract(newContract);
 
-    const newContract = await new ethers.Contract(
-      contractAddress,
-      contractAbi,
-      newProvider.getSigner() // Use the signer to send transactions
-    );
-    console.log("newContract: ", newContract);
-    setContract(newContract);
+      // Function to load the public_Price value from the contract
+      try {
+        // Call the public_Price function in the smart contract to get the value
+        const publicActive = await newContract.getPublicActive();
+        console.log("publicActive: ", parseInt(publicActive));
+        setPublicActive(parseInt(publicActive));
 
-    // Function to load the public_Price value from the contract
-    try {
-      // Call the public_Price function in the smart contract to get the value
-      const publicActive = await newContract.getPublicActive();
-      console.log("publicActive: ", parseInt(publicActive));
-      setPublicActive(parseInt(publicActive));
+        const guaranteeActive =
+          await newContract.getGuaranteedWhitelistActive();
+        console.log("guaranteeActive: ", parseInt(guaranteeActive));
+        setGuaranteeActive(parseInt(guaranteeActive));
 
-      const guaranteeActive = await newContract.getGuaranteedWhitelistActive();
-      console.log("guaranteeActive: ", parseInt(guaranteeActive));
-      setGuaranteeActive(parseInt(guaranteeActive));
-
-      const competitiveActive =
-        await newContract.getCompetitiveWhitelistActive();
-      console.log("competitiveActive: ", parseInt(competitiveActive));
-      setCompetitiveActive(parseInt(competitiveActive));
-    } catch (error) {
-      console.error("Error loading:", error);
-      alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
+        const competitiveActive =
+          await newContract.getCompetitiveWhitelistActive();
+        console.log("competitiveActive: ", parseInt(competitiveActive));
+        setCompetitiveActive(parseInt(competitiveActive));
+      } catch (error) {
+        console.error("Error loading:", error);
+        alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
+      }
     }
   };
 
@@ -105,15 +108,7 @@ const NftSingle = () => {
   };
 
   useEffect(() => {
-    // Check if the window.ethereum object is available
-    if (window.ethereum) {
-      // Check if the connect to metamask
-      if (window.ethereum.selectedAddress) {
-        initializeEthers();
-      } else {
-        alert("메타마스크를 연결해주세요.");
-      }
-    }
+    initializeEthers();
     showKorCountdown();
   }, []);
 

@@ -22,12 +22,15 @@ const Header = ({ walletToggle, navigationToggle }) => {
 
   // this function lets you update your provider and signer , and initialize contract
   const updateEthers = async () => {
-    const provider =
-      typeof window !== "undefined" && window.ethereum
-        ? new ethers.providers.Web3Provider(window.ethereum)
-        : null;
+    if (
+      typeof window.ethereum !== "undefined" &&
+      window.ethereum.selectedAddress
+    ) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      // typeof window !== "undefined" && window.ethereum
+      //   ? new ethers.providers.Web3Provider(window.ethereum)
+      //   : null;
 
-    if (provider) {
       setProvider(provider);
       console.log(provider.getCode(contractAddress));
 
@@ -51,18 +54,6 @@ const Header = ({ walletToggle, navigationToggle }) => {
         signer
       );
       setContract(contract);
-
-      // const raffleContract = new ethers.Contract(
-      //   raffleContractAddress,
-      //   raffleContactABI,
-      //   signer
-      // );
-      // console.log("raffleContract: ", raffleContract);
-
-      //! 지갑 연결될때마다 체크해야하는 것
-      // await raffleContract.resetCheck();
-    } else {
-      alert("메타마스크를 설치해주세요");
     }
   };
 
@@ -104,31 +95,6 @@ const Header = ({ walletToggle, navigationToggle }) => {
                   <a className="creative_link">NFTs</a>
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/#about">
-                  <a className="creative_link">About</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/#collection">
-                  <a className="creative_link">Collection</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/#news">
-                  <a className="creative_link">News</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/#faq">
-                  <a className="creative_link">FAQ</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/#contact">
-                  <a className="creative_link">Contact</a>
-                </Link>
-              </li> */}
               <li>
                 <Link href="/event">
                   <a className="creative_link">Event</a>

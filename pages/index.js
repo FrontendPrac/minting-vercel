@@ -23,7 +23,7 @@ const Index = () => {
       <WaterHero />
       {/* !Home Section #2 */}
       {/* Fun Facts */}
-      <FunFacts />
+      {/* <FunFacts /> */}
       {/* !Fun Facts */}
       {/* Event */}
       <Event />

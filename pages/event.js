@@ -29,63 +29,67 @@ const EventPage = () => {
   // Get Raffle Data
   const initializeEthers = async () => {
     // Request access to the user's Ethereum account
-    await window.ethereum.request({ method: "eth_requestAccounts" });
+    // await window.ethereum.request({ method: "eth_requestAccounts" });
+    if (
+      typeof window.ethereum !== "undefined" &&
+      window.ethereum.selectedAddress
+    ) {
+      // Create an ethers provider using the window.ethereum object
+      const newProvider = await new ethers.providers.Web3Provider(
+        window.ethereum
+      );
+      console.log("newProvider: ", newProvider);
+      setProvider(newProvider);
 
-    // Create an ethers provider using the window.ethereum object
-    const newProvider = await new ethers.providers.Web3Provider(
-      window.ethereum
-    );
-    console.log("newProvider: ", newProvider);
-    setProvider(newProvider);
+      // Wallet Address
+      const accounts = await newProvider.listAccounts();
+      console.log("accounts[0]: ", accounts[0]);
+      setSignerAddress(accounts[0]);
 
-    // Wallet Address
-    const accounts = await newProvider.listAccounts();
-    console.log("accounts[0]: ", accounts[0]);
-    setSignerAddress(accounts[0]);
-
-    console.log("raffleContractAddress: ", raffleContractAddress);
-    console.log("raffleContactABI: ", raffleContactABI);
-
-    // Create an ethers contract instance using the contract address and ABI
-    const newRaffleContract = new ethers.Contract(
-      raffleContractAddress,
-      raffleContactABI,
-      newProvider.getSigner()
-    );
-    console.log("Depoly Test");
-    console.log("newRaffleContract: ", newRaffleContract);
-    setContract(newRaffleContract);
-
-    try {
-      const response = await newRaffleContract.getEntranceState(accounts[0]);
-      console.log("EntranceState: ", response);
-      setIsRaffle(response);
-
-      const response_2 = await newRaffleContract.getPrize(accounts[0]);
-      console.log("Prize: ", response_2);
-      const _prize = parseInt(response_2);
-      console.log("_prize: ", _prize);
-      setPrize(_prize);
+      console.log("raffleContractAddress: ", raffleContractAddress);
+      console.log("raffleContactABI: ", raffleContactABI);
 
       // Create an ethers contract instance using the contract address and ABI
-      const newContract = new ethers.Contract(
-        contractAddress,
-        contractABI,
+      const newRaffleContract = new ethers.Contract(
+        raffleContractAddress,
+        raffleContactABI,
         newProvider.getSigner()
       );
+      console.log("Depoly Test");
+      console.log("newRaffleContract: ", newRaffleContract);
+      setContract(newRaffleContract);
 
-      const response_3 = await newContract.getOnCompetitiveWhitelist(
-        accounts[0]
-      );
-      const response_4 = await newContract.getOnGuaranteedWhitelist(
-        accounts[0]
-      );
+      try {
+        const response = await newRaffleContract.getEntranceState(accounts[0]);
+        console.log("EntranceState: ", response);
+        setIsRaffle(response);
 
-      setIsCompetitiveWhiteList(response_3);
-      setIsGuaranteeWhiteList(response_4);
-    } catch (error) {
-      console.log("error: ", error);
-      alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
+        const response_2 = await newRaffleContract.getPrize(accounts[0]);
+        console.log("Prize: ", response_2);
+        const _prize = parseInt(response_2);
+        console.log("_prize: ", _prize);
+        setPrize(_prize);
+
+        // Create an ethers contract instance using the contract address and ABI
+        const newContract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          newProvider.getSigner()
+        );
+
+        const response_3 = await newContract.getOnCompetitiveWhitelist(
+          accounts[0]
+        );
+        const response_4 = await newContract.getOnGuaranteedWhitelist(
+          accounts[0]
+        );
+
+        setIsCompetitiveWhiteList(response_3);
+        setIsGuaranteeWhiteList(response_4);
+      } catch (error) {
+        console.log("error: ", error);
+        alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
+      }
     }
   };
 
@@ -130,17 +134,7 @@ const EventPage = () => {
   };
 
   useEffect(() => {
-    // Check if the window.ethereum object is available
-    if (window.ethereum) {
-      // Check if the connect to metamask
-      if (window.ethereum.selectedAddress) {
-        initializeEthers();
-      } else {
-        alert("Please connect to MetaMask.");
-      }
-    } else {
-      alert("Please install a Web3-enabled browser like MetaMask.");
-    }
+    initializeEthers();
   }, []);
 
   return (
