@@ -205,4 +205,11 @@ export const heroSlider2 = () => {
   });
 };
 
-
+// Request Conneting Wallet
+export const requestConnectWallet = async () => {
+  try {
+    await window.ethereum.request({ method: "eth_requestAccounts" });
+  } catch (error) {
+    console.log("error: ", error);
+  }
+};

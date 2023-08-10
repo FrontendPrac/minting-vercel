@@ -73,7 +73,9 @@ const WaterHero = () => {
                         <img src="/img/1x1.jpg" alt="" />
                         <a
                           className="popup-youtube metaportal_fn_videobutton"
-                          href="https://youtu.be/YKh8eTJUql4"
+                          href="http://ktmf.koreatimes.com/"
+                          target="_blank"
+                          rel="noreferrer"
                         >
                           <img src="/svg/play.svg" alt="" className="fn__svg" />
                         </a>

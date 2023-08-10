@@ -31,45 +31,48 @@ const NftSingle = () => {
   const [korSeconds, setKorSeconds] = useState();
 
   const initializeEthers = async () => {
-    // Request access to the user's Ethereum account
-    await window.ethereum.request({ method: "eth_requestAccounts" });
+    if (
+      typeof window.ethereum !== "undefined" &&
+      window.ethereum.selectedAddress
+    ) {
+      // Create an ethers provider using the window.ethereum object
+      const newProvider = await new ethers.providers.Web3Provider(
+        window.ethereum
+      );
+      console.log("newProvider: ", newProvider);
+      setProvider(newProvider);
 
-    // Create an ethers provider using the window.ethereum object
-    const newProvider = await new ethers.providers.Web3Provider(
-      window.ethereum
-    );
-    console.log("newProvider: ", newProvider);
-    setProvider(newProvider);
+      // Create an ethers contract instance using the contract address and ABI
+      const contractAbi = contractABI;
 
-    // Create an ethers contract instance using the contract address and ABI
-    const contractAbi = contractABI;
+      const newContract = await new ethers.Contract(
+        contractAddress,
+        contractAbi,
+        newProvider.getSigner() // Use the signer to send transactions
+      );
+      console.log("newContract: ", newContract);
+      setContract(newContract);
 
-    const newContract = await new ethers.Contract(
-      contractAddress,
-      contractAbi,
-      newProvider.getSigner() // Use the signer to send transactions
-    );
-    console.log("newContract: ", newContract);
-    setContract(newContract);
+      // Function to load the public_Price value from the contract
+      try {
+        // Call the public_Price function in the smart contract to get the value
+        const publicActive = await newContract.getPublicActive();
+        console.log("publicActive: ", parseInt(publicActive));
+        setPublicActive(parseInt(publicActive));
 
-    // Function to load the public_Price value from the contract
-    try {
-      // Call the public_Price function in the smart contract to get the value
-      const publicActive = await newContract.getPublicActive();
-      console.log("publicActive: ", parseInt(publicActive));
-      setPublicActive(parseInt(publicActive));
+        const guaranteeActive =
+          await newContract.getGuaranteedWhitelistActive();
+        console.log("guaranteeActive: ", parseInt(guaranteeActive));
+        setGuaranteeActive(parseInt(guaranteeActive));
 
-      const guaranteeActive = await newContract.getGuaranteedWhitelistActive();
-      console.log("guaranteeActive: ", parseInt(guaranteeActive));
-      setGuaranteeActive(parseInt(guaranteeActive));
-
-      const competitiveActive =
-        await newContract.getCompetitiveWhitelistActive();
-      console.log("competitiveActive: ", parseInt(competitiveActive));
-      setCompetitiveActive(parseInt(competitiveActive));
-    } catch (error) {
-      console.error("Error loading:", error);
-      alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
+        const competitiveActive =
+          await newContract.getCompetitiveWhitelistActive();
+        console.log("competitiveActive: ", parseInt(competitiveActive));
+        setCompetitiveActive(parseInt(competitiveActive));
+      } catch (error) {
+        console.error("Error loading:", error);
+        alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
+      }
     }
   };
 
@@ -105,15 +108,7 @@ const NftSingle = () => {
   };
 
   useEffect(() => {
-    // Check if the window.ethereum object is available
-    if (window.ethereum) {
-      // Check if the connect to metamask
-      if (window.ethereum.selectedAddress) {
-        initializeEthers();
-      } else {
-        alert("메타마스크를 연결해주세요.");
-      }
-    }
+    initializeEthers();
     showKorCountdown();
   }, []);
 
@@ -133,11 +128,8 @@ const NftSingle = () => {
           <div className="metaportal_fn_mint_top" style={{ paddingTop: 0 }}>
             <div className="mint_left">
               <div className="img">
-                <div
-                  className="img_in"
-                  data-bg-img="/img/about/KTMF_Pass_1x1.jpg"
-                >
-                  <img src="/img/1x1.jpg" alt="" />
+                <div className="img_in" data-bg-img="/img/event/nft_ticket.png">
+                  <img src="/img/event/nft_ticket.png" alt="" />
                 </div>
               </div>
             </div>
@@ -285,7 +277,7 @@ const NftSingle = () => {
           )}
           {/* !Mint Box */}
           {/* NFT Categories */}
-          <div className="metaportal_fn_nft_cats">
+          {/* <div className="metaportal_fn_nft_cats">
             <ul>
               <li>
                 <div className="item">
@@ -352,7 +344,7 @@ const NftSingle = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </div> */}
           {/* !NFT Categories */}
           {/* Section Divider */}
           <SectionDivider />
@@ -364,7 +356,7 @@ const NftSingle = () => {
           <SectionDivider />
           {/* !Section Divider */}
           {/* Similar Items */}
-          <div className="metaportal_fn_similar">
+          {/* <div className="metaportal_fn_similar">
             <h3 className="fn__maintitle" data-text="Similar Items">
               Similar Items
             </h3>
@@ -468,7 +460,7 @@ const NftSingle = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           {/* !Similar Items */}
         </div>
       </div>

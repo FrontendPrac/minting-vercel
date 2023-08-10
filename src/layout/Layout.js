@@ -2,7 +2,12 @@ import Head from "next/head";
 import { Fragment, useEffect } from "react";
 import ImageView from "../components/popup/ImageView";
 import VideoPopup from "../components/popup/VideoPopup";
-import { dataBgImg, holdSection, imgToSVG } from "../utilits";
+import {
+  dataBgImg,
+  holdSection,
+  imgToSVG,
+  requestConnectWallet,
+} from "../utilits";
 import Footer from "./Footer";
 import Header from "./Header";
 import MobileNavigation from "./MobileNavigation";
@@ -15,6 +20,21 @@ import Social from "./Social";
 import WalletPopUp from "./WalletPopUp";
 const Layout = ({ children, pageTitle }) => {
   useEffect(() => {
+    // Check if the window.ethereum object is available
+    if (typeof window.ethereum !== "undefined") {
+      // Check install metamask
+      if (window.ethereum.selectedAddress) {
+        // Check if the connect to metamask
+        // Request access to the user's Ethereum account
+        requestConnectWallet();
+        console.log("메타마스크 로직을 작성해주세요.");
+      } else {
+        alert("메타마스크를 연결해주세요.");
+      }
+    } else {
+      alert("메타마스크를 설치해주세요.");
+    }
+
     holdSection();
     imgToSVG();
     dataBgImg();
