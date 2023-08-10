@@ -122,7 +122,7 @@ const EventPage = () => {
       // 래플 시작하기
       const transaction = await raffleContract.enterRaffle({
         gasLimit: 500000,
-        value: ethers.utils.parseEther((0.0001).toString()),
+        value: ethers.utils.parseEther((0.01).toString()),
       });
 
       await transaction.wait();

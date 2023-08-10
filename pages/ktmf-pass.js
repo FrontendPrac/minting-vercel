@@ -12,6 +12,7 @@ import PublicMintBox from "../src/components/ktmf-pass/PublicMintBox";
 import GuaranteedMintBox from "../src/components/ktmf-pass/GuaranteedMintBox";
 import CompetitiveMintBox from "../src/components/ktmf-pass/CompetitiveMintBox";
 import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
+import KtmfFAQ from "../src/components/ktmf-pass/KtmfFAQ";
 
 const NftSingle = () => {
   // State variables for ethers provider and contract
@@ -211,30 +212,35 @@ const NftSingle = () => {
                   <b>KTMF PASS NFT COLLECTION</b>
                 </p>
                 <p>
-                  &quot;한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어
-                  메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in
-                  Metaverse&quot; 아즈메타가 선보이는 온·오프라인 융합
-                  하이브리드 콘테스트와 특별 한정판 NFT는 KPOP COVER SONG
-                  CONTEST에 새로운 전환점과 패러다임을 제시합니다. 이더리움(ETH)
-                  블록체인상에서 창작된 유니크한 15,000장의 아즈메타 메타버스
-                  생태계 NFT 컬렉션으로, 멤버십 서비스와 제너레이티브 아이템
-                  NFT가 결합된 유틸리티 성격의 NFT입니다. KTMF PASS NFT는 2009년
-                  아시아의 별 보아가 미국 데뷔 동시에 빌보드 200에서 127위에
-                  올라 한국인 최초로 빌보드 메인차트 입성한 순간부터 KTMF KPOP
-                  COVER SONG CONTEST의 스타 탄생까지 KPOP과 한류의 15년을 기록한
-                  15K 프로젝트로, 이더리움(ETH) 블록체인상에서 창작된 유니크한
-                  15,000장의 아즈메타 메타버스 생태계 NFT 컬렉션입니다. KTMF
-                  PASS NFT는 멤버십 서비스와 제너레이티브 아이템 NFT가 결합된
-                  유틸리티 성격의 NFT로, 각각의 NFT에는 아즈메타 KTMF 독점
-                  커뮤니티에 입장할 수 있는 PASS 티켓과 아즈메타 메타버스 내
-                  아바타가 착용할 수 있는 코스튬 파츠가 결합되어있습니다. KTMF
-                  PASS NFT와 함께 아즈메타 얼리 엑세스가 시작됩니다. KTMF PASS
-                  NFT를 구매하여 커뮤니티에 가입하고 홀더들만의 다양한 특전과
-                  놀라운 혜택을 누려보세요!
+                  한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로!
+                  아즈메타와 K-POP이 만납니다, K-POP in Metaverse
+                  <br />
+                  <br />
+                  아즈메타가 선보이는 온·오프라인 융합 하이브리드 콘테스트와
+                  특별 한정판 NFT는 KPOP COVER SONG CONTEST에 새로운 전환점과
+                  패러다임을 제시합니다.
+                  <br />
+                  <br />
+                  KTMF PASS NFT는 멤버십 서비스와 제너레이티브 아이템 NFT가
+                  결합된 유틸리티 성격의 NFT로, 각각의 NFT에는 아즈메타 KTMF
+                  독점 커뮤니티에 입장할 수 있는 PASS 티켓과 아즈메타 메타버스
+                  내 아바타가 착용할 수 있는 코스튬 파츠가 결합되어있습니다.
+                  <br />
+                  <br />
+                  KTMF PASS NFT와 함께 아즈메타 얼리 엑세스가 시작됩니다. KTMF
+                  PASS NFT를 구매하여 커뮤니티에 가입하고 홀더들만의 다양한
+                  특전과 놀라운 혜택을 누려보세요!
                 </p>
               </div>
               <div className="view_on">
-                <ul>
+                <ul
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "30px",
+                    listStyle: "none",
+                  }}
+                >
                   <li>
                     <span>View On:</span>
                   </li>
@@ -355,6 +361,10 @@ const NftSingle = () => {
           {/* Section Divider */}
           <SectionDivider />
           {/* !Section Divider */}
+          {/* KTNF FAQ */}
+          <KtmfFAQ />
+          {/* KTNF FAQ */}
+
           {/* Similar Items */}
           {/* <div className="metaportal_fn_similar">
             <h3 className="fn__maintitle" data-text="Similar Items">

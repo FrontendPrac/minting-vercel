@@ -23,7 +23,7 @@ const About = () => {
                 가능하며, 이러한 특성 덕분에 디지털 아트, 뮤직, 동영상, 게임
                 아이템 등 다양한 자산을 표현하고 거래할 수 있습니다.
               </p>
-              <div className="fn_cs_divider">
+              {/* <div className="fn_cs_divider">
                 <div className="divider">
                   <span />
                   <span />
@@ -61,7 +61,7 @@ const About = () => {
               <p>
                 8. 마켓플레이스 및 웹사이트에서의 보기: NFT는 OpenSea를 통해
                 직접 확인할 수 있습니다.
-              </p>
+              </p> */}
             </div>
             <Link href="/ktmf-pass">
               <a className="metaportal_fn_button">
@@ -76,32 +76,42 @@ const About = () => {
                 <li>
                   <div className="item">
                     <div className="item_in">
-                      <h3 className="fn__gradient_title">01</h3>
-                      <p>지갑 연결</p>
+                      <h3 className="fn__gradient_title">01. 지갑 연결</h3>
+                      <p>
+                        상단의 Connect wallet 버튼을 클랙하여 메타마스크 지갑을
+                        연결합니다. 민팅할 수 있을만큼 ETH 잔액이 충분한지
+                        확인합니다.
+                      </p>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="item">
                     <div className="item_in">
-                      <h3 className="fn__gradient_title">02</h3>
-                      <p>수량 선택</p>
+                      <h3 className="fn__gradient_title">02. 수량 선택</h3>
+                      <p>
+                        [NFTs] 탭을 선택하여 민팅 페이지로 이동합니다. 남은 민팅
+                        시간을 확인합니다.
+                      </p>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="item">
                     <div className="item_in">
-                      <h3 className="fn__gradient_title">03</h3>
-                      <p>민팅 완료</p>
+                      <h3 className="fn__gradient_title">03. 민팅 완료</h3>
+                      <p>
+                        민팅 시간이 되면 [Mint Now] 버튼을 클릭하여 민팅을
+                        완료합니다.
+                      </p>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="item">
                     <div className="item_in">
-                      <h3 className="fn__gradient_title">04</h3>
-                      <p>NFT 수령</p>
+                      <h3 className="fn__gradient_title">04. NFT 수령</h3>
+                      <p>민팅 완료한 NFT를 지갑에서 확인합니다.</p>
                     </div>
                   </div>
                 </li>

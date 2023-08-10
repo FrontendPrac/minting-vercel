@@ -35,7 +35,7 @@ const News = () => {
                 <div className="image">
                   <Link href="/blog-single">
                     <a target="_blank" rel="noreferrer">
-                      <img src="/img/NFT_POPUP_ticket.png" alt="" />
+                      <img src="/img/NFT_ARTICLE.jpg" alt="" />
                     </a>
                   </Link>
                 </div>
@@ -88,7 +88,16 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>July 30, 2023 / MetaVerse</p>
+                  <p>April 24, 2023 / MetaVerse</p>
+                </div>
+                <div className="title">
+                  <h3>
+                    <Link href="https://www.etnews.com/20230423000047">
+                      <a target="_blank" rel="noreferrer">
+                        한컴그룹, 메타버스 플랫폼 [아즈메타] 닻 올렸다
+                      </a>
+                    </Link>
+                  </h3>
                 </div>
               </div>
             </div>

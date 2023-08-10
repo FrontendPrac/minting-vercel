@@ -86,10 +86,16 @@ const Header = ({ walletToggle, navigationToggle }) => {
           <div className="nav" style={{ opacity: 1 }}>
             <ul>
               <li>
+                <Link href="/world">
+                  <a className="creative_link">World</a>
+                </Link>
+              </li>
+              <li>
                 <Link href="/#home2">
                   <a className="creative_link">Home</a>
                 </Link>
               </li>
+
               <li>
                 <Link href="/ktmf-pass">
                   <a className="creative_link">NFTs</a>
@@ -98,6 +104,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
               <li>
                 <Link href="/event">
                   <a className="creative_link">Event</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  <a className="creative_link">Blogs</a>
                 </Link>
               </li>
             </ul>
