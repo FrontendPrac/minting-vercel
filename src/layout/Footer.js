@@ -16,7 +16,7 @@ const Footer = () => {
               Copyright 2023 — Hancom Frontis
             </p> */}
           </div>
-          <div className="right_part">
+          {/* <div className="right_part">
             <ul>
               <li>
                 <Link href="/policy">
@@ -34,7 +34,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

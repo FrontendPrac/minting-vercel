@@ -258,6 +258,18 @@ const NftSingle = () => {
               </div>
             </div>
           </div>
+          {/* Video Shortcode */}
+          <div className="fn_cs_video">
+            <img src="/img/ktmf.jpg" alt="" />
+            <a
+              className="popup-youtube"
+              href="https://www.youtube.com/watch?v=X3-wCHPQ7uU"
+            >
+              <img src="/svg/play.svg" alt="" className="fn__svg" />
+            </a>
+          </div>
+          {/* /Video Shortcode */}
+          
           {/* !Mint Top */}
           {/* Mint Box */}
           {publicActive === 1 && (

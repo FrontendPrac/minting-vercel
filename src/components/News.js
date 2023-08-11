@@ -21,7 +21,7 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>July 09, 2023 / MetaVerse</p>
+                  <p>July 09, 2023 / 한국일보</p>
                 </div>
                 <div className="title">
                   <h3>
@@ -49,7 +49,7 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>July 09, 2023 / MetaVerse</p>
+                  <p>July 11, 2023 / 서울경제</p>
                 </div>
                 <div className="title">
                   <h3>
@@ -68,7 +68,7 @@ const News = () => {
                   </span>
                 </div>
                 <div className="meta">
-                  <p>July 22, 2023 / NFT </p>
+                  <p>July 22, 2023 / 서울경제</p>
                 </div>
                 <div className="title">
                   <h3>
@@ -81,7 +81,8 @@ const News = () => {
                   </h3>
                 </div>
               </div>
-              <div className="blog__item">
+              <div className="blog__item"></div>
+              {/* <div className="blog__item">
                 <div className="counter">
                   <span className="cc">
                     <span>04</span>
@@ -99,7 +100,7 @@ const News = () => {
                     </Link>
                   </h3>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="bottom_part">
@@ -110,7 +111,7 @@ const News = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span>Read All Articles</span>
+                  <span>GO TO LATEST ARTICLES</span>
                 </a>
               </Link>
             </div>

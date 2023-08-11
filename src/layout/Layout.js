@@ -42,6 +42,19 @@ const Layout = ({ children, pageTitle }) => {
 
   return (
     <Fragment>
+      <section id="layout">
+        <div className="alert_modal">
+          <div className="alert_box">
+            <div className="modal_content">
+              <p>Checkout</p>
+              <span>메타마스크를 설치해주세요.</span>
+              <a href="" className="alert_modal_btn">
+                Add funds
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <Head>
         <title>a:rzmeta | {pageTitle}</title>
       </Head>
