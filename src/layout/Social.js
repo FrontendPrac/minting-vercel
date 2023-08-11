@@ -6,34 +6,50 @@ const Social = () => {
         <ul>
           <li>
             <a
-              href="https://www.facebook.com/"
+              href="https://twitter.com/a_rzmeta"
               target="_blank"
               rel="noreferrer"
             >
-              Fb.
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
-              Tw.
+              <img src="/svg/social/twitter-1.svg" alt="" className="fn__svg" />
             </a>
           </li>
           <li>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/arzmeta_/"
               target="_blank"
               rel="noreferrer"
             >
-              In.
+              <img
+                src="/svg/social/instagram-1.svg"
+                alt=""
+                className="fn__svg"
+              />
             </a>
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/"
+              href="https://t.me/arzmeta_official"
               target="_blank"
               rel="noreferrer"
             >
-              Ln.
+              <img
+                src="/img/telegram.png"
+                alt=""
+                style={{ width: "30px", height: "40px", paddingBottom: "5px" }}
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://open.kakao.com/o/gda1vbof"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/img/kakao.png"
+                alt=""
+                style={{ width: "30px", height: "30px", paddingBottom: "5px" }}
+              />
             </a>
           </li>
         </ul>

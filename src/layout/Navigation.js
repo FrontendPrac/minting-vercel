@@ -44,20 +44,20 @@ const Navigation = ({ navigation, navigationToggle }) => {
               <li>
                 <div className="item">
                   <a
-                    href="https://discord.com/"
+                    href="https://twitter.com/a_rzmeta"
                     target="_blank"
                     rel="noreferrer"
                   />
                   <span className="icon">
                     {/* <img src="/img/market/discord.png" alt="" /> */}
                     <Image
-                      src="/img/market/discord.png"
-                      alt="discord"
+                      src="/img/twitter.png"
+                      alt="twitter"
                       width={23}
                       height={23}
                     />
                   </span>
-                  <span className="text">Discord</span>
+                  <span className="text">Twitter</span>
                 </div>
               </li>
             </ul>
@@ -273,7 +273,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
             <div className="social_icons">
               <ul>
                 <li>
-                  <a href="#">
+                  <a href="https://twitter.com/a_rzmeta">
                     <img
                       src="/svg/social/twitter-1.svg"
                       alt=""
@@ -282,16 +282,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <img
-                      src="/svg/social/facebook-1.svg"
-                      alt=""
-                      className="fn__svg"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
+                  <a href="https://www.instagram.com/arzmeta_/">
                     <img
                       src="/svg/social/instagram-1.svg"
                       alt=""
@@ -302,18 +293,26 @@ const Navigation = ({ navigation, navigationToggle }) => {
                 <li>
                   <a href="#">
                     <img
-                      src="/svg/social/pinterest-1.svg"
+                      src="/img/telegram.png"
                       alt=""
-                      className="fn__svg"
+                      style={{
+                        width: "30px",
+                        height: "40px",
+                        paddingBottom: "5px",
+                      }}
                     />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://open.kakao.com/o/gda1vbof">
                     <img
-                      src="/svg/social/behance-1.svg"
+                      src="/img/kakao.png"
                       alt=""
-                      className="fn__svg"
+                      style={{
+                        width: "30px",
+                        height: "40px",
+                        paddingBottom: "5px",
+                      }}
                     />
                   </a>
                 </li>
