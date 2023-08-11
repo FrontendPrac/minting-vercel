@@ -19,13 +19,9 @@ const WaterHero = () => {
               <h3 className="fn__maintitle big" data-text="ARZ PASS">
                 ARZ PASS
               </h3>
-              <p>
-                ARZ PASS Project는 메타버스라는 꿈과 현실을 이어주는 역할을 하는
-                NFT 프로젝트입니다. 우리 프로젝트는 다수의 NFT 컬렉션으로
-                구성되어 있으며, 각 NFT 컬렉션마다 메타버스로 가는 로드맵을
-                보여줍니다. 하나의 컬렉션에서 수백 개에서 수천 개의 NFT 아이템이
-                생성되며, 희귀성 수준에 따라 가치가 달라지기도 합니다.
-              </p>
+              <h4>
+                Start your NFT journey with ARZPASS, and get access to a:rzmeta
+              </h4>
               <a
                 href="https://opensea.io/"
                 className="metaportal_fn_button"
