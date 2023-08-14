@@ -155,9 +155,9 @@ const EventPage = () => {
               <div className="metaportal_fn_mint_top">
                 <div className="mint_right">
                   <div className="metaportal_fn_share">
-                    <button onClick={() => setIsLoading(!isLoading)}>
+                    {/* <button onClick={() => setIsLoading(!isLoading)}>
                       버튼
-                    </button>
+                    </button> */}
                     <h5 className="label">08.08.MON - 09.01.FRI</h5>
                   </div>
                   <h3

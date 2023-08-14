@@ -1,7 +1,13 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 
-const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
+const GuaranteedMintBox = ({
+  provider,
+  contract,
+  guaranteeActive,
+  isLoading,
+  setIsLoading,
+}) => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -75,15 +81,26 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
         value: ethers.utils.parseEther(totalPrice.toFixed(4).toString()),
       });
 
+      setIsLoading(true);
+
       // Wait for the transaction to be mined
       const receipt = await transaction.wait();
       console.log("receipt: ", receipt);
 
+      setIsLoading(false);
       alert("NFTs minted successfully!");
       location.reload();
     } catch (error) {
-      console.error("Error minting NFTs:", error);
-      alert("Error minting NFTs. Please check the console for details.");
+      if (error.code === "ACTION_REJECTED") {
+        console.error("Error minting NFTs:", error);
+        setIsLoading(false);
+      } else {
+        setIsLoading(false);
+        console.error("Error minting NFTs:", error);
+        alert(
+          "확정 화이트리스트가 있는지 확인하세요. 해당 화이트리스트는 한번만 참여할 수 있어요."
+        );
+      }
     }
   };
 
@@ -185,6 +202,7 @@ const GuaranteedMintBox = ({ provider, contract, guaranteeActive }) => {
   return (
     <div className="metaportal_fn_mintbox">
       <div className="mint_left">
+        {/* <button onClick={() => setIsLoading(!isLoading)}>버튼</button> */}
         <div className="mint_title">
           <span>GUARANTEE Mint is Live</span>
         </div>
