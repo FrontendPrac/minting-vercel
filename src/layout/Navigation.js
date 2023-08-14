@@ -273,27 +273,13 @@ const Navigation = ({ navigation, navigationToggle }) => {
             <div className="social_icons">
               <ul>
                 <li>
-                  <a href="https://twitter.com/a_rzmeta">
+                  <a
+                    href="https://twitter.com/a_rzmeta"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
-                      src="/svg/social/twitter-1.svg"
-                      alt=""
-                      className="fn__svg"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/arzmeta_/">
-                    <img
-                      src="/svg/social/instagram-1.svg"
-                      alt=""
-                      className="fn__svg"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="/img/telegram.png"
+                      src="/img/social/twitter.png"
                       alt=""
                       style={{
                         width: "30px",
@@ -304,9 +290,47 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://open.kakao.com/o/gda1vbof">
+                  <a
+                    href="https://www.instagram.com/arzmeta_/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
-                      src="/img/kakao.png"
+                      src="/img/social/instagram.png"
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "40px",
+                        paddingBottom: "5px",
+                      }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://t.me/arzmeta_official"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/img/social/telegram.png"
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "40px",
+                        paddingBottom: "5px",
+                      }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://open.kakao.com/o/gda1vbof"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/img/social/kakaotalk.png"
                       alt=""
                       style={{
                         width: "30px",
