@@ -6,6 +6,8 @@ import {
   contractAddress,
   raffleContactABI,
   raffleContractAddress,
+  stakingContractABI,
+  stakingContractAddress,
 } from "../src/components/utils/constants";
 import Portal from "../src/components/modal/portal/Portal";
 import Alert from "../src/components/modal/alert/Alert";
@@ -38,9 +40,7 @@ const EventPage = () => {
       window.ethereum.selectedAddress
     ) {
       // Create an ethers provider using the window.ethereum object
-      const newProvider = await new ethers.providers.Web3Provider(
-        window.ethereum
-      );
+      const newProvider = new ethers.providers.Web3Provider(window.ethereum);
       console.log("newProvider: ", newProvider);
       setProvider(newProvider);
 
@@ -139,6 +139,42 @@ const EventPage = () => {
     }
   };
 
+  // Test stake
+  const onClickStake = async () => {
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider.getSigner()
+    );
+
+    const isApprovedForAll = await contract.isApprovedForAll(
+      signerAddress,
+      stakingContractAddress
+    );
+
+    console.log("isApprovedForAll: ", isApprovedForAll);
+    if (!isApprovedForAll) {
+      await contract.setApprovalForAll(stakingContractAddress, true);
+      console.log("isApprovedForAll: ", isApprovedForAll);
+    }
+
+    const stakeContract = new ethers.Contract(
+      stakingContractAddress,
+      stakingContractABI,
+      provider.getSigner()
+    );
+
+    try {
+      const response = await stakeContract.stake(2, {
+        gasLimit: 500000,
+      });
+
+      console.log("response: ", response);
+    } catch (error) {
+      console.log("error:", error);
+    }
+  };
+
   useEffect(() => {
     initializeEthers();
   }, []);
@@ -157,6 +193,7 @@ const EventPage = () => {
                     {/* <button onClick={() => setIsLoading(!isLoading)}>
                       버튼
                     </button> */}
+                    {/* <button onClick={onClickStake}>스테이킹</button> */}
                     <h5 className="label">08.08.MON - 09.01.FRI</h5>
                   </div>
                   <h3

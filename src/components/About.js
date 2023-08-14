@@ -1,4 +1,16 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  imgScale,
+  variantsCenter,
+  variantsDown,
+  variantsFade,
+  variantsOpacity,
+  variantsSideLeft,
+  variantsSideRight,
+  variantsUp,
+} from "../variants";
+
 const About = () => {
   return (
     <section id="about">
@@ -87,44 +99,68 @@ const About = () => {
             <div className="fn_cs_steps">
               <ul>
                 <li>
-                  <div className="item">
+                  <motion.div
+                    className="item"
+                    whileInView="onscreen"
+                    initial="offscreen"
+                    variants={imgScale}
+                    custom={1}
+                  >
                     <div className="item_in">
                       <h3 className="fn__gradient_title">01</h3>
                       <p style={{ textAlign: "center", fontSize: "40px" }}>
                         지갑 연결
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </li>
                 <li>
-                  <div className="item">
+                  <motion.div
+                    className="item"
+                    whileInView="onscreen"
+                    initial="offscreen"
+                    variants={variantsDown}
+                    custom={1}
+                  >
                     <div className="item_in">
                       <h3 className="fn__gradient_title">02</h3>
                       <p style={{ textAlign: "center", fontSize: "40px" }}>
                         수량 선택
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </li>
                 <li>
-                  <div className="item">
+                  <motion.div
+                    className="item"
+                    whileInView="onscreen"
+                    initial="offscreen"
+                    variants={variantsSideLeft}
+                    custom={1}
+                  >
                     <div className="item_in">
                       <h3 className="fn__gradient_title">03</h3>
                       <p style={{ textAlign: "center", fontSize: "40px" }}>
                         민팅 완료
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </li>
                 <li>
-                  <div className="item">
+                  <motion.div
+                    className="item"
+                    whileInView="onscreen"
+                    initial="offscreen"
+                    variants={variantsSideRight}
+                    custom={1}
+                  >
                     <div className="item_in">
                       <h3 className="fn__gradient_title">04</h3>
                       <p style={{ textAlign: "center", fontSize: "40px" }}>
                         NFT 수령
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </li>
               </ul>
             </div>

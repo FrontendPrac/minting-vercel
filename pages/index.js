@@ -12,6 +12,7 @@ import dynamic from "next/dynamic";
 import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
 import { Video } from "../src/components/Video";
+import Textmoving from "../src/components/TextMoving";
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
@@ -22,21 +23,26 @@ const Index = () => {
     <Layout pageTitle={"Home"}>
       {/* Home Section #2 */}
       <Video />
-      <WaterHero />
+      {/* <WaterHero /> */}
       {/* !Home Section #2 */}
       {/* Fun Facts */}
       {/* <FunFacts /> */}
       {/* !Fun Facts */}
       {/* Event */}
-      <Event />
-      {/* Event */}
+      {/* <Event /> */}
       {/* Event Slider */}
-      <EventSlider />
+      {/* Event */}
+      {/* <EventSlider /> */}
+      {/* <Event /> */}
       {/* !Event Slider */}
       {/* !Home Section #2 */}
       {/* Section About #2 */}
       <About />
       {/* !Section About #2 */}
+      {/* Section Textmoving */}
+      <SectionDivider />
+      {/* <Textmoving /> */}
+      {/* Section Parallax */}
       {/* Section Divider */}
       {/* <SectionDivider /> */}
       {/* !Section Divider */}
