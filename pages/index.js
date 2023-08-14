@@ -11,6 +11,7 @@ import Layout from "../src/layout/Layout";
 import dynamic from "next/dynamic";
 import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
+import { Video } from "../src/components/Video";
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
@@ -20,6 +21,7 @@ const Index = () => {
   return (
     <Layout pageTitle={"Home"}>
       {/* Home Section #2 */}
+      <Video />
       <WaterHero />
       {/* !Home Section #2 */}
       {/* Fun Facts */}
