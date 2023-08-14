@@ -11,7 +11,7 @@ import Portal from "../src/components/modal/portal/Portal";
 import Alert from "../src/components/modal/alert/Alert";
 import useModal from "../src/hooks/useModal";
 import useLoading from "../src/hooks/useLoading";
-import { RotatingLines } from "react-loader-spinner";
+import Loading from "../src/components/loading/Loading";
 
 const EventPage = () => {
   // State variables for ethers provider and contract
@@ -147,47 +147,7 @@ const EventPage = () => {
   return (
     <>
       {isLoading ? (
-        <>
-          <div
-            style={{
-              overflow: "hidden",
-              width: "100vw",
-              height: "100vh",
-              display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
-              gap: "30px",
-            }}
-          >
-            <div
-              style={{
-                flexBasis: "50%",
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
-            >
-              <RotatingLines
-                strokeColor="grey"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="96"
-                visible={true}
-              />
-            </div>
-
-            <div
-              style={{
-                margin: "auto",
-                flexBasis: "50%",
-              }}
-            >
-              트랜잭션을 실행중입니다.
-              <br />5 ~ 10초 정도의 시간이 걸립니다.
-            </div>
-          </div>
-
-          {/* <button onClick={() => setIsLoading(!isLoading)}>버튼</button> */}
-        </>
+        <Loading isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
         <Layout pageTitle={"Event"}>
           <div className="metaportal_fn_mintpage">
@@ -195,9 +155,9 @@ const EventPage = () => {
               <div className="metaportal_fn_mint_top">
                 <div className="mint_right">
                   <div className="metaportal_fn_share">
-                    {/* <button onClick={() => setIsLoading(!isLoading)}>
+                    <button onClick={() => setIsLoading(!isLoading)}>
                       버튼
-                    </button> */}
+                    </button>
                     <h5 className="label">08.08.MON - 09.01.FRI</h5>
                   </div>
                   <h3
