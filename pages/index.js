@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
 import { Video } from "../src/components/Video";
-import Textmoving from "../src/components/Textmoving";
+// import Textmoving from "../src/components/Textmoving";
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
@@ -39,8 +39,8 @@ const Index = () => {
       <About />
       {/* !Section About #2 */}
       {/* Section Textmoving */}
-      <SectionDivider />
-      <Textmoving />
+      {/* <SectionDivider /> */}
+      {/* <Textmoving /> */}
       {/* Section Parallax */}
       {/* Section Divider */}
       {/* <SectionDivider /> */}
