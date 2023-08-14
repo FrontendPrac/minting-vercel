@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
           href="/css/plugins.css?ver=4.1"
         /> */}
-        {/* <link type="text/css" rel="stylesheet" href="/css/style.css?ver=4.1" /> */}
+        <link type="text/css" rel="stylesheet" href="/css/style.css?ver=4.1" />
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" />
       </Head>
