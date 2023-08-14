@@ -1,11 +1,11 @@
-import Head from "next/head";
 import { Provider } from "react-redux";
 import store from "../src/redux/store";
 import "../styles/globals.css";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
+    <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -28,8 +28,10 @@ function MyApp({ Component, pageProps }) {
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Component {...pageProps} />
-    </Provider>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </>
   );
 }
 
