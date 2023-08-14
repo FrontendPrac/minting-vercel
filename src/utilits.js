@@ -209,7 +209,24 @@ export const heroSlider2 = () => {
 export const requestConnectWallet = async () => {
   try {
     await window.ethereum.request({ method: "eth_requestAccounts" });
+    location.reload();
   } catch (error) {
     console.log("error: ", error);
+  }
+};
+
+// Request Conneting Network
+export const checkNetwork = async () => {
+  try {
+    const networkId = await ethereum.request({ method: "eth_chainId" });
+    if (networkId !== "0xaa36a7") {
+      await ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0xaa36a7" }],
+      });
+      location.reload();
+    }
+  } catch (err) {
+    console.log("err: ", err);
   }
 };

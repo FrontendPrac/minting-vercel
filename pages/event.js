@@ -91,7 +91,6 @@ const EventPage = () => {
         setIsGuaranteeWhiteList(response_4);
       } catch (error) {
         console.log("error: ", error);
-        alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
       }
     }
   };

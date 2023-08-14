@@ -3,6 +3,7 @@ import { Fragment, useEffect } from "react";
 import ImageView from "../components/popup/ImageView";
 import VideoPopup from "../components/popup/VideoPopup";
 import {
+  checkNetwork,
   dataBgImg,
   holdSection,
   imgToSVG,
@@ -26,10 +27,9 @@ const Layout = ({ children, pageTitle }) => {
       if (window.ethereum.selectedAddress) {
         // Check if the connect to metamask
         // Request access to the user's Ethereum account
-        requestConnectWallet();
-        console.log("메타마스크 로직을 작성해주세요.");
+        checkNetwork();
       } else {
-        alert("메타마스크를 연결해주세요.");
+        requestConnectWallet();
       }
     } else {
       alert("메타마스크를 설치해주세요.");

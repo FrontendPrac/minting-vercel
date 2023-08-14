@@ -1,15 +1,14 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { walletToggle } from "../redux/actions/siteSettings";
-import { ethers } from "ethers";
-import { contractABI, contractAddress } from "../components/utils/constants";
 import Image from "next/image";
+import { requestConnectWallet } from "../utilits";
 
 const WalletPopUp = ({ walletToggle, wallet }) => {
   // this function lets you connect the frontend to the blockchain using metamask
   const connectWalletHandler = () => {
     if (ethereum) {
-      window.ethereum.request({ method: "eth_requestAccounts" });
+      requestConnectWallet();
     } else {
       alert("메타마스크를 설치해주세요.");
       setConnectedAddress("Please Install Metamask Extension!");

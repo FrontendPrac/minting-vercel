@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/ktmf-pass": [
+    "/event": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/ktmf-pass.js"
+      "static/chunks/pages/event.js"
     ]
   },
   "ampFirstPages": []
