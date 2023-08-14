@@ -7,12 +7,12 @@ import Faq from "../src/components/Faq";
 import News from "../src/components/News";
 import SectionDivider from "../src/components/SectionDivider";
 import Layout from "../src/layout/Layout";
-
 import dynamic from "next/dynamic";
 import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
 import { Video } from "../src/components/Video";
 import Textmoving from "../src/components/TextMoving";
+
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
@@ -41,7 +41,7 @@ const Index = () => {
       {/* !Section About #2 */}
       {/* Section Textmoving */}
       <SectionDivider />
-      {/* <Textmoving /> */}
+      <Textmoving />
       {/* Section Parallax */}
       {/* Section Divider */}
       {/* <SectionDivider /> */}
