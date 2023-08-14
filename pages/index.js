@@ -11,8 +11,7 @@ import dynamic from "next/dynamic";
 import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
 import { Video } from "../src/components/Video";
-import Textmoving from "../src/components/TextMoving";
-
+import Textmoving from "../src/components/Textmoving";
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
