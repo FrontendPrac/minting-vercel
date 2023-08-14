@@ -16,8 +16,8 @@ const WaterHero = () => {
           <div className="fn_cs_hero_slider">
             <div className="bg_overlay" />
             <div className="left_part">
-              <h3 className="fn__maintitle big" data-text="ARZ PASS">
-                ARZ PASS
+              <h3 className="fn__maintitle big" data-text="ARZPASS">
+                ARZPASS
               </h3>
               <h4>
                 Start your NFT journey with ARZPASS, and get access to a:rzmeta

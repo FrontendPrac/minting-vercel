@@ -10,6 +10,8 @@ import {
 import Portal from "../src/components/modal/portal/Portal";
 import Alert from "../src/components/modal/alert/Alert";
 import useModal from "../src/hooks/useModal";
+import useLoading from "../src/hooks/useLoading";
+import Loading from "../src/components/loading/Loading";
 
 const EventPage = () => {
   // State variables for ethers provider and contract
@@ -23,8 +25,9 @@ const EventPage = () => {
   const [isCompetitiveWhiteList, setIsCompetitiveWhiteList] = useState(false);
   const [isGuaranteeWhiteList, setIsGuaranteeWhiteList] = useState(false);
 
-  // Custom Hook to Modal
+  // Custom Hook
   const { isOpen, open, close } = useModal();
+  const { isLoading, setIsLoading } = useLoading();
 
   // Get Raffle Data
   const initializeEthers = async () => {
@@ -88,7 +91,6 @@ const EventPage = () => {
         setIsGuaranteeWhiteList(response_4);
       } catch (error) {
         console.log("error: ", error);
-        alert("SEPOLIA 네트워크가 맞는지 확인해주세요");
       }
     }
   };
@@ -125,11 +127,15 @@ const EventPage = () => {
         value: ethers.utils.parseEther((0.01).toString()),
       });
 
+      setIsLoading(true);
       await transaction.wait();
       console.log("화이트리스트 부여 성공");
+
+      setIsLoading(false);
       open();
     } catch (error) {
       console.log("error: ", error);
+      setIsLoading(false);
     }
   };
 
@@ -138,231 +144,467 @@ const EventPage = () => {
   }, []);
 
   return (
-    <Layout pageTitle={"Event"}>
-      <div className="metaportal_fn_mintpage">
-        <div className="container small mtp">
-          <div className="metaportal_fn_mint_top">
-            <div className="mint_right">
-              <div className="metaportal_fn_share">
-                <h5 className="label">08.08.MON - 09.01.FRI</h5>
-              </div>
-              <h3
-                className="fn__maintitle mintT"
-                data-text="KTMF PASS NFT DRAW EVENT"
-                data-align="left"
-              >
-                KTMF PASS NFT DRAW EVENT
-              </h3>
-              <div className="desc">
-                <p>
-                  드로우에 참여하고 혜택을 받아보세요! 원하는 카드를 선택하면
-                  바로 당첨 확인 가능! 이벤트 기간 동안 누구나 참여할 수 있어요
-                  과연 어떤 혜택이 기다리고 있을까요?
-                </p>
-              </div>
-              <div className="view_on">
-                <ul className="textC">
-                  <li>
-                    <span>현재 획득 혜택</span>
-                  </li>
-                  <li>
-                    <span>
-                      {!isCompetitiveWhiteList &&
-                        !isGuaranteeWhiteList &&
-                        "아직 받은 혜택이 없어요. 이벤트에 참여해보세요! "}
-                      {isCompetitiveWhiteList &&
-                        !isGuaranteeWhiteList &&
-                        "경쟁 화이트리스트"}
-                      {!isCompetitiveWhiteList &&
-                        isGuaranteeWhiteList &&
-                        "확정 화이트리스트"}
-                      {isCompetitiveWhiteList &&
-                        isGuaranteeWhiteList &&
-                        "확정 화이트리스트 & 경쟁 화이트리스트"}
-                    </span>
-                  </li>
-                </ul>
-                <ul className="counT">
-                  <li>
-                    <span>참여 가능 횟수</span>
-                  </li>
-                  <li>
-                    <span>{isRaffle ? 1 : 0}/1</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="mint_left">
-              <div className="img">
-                <ul className="mint_grid">
-                  <li>
-                    <div className="mint__item">
-                      <span className="nft_title">
-                        <b>KTMF</b> PASS NFT
-                      </span>
-                      <div className="img_holder">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          src="/img/video/mint.mp4"
-                          type="video/mp4"
-                          poster="/img/mint.png"
-                        ></video>
-                        <a className="full_link2" />
-                      </div>
-                      <div className="title_holder">
-                        <h3 className="fn_title">
-                          <a href="#" onClick={onClickEnterAndSpin}>
-                            Click
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="mint__item">
-                      <span className="nft_title">
-                        <b>KTMF</b> PASS NFT
-                      </span>
-                      <div className="img_holder">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          src="/img/video/mint.mp4"
-                          type="video/mp4"
-                          poster="/img/mint.png"
-                        ></video>
-                        <a className="full_link2" />
-                      </div>
-                      <div className="title_holder">
-                        <h3 className="fn_title">
-                          <a href="#" onClick={onClickEnterAndSpin}>
-                            Click
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="mint__item">
-                      <span className="nft_title">
-                        <b>KTMF</b> PASS NFT
-                      </span>
-                      <div className="img_holder">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          src="/img/video/mint.mp4"
-                          type="video/mp4"
-                          poster="/img/mint.png"
-                        ></video>
-                        <a className="full_link2" />
-                      </div>
-                      <div className="title_holder">
-                        <h3 className="fn_title">
-                          <a href="#" onClick={onClickEnterAndSpin}>
-                            Click
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="mint__item">
-                      <span className="nft_title">
-                        <b>KTMF</b> PASS NFT
-                      </span>
-                      <div className="img_holder">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          src="/img/video/mint.mp4"
-                          type="video/mp4"
-                          poster="/img/mint.png"
-                        ></video>
-                        <a className="full_link2" />
-                      </div>
-                      <div className="title_holder">
-                        <h3 className="fn_title">
-                          <a href="#" onClick={onClickEnterAndSpin}>
-                            Click
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="mint__item">
-                      <span className="nft_title">
-                        <b>KTMF</b> PASS NFT
-                      </span>
-                      <div className="img_holder">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          src="/img/video/mint.mp4"
-                          type="video/mp4"
-                          poster="/img/mint.png"
-                        ></video>
-                        <a className="full_link2" />
-                      </div>
-                      <div className="title_holder">
-                        <h3 className="fn_title">
-                          <a href="#" onClick={onClickEnterAndSpin}>
-                            Click
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="mint__item">
-                      <span className="nft_title">
-                        <b>KTMF</b> PASS NFT
-                      </span>
-                      <div className="img_holder">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          src="/img/video/mint.mp4"
-                          type="video/mp4"
-                          poster="/img/mint.png"
-                        ></video>
-                        <a className="full_link2" />
-                      </div>
-                      <div className="title_holder">
-                        <h3 className="fn_title">
-                          <a href="#" onClick={onClickEnterAndSpin}>
-                            Click
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+    <>
+      {isLoading ? (
+        <Loading isLoading={isLoading} setIsLoading={setIsLoading} />
+      ) : (
+        <Layout pageTitle={"Event"}>
+          <div className="metaportal_fn_mintpage">
+            <div className="container small mtp">
+              <div className="metaportal_fn_mint_top">
+                <div className="mint_right">
+                  <div className="metaportal_fn_share">
+                    {/* <button onClick={() => setIsLoading(!isLoading)}>
+                      버튼
+                    </button> */}
+                    <h5 className="label">08.08.MON - 09.01.FRI</h5>
+                  </div>
+                  <h3
+                    className="fn__maintitle mintT"
+                    data-text="KTMF PASS NFT DRAW EVENT"
+                    data-align="left"
+                  >
+                    KTMF PASS NFT DRAW EVENT
+                  </h3>
+                  <div className="desc">
+                    <p>
+                      드로우에 참여하고 혜택을 받아보세요! 원하는 카드를
+                      선택하면 바로 당첨 확인 가능! 이벤트 기간 동안 누구나
+                      참여할 수 있어요 과연 어떤 혜택이 기다리고 있을까요?
+                    </p>
+                  </div>
+                  <div className="view_on">
+                    <ul className="textC">
+                      <li>
+                        <span>현재 획득 혜택</span>
+                      </li>
+                      <li>
+                        <span>
+                          {!isCompetitiveWhiteList &&
+                            !isGuaranteeWhiteList &&
+                            "아직 받은 혜택이 없어요. 이벤트에 참여해보세요! "}
+                          {isCompetitiveWhiteList &&
+                            !isGuaranteeWhiteList &&
+                            "경쟁 화이트리스트"}
+                          {!isCompetitiveWhiteList &&
+                            isGuaranteeWhiteList &&
+                            "확정 화이트리스트"}
+                          {isCompetitiveWhiteList &&
+                            isGuaranteeWhiteList &&
+                            "확정 화이트리스트 & 경쟁 화이트리스트"}
+                        </span>
+                      </li>
+                    </ul>
+                    <ul className="counT">
+                      <li>
+                        <span>참여 가능 횟수</span>
+                      </li>
+                      <li>
+                        <span>{isRaffle ? 1 : 0}/1</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mint_left">
+                  <div className="img">
+                    <ul className="mint_grid">
+                      <li>
+                        <div className="mint__item">
+                          <span className="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div className="img_holder">
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                              poster="/img/mint.png"
+                            ></video>
+                            <a className="full_link2" />
+                          </div>
+                          <div className="title_holder">
+                            <h3 className="fn_title">
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="mint__item">
+                          <span className="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div className="img_holder">
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                              poster="/img/mint.png"
+                            ></video>
+                            <a className="full_link2" />
+                          </div>
+                          <div className="title_holder">
+                            <h3 className="fn_title">
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="mint__item">
+                          <span className="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div className="img_holder">
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                              poster="/img/mint.png"
+                            ></video>
+                            <a className="full_link2" />
+                          </div>
+                          <div className="title_holder">
+                            <h3 className="fn_title">
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="mint__item">
+                          <span className="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div className="img_holder">
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                              poster="/img/mint.png"
+                            ></video>
+                            <a className="full_link2" />
+                          </div>
+                          <div className="title_holder">
+                            <h3 className="fn_title">
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="mint__item">
+                          <span className="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div className="img_holder">
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                              poster="/img/mint.png"
+                            ></video>
+                            <a className="full_link2" />
+                          </div>
+                          <div className="title_holder">
+                            <h3 className="fn_title">
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="mint__item">
+                          <span className="nft_title">
+                            <b>KTMF</b> PASS NFT
+                          </span>
+                          <div className="img_holder">
+                            <video
+                              autoPlay
+                              muted
+                              loop
+                              src="/img/video/mint.mp4"
+                              type="video/mp4"
+                              poster="/img/mint.png"
+                            ></video>
+                            <a className="full_link2" />
+                          </div>
+                          <div className="title_holder">
+                            <h3 className="fn_title">
+                              <a href="#" onClick={onClickEnterAndSpin}>
+                                Click
+                              </a>
+                            </h3>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {isOpen && (
-        <Portal>
-          <Alert
-            contract={contract}
-            signerAddress={signerAddress}
-            close={close}
-          />
-        </Portal>
+          {isOpen && (
+            <Portal>
+              <Alert
+                contract={contract}
+                signerAddress={signerAddress}
+                close={close}
+              />
+            </Portal>
+          )}
+        </Layout>
       )}
-    </Layout>
+    </>
   );
+
+  // return (
+  //   <Layout pageTitle={"Event"}>
+  //     <div className="metaportal_fn_mintpage">
+  //       <div className="container small mtp">
+  //         <div className="metaportal_fn_mint_top">
+  //           <div className="mint_right">
+  //             <div className="metaportal_fn_share">
+  //               <h5 className="label">08.08.MON - 09.01.FRI</h5>
+  //             </div>
+  //             <h3
+  //               className="fn__maintitle mintT"
+  //               data-text="KTMF PASS NFT DRAW EVENT"
+  //               data-align="left"
+  //             >
+  //               KTMF PASS NFT DRAW EVENT
+  //             </h3>
+  //             <div className="desc">
+  //               <p>
+  //                 드로우에 참여하고 혜택을 받아보세요! 원하는 카드를 선택하면
+  //                 바로 당첨 확인 가능! 이벤트 기간 동안 누구나 참여할 수 있어요
+  //                 과연 어떤 혜택이 기다리고 있을까요?
+  //               </p>
+  //             </div>
+  //             <div className="view_on">
+  //               <ul className="textC">
+  //                 <li>
+  //                   <span>현재 획득 혜택</span>
+  //                 </li>
+  //                 <li>
+  //                   <span>
+  //                     {!isCompetitiveWhiteList &&
+  //                       !isGuaranteeWhiteList &&
+  //                       "아직 받은 혜택이 없어요. 이벤트에 참여해보세요! "}
+  //                     {isCompetitiveWhiteList &&
+  //                       !isGuaranteeWhiteList &&
+  //                       "경쟁 화이트리스트"}
+  //                     {!isCompetitiveWhiteList &&
+  //                       isGuaranteeWhiteList &&
+  //                       "확정 화이트리스트"}
+  //                     {isCompetitiveWhiteList &&
+  //                       isGuaranteeWhiteList &&
+  //                       "확정 화이트리스트 & 경쟁 화이트리스트"}
+  //                   </span>
+  //                 </li>
+  //               </ul>
+  //               <ul className="counT">
+  //                 <li>
+  //                   <span>참여 가능 횟수</span>
+  //                 </li>
+  //                 <li>
+  //                   <span>{isRaffle ? 1 : 0}/1</span>
+  //                 </li>
+  //               </ul>
+  //             </div>
+  //           </div>
+  //           <div className="mint_left">
+  //             <div className="img">
+  //               <ul className="mint_grid">
+  //                 <li>
+  //                   <div className="mint__item">
+  //                     <span className="nft_title">
+  //                       <b>KTMF</b> PASS NFT
+  //                     </span>
+  //                     <div className="img_holder">
+  //                       <video
+  //                         autoPlay
+  //                         muted
+  //                         loop
+  //                         src="/img/video/mint.mp4"
+  //                         type="video/mp4"
+  //                         poster="/img/mint.png"
+  //                       ></video>
+  //                       <a className="full_link2" />
+  //                     </div>
+  //                     <div className="title_holder">
+  //                       <h3 className="fn_title">
+  //                         <a href="#" onClick={onClickEnterAndSpin}>
+  //                           Click
+  //                         </a>
+  //                       </h3>
+  //                     </div>
+  //                   </div>
+  //                 </li>
+  //                 <li>
+  //                   <div className="mint__item">
+  //                     <span className="nft_title">
+  //                       <b>KTMF</b> PASS NFT
+  //                     </span>
+  //                     <div className="img_holder">
+  //                       <video
+  //                         autoPlay
+  //                         muted
+  //                         loop
+  //                         src="/img/video/mint.mp4"
+  //                         type="video/mp4"
+  //                         poster="/img/mint.png"
+  //                       ></video>
+  //                       <a className="full_link2" />
+  //                     </div>
+  //                     <div className="title_holder">
+  //                       <h3 className="fn_title">
+  //                         <a href="#" onClick={onClickEnterAndSpin}>
+  //                           Click
+  //                         </a>
+  //                       </h3>
+  //                     </div>
+  //                   </div>
+  //                 </li>
+  //                 <li>
+  //                   <div className="mint__item">
+  //                     <span className="nft_title">
+  //                       <b>KTMF</b> PASS NFT
+  //                     </span>
+  //                     <div className="img_holder">
+  //                       <video
+  //                         autoPlay
+  //                         muted
+  //                         loop
+  //                         src="/img/video/mint.mp4"
+  //                         type="video/mp4"
+  //                         poster="/img/mint.png"
+  //                       ></video>
+  //                       <a className="full_link2" />
+  //                     </div>
+  //                     <div className="title_holder">
+  //                       <h3 className="fn_title">
+  //                         <a href="#" onClick={onClickEnterAndSpin}>
+  //                           Click
+  //                         </a>
+  //                       </h3>
+  //                     </div>
+  //                   </div>
+  //                 </li>
+  //                 <li>
+  //                   <div className="mint__item">
+  //                     <span className="nft_title">
+  //                       <b>KTMF</b> PASS NFT
+  //                     </span>
+  //                     <div className="img_holder">
+  //                       <video
+  //                         autoPlay
+  //                         muted
+  //                         loop
+  //                         src="/img/video/mint.mp4"
+  //                         type="video/mp4"
+  //                         poster="/img/mint.png"
+  //                       ></video>
+  //                       <a className="full_link2" />
+  //                     </div>
+  //                     <div className="title_holder">
+  //                       <h3 className="fn_title">
+  //                         <a href="#" onClick={onClickEnterAndSpin}>
+  //                           Click
+  //                         </a>
+  //                       </h3>
+  //                     </div>
+  //                   </div>
+  //                 </li>
+  //                 <li>
+  //                   <div className="mint__item">
+  //                     <span className="nft_title">
+  //                       <b>KTMF</b> PASS NFT
+  //                     </span>
+  //                     <div className="img_holder">
+  //                       <video
+  //                         autoPlay
+  //                         muted
+  //                         loop
+  //                         src="/img/video/mint.mp4"
+  //                         type="video/mp4"
+  //                         poster="/img/mint.png"
+  //                       ></video>
+  //                       <a className="full_link2" />
+  //                     </div>
+  //                     <div className="title_holder">
+  //                       <h3 className="fn_title">
+  //                         <a href="#" onClick={onClickEnterAndSpin}>
+  //                           Click
+  //                         </a>
+  //                       </h3>
+  //                     </div>
+  //                   </div>
+  //                 </li>
+  //                 <li>
+  //                   <div className="mint__item">
+  //                     <span className="nft_title">
+  //                       <b>KTMF</b> PASS NFT
+  //                     </span>
+  //                     <div className="img_holder">
+  //                       <video
+  //                         autoPlay
+  //                         muted
+  //                         loop
+  //                         src="/img/video/mint.mp4"
+  //                         type="video/mp4"
+  //                         poster="/img/mint.png"
+  //                       ></video>
+  //                       <a className="full_link2" />
+  //                     </div>
+  //                     <div className="title_holder">
+  //                       <h3 className="fn_title">
+  //                         <a href="#" onClick={onClickEnterAndSpin}>
+  //                           Click
+  //                         </a>
+  //                       </h3>
+  //                     </div>
+  //                   </div>
+  //                 </li>
+  //               </ul>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+
+  //     {isOpen && (
+  //       <Portal>
+  //         <Alert
+  //           contract={contract}
+  //           signerAddress={signerAddress}
+  //           close={close}
+  //         />
+  //       </Portal>
+  //     )}
+  //   </Layout>
+  // );
 };
 
 export default EventPage;

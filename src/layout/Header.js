@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
 import { stickyNav } from "../utilits";
-import {
-  contractABI,
-  contractAddress,
-  raffleContactABI,
-  raffleContractAddress,
-} from "../components/utils/constants";
+import { contractABI, contractAddress } from "../components/utils/constants";
 import { ethers } from "ethers";
 import Image from "next/image";
 
@@ -27,9 +22,6 @@ const Header = ({ walletToggle, navigationToggle }) => {
       window.ethereum.selectedAddress
     ) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      // typeof window !== "undefined" && window.ethereum
-      //   ? new ethers.providers.Web3Provider(window.ethereum)
-      //   : null;
 
       setProvider(provider);
       console.log(provider.getCode(contractAddress));

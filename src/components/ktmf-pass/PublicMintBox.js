@@ -1,7 +1,13 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 
-const PublicMintBox = ({ provider, contract, publicActive }) => {
+const PublicMintBox = ({
+  provider,
+  contract,
+  publicActive,
+  isLoading,
+  setIsLoading,
+}) => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -68,15 +74,18 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
         value: ethers.utils.parseEther(totalPrice.toFixed(4).toString()),
       });
 
+      setIsLoading(true);
+
       // Wait for the transaction to be mined
       const receipt = await transaction.wait();
       console.log("receipt: ", receipt);
 
+      setIsLoading(false);
       alert("NFTs minted successfully!");
       location.reload();
     } catch (error) {
       console.error("Error minting NFTs:", error);
-      alert("Error minting NFTs. Please check the console for details.");
+      setIsLoading(false);
     }
   };
 
@@ -178,6 +187,7 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
   return (
     <div className="metaportal_fn_mintbox">
       <div className="mint_left">
+        {/* <button onClick={() => setIsLoading(!isLoading)}>버튼</button> */}
         <div className="mint_title">
           <span>Public Mint is Live</span>
         </div>
@@ -249,21 +259,6 @@ const PublicMintBox = ({ provider, contract, publicActive }) => {
         <div className="mright">
           <div className="mint_time">
             <h4>Public Mint Ends In</h4>
-            {/* 
-        There is two types of countdown: due_date (Due Date), ever (Evergreen timer)
-          1. 	data-type="due_date"
-            In this case you have to change value of data-date. For example:
-            data-date="October 13, 2022 12:30:00"
-            It will mean that mint will finished at this time
-
-          2. 	data-type="ever"
-            In this case you have to change values of data-days, data-hours, data-minutes and data-seconds. For example:
-            data-days="34"
-            data-hours="10"
-            data-minutes="20"
-            data-seconds="0"
-            It will mean that the time expires after this time, but when the page is refreshed, the value will return again. It means, it won't end.
-      */}
             <h3
               className="metaportal_fn_countdown"
               data-type="due_date"

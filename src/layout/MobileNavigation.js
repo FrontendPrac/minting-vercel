@@ -16,38 +16,62 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
               <ul>
                 <li>
                   <a
-                    href="https://www.facebook.com/"
+                    href="https://twitter.com/a_rzmeta"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Fb.
+                    <img
+                      src="/svg/social/twitter-1.svg"
+                      alt=""
+                      className="fn__svg"
+                    />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.twitter.com/"
+                    href="https://www.instagram.com/arzmeta_/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Tw.
+                    <img
+                      src="/svg/social/instagram-1.svg"
+                      alt=""
+                      className="fn__svg"
+                    />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.instagram.com/"
+                    href="https://t.me/arzmeta_official"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    In.
+                    <img
+                      src="/img/telegram.png"
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "40px",
+                        paddingBottom: "5px",
+                      }}
+                    />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/"
+                    href="https://open.kakao.com/o/gda1vbof"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Ln.
+                    <img
+                      src="/img/kakao.png"
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        paddingBottom: "5px",
+                      }}
+                    />
                   </a>
                 </li>
               </ul>
@@ -81,38 +105,18 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
         <div className="mob_bot" style={{ display: toggle ? "block" : "none" }}>
           <ul>
             <li>
-              <Link href="/ktmf-pass">
-                <a className="creative_link">NFTs</a>
-              </Link>
-            </li>
-            <li>
               <Link href="/#home2">
                 <a className="creative_link">Home</a>
               </Link>
             </li>
             <li>
-              <Link href="/#about">
-                <a className="creative_link">About</a>
+              <Link href="/ktmf-pass">
+                <a className="creative_link">NFTs</a>
               </Link>
             </li>
             <li>
-              <Link href="/#collection">
-                <a className="creative_link">Collection</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/#news">
-                <a className="creative_link">News</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/#faq">
-                <a className="creative_link">FAQ</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/#contact">
-                <a className="creative_link">Contact</a>
+              <Link href="/event">
+                <a className="creative_link">Event</a>
               </Link>
             </li>
           </ul>
