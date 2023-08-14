@@ -68,8 +68,8 @@ const Header = ({ walletToggle, navigationToggle }) => {
                   <Image
                     src="/img/logo.png"
                     alt="logo"
-                    width={200}
-                    height={50}
+                    width={150}
+                    height={30}
                   />
                 </a>
               </Link>
