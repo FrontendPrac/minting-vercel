@@ -1,23 +1,45 @@
 import React from "react";
-import Link from "next/link";
 
 const Event = () => {
   return (
-    <div className="fn_cs_event">
-      <div>
-        <span className="left_text">GET</span> YOUR WHITELIST
+    <div class="main_sec1">
+      <div class="sec1title">
+        <h3>
+          KTMF PASS NFT <br />
+          DRAW EVENT
+        </h3>
+        <div class="baro">
+          <a href="">Get started!</a>
+        </div>
       </div>
-      <div className="title">
-        KTMF PASS NFT <br />
-        DRAW EVENT
+      <div class="potext-1 t-n">
+        <ul class="text_ani">
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+        </ul>
       </div>
-      <div className="content">
-        이벤트에 참여하고 KTMF PASS NFT 화이트리스트를 획득하세요!
+      <div class="potext-2 t-n">
+        <ul class="text_ani">
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+          <li>get your whitelist</li>
+        </ul>
       </div>
-
-      <Link href="/event">
-        <div className="button">GET STARTED!</div>
-      </Link>
+      {/* <!-- POINT IMG --> */}
+      <img class="secpo1 p-1" src="/img/main/mainsec1.png" alt="" />
+      <img class="secpo2 p-1" src="/img/main/mainsec1.png" alt="" />
+      <img class="secpo3 p-1" src="/img/main/mainsec1.png" alt="" />
+      <img class="secpo4 p-2" src="/img/main/NFT_TICKET.png" alt="" />
+      <img class="secpo5 p-2" src="/img/main/NFT_TICKET.png" alt="" />
     </div>
   );
 };

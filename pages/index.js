@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
-import About from "../src/components/About";
-import Collection from "../src/components/Collection";
-import Contact from "../src/components/Contact";
-import FunFacts from "../src/components/FunFacts";
-import Faq from "../src/components/Faq";
-import News from "../src/components/News";
 import SectionDivider from "../src/components/SectionDivider";
 import Layout from "../src/layout/Layout";
-import dynamic from "next/dynamic";
-import Event from "../src/components/Event";
-import EventSlider from "../src/components/EventSlider";
-import { Video } from "../src/components/Video_2";
 import Textmoving from "../src/components/Textmoving";
-import Front from "../src/components/Front";
-import { CSSTransition } from "react-transition-group";
 import Enter from "../src/components/Enter";
 import PageWrapper from "../src/components/PageWrapper";
-
-const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
-  ssr: false,
-});
+import Event from "../src/components/Event";
+import News from "../src/components/News";
+import Faq from "../src/components/Faq";
 
 const Index = () => {
   const [showSecondComponent, setShowSecondComponent] = useState(false);
@@ -70,10 +57,14 @@ const Index = () => {
           {/* Event */}
 
           {/* About */}
-          <About />
+          {/* <About /> */}
           {/* About  */}
+
+          {/* Section News */}
+          <News />
+          {/* !Section News */}
+
           {/* Section Textmoving */}
-          <SectionDivider />
           <Textmoving />
           {/* Section Parallax */}
           {/* Section Divider */}
@@ -83,19 +74,16 @@ const Index = () => {
           {/* <Collection /> */}
           {/* !Collection Section */}
           {/* Section Divider */}
-          <SectionDivider />
           {/* !Section Divider */}
-          {/* Section News */}
-          <News />
-          {/* !Section News */}
+
           {/* Section Divider */}
-          <SectionDivider />
+          {/* <SectionDivider /> */}
           {/* !Section Divider */}
           {/* Section FAQ */}
           <Faq />
           {/* !Section FAQ */}
           {/* Section Divider */}
-          <SectionDivider />
+          {/* <SectionDivider /> */}
           {/* !Section Divider */}
           {/* Section */}
           {/* <Contact /> */}
