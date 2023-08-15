@@ -14,6 +14,7 @@ import Alert from "../src/components/modal/alert/Alert";
 import useModal from "../src/hooks/useModal";
 import useLoading from "../src/hooks/useLoading";
 import Loading from "../src/components/loading/Loading";
+import PageWrapper from "../src/components/PageWrapper";
 
 const EventPage = () => {
   // State variables for ethers provider and contract
@@ -180,7 +181,7 @@ const EventPage = () => {
   }, []);
 
   return (
-    <>
+    <PageWrapper>
       {isLoading ? (
         <Loading isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
@@ -413,7 +414,7 @@ const EventPage = () => {
           )}
         </Layout>
       )}
-    </>
+    </PageWrapper>
   );
 
   // return (

@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import { AnimatePresence } from "framer-motion";
 // import AlertTemplate from "react-alert-template-oldschool-dark";
 // import AlertTemplate from "react-alert-template-mui";
 
@@ -40,11 +41,13 @@ function MyApp({ Component, pageProps }) {
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <AlertProvider template={AlertTemplate} {...options}>
-        <Provider store={store}>
-          <Component {...pageProps} />
-        </Provider>
-      </AlertProvider>
+      <AnimatePresence>
+        <AlertProvider template={AlertTemplate} {...options}>
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
+        </AlertProvider>
+      </AnimatePresence>
     </>
   );
 }
