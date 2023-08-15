@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 const Faq = () => {
@@ -14,9 +15,6 @@ const Faq = () => {
       title: "어떤 블록체인을 이용하나요?",
       dec: "아즈메타 NFT 컬렉션은 이더리움(ETH)올 이용합니다.",
     },
-  ];
-
-  const faqs2 = [
     {
       title: "커뮤니티는 어떻게 참여하나요?",
       dec: "아즈메타는 트위터, 텔레그램, 인스타그램, 카카오톡, 유튜브 등의 커뮤니티를 보유하고있으며, 홈페이지 내 연결된 URL을 통해 입장하실 수 있습니다. 추후 디스코드가 추가로 개설될 예정입니다.",
@@ -64,29 +62,19 @@ const Faq = () => {
   };
 
   return (
-    <section id="faq">
-      <div className="container">
-        <div className="fn_cs_faq">
-          <div className="faq_col">
-            <h3 className="fn__maintitle" data-text="FAQ">
-              FAQ
-            </h3>
-            <div className="fn_cs_divider">
-              <div className="divider">
-                <span />
-                <span />
-              </div>
-            </div>
-          </div>
+    <div class="main_sec3">
+      <div class="sec3_flex">
+        <div class="sec3_text">
+          <p>Frequently Asked Questions</p>
+        </div>
+        <div class="con_list">
           <div className="faq_col">
             <div className="fn_cs_accordion">{faqMap(faqs1, "a")}</div>
           </div>
-          <div className="faq_col">
-            <div className="fn_cs_accordion">{faqMap(faqs2, "b")}</div>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
+
 export default Faq;

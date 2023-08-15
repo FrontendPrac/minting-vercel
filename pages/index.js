@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
-import About from "../src/components/About";
-import Collection from "../src/components/Collection";
-import Contact from "../src/components/Contact";
-import FunFacts from "../src/components/FunFacts";
-import Faq from "../src/components/Faq";
-import News from "../src/components/News";
-import SectionDivider from "../src/components/SectionDivider";
 import Layout from "../src/layout/Layout";
-import dynamic from "next/dynamic";
-import Event from "../src/components/Event";
-import EventSlider from "../src/components/EventSlider";
-import { Video } from "../src/components/Video";
-import Textmoving from "../src/components/Textmoving";
-import Front from "../src/components/Front";
-import { CSSTransition } from "react-transition-group";
 import Enter from "../src/components/Enter";
 import PageWrapper from "../src/components/PageWrapper";
+import Event from "../src/components/Event";
+import News from "../src/components/News";
 
-const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
-  ssr: false,
-});
+import Faq from "../src/components/Faq";
+import Faq_2 from "../src/components/Faq_2";
 
 const Index = () => {
   const [showSecondComponent, setShowSecondComponent] = useState(false);
@@ -47,55 +34,60 @@ const Index = () => {
   return (
     <PageWrapper>
       <Layout pageTitle={"Home"}>
-        {/* Enter */}
-        <Enter showSecondComponent={showSecondComponent} />
-        {/* Enter */}
+        <div id="main">
+          {/* Enter */}
 
-        {/* WaterHero */}
-        <WaterHero />
-        {/* WaterHero */}
+          <Enter showSecondComponent={showSecondComponent} />
 
-        {/* Fun Facts */}
-        {/* <FunFacts /> */}
-        {/* !Fun Facts */}
+          {/* Enter */}
 
-        {/* Event */}
-        {/* Event Slider */}
-        <Event />
-        <EventSlider />
-        {/* Event Slider */}
-        {/* Event */}
+          {/* WaterHero */}
+          {/* <WaterHero /> */}
+          {/* WaterHero */}
 
-        {/* About */}
-        <About />
-        {/* About  */}
-        {/* Section Textmoving */}
-        <SectionDivider />
-        <Textmoving />
-        {/* Section Parallax */}
-        {/* Section Divider */}
-        {/* <SectionDivider /> */}
-        {/* !Section Divider */}
-        {/* Collection Section */}
-        {/* <Collection /> */}
-        {/* !Collection Section */}
-        {/* Section Divider */}
-        <SectionDivider />
-        {/* !Section Divider */}
-        {/* Section News */}
-        <News />
-        {/* !Section News */}
-        {/* Section Divider */}
-        <SectionDivider />
-        {/* !Section Divider */}
-        {/* Section FAQ */}
-        <Faq />
-        {/* !Section FAQ */}
-        {/* Section Divider */}
-        <SectionDivider />
-        {/* !Section Divider */}
-        {/* Section */}
-        {/* <Contact /> */}
+          {/* Fun Facts */}
+          {/* <FunFacts /> */}
+          {/* !Fun Facts */}
+
+          {/* Event */}
+          {/* Event Slider */}
+          <Event />
+          {/* <EventSlider /> */}
+          {/* Event Slider */}
+          {/* Event */}
+
+          {/* About */}
+          {/* <About /> */}
+          {/* About  */}
+
+          {/* Section News */}
+          <News />
+          {/* !Section News */}
+
+          {/* Section Textmoving */}
+          {/* <Textmoving /> */}
+          {/* Section Parallax */}
+          {/* Section Divider */}
+          {/* <SectionDivider /> */}
+          {/* !Section Divider */}
+          {/* Collection Section */}
+          {/* <Collection /> */}
+          {/* !Collection Section */}
+          {/* Section Divider */}
+          {/* !Section Divider */}
+
+          {/* Section Divider */}
+          {/* <SectionDivider /> */}
+          {/* !Section Divider */}
+          {/* Section FAQ */}
+          <Faq />
+          {/* !Section FAQ */}
+          {/* Section Divider */}
+          {/* <SectionDivider /> */}
+          {/* !Section Divider */}
+          {/* Section */}
+          {/* <Contact /> */}
+        </div>
       </Layout>
     </PageWrapper>
   );
