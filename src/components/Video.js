@@ -46,7 +46,11 @@ const Video = () => {
               </div>
             </div>
             <div class="baro">
-              <a href="">
+              <a
+                href="https://testnets.opensea.io/collection/ktmfpassnft"
+                target="_blank"
+                rel="noreferrer"
+              >
                 view page
                 <svg
                   width="1.7rem"

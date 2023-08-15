@@ -210,14 +210,16 @@ export const heroSlider2 = () => {
 // Request Conneting Wallet
 export const requestConnectWallet = async (alert) => {
   try {
-    alert.show("메타마스크를 연결하세요.");
     if (window.ethereum.selectedAddress) {
+      alert.success("메타마스크를 연결했어요.");
+    } else {
+      alert.show("메타마스크를 연결하세요.");
       await window.ethereum.request({ method: "eth_requestAccounts" });
       location.reload();
     }
   } catch (error) {
     console.log("error: ", error);
-    alert.error("트랜잭션에 실패했습니다.");
+    // alert.error("트랜잭션에 실패했습니다.");
   }
 };
 
