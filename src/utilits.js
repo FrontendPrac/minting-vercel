@@ -1,3 +1,5 @@
+import { useAlert } from "react-alert";
+
 export const imgToSVG = () => {
   document.querySelectorAll("img.fn__svg").forEach((el) => {
     const imgID = el.getAttribute("id");
@@ -206,27 +208,35 @@ export const heroSlider2 = () => {
 };
 
 // Request Conneting Wallet
-export const requestConnectWallet = async () => {
+export const requestConnectWallet = async (alert) => {
   try {
-    await window.ethereum.request({ method: "eth_requestAccounts" });
-    location.reload();
+    alert.show("메타마스크를 연결하세요.");
+    if (window.ethereum.selectedAddress) {
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      location.reload();
+    }
   } catch (error) {
     console.log("error: ", error);
+    alert.error("트랜잭션에 실패했습니다.");
   }
 };
 
 // Request Conneting Network
-export const checkNetwork = async () => {
+export const checkNetwork = async (alert) => {
   try {
-    const networkId = await ethereum.request({ method: "eth_chainId" });
-    if (networkId !== "0xaa36a7") {
-      await ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0xaa36a7" }],
-      });
-      location.reload();
+    if (window.ethereum.selectedAddress) {
+      const networkId = await ethereum.request({ method: "eth_chainId" });
+      if (networkId !== "0xaa36a7") {
+        alert.show("Sepolia 네트워크로 변경해주세요.");
+        await ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0xaa36a7" }],
+        });
+        location.reload();
+      }
     }
   } catch (err) {
     console.log("err: ", err);
+    alert.error("트랜잭션에 실패했습니다.");
   }
 };

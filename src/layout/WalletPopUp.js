@@ -3,15 +3,17 @@ import { connect } from "react-redux";
 import { walletToggle } from "../redux/actions/siteSettings";
 import Image from "next/image";
 import { requestConnectWallet } from "../utilits";
+import { useAlert } from "react-alert";
 
 const WalletPopUp = ({ walletToggle, wallet }) => {
+  const alert = useAlert();
+
   // this function lets you connect the frontend to the blockchain using metamask
   const connectWalletHandler = () => {
     if (ethereum) {
-      requestConnectWallet();
+      requestConnectWallet(alert);
     } else {
-      alert("메타마스크를 설치해주세요.");
-      setConnectedAddress("Please Install Metamask Extension!");
+      alert.error("메타마스크를 설치하세요.");
     }
   };
 
