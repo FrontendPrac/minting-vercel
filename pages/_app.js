@@ -2,8 +2,20 @@ import { Provider } from "react-redux";
 import store from "../src/redux/store";
 import "../styles/globals.css";
 import Head from "next/head";
+import { positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+// import AlertTemplate from "react-alert-template-oldschool-dark";
+// import AlertTemplate from "react-alert-template-mui";
 
 function MyApp({ Component, pageProps }) {
+  // Alert options
+  const options = {
+    timeout: 5000,
+    position: positions.BOTTOM_CENTER,
+    offset: "10px",
+    containerStyle: { zIndex: 1000, marginBottom: 250 },
+  };
+
   return (
     <>
       <Head>
@@ -28,9 +40,11 @@ function MyApp({ Component, pageProps }) {
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
+      <AlertProvider template={AlertTemplate} {...options}>
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
+      </AlertProvider>
     </>
   );
 }

@@ -19,7 +19,10 @@ import Searchbox from "./Searchbox";
 import SearchButton from "./SearchButton";
 import Social from "./Social";
 import WalletPopUp from "./WalletPopUp";
+import { useAlert } from "react-alert";
 const Layout = ({ children, pageTitle }) => {
+  const alert = useAlert();
+
   useEffect(() => {
     // Check if the window.ethereum object is available
     if (typeof window.ethereum !== "undefined") {
@@ -27,12 +30,12 @@ const Layout = ({ children, pageTitle }) => {
       if (window.ethereum.selectedAddress) {
         // Check if the connect to metamask
         // Request access to the user's Ethereum account
-        checkNetwork();
+        checkNetwork(alert);
       } else {
-        requestConnectWallet();
+        requestConnectWallet(alert);
       }
     } else {
-      alert("메타마스크를 설치해주세요.");
+      alert.show("메타마스크를 설치해주세요.");
     }
 
     holdSection();
@@ -47,7 +50,7 @@ const Layout = ({ children, pageTitle }) => {
           <div className="alert_box">
             <div className="modal_content">
               <p>Checkout</p>
-              <span>메타마스크를 설치해주세요.</span>
+              <span>메타마스크를 설치하세요.</span>
               <a href="" className="alert_modal_btn">
                 Add funds
               </a>

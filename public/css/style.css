@@ -7605,6 +7605,7 @@ h3.mintT {
   }
 }
 
+/* Video */
 .fn_cs_video {
   position: relative;
   z-index: 5;
@@ -7671,4 +7672,62 @@ h3.mintT {
 .fn_cd_video_text_box p {
   font-size: 40px;
   font-weight: bold;
+}
+
+/* TextMoving */
+.fn_cd_text_moving {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fn_cd_text_moving h3 {
+  font-size: 3em;
+  color: limegreen;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  /* Apply animation to this element */
+  -moz-animation: fn_cd_text_moving 15s linear infinite;
+  -webkit-animation: fn_cd_text_moving 15s linear infinite;
+  animation: fn_cd_text_moving 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes fn_cd_text_moving {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes fn_cd_text_moving {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes fn_cd_text_moving {
+  0% {
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%); /* Firefox bug fix */
+    -webkit-transform: translateX(-100%); /* Firefox bug fix */
+    transform: translateX(-100%);
+  }
 }
