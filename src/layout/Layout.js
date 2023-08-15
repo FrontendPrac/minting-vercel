@@ -10,7 +10,6 @@ import {
   requestConnectWallet,
 } from "../utilits";
 import Footer from "./Footer";
-import Header from "./Header";
 import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
 import PreLoader from "./PreLoader";
@@ -20,6 +19,8 @@ import SearchButton from "./SearchButton";
 import Social from "./Social";
 import WalletPopUp from "./WalletPopUp";
 import { useAlert } from "react-alert";
+import Header from "./Header";
+
 const Layout = ({ children, pageTitle }) => {
   const alert = useAlert();
 

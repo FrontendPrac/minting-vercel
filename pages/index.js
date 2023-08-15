@@ -10,7 +10,7 @@ import Layout from "../src/layout/Layout";
 import dynamic from "next/dynamic";
 import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
-import { Video } from "../src/components/Video";
+import { Video } from "../src/components/Video_2";
 import Textmoving from "../src/components/Textmoving";
 import Front from "../src/components/Front";
 import { CSSTransition } from "react-transition-group";
@@ -47,55 +47,59 @@ const Index = () => {
   return (
     <PageWrapper>
       <Layout pageTitle={"Home"}>
-        {/* Enter */}
-        <Enter showSecondComponent={showSecondComponent} />
-        {/* Enter */}
+        <div id="main">
+          {/* Enter */}
 
-        {/* WaterHero */}
-        <WaterHero />
-        {/* WaterHero */}
+          <Enter showSecondComponent={showSecondComponent} />
 
-        {/* Fun Facts */}
-        {/* <FunFacts /> */}
-        {/* !Fun Facts */}
+          {/* Enter */}
 
-        {/* Event */}
-        {/* Event Slider */}
-        <Event />
-        <EventSlider />
-        {/* Event Slider */}
-        {/* Event */}
+          {/* WaterHero */}
+          {/* <WaterHero /> */}
+          {/* WaterHero */}
 
-        {/* About */}
-        <About />
-        {/* About  */}
-        {/* Section Textmoving */}
-        <SectionDivider />
-        <Textmoving />
-        {/* Section Parallax */}
-        {/* Section Divider */}
-        {/* <SectionDivider /> */}
-        {/* !Section Divider */}
-        {/* Collection Section */}
-        {/* <Collection /> */}
-        {/* !Collection Section */}
-        {/* Section Divider */}
-        <SectionDivider />
-        {/* !Section Divider */}
-        {/* Section News */}
-        <News />
-        {/* !Section News */}
-        {/* Section Divider */}
-        <SectionDivider />
-        {/* !Section Divider */}
-        {/* Section FAQ */}
-        <Faq />
-        {/* !Section FAQ */}
-        {/* Section Divider */}
-        <SectionDivider />
-        {/* !Section Divider */}
-        {/* Section */}
-        {/* <Contact /> */}
+          {/* Fun Facts */}
+          {/* <FunFacts /> */}
+          {/* !Fun Facts */}
+
+          {/* Event */}
+          {/* Event Slider */}
+          <Event />
+          {/* <EventSlider /> */}
+          {/* Event Slider */}
+          {/* Event */}
+
+          {/* About */}
+          <About />
+          {/* About  */}
+          {/* Section Textmoving */}
+          <SectionDivider />
+          <Textmoving />
+          {/* Section Parallax */}
+          {/* Section Divider */}
+          {/* <SectionDivider /> */}
+          {/* !Section Divider */}
+          {/* Collection Section */}
+          {/* <Collection /> */}
+          {/* !Collection Section */}
+          {/* Section Divider */}
+          <SectionDivider />
+          {/* !Section Divider */}
+          {/* Section News */}
+          <News />
+          {/* !Section News */}
+          {/* Section Divider */}
+          <SectionDivider />
+          {/* !Section Divider */}
+          {/* Section FAQ */}
+          <Faq />
+          {/* !Section FAQ */}
+          {/* Section Divider */}
+          <SectionDivider />
+          {/* !Section Divider */}
+          {/* Section */}
+          {/* <Contact /> */}
+        </div>
       </Layout>
     </PageWrapper>
   );

@@ -1,7 +1,7 @@
 import React from "react";
-import { Video } from "./Video";
 import Front from "./Front";
 import { CSSTransition } from "react-transition-group";
+import Video from "./Video";
 
 const Enter = ({ showSecondComponent }) => {
   return (
