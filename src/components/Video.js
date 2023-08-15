@@ -12,7 +12,6 @@ export const Video = () => {
             loop
             muted
             src="/img/video/arzmeta.mp4"
-            // ref={videoRef}
           />
         </div>
         <div className="fn_cd_video_top_box">

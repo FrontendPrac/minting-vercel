@@ -12,32 +12,61 @@ import Event from "../src/components/Event";
 import EventSlider from "../src/components/EventSlider";
 import { Video } from "../src/components/Video";
 import Textmoving from "../src/components/Textmoving";
+import Front from "../src/components/Front";
+import { CSSTransition } from "react-transition-group";
+import Enter from "../src/components/Enter";
 
 const WaterHero = dynamic(() => import("../src/components/WaterHero"), {
   ssr: false,
 });
 
 const Index = () => {
+  const [showSecondComponent, setShowSecondComponent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("scrollPosition: ", scrollPosition);
+      console.log("windowHeight: ", windowHeight);
+
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      if (scrollPosition) {
+        setShowSecondComponent(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Layout pageTitle={"Home"}>
-      {/* Home Section #2 */}
-      <Video />
-      {/* <WaterHero /> */}
-      {/* !Home Section #2 */}
+      {/* Enter */}
+      <Enter showSecondComponent={showSecondComponent} />
+      {/* Enter */}
+
+      {/* WaterHero */}
+      <WaterHero />
+      {/* WaterHero */}
+
       {/* Fun Facts */}
       {/* <FunFacts /> */}
       {/* !Fun Facts */}
+
       {/* Event */}
-      {/* <Event /> */}
+      {/* Event Slider */}
+      <Event />
+      <EventSlider />
       {/* Event Slider */}
       {/* Event */}
-      {/* <EventSlider /> */}
-      {/* <Event /> */}
-      {/* !Event Slider */}
-      {/* !Home Section #2 */}
-      {/* Section About #2 */}
+
+      {/* About */}
       <About />
-      {/* !Section About #2 */}
+      {/* About  */}
       {/* Section Textmoving */}
       <SectionDivider />
       <Textmoving />
