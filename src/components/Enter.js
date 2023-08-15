@@ -9,7 +9,7 @@ const Enter = ({ showSecondComponent }) => {
       {showSecondComponent ? (
         <CSSTransition
           in={showSecondComponent}
-          timeout={1000} // 애니메이션 지속 시간 (밀리초)
+          timeout={1000}
           classNames="fn_cs_fade"
           unmountOnExit
         >

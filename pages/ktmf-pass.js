@@ -15,6 +15,7 @@ import KSTTimeout from "../src/components/coming-soon/KSTTimeout";
 import KtmfFAQ from "../src/components/ktmf-pass/KtmfFAQ";
 import useLoading from "../src/hooks/useLoading";
 import Loading from "../src/components/loading/Loading";
+import PageWrapper from "../src/components/PageWrapper";
 
 const NftSingle = () => {
   // State variables for ethers provider and contract
@@ -118,7 +119,7 @@ const NftSingle = () => {
   }, []);
 
   return (
-    <>
+    <PageWrapper>
       {isLoading ? (
         <Loading isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
@@ -336,7 +337,7 @@ const NftSingle = () => {
           </div>
         </Layout>
       )}
-    </>
+    </PageWrapper>
     // <Layout pageTitle={"Minting"}>
     //   <div className="metaportal_fn_mintpage">
     //     <div className="container small">
