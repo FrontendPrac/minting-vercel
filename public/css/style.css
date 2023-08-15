@@ -8243,6 +8243,9 @@ body {
   width: 100%;
   list-style-type: none;
 }
+.main_sec2 ul.cont li:hover {
+  transform: scale(1.1);
+}
 .main_sec2 ul.cont li a {
   transition: 0.2s;
   position: relative;
