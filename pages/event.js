@@ -221,8 +221,17 @@ const EventPage = () => {
         <Loading isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
         <Layout pageTitle={"Event"}>
+          {/* <div id="event_vd">
+            <div class="bg"></div>
+            <video src="/img/video/arzmeta.mp4" playsInline autoPlay loop muted />
+          </div> */}
           <div id="event">
             <div class="event_wrap">
+              
+              <img class="leri_ef e-1" src="/img/event/event_img.png" alt="" />
+              <img class="leri_ef e-2" src="/img/event/event_img.png" alt="" />
+              <img class="leri_ef e-3" src="/img/event/event_img.png" alt="" />
+              <img class="leri_ef e-4" src="/img/event/event_img.png" alt="" />
               <div class="event_text">
                 <div class="e-dt">08.08.mon - 09.01.fri</div>
                 <div class="e-tit">
@@ -267,6 +276,9 @@ const EventPage = () => {
                   </div>
                 </div>
               </div>
+              <img class="leri_ef e-5" src="/img/event/event_img.png" alt="" />
+              <img class="leri_ef e-6" src="/img/event/event_img.png" alt="" />
+              <img class="leri_ef e-7" src="/img/event/event_img.png" alt="" />
 
               <div class="event_flex">
                 {/* <div class="ev_item">
