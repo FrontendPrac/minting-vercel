@@ -46,7 +46,7 @@ const News = () => {
                   <p>K팝 함성, 시공간 뛰어넘는다 ··· KTMF K팝 커버 콘테스트 | 서울경제</p>
                 </div>
                 <div class="article">
-                  <img src="img/ktmf.jpg" alt="" />
+                  <img src="img/new--1.jpg" alt="" />
                 </div>
               </a>
             </li>
@@ -62,7 +62,7 @@ const News = () => {
                     KTMF K팝 커버 콘테스트, 전 세계 지원자 몰려들어 흥행 예감 | 서울경제</p>
                 </div>
                 <div class="article">
-                  <img src="img/ktmf.jpg" alt="" />
+                  <img src="img/new--2.jpg" alt="" />
                 </div>
               </a>
             </li>

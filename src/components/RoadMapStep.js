@@ -3,7 +3,7 @@ import { roadMapProps } from "../sliderProps";
 const RoadMapSlider = () => {
   return (
     <section id="roadmap">
-      <div className="container">
+      <div className="contain">
         <h3
           className="fn__maintitle big"
           data-text="RoadMap"
@@ -24,7 +24,8 @@ const RoadMapSlider = () => {
                     <span className="phase">Chapter 1</span>
                     <div className="item_in">
                       <h3 className="title">
-                        KTMF PASS 홀더 전용 독점 커뮤니티
+                        KTMF PASS 홀더 전용<br />
+                        독점 커뮤니티
                       </h3>
                     </div>
                   </div>
@@ -36,8 +37,7 @@ const RoadMapSlider = () => {
                     <div className="item_in">
                       {/* <p className="date">2023년 09월 06일 20시(KST)</p> */}
                       <h3 className="title">
-                        KTMF 코스튬 <br />
-                        아이템
+                        KTMF 코스튬 아이템
                       </h3>
                     </div>
                   </div>
