@@ -15,8 +15,11 @@ import useModal from "../src/hooks/useModal";
 import useLoading from "../src/hooks/useLoading";
 import Loading from "../src/components/loading/Loading";
 import PageWrapper from "../src/components/PageWrapper";
+import { useAlert } from "react-alert";
 
 const EventPage = () => {
+  const alert = useAlert();
+
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState("");
   const [contract, setContract] = useState("");
@@ -137,8 +140,15 @@ const EventPage = () => {
       setIsLoading(false);
       open();
     } catch (error) {
-      console.log("error: ", error);
-      setIsLoading(false);
+      if (error.code === "ACTION_REJECTED") {
+        console.log("error: ", error);
+      } else {
+        console.log("error: ", error);
+        setIsLoading(false);
+        alert.error(
+          `트랜잭션에 실패했습니다.\n 참여 가능 횟수를 초과했거나, \n 화이트리스트를 보유하고 있습니다.`
+        );
+      }
     }
   };
 
@@ -239,7 +249,7 @@ const EventPage = () => {
                 <div class="ev_item">
                   <ul>
                     <li class="card">
-                      <a href="" onClick={onClickEnterAndSpin}>
+                      <a class="card" href="" onClick={onClickEnterAndSpin}>
                         <div class="key">
                           <span>click</span>
                           <svg
