@@ -16,9 +16,13 @@ import useLoading from "../src/hooks/useLoading";
 import Loading from "../src/components/loading/Loading";
 import PageWrapper from "../src/components/PageWrapper";
 import { useAlert } from "react-alert";
-import Image from "next/image";
 import Cards from "../src/components/Cards";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  variantsOpacity,
+  variantsSideLeft,
+  variantsSideRight,
+} from "../src/variants";
 
 const EventPage = () => {
   const alert = useAlert();
@@ -521,13 +525,91 @@ const EventPage = () => {
 
               {/* <!-- IMG EFFECT --> */}
 
-              <img class="leri_ef e-1" src="/img/event/event_img.png" alt="" />
-              <img class="leri_ef e-2" src="/img/event/event_img.png" alt="" />
-              <img class="leri_ef e-3" src="/img/event/event_img.png" alt="" />
-              <img class="leri_ef e-4" src="/img/event/event_img.png" alt="" />
-              <img class="leri_ef e-5" src="/img/event/event_img.png" alt="" />
-              <img class="leri_ef e-6" src="/img/event/event_img.png" alt="" />
-              <img class="leri_ef e-7" src="/img/event/event_img.png" alt="" />
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-1"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-2"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-3"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-4"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
+
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-5"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-6"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
+              <motion.div
+                whileInView="onscreen"
+                initial="offscreen"
+                variants={variantsOpacity}
+                custom={0.5}
+              >
+                <img
+                  class="leri_ef e-7"
+                  src="/img/event/event_img.png"
+                  alt=""
+                />
+              </motion.div>
 
               {isOpen && (
                 <Portal>
