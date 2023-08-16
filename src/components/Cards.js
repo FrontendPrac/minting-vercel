@@ -42,14 +42,14 @@ const Cards = ({ onClickEnterAndSpin }) => {
             }}
           >
             <div className="box-item-front" style={{ zIndex: "10" }}>
-              <span className="box-text">click</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/key_ai.svg" width="100%" height="100%" />
             </div>
             <div
               className="box-item-back"
               style={{ zIndex: "5", transform: "rotateY(180deg)" }}
             >
-              <span className="box-text">Back</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/question.png" width="100%" height="100%" />
             </div>
           </div>
@@ -82,14 +82,14 @@ const Cards = ({ onClickEnterAndSpin }) => {
             }}
           >
             <div className="box-item-front" style={{ zIndex: "10" }}>
-              <span className="box-text">click</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/key_ai.svg" width="100%" height="100%" />
             </div>
             <div
               className="box-item-back"
               style={{ zIndex: "5", transform: "rotateY(180deg)" }}
             >
-              <span className="box-text">Back</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/question.png" width="100%" height="100%" />
             </div>
           </div>
@@ -122,14 +122,14 @@ const Cards = ({ onClickEnterAndSpin }) => {
             }}
           >
             <div className="box-item-front" style={{ zIndex: "10" }}>
-              <span className="box-text">click</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/key_ai.svg" width="100%" height="100%" />
             </div>
             <div
               className="box-item-back"
               style={{ zIndex: "5", transform: "rotateY(180deg)" }}
             >
-              <span className="box-text">Back</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/question.png" width="100%" height="100%" />
             </div>
           </div>
@@ -162,14 +162,14 @@ const Cards = ({ onClickEnterAndSpin }) => {
             }}
           >
             <div className="box-item-front" style={{ zIndex: "10" }}>
-              <span className="box-text">click</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/key_ai.svg" width="100%" height="100%" />
             </div>
             <div
               className="box-item-back"
               style={{ zIndex: "5", transform: "rotateY(180deg)" }}
             >
-              <span className="box-text">Back</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/question.png" width="100%" height="100%" />
             </div>
           </div>
@@ -202,14 +202,14 @@ const Cards = ({ onClickEnterAndSpin }) => {
             }}
           >
             <div className="box-item-front" style={{ zIndex: "10" }}>
-              <span className="box-text">click</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/key_ai.svg" width="100%" height="100%" />
             </div>
             <div
               className="box-item-back"
               style={{ zIndex: "5", transform: "rotateY(180deg)" }}
             >
-              <span className="box-text">Back</span>
+              <span className="box-text">Click</span>
               <Image src="/img/event/question.png" width="100%" height="100%" />
             </div>
           </div>
