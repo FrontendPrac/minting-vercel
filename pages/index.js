@@ -4,9 +4,7 @@ import Enter from "../src/components/Enter";
 import PageWrapper from "../src/components/PageWrapper";
 import Event from "../src/components/Event";
 import News from "../src/components/News";
-
 import Faq from "../src/components/Faq";
-import Faq_2 from "../src/components/Faq_2";
 
 const Index = () => {
   const [showSecondComponent, setShowSecondComponent] = useState(false);
