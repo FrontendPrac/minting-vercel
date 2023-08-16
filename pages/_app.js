@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     timeout: 5000,
     position: positions.BOTTOM_CENTER,
     offset: "10px",
-    containerStyle: { zIndex: 1000, marginBottom: "600px" },
+    containerStyle: { zIndex: 1000, marginBottom: "250px" },
   };
 
   return (
