@@ -3,8 +3,8 @@ import store from "../src/redux/store";
 import "../styles/globals.css";
 import Head from "next/head";
 import { positions, Provider as AlertProvider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
 import { AnimatePresence } from "framer-motion";
+import AlertTemplate from "react-alert-template-basic";
 // import AlertTemplate from "react-alert-template-oldschool-dark";
 // import AlertTemplate from "react-alert-template-mui";
 
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     timeout: 5000,
     position: positions.BOTTOM_CENTER,
     offset: "10px",
-    containerStyle: { zIndex: 1000, marginBottom: 250 },
+    containerStyle: { zIndex: 1000, marginBottom: "250px" },
   };
 
   return (
