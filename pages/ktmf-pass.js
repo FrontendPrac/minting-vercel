@@ -125,7 +125,18 @@ const NftSingle = () => {
       ) : (
         <Layout pageTitle={"Minting"}>
           <div className="metaportal_fn_mintpage">
-            <div className="container small">
+            <div className="small">
+              <div className="mint_tit">
+                <div className="f-title">
+                  <h3>KST (GMT+9)</h3>
+                </div>
+                <div className="f-sub">
+                  <span>let’s keep the party rolling</span>
+                </div>
+                <div className="baro">
+                  more info on the collection
+                </div>
+              </div>
               {/* Count Down */}
               <KSTTimeout
                 korDays={korDays}
@@ -134,16 +145,21 @@ const NftSingle = () => {
                 korSeconds={korSeconds}
                 marginTop={180}
               />
+                <div className="line-ef">
+                  <div className="l-1"></div>
+                  <div className="l-2"></div>
+                  <div className="l-3"></div>
+                  <div className="l-4"></div>
+                </div>
+                <div className="pass_tit">
+                  <h3>KTMF PASS NFT</h3>
+                </div>
               {/* Mint Top */}
               <div className="metaportal_fn_mint_top" style={{ paddingTop: 0 }}>
                 <div className="mint_left">
                   <div className="img">
-                    <div
-                      className="img_in"
-                      data-bg-img="/img/event/nft_ticket.png"
-                    >
-                      <img src="/img/event/nft_ticket.png" alt="" />
-                    </div>
+                      <img className="i-11" src="/img/event/nft_ticket.png" alt="" />
+                      <img className="i-22" src="/img/event/nft_ticket.png" alt="" />
                   </div>
                 </div>
                 <div className="mint_right">
