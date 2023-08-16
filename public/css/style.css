@@ -8528,7 +8528,7 @@ body {
   position: relative;
 }
 #event .event_wrap .leri_ef {
-  position: absolute;
+  position: fixed;
   transition: 0.3s;
 }
 #event .event_wrap img.e-1 {
