@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { variantsSideLeft } from "../variants";
 
 const Faq = () => {
   const faqs1 = [
@@ -65,8 +67,16 @@ const Faq = () => {
     <div class="main_sec3">
       <div class="sec3_flex">
         <div class="sec3_text">
-          <p>Frequently Asked Questions</p>
+          <motion.div
+            whileInView="onscreen"
+            initial="offscreen"
+            variants={variantsSideLeft}
+            custom={0.5}
+          >
+            <p>Frequently Asked Questions</p>
+          </motion.div>
         </div>
+
         <div class="con_list">
           <div className="faq_col">
             <div className="fn_cs_accordion">{faqMap(faqs1, "a")}</div>
