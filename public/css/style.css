@@ -8890,3 +8890,67 @@ body {
     position: absolute;
     filter: blur(50px);
 } */
+
+/* Event Box */
+#event .box-text {
+  position: absolute;
+  z-index: 100;
+  color: orange;
+  font-size: 2rem;
+  font-family: var(--titleText);
+  animation: keyT 1s linear infinite;
+}
+@keyframes keyT {
+  0% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* 테스트 */
+#wrap:hover .box-item {
+  transform: rotateY(180deg);
+}
+
+#wrap:hover {
+  animation: keyEF 1s ease-in-out forwards;
+}
+@keyframes keyEF {
+  0% {
+    box-shadow: 0 0 20px #ffbb005c;
+  }
+  50% {
+    box-shadow: 0 0 30px #ffb70098;
+  }
+  100% {
+    box-shadow: 0 0 40px #ffbf00c3;
+  }
+}
+
+#wrap .box-item > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border-radius: 20px;
+  backface-visibility: hidden;
+}

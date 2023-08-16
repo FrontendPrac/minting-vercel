@@ -16,6 +16,8 @@ import useLoading from "../src/hooks/useLoading";
 import Loading from "../src/components/loading/Loading";
 import PageWrapper from "../src/components/PageWrapper";
 import { useAlert } from "react-alert";
+import Image from "next/image";
+import Cards from "../src/components/Cards";
 
 const EventPage = () => {
   const alert = useAlert();
@@ -246,7 +248,7 @@ const EventPage = () => {
               </div>
 
               <div class="event_flex">
-                <div class="ev_item">
+                {/* <div class="ev_item">
                   <ul>
                     <li class="card">
                       <a class="card" href="" onClick={onClickEnterAndSpin}>
@@ -496,7 +498,8 @@ const EventPage = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
+                <Cards onClickEnterAndSpin={onClickEnterAndSpin} />
               </div>
 
               {/* <!-- IMG EFFECT --> */}
