@@ -51,7 +51,7 @@ export const Head3 = styled.h3`
   background: linear-gradient(to right, \\var(--mc1), var(--mc2));
   -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
-  color: #160f1a;
+  /* color: #ffcb3f; */
   filter: drop-shadow(0 5px 20px rgba(204, 0, 255, 0.15));
   font-size: 60px;
   font-weight: 600;
