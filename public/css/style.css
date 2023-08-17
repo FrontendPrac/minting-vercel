@@ -8912,7 +8912,7 @@ body {
   max-width: 100%;
 }
 #event .event_wrap .leri_ef {
-  position: fixed;
+  position: absolute;
   transition: 0.3s;
 }
 #event .event_wrap img {
@@ -8941,7 +8941,7 @@ body {
 }
 #event .event_wrap img.e-4 {
   max-width: 10vw;
-  top: 650px;
+  top: 550px;
   left: 13vw;
   transform: rotate(30deg);
   transition-duration: 0.9s;
