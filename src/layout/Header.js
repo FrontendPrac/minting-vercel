@@ -3,11 +3,13 @@ import React from "react";
 import { useAlert } from "react-alert";
 import { requestConnectWallet } from "../utilits";
 import { useMetaMask } from "metamask-react";
+import { useGlobalContext } from "../../context/GlobalContextProvider";
 
 
 const Header = () => {
 
-  const { status, connect, account, chainId, ethereum } = useMetaMask();
+  const { status, connect, account, chainId, ethereum, switchChain } = useMetaMask();
+  const {alertcon}= useGlobalContext()
   const alert = useAlert();
   /*const alert = useAlert();
 
@@ -21,9 +23,6 @@ const Header = () => {
     }
   };*/
 
-  if (status==="unavailable") {
-    alert.error("메타마스크를 설치하세요.");
-  }
 //
 
   return (
@@ -31,7 +30,7 @@ const Header = () => {
       <div class="flex_item">
         <div class="flex_logo">
           <div class="nav_logo h-2">
-            <Link href="/">ARZPASS</Link>
+            <Link href="/">ARZPASS </Link>
           </div>
         </div>
         <div class="flex_ul">
@@ -46,7 +45,7 @@ const Header = () => {
               </Link>
             </li>
             <li class="h-2">
-              <a href="">WORLD</a>
+              <a href="">WORLD </a>
             </li>
             <li class="h-2">
               <a href="ktmf-pass">NFTS</a>

@@ -20,25 +20,14 @@ import Social from "./Social";
 import WalletPopUp from "./WalletPopUp";
 import { useAlert } from "react-alert";
 import Header from "./Header";
+import { useGlobalContext } from "../../context/GlobalContextProvider";
 
 const Layout = ({ children, pageTitle }) => {
   const alert = useAlert();
+  const {alertcon, alertSepholia}= useGlobalContext()
 
   useEffect(() => {
-    // Check if the window.ethereum object is available
-    if (typeof window.ethereum !== "undefined") {
-      // Check install metamask
-      if (window.ethereum.selectedAddress) {
-        // Check if the connect to metamask
-        // Request access to the user's Ethereum account
-        checkNetwork(alert);
-      } else {
-        requestConnectWallet(alert);
-      }
-    } else {
-      alert.error("메타마스크를 설치하세요.");
-    }
-
+  
     holdSection();
     imgToSVG();
     dataBgImg();
