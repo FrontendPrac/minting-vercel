@@ -27,6 +27,7 @@ const NftSingle = () => {
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
+  // comment
 
   // State variables for user status
   const [publicActive, setPublicActive] = useState(false);
