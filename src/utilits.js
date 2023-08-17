@@ -213,7 +213,7 @@ export const requestConnectWallet = async (alert) => {
     if (window.ethereum.selectedAddress) {
       alert.success("메타마스크를 연결했어요.");
     } else {
-      alert.show("메타마스크를 연결하세요.");
+      alert.error("메타마스크를 연결하세요.");
       await window.ethereum.request({ method: "eth_requestAccounts" });
       location.reload();
     }
@@ -229,7 +229,7 @@ export const checkNetwork = async (alert) => {
     if (window.ethereum.selectedAddress) {
       const networkId = await ethereum.request({ method: "eth_chainId" });
       if (networkId !== "0xaa36a7") {
-        alert.show("Sepolia 네트워크로 변경해주세요.");
+        alert.error("Sepolia 네트워크로 변경해주세요.");
         await ethereum.request({
           method: "wallet_switchEthereumChain",
           params: [{ chainId: "0xaa36a7" }],
@@ -239,6 +239,6 @@ export const checkNetwork = async (alert) => {
     }
   } catch (err) {
     console.log("err: ", err);
-    alert.error("트랜잭션에 실패했습니다.");
+    // alert.error("트랜잭션에 실패했습니다.");
   }
 };
