@@ -11765,7 +11765,11 @@ react-countup@^6.3.2:
     "@rollup/plugin-babel" "^6.0.3"
     countup.js "^2.5.0"
 
+<<<<<<< HEAD
 "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.1 || ^17", "react-dom@^17.0.2 || ^18.0.0-0", react-dom@^18.0.0, "react-dom@>= 15.0.0", "react-dom@>= 16.8.0", react-dom@>=16, react-dom@>=16.0.0, react-dom@>=16.6.0, react-dom@18.2.0:
+=======
+"react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.1 || ^17", "react-dom@^17.0.2 || ^18.0.0-0", react-dom@^18.0.0, "react-dom@>= 15.0.0", "react-dom@>= 16.8.0", react-dom@>=16.0.0, react-dom@>=16.6.0, react-dom@18.2.0:
+>>>>>>> 2540e0019d2e0eae0fbbdd1a6d92747a5a067c8f
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==

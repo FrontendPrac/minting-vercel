@@ -6,9 +6,9 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
   const [toggle, setToggle] = useState(false);
   return (
     <Fragment>
-      <div className="metaportal_fn_mobnav">
+      {/* <div className="metaportal_fn_mobnav">
         <div className="mob_top">
-          <div className="social_trigger">
+          {<div className="social_trigger">
             <div className="trigger" onClick={() => navigationToggle(true)}>
               <span />
             </div>
@@ -76,7 +76,7 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> }
           <div className="wallet">
             <a
               href="#"
@@ -121,7 +121,7 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </Fragment>
   );
 };
