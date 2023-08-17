@@ -36,7 +36,7 @@ const Layout = ({ children, pageTitle }) => {
         requestConnectWallet(alert);
       }
     } else {
-      alert.show("메타마스크를 설치해주세요.");
+      alert.error("메타마스크를 설치하세요.");
     }
 
     holdSection();

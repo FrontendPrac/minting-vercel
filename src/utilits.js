@@ -213,7 +213,7 @@ export const requestConnectWallet = async (alert) => {
     if (window.ethereum.selectedAddress) {
       alert.success("메타마스크를 연결했어요.");
     } else {
-      alert.show("메타마스크를 연결하세요.");
+      alert.error("메타마스크를 연결하세요.");
       await window.ethereum.request({ method: "eth_requestAccounts" });
       location.reload();
     }
