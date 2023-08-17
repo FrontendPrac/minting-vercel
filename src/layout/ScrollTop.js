@@ -12,7 +12,7 @@ const ScrollTop = () => {
         <span className="icon">
           <img src="/svg/down.svg" alt="" className="fn__svg" />
         </span>
-        <span className="text">Scroll To Top</span>
+        <span className="text">scroll to top</span>
       </span>
     </a>
   );
