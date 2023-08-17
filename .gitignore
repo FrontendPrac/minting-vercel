@@ -1,8 +1,6 @@
 node_modules
 webpack
 .next
-./next
-./.next
 .env
 coverage
 coverage.json
