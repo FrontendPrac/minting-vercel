@@ -10,6 +10,9 @@ import { MetaMaskProvider } from "metamask-react";
 // import AlertTemplate from "react-alert-template-oldschool-dark";
 // import AlertTemplate from "react-alert-template-mui";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function MyApp({ Component, pageProps }) {
   // Alert options
   const options = {
@@ -65,8 +68,9 @@ function MyApp({ Component, pageProps }) {
               </Provider>
             </AlertProvider>
           </AnimatePresence>
-
+          <ToastContainer />
         </GlobalContextProvider>
+
       </MetaMaskProvider>
     </>
   );

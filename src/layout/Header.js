@@ -25,7 +25,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
       <div class="flex_item">
         <div class="flex_logo">
           <div class="nav_logo h-2">
-            <Link href="/">ARZPASS</Link>
+            <Link href="/">ARZPASS </Link>
           </div>
         </div>
         <div class="flex_ul">
@@ -40,7 +40,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
               </Link>
             </li>
             <li class="h-2">
-              <a href="">WORLD</a>
+              <a href="">WORLD </a>
             </li>
             <li class="h-2">
               <a href="ktmf-pass">NFTS</a>
