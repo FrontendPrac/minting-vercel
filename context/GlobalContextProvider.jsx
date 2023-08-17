@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { useMetaMask } from 'metamask-react';
 import { toast } from 'react-toastify';
 
-
 const AuthContext = React.createContext()
 export function useGlobalContext() {
 
@@ -22,8 +21,6 @@ export function GlobalContextProvider({ children }) {
   const [alertSepholia, setAlertSepholia] = useState(false)
   const [chainID, setChainID] = useState()
 
-
-
   useEffect(() => {
     Setloading(false)
     if (status === "connected") {
@@ -37,17 +34,19 @@ export function GlobalContextProvider({ children }) {
         toast.dark("Connect to sepholia network",{ position: toast.POSITION.TOP_CENTER})
       }
 
-    } else if (status === "unavailable") {
-     
-      alert("sdfsdfsd")
-      toast.dark("Please install metamask",{ position: toast.POSITION.TOP_CENTER})
-
     }
-
-  
-
-
+    
   }, [chainId])
+
+  useEffect(() => {
+    console.log("sdgsdgsdgs",status)
+      if (status === "unavailable") {
+        toast.error("Please install metamask",{ position: toast.POSITION.TOP_CENTER})
+   
+  }
+
+  }, [status])
+  
 
 
   const value = {

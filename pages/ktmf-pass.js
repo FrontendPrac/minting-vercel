@@ -22,11 +22,13 @@ import {
   variantsSideRight,
   variantsUp,
 } from "../src/variants";
+import { useMetaMask } from "metamask-react";
 
 const NftSingle = () => {
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
+  const { status, connect, account, chainId, ethereum, switchChain } = useMetaMask();
   // comment
 
   // State variables for user status
@@ -294,6 +296,8 @@ const NftSingle = () => {
               {/* /Video Shortcode */}
 
               {/* !Mint Top */}
+              {status==='connected'&&
+              <>
               {/* Mint Box */}
               {publicActive === 1 && (
                 <motion.div
@@ -343,6 +347,9 @@ const NftSingle = () => {
                   />
                 </motion.div>
               )}
+              </>
+              }
+
               {/* Section Divider */}
               <SectionDivider />
               {/* !Section Divider */}
