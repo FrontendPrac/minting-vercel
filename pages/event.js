@@ -238,9 +238,8 @@ const EventPage = () => {
                   <img class="light r-2" src="/img/event/light.png" alt="" />
                 </div>
                 <div class="en-tex">
-                  Discover what's behind the lock. 
-                  <br />
-                  A whitelist spot awaits!
+                  Discover whats behind the lock.
+                  <br />A whitelist spot awaits!
                 </div>
                 <div class="ko-tex">
                   숨어있는 화이트리스트를 찾아라!
