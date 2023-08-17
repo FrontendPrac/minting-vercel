@@ -33,26 +33,20 @@ const Event = () => {
         </div>
       </div>
       <div class="potext-1 t-n">
-        <ul class="text_ani">
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-        </ul>
+        <div className="animation-text-moving">
+          <span className="animation-text">
+            get your whitelist get your whitelist get your whitelist get your
+            whitelist get your whitelist
+          </span>
+        </div>
       </div>
       <div class="potext-2 t-n">
-        <ul class="text_ani">
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-          <li>get your whitelist</li>
-        </ul>
+        <div className="animation-text-moving">
+          <span className="animation-text">
+            get your whitelist get your whitelist get your whitelist get your
+            whitelist get your whitelist
+          </span>
+        </div>
       </div>
       {/* <!-- POINT IMG --> */}
       <motion.div

@@ -5,6 +5,7 @@ import PageWrapper from "../src/components/PageWrapper";
 import Event from "../src/components/Event";
 import News from "../src/components/News";
 import Faq from "../src/components/Faq";
+import Textmoving from "../src/components/Textmoving";
 
 const Index = () => {
   const [showSecondComponent, setShowSecondComponent] = useState(false);
@@ -50,6 +51,11 @@ const Index = () => {
           {/* Event */}
           {/* Event Slider */}
           <Event />
+
+          {/* Section Textmoving */}
+          {/* <Textmoving /> */}
+          {/* Section Textmoving */}
+
           {/* <EventSlider /> */}
           {/* Event Slider */}
           {/* Event */}
@@ -62,8 +68,6 @@ const Index = () => {
           <News />
           {/* !Section News */}
 
-          {/* Section Textmoving */}
-          {/* <Textmoving /> */}
           {/* Section Parallax */}
           {/* Section Divider */}
           {/* <SectionDivider /> */}

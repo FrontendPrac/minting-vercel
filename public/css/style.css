@@ -7731,6 +7731,33 @@ h3.mintT {
   animation: fn_cd_text_moving 15s linear infinite;
 }
 
+.animation-text-moving {
+  font-size: 1.5rem;
+  font-family: var(--subText);
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.animation-text-moving .animation-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  /* Apply animation to this element */
+  -moz-animation: fn_cd_text_moving 15s linear infinite;
+  -webkit-animation: fn_cd_text_moving 15s linear infinite;
+  animation: fn_cd_text_moving 15s linear infinite;
+}
+
 /* Move it (define the animation) */
 @-moz-keyframes fn_cd_text_moving {
   0% {
@@ -7758,6 +7785,36 @@ h3.mintT {
     -moz-transform: translateX(-100%); /* Firefox bug fix */
     -webkit-transform: translateX(-100%); /* Firefox bug fix */
     transform: translateX(-100%);
+  }
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes fn_cd_text_moving {
+  0% {
+    -moz-transform: translateX(-100%);
+  }
+  100% {
+    -moz-transform: translateX(100%);
+  }
+}
+@-webkit-keyframes fn_cd_text_moving {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+  }
+}
+@keyframes fn_cd_text_moving {
+  0% {
+    -moz-transform: translateX(-100%); /* Firefox bug fix */
+    -webkit-transform: translateX(-100%); /* Firefox bug fix */
+    transform: translateX(-100%);
+  }
+  100% {
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%);
   }
 }
 
@@ -8153,6 +8210,31 @@ body {
   font-size: 1rem;
   font-family: var(--subText);
 }
+
+.main_sec1 .potext-1 .animation-text {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-family: var(--subText);
+}
+
+.main_sec1 .potext-2 span {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-family: var(--subText);
+}
+
+.main_sec1 .potext-2 .animation-text {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-family: var(--subText);
+}
+
+.main_sec1 .potext-1 span {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-family: var(--subText);
+}
+
 .main_sec1 .potext-2 ul.text_ani {
   height: 100%;
   position: absolute;

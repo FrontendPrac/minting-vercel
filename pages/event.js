@@ -17,6 +17,8 @@ import Loading from "../src/components/loading/Loading";
 import PageWrapper from "../src/components/PageWrapper";
 import { useAlert } from "react-alert";
 import Cards from "../src/components/Cards";
+import { motion } from "framer-motion";
+import { variantsUp } from "../src/variants";
 
 const EventPage = () => {
   const alert = useAlert();
@@ -225,6 +227,7 @@ const EventPage = () => {
               <img class="leri_ef e-2" src="/img/event/event_img.png" alt="" />
               <img class="leri_ef e-3" src="/img/event/event_img.png" alt="" />
               <img class="leri_ef e-4" src="/img/event/event_img.png" alt="" />
+
               <div class="event_text">
                 <div class="e-dt">08.08.mon - 09.01.fri</div>
                 <div class="e-tit">
@@ -269,6 +272,7 @@ const EventPage = () => {
                   </div>
                 </div>
               </div>
+
               <img class="leri_ef e-5" src="/img/event/event_img.png" alt="" />
               <img class="leri_ef e-6" src="/img/event/event_img.png" alt="" />
               <img class="leri_ef e-7" src="/img/event/event_img.png" alt="" />
