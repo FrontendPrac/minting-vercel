@@ -229,7 +229,7 @@ const EventPage = () => {
               <img class="leri_ef e-3" src="/img/event/event_img.png" alt="" />
               <img class="leri_ef e-4" src="/img/event/event_img.png" alt="" />
               <div class="event_text">
-                <div class="e-dt">08.08.mon - 09.01.fri</div>
+                <div class="e-dt">09.01.fri</div>
                 <div class="e-tit">
                   KTMF PASS NFT
                   <br />
@@ -238,15 +238,14 @@ const EventPage = () => {
                   <img class="light r-2" src="/img/event/light.png" alt="" />
                 </div>
                 <div class="en-tex">
-                  Draw events that anyone can participate in once-a
+                  Discover what's behind the lock. 
                   <br />
-                  choose the key you want and check out the benefits you won!
+                  A whitelist spot awaits!
                 </div>
                 <div class="ko-tex">
-                  이벤트 기간 동안 하루에 - 한 번씩 누구나 참여할 수 있는 드로우
-                  이벤트
+                  숨어있는 화이트리스트를 찾아라!
                   <br />
-                  원하는 자물쇠를 선택해서 당첨된 혜택을 확인해 보세요!
+                  자물쇠를 열고, 화이트리스트를 획득하세요
                 </div>
                 <div class="e-fn">
                   <div class="ch_bar">

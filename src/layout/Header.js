@@ -1,9 +1,13 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useAlert } from "react-alert";
 import { requestConnectWallet } from "../utilits";
+import { connect } from "react-redux";
+import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
 
-const Header = () => {
+const Header = ({ walletToggle, navigationToggle }) => {
+  const [toggle, setToggle] = useState(false);
+
   const alert = useAlert();
 
   const onClickConnectWallet = (event) => {
@@ -135,9 +139,114 @@ const Header = () => {
             </li>
           </ul>
         </div>
+        <div className="metaportal_fn_mobnav">
+        <div className="mob_top">
+          {<div className="social_trigger">
+            <div className="trigger" onClick={() => navigationToggle(true)}>
+              <span />
+            </div>
+            {/* <div className="social">
+              <ul>
+                <li>
+                  <a
+                    href="https://twitter.com/a_rzmeta"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/svg/social/twitter-1.svg"
+                      alt=""
+                      className="fn__svg"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/arzmeta_/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/svg/social/instagram-1.svg"
+                      alt=""
+                      className="fn__svg"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://t.me/arzmeta_official"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/img/telegram.png"
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "40px",
+                        paddingBottom: "5px",
+                      }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://open.kakao.com/o/gda1vbof"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/img/kakao.png"
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        paddingBottom: "5px",
+                      }}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div> */}
+          </div> }
+          {/* <div className="wallet">
+            <a
+              href="#"
+              className="metaportal_fn_button wallet_opener"
+              onClick={() => walletToggle(true)}
+            >
+              <span>Wallet</span>
+            </a>
+          </div> */}
+        </div>
+        {/* <div className="mob_mid">
+          <div className="logo">
+            <Link href="/">
+              <a>
+                <img src="/img/logo.png" alt="" />
+              </a>
+            </Link>
+          </div>
+          <div
+            className={`trigger ${toggle ? "active" : ""}`}
+            onClick={() => setToggle(!toggle)}
+          >
+            <span />
+          </div>
+        </div> */}
       </div>
+      </div>
+      
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  navigation: state.site.navigation,
+});
+
+// export default Header;
+export default connect(mapStateToProps, { walletToggle, navigationToggle })(
+  Header
+);
