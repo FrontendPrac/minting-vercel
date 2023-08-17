@@ -16,15 +16,12 @@ const Event = () => {
         >
           <TypeAnimation
             style={{
-              whiteSpace: "pre-line",
-              height: "100px",
               display: "block",
             }}
             sequence={[`KTMF PASS NFT\nDRAW EVENT`, 100]}
             wrapper="h3"
             cursor={true}
             repeat={Infinity}
-            speed={1}
           />
         </motion.div>
         {/* <h3>

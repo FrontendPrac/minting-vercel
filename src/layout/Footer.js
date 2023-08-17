@@ -2,7 +2,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className="container">
+      <div className="contain">
         <div className="footer">
           <div className="left_part">
             <ul>

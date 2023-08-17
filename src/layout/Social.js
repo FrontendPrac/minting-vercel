@@ -10,7 +10,7 @@ const Social = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="/svg/social/twitter-1.svg" alt="" className="fn__svg" />
+              <img src="/img/twitter_logo.svg" alt="" className="fn__svg"/>
             </a>
           </li>
           <li>
@@ -19,11 +19,7 @@ const Social = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src="/svg/social/instagram-1.svg"
-                alt=""
-                className="fn__svg"
-              />
+              <img src="/img/instagram_logo.svg" alt="" className="fn__svg"/>
             </a>
           </li>
           <li>
@@ -32,11 +28,8 @@ const Social = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src="/img/telegram.png"
-                alt=""
-                style={{ width: "30px", height: "40px", paddingBottom: "5px" }}
-              />
+              <img src="/img/telegram_logo.svg" alt="" className="fn__svg"/>
+
             </a>
           </li>
           <li>
@@ -45,11 +38,7 @@ const Social = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src="/img/kakao.png"
-                alt=""
-                style={{ width: "30px", height: "30px", paddingBottom: "5px" }}
-              />
+              <img src="/img/kakaotalk_logo.svg" alt="" className="fn__svg"/>
             </a>
           </li>
         </ul>

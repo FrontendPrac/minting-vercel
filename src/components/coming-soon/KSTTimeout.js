@@ -9,10 +9,7 @@ const KSTTimeout = ({
   marginTop,
 }) => {
   return (
-    <div style={{ marginTop: marginTop }}>
-      <h3 className="fn__maintitle" data-text="KST(GMT +9)" data-align="center">
-        KST(GMT +9)
-      </h3>
+    <div>
       <br />
       <S.CountdownBox>
         <S.Ul>
