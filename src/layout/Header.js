@@ -24,7 +24,7 @@ const Header = () => {
   if (status==="unavailable") {
     alert.error("메타마스크를 설치하세요.");
   }
-
+//
 
   return (
     <div class="fixed_nav">
@@ -132,6 +132,7 @@ const Header = () => {
                 </svg>
               </a>
             </li>
+            
 
             {status === 'unavailable' &&<li class="h-2">
               <a href="https://metamask.io/" target="_blank" rel="noreferrer">
