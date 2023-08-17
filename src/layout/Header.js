@@ -134,7 +134,7 @@ const Header = () => {
             </li>
 
             {status === 'unavailable' &&<li class="h-2">
-              <a href="https://metamask.io/" target="_blank">
+              <a href="https://metamask.io/" target="_blank" rel="noreferrer">
               <div
              
                 style={{
