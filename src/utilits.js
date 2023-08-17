@@ -239,6 +239,6 @@ export const checkNetwork = async (alert) => {
     }
   } catch (err) {
     console.log("err: ", err);
-    alert.error("트랜잭션에 실패했습니다.");
+    // alert.error("트랜잭션에 실패했습니다.");
   }
 };
