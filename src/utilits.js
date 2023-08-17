@@ -229,7 +229,7 @@ export const checkNetwork = async (alert) => {
     if (window.ethereum.selectedAddress) {
       const networkId = await ethereum.request({ method: "eth_chainId" });
       if (networkId !== "0xaa36a7") {
-        alert.show("Sepolia 네트워크로 변경해주세요.");
+        alert.error("Sepolia 네트워크로 변경해주세요.");
         await ethereum.request({
           method: "wallet_switchEthereumChain",
           params: [{ chainId: "0xaa36a7" }],
