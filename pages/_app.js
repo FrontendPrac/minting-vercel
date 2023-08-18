@@ -27,9 +27,9 @@ function MyApp({ Component, pageProps }) {
       <MetaMaskProvider>
         <GlobalContextProvider>
           <Head>
-            <meta http-equiv="Cache-Control" content="no-store" />
+            {/* <meta http-equiv="Cache-Control" content="no-store" />
             <meta http-equiv="Pragma" content="no-cache" />
-            <meta http-equiv="Expires" content="0" />
+            <meta http-equiv="Expires" content="0" /> */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"
