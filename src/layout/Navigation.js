@@ -253,7 +253,6 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </Link>
                 </span>
               </li>
-
               <li className="li-c">
                 {status === "unavailable" && (
                   <li class="h-2">

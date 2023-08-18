@@ -19,9 +19,6 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   margin: 0 0 20px 0px;
   padding-left: 20px;
-  @media (max-width: 768px) {
-    width: 25%;
-  }
 `;
 
 export const Item = styled.div`
