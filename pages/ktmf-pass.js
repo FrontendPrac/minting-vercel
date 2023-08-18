@@ -138,8 +138,16 @@ const NftSingle = () => {
       ) : (
         <Layout pageTitle={"Minting"}>
           <div className="metaportal_fn_mintpage">
-            <div className="nfts_vd">
-              <video src="/img/video/KTMF_18sec_062923.mp4" playsInline autoPlay loop muted />
+            <div className="nfts_full_vd">
+              <div className="nfts_vd">
+                <video
+                  src="/img/video/KTMF_18sec_062923.mp4"
+                  playsInline
+                  autoPlay
+                  loop
+                  muted
+                />
+              </div>
             </div>
             <div className="small">
               <div className="mint_tit">
