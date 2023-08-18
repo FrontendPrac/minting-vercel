@@ -239,7 +239,7 @@ const EventPage = () => {
               <img class="leri_ef e-4" src="/img/event/event_img.png" alt="" />
 
               <div class="event_text">
-                <div class="e-dt">09.01.fri</div>
+                <div class="e-dt">~ 09.01.fri</div>
                 <div class="e-tit">
                   KTMF PASS NFT
                   <br />
@@ -248,7 +248,7 @@ const EventPage = () => {
                   <img class="light r-2" src="/img/event/light.png" alt="" />
                 </div>
                 <div class="en-tex">
-                  Discover whats behind the lock.
+                  {"Discover what’s behind the lock."}
                   <br />A whitelist spot awaits!
                 </div>
                 <div class="ko-tex">
