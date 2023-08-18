@@ -104,11 +104,6 @@ const PublicMintBox = ({
 
   // Update total price when quantity changes
   const handleQuantityChange = async (value) => {
-    if (!window.ethereum) {
-      alert("메타마스크를 연결해주세요");
-      return;
-    }
-
     if (value > 0 && value < 3) {
       setQuantity(value);
       // Calculate total price using the cost value from the smart contract
@@ -252,7 +247,9 @@ const PublicMintBox = ({
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(2)}</span>{" "}
+                  <span className="total_price">
+                    {totalPrice ? totalPrice.toFixed(2) : "0.02"}
+                  </span>{" "}
                   ETH + GAS
                 </h3>
               </div>
