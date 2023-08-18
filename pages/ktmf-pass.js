@@ -48,21 +48,22 @@ const NftSingle = () => {
   const { isLoading, setIsLoading } = useLoading();
 
   const initializeEthers = async () => {
+    console.log("typeof window.ethereum: ", typeof window.ethereum);
+
     if (
-      typeof window.ethereum !== "undefined" &&
-      window.ethereum.selectedAddress
+      // typeof window?.ethereum !== "undefined" &&
+      // window?.ethereum?.selectedAddress
+      status === "connected"
     ) {
       // Create an ethers provider using the window.ethereum object
-      const newProvider = await new ethers.providers.Web3Provider(
-        window.ethereum
-      );
+      const newProvider = new ethers.providers.Web3Provider(window.ethereum);
       console.log("newProvider: ", newProvider);
       setProvider(newProvider);
 
       // Create an ethers contract instance using the contract address and ABI
       const contractAbi = contractABI;
 
-      const newContract = await new ethers.Contract(
+      const newContract = new ethers.Contract(
         contractAddress,
         contractAbi,
         newProvider.getSigner() // Use the signer to send transactions
@@ -128,7 +129,7 @@ const NftSingle = () => {
   useEffect(() => {
     initializeEthers();
     showKorCountdown();
-  }, []);
+  }, [status]);
 
   return (
     <PageWrapper>
