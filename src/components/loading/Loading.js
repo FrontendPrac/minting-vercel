@@ -38,7 +38,8 @@ const Loading = ({ isLoading, setIsLoading }) => {
           }}
         >
           트랜잭션을 실행중입니다.
-          <br />5 ~ 10초 정도의 시간이 걸립니다.
+          <br />
+          15 ~ 20초 정도의 시간이 걸립니다.
         </div>
       </div>
       <button onClick={() => setIsLoading(!isLoading)}>버튼</button>

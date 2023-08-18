@@ -24,11 +24,10 @@ import { useGlobalContext } from "../../context/GlobalContextProvider";
 
 const Layout = ({ children, pageTitle }) => {
   const alert = useAlert();
-  const {alertcon, alertSepholia}= useGlobalContext()
+  const { alertcon, alertSepholia } = useGlobalContext();
 
   useEffect(() => {
-  
-    holdSection();
+    // holdSection();
     imgToSVG();
     dataBgImg();
   }, []);
@@ -59,7 +58,7 @@ const Layout = ({ children, pageTitle }) => {
       <Navigation />
       {/* !Left Navigation */}
       {/* Searchbox Popup */}
-      <Searchbox />
+      {/* <Searchbox /> */}
       {/* !Searchbox Popup */}
       {/* Wallet Popup */}
       <WalletPopUp />
@@ -87,7 +86,7 @@ const Layout = ({ children, pageTitle }) => {
         <ScrollTop />
         {/* /Totop */}
         {/* Search Button */}
-        <SearchButton />
+        {/* <SearchButton /> */}
         {/* !Search Button */}
       </div>
     </Fragment>
