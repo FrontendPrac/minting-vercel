@@ -724,6 +724,7 @@ input[type="text"]:focus {
 .metaportal_fn_button span {
   position: relative;
   z-index: 5;
+  color: var(--black-color);
 }
 .metaportal_fn_protected .submit {
   display: block;
@@ -4331,7 +4332,7 @@ h3.mintT {
   color: #000;
   letter-spacing: 0.5px;
   font-family: var(--hff);
-  background-color: #47e300;
+  background-color: var(--yellow-color);
   padding-right: 40px;
   padding-left: 59px;
   line-height: 48px;
@@ -4347,7 +4348,7 @@ h3.mintT {
   height: 0;
   border-style: solid;
   border-width: 48px 0 0 20px;
-  border-color: transparent transparent transparent #47e300;
+  border-color: transparent transparent transparent var(--yellow-color);
 }
 .metaportal_fn_mintbox .mint_list {
   margin-bottom: 5px;
@@ -4367,7 +4368,6 @@ h3.mintT {
   -o-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -40px;
 }
 .metaportal_fn_mintbox .mint_list li {
   width: 50%;
@@ -4521,7 +4521,7 @@ h3.mintT {
   justify-content: center;
   width: 14px;
   height: 14px;
-  background-color: #47e300;
+  background-color: var(--orange-color);
   color: #000;
   border-radius: 100%;
   margin-left: 5px;
@@ -4532,6 +4532,7 @@ h3.mintT {
   width: 8px;
   height: 8px;
   display: block;
+  fill: var(--black-color);
 }
 .metaportal_fn_mintbox .mint_info p {
   margin: 0;
@@ -6769,7 +6770,7 @@ h3.mintT {
 .fn_cs_roadmap .swiper-slide .icon {
   position: absolute;
   display: block;
-  left: 130px;
+  /* left: 130px; */
   width: 13px;
   height: 13px;
   /* background: -moz-linear-gradient(90deg, var(--orange-color), var(--yellow-color));
@@ -8204,8 +8205,7 @@ body {
   font-size: 1rem;
 }
 .metaportal_fn_leftnav .navbox {
-  background: rgb(255 255 255 / 30%)!important;
-  backdrop-filter: blur(16px);
+  background: rgb(0, 0, 0)!important;
 
 }
 .navbox .mob_bot ul.mob_ul li {
@@ -8719,10 +8719,27 @@ body {
   padding-top: 100px;
   padding-bottom: 0;
 }
+
+.metaportal_fn_mintpage .nfts_vd {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  position: relative;
+  top: 20px;
+}
+.metaportal_fn_mintpage .nfts_vd video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* .metaportal_fn_mintpage .nfts_vd iframe {
+
+} */
 .metaportal_fn_mintpage .small {
   padding: 200px 100px;
   width: 1440px;
   margin: 0 auto;
+  max-width: 100%;
 }
 .metaportal_fn_mintpage .mint_tit {
   width: 100%;
@@ -8920,6 +8937,7 @@ body {
   right: 40%;
   bottom: 5%;
   transform: rotate(-17deg);
+  transition: .5s;
   /* animation: mintImg 2s ease infinite; */
 }
 @keyframes mintImg {
@@ -8933,6 +8951,7 @@ body {
   width: 30%;
   right: 20%;
   bottom: 0;
+  transition: .5s;
 }
 
 .metaportal_fn_mint_top .mint_right {
@@ -8958,6 +8977,7 @@ body {
   left: 0;
   top: 0;
 }
+
 #event .event_vd .vd_wrap {
   width: 100%;
   height: 100%;
@@ -9661,6 +9681,38 @@ body {
     flex-shrink: 1;
     flex-basis: 0;
   }
+  .metaportal_fn_mint_top {
+    height: 100vh;
+    flex-direction: column;
+  }
+  .metaportal_fn_mint_top .mint_left {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+  .metaportal_fn_mint_top .mint_right {
+    width: 100%;
+  }
+  .metaportal_fn_mint_top .mint_left .img img.i-11 {
+    width: 35vw;
+  }
+  .metaportal_fn_breadcrumbs p {
+    margin-top: 5rem;
+  }
+  .metaportal_fn_mintbox .mint_left {
+    width: 100%;
+  }
+  .metaportal_fn_mintbox .mint_right {
+    width: 100%;
+  }
+  .metaportal_fn_mintbox .mright {
+    width: 100%;
+  }
+  .metaportal_fn_mintbox .mright {
+    margin-left: 0;
+  }
+
+
 
 }
 @media (max-width: 1360px) {
@@ -10094,5 +10146,80 @@ body {
 @media (max-width: 346px) {
   #event-card .card_flex #wrap {
     min-width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .metaportal_fn_mintpage .small {
+    padding: 200px 5rem;
+  }
+  .metaportal_fn_mintpage #faq {
+    padding-top: 50px;
+  }
+  .metaportal_fn_mintbox .mint_list ul {
+    flex-direction: column;
+  }
+  .metaportal_fn_mintbox .mint_list li {
+    width: 100%;
+  }
+  .small .pass_tit h3 {
+    font-size: 2.7rem;
+  }
+  .small .mint_tit .f-title h3 {
+    font-size: 2.7rem;
+  }
+  .metaportal_fn_mintbox .mint_list li {
+    padding-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .metaportal_fn_mint_top {
+    margin-top: -300px;
+  }
+}
+@media (max-width: 650px) {
+  .metaportal_fn_mintpage .small {
+    padding: 150px 1rem;
+  }
+  .metaportal_fn_mint_top {
+    margin-top: -250px;
+  }
+}
+@media (max-width: 920px) {
+  .metaportal_fn_mint_top {
+    margin-top: 0;
+  }
+}
+@media (max-width: 779px) {
+  .metaportal_fn_mint_top {
+    margin-top: -100px;
+  }
+  li.kmJmkG {
+    width: 50%;
+  }
+}
+@media (max-width: 580px) {
+  .metaportal_fn_mint_top {
+    margin-top: -240px;
+  }
+  .metaportal_fn_mintbox .mint_list li {
+    padding-left: 0;
+  }
+  .metaportal_fn_mintbox .mint_right {
+    padding: 50px 1rem;
+  }
+}
+@media (max-width: 472px) {
+  .metaportal_fn_mint_top {
+    margin-top: -270px;
+  }
+
+}
+
+@media (max-width: 385px) {
+  .metaportal_fn_mint_top .mint_left {
+    margin-bottom: 30px;
+  }
+  .metaportal_fn_mint_top .mint_left .img img.i-11 {
+    width: 37vw;
   }
 }

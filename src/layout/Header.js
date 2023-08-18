@@ -22,22 +22,6 @@ const Header = ({ walletToggle, navigationToggle }) => {
         <div class="flex_ul">
           <ul>
             <li class="h-2">
-              <Link href="https://arzmeta.net/" class="h-3">
-                <a target="_blank" rel="noreferrer">
-                  <img
-                    src="/img/main/main_arzmata_logo.png"
-                    alt=""
-                    style={{
-                      marginRight: 15,
-                      marginLeft: 15,
-                      cursor: "pointer",
-                    }}
-                  />
-                </a>
-              </Link>
-            </li>
-
-            <li class="h-2">
               <a href="">WORLD</a>
             </li>
 
@@ -279,6 +263,21 @@ const Header = ({ walletToggle, navigationToggle }) => {
               </a>
             </li>
 
+            <li class="h-2">
+              <Link href="https://arzmeta.net/" class="h-3">
+                <a target="_blank" rel="noreferrer">
+                  <img
+                    src="/img/main/main_arzmata_logo.png"
+                    alt=""
+                    style={{
+                      marginRight: 15,
+                      marginLeft: 15,
+                      cursor: "pointer",
+                    }}
+                  />
+                </a>
+              </Link>
+            </li>
             {status === "unavailable" && (
               <li class="h-2">
                 <a href="https://metamask.io/" target="_blank" rel="noreferrer">
