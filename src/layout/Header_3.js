@@ -6,7 +6,7 @@
 // import { contractABI, contractAddress } from "../components/utils/constants";
 // import { ethers } from "ethers";
 // import Image from "next/image";
-
+  
 // const Header_3 = ({ walletToggle, navigationToggle }) => {
 //   // state management of provider , signer and contract
 //   const [provider, setProvider] = useState(null);

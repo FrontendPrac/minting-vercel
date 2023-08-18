@@ -57,7 +57,7 @@ const Layout = ({ children, pageTitle }) => {
       {/* <Searchbox /> */}
       {/* !Searchbox Popup */}
       {/* Wallet Popup */}
-      <WalletPopUp />
+      {/* <WalletPopUp /> */}
       {/* !Wallet Popup */}
       {/* Main */}
       <div className="metaportal_fn_main">

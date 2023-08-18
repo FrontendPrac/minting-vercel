@@ -130,12 +130,6 @@
 //   MobileNavigation
 // );
 
-
-
-
-
-
-
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import { connect } from "react-redux";
