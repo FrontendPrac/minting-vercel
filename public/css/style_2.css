@@ -2538,7 +2538,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   height: 40px;
   display: block;
 }
-
+/* 
 .metaportal_fn_leftnav.ready,
 .metaportal_fn_leftnav_closer.ready {
   display: none;
@@ -2723,7 +2723,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
 }
 .metaportal_fn_leftnav::-webkit-scrollbar-thumb {
   background-color: var(--mc1);
-}
+} */
 
 .metaportal_fn_wallet_closer.ready,
 .metaportal_fn_walletbox.ready {
@@ -5675,7 +5675,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   .metaportal_fn_bloglist .bloglist li {
     width: 100%;
   }
-  .metaportal_fn_leftnav .copyright p,
+  /* .metaportal_fn_leftnav .copyright p,
   .metaportal_fn_leftnav .nav_holder ul {
     text-align: left;
   }
@@ -5692,7 +5692,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   }
   .metaportal_fn_leftnav .copyright p {
     max-width: 100%;
-  }
+  } */
   .fn_cs_slider .slider_top li.next {
     margin-left: 10px;
   }
