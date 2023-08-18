@@ -5,14 +5,14 @@ import React from "react";
 const Cards = ({ onClickEnterAndSpin }) => {
   return (
     <setcion id="event-card">
-      <div
+      <div className="card_flex"
         style={{
-          width: "65%",
+          width: "90%",
           margin: "0 auto",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignContent: "center",
-          gap: "5px",
+          gap: "15px",
         }}
       >
         <div
@@ -21,7 +21,6 @@ const Cards = ({ onClickEnterAndSpin }) => {
           style={{
             border: "1px solid orange",
             backgroundColor: "black",
-            width: "20%",
             height: "15rem",
             padding: "1rem",
             borderRadius: "5px",
@@ -61,7 +60,6 @@ const Cards = ({ onClickEnterAndSpin }) => {
           style={{
             border: "1px solid orange",
             backgroundColor: "black",
-            width: "20%",
             height: "15rem",
             padding: "1rem",
             borderRadius: "5px",
@@ -101,7 +99,6 @@ const Cards = ({ onClickEnterAndSpin }) => {
           style={{
             border: "1px solid orange",
             backgroundColor: "black",
-            width: "20%",
             height: "15rem",
             padding: "1rem",
             borderRadius: "5px",
@@ -141,7 +138,6 @@ const Cards = ({ onClickEnterAndSpin }) => {
           style={{
             border: "1px solid orange",
             backgroundColor: "black",
-            width: "20%",
             height: "15rem",
             padding: "1rem",
             borderRadius: "5px",
@@ -181,7 +177,6 @@ const Cards = ({ onClickEnterAndSpin }) => {
           style={{
             border: "1px solid orange",
             backgroundColor: "black",
-            width: "20%",
             height: "15rem",
             padding: "1rem",
             borderRadius: "5px",
