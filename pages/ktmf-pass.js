@@ -297,59 +297,59 @@ const NftSingle = () => {
               {/* /Video Shortcode */}
 
               {/* !Mint Top */}
-              {/* {status === "connected" && (
-                <> */}
-              {/* Mint Box */}
-              {publicActive === 1 && (
-                <motion.div
-                  whileInView="onscreen"
-                  initial="offscreen"
-                  variants={variantsOpacity}
-                  custom={0.5}
-                >
-                  <PublicMintBox
-                    provider={provider}
-                    contract={contract}
-                    publicActive={publicActive}
-                    isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                  />
-                </motion.div>
+              {status === "connected" && (
+                <>
+                  {/* Mint Box */}
+                  {publicActive === 1 && (
+                    <motion.div
+                      whileInView="onscreen"
+                      initial="offscreen"
+                      variants={variantsOpacity}
+                      custom={0.5}
+                    >
+                      <PublicMintBox
+                        provider={provider}
+                        contract={contract}
+                        publicActive={publicActive}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                      />
+                    </motion.div>
+                  )}
+                  {guaranteeActive === 1 && (
+                    <motion.div
+                      whileInView="onscreen"
+                      initial="offscreen"
+                      variants={variantsOpacity}
+                      custom={0.5}
+                    >
+                      <GuaranteedMintBox
+                        provider={provider}
+                        contract={contract}
+                        guaranteeActive={guaranteeActive}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                      />
+                    </motion.div>
+                  )}
+                  {competitiveActive === 1 && (
+                    <motion.div
+                      whileInView="onscreen"
+                      initial="offscreen"
+                      variants={variantsOpacity}
+                      custom={0.5}
+                    >
+                      <CompetitiveMintBox
+                        provider={provider}
+                        contract={contract}
+                        competitiveActive={competitiveActive}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                      />
+                    </motion.div>
+                  )}
+                </>
               )}
-              {guaranteeActive === 1 && (
-                <motion.div
-                  whileInView="onscreen"
-                  initial="offscreen"
-                  variants={variantsOpacity}
-                  custom={0.5}
-                >
-                  <GuaranteedMintBox
-                    provider={provider}
-                    contract={contract}
-                    guaranteeActive={guaranteeActive}
-                    isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                  />
-                </motion.div>
-              )}
-              {competitiveActive === 1 && (
-                <motion.div
-                  whileInView="onscreen"
-                  initial="offscreen"
-                  variants={variantsOpacity}
-                  custom={0.5}
-                >
-                  <CompetitiveMintBox
-                    provider={provider}
-                    contract={contract}
-                    competitiveActive={competitiveActive}
-                    isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                  />
-                </motion.div>
-              )}
-              {/* </>
-              )} */}
 
               {/* Section Divider */}
               <SectionDivider />

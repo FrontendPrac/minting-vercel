@@ -20,12 +20,8 @@ import Social from "./Social";
 import WalletPopUp from "./WalletPopUp";
 import { useAlert } from "react-alert";
 import Header from "./Header";
-import { useGlobalContext } from "../../context/GlobalContextProvider";
 
 const Layout = ({ children, pageTitle }) => {
-  const alert = useAlert();
-  const { alertcon, alertSepholia } = useGlobalContext();
-
   useEffect(() => {
     // holdSection();
     imgToSVG();
