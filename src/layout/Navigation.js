@@ -31,24 +31,30 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   <span />
                 </a>
               </li>
+
               <li>
                 <Link href="/#home2">
                   <a>HOME</a>
                 </Link>
               </li>
+
               <li>
                 <Link href="/ktmf-pass">
                   <a>NFTs</a>
                 </Link>
               </li>
+
               <li>
                 <Link href="/event">
                   <a>EVENT</a>
                 </Link>
               </li>
+
               <li className="li-c">
-                <Link href="">
-                  <a>OPENSEA</a>
+                <Link href="https://testnets.opensea.io/collection/ktmfpassnft">
+                  <a target="_blank" rel="noreferrer">
+                    OPENSEA
+                  </a>
                 </Link>
                 <span className="svg_baro">
                   <Link href="">
@@ -88,9 +94,12 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </Link>
                 </span>
               </li>
+
               <li className="li-c">
-                <Link href="">
-                  <a>TWITTER</a>
+                <Link href="https://twitter.com/a_rzmeta">
+                  <a target="_blank" rel="noreferrer">
+                    TWITTER
+                  </a>
                 </Link>
                 <span className="svg_baro">
                   <Link href="">
@@ -128,9 +137,12 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </Link>
                 </span>
               </li>
+
               <li className="li-c">
-                <Link href="">
-                  <a>INSTAGRAM</a>
+                <Link href="https://www.instagram.com/arzmeta_/">
+                  <a target="_blank" rel="noreferrer">
+                    INSTAGRAM
+                  </a>
                 </Link>
                 <span className="svg_baro">
                   <Link href="">
@@ -168,9 +180,12 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </Link>
                 </span>
               </li>
+
               <li className="li-c">
-                <Link href="">
-                  <a>TIKTOK</a>
+                <Link href="https://www.tiktok.com/@arzmeta_official">
+                  <a target="_blank" rel="noreferrer">
+                    TIKTOK
+                  </a>
                 </Link>
                 <span className="svg_baro">
                   <Link href="">
@@ -208,12 +223,16 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </Link>
                 </span>
               </li>
+
               <li className="li-c mbli">
-                <Link href="">
-                  <a>KAKAOTALK</a>
+                <Link href="https://open.kakao.com/o/gda1vbof">
+                  <a target="_blank" rel="noreferrer">
+                    {" "}
+                    KAKAOTALK
+                  </a>
                 </Link>
                 <span className="svg_baro">
-                  <Link href="">
+                  <Link href="https://open.kakao.com/o/gda1vbof">
                     <a>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
