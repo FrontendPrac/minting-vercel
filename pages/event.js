@@ -232,6 +232,13 @@ const EventPage = () => {
             <video src="/img/video/arzmeta.mp4" playsInline autoPlay loop muted />
           </div> */}
           <div id="event">
+            <div className="event_vd">
+              <div className="vd_wrap">
+                <div className="over_bg">
+                  <video src="/img/video/arzmeta.mp4" playsInline autoPlay loop muted />
+                </div>
+              </div>
+            </div>
             <div class="event_wrap">
               <img class="leri_ef e-1" src="/img/event/event_img.png" alt="" />
               <img class="leri_ef e-2" src="/img/event/event_img.png" alt="" />
