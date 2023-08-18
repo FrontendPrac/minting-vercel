@@ -8,6 +8,7 @@ const PublicMintBox = ({
   publicActive,
   isLoading,
   setIsLoading,
+  previousScrollPosition,
 }) => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(1);
@@ -85,11 +86,11 @@ const PublicMintBox = ({
       toast.dark("NFTs minted successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
-      location.reload();
     } catch (error) {
       if (error.code === "ACTION_REJECTED") {
         console.error("Error minting NFTs:", error);
         setIsLoading(false);
+        restoreScrollPosition();
       } else {
         console.error("Error minting NFTs:", error);
         toast.dark("NFTs minted failed!", {
@@ -185,6 +186,12 @@ const PublicMintBox = ({
       }
     }, 1000);
   };
+
+  // Postion y
+  previousScrollPosition = window.scrollY;
+  function restoreScrollPosition() {
+    window.scrollTo(0, previousScrollPosition);
+  }
 
   useEffect(() => {
     showKorCountdown();

@@ -123,6 +123,8 @@ const NftSingle = () => {
     }, 1000);
   };
 
+  const previousScrollPosition = 0;
+
   useEffect(() => {
     initializeEthers();
     showKorCountdown();
@@ -143,7 +145,7 @@ const NftSingle = () => {
                 <div className="f-sub">
                   <span>let’s keep the party rolling</span>
                 </div>
-                <div className="baro">more info on the collection</div>
+                {/* <div className="baro">more info on the collection</div> */}
               </div>
               {/* Count Down */}
               <KSTTimeout
@@ -224,9 +226,11 @@ const NftSingle = () => {
                         COLLECTION
                       </p>
                       <p>
-                        [한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어
-                        메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in
-                        Metaverse]
+                        <em>
+                          {
+                            '"한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in Metaverse"'
+                          }
+                        </em>
                         <br />
                         <br />
                         아즈메타가 선보이는 온·오프라인 융합 하이브리드
@@ -313,6 +317,7 @@ const NftSingle = () => {
                         publicActive={publicActive}
                         isLoading={isLoading}
                         setIsLoading={setIsLoading}
+                        previousScrollPosition={previousScrollPosition}
                       />
                     </motion.div>
                   )}
@@ -329,6 +334,7 @@ const NftSingle = () => {
                         guaranteeActive={guaranteeActive}
                         isLoading={isLoading}
                         setIsLoading={setIsLoading}
+                        previousScrollPosition={previousScrollPosition}
                       />
                     </motion.div>
                   )}
@@ -345,6 +351,7 @@ const NftSingle = () => {
                         competitiveActive={competitiveActive}
                         isLoading={isLoading}
                         setIsLoading={setIsLoading}
+                        previousScrollPosition={previousScrollPosition}
                       />
                     </motion.div>
                   )}
