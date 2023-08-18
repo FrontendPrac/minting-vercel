@@ -276,7 +276,7 @@ const EventPage = () => {
                   </div>
                   <div class="e-count">
                     <span>참여 가능 횟수</span>
-                    <strong>{isRaffle ? 1 : 0}/1</strong>
+                    <strong>{isRaffle ? 0 : 1}/1</strong>
                   </div>
                 </div>
               </div>
