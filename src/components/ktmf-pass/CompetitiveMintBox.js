@@ -8,6 +8,7 @@ const CompetitiveMintBox = ({
   competitiveActive,
   isLoading,
   setIsLoading,
+  previousScrollPosition,
 }) => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(1);
@@ -98,6 +99,7 @@ const CompetitiveMintBox = ({
       if (error.code === "ACTION_REJECTED") {
         console.error("Error minting NFTs:", error);
         setIsLoading(false);
+        restoreScrollPosition();
       } else {
         setIsLoading(false);
         console.log("Error minting NFTs:", error);
@@ -192,6 +194,12 @@ const CompetitiveMintBox = ({
       }
     }, 1000);
   };
+
+  // Postion y
+  previousScrollPosition = window.scrollY;
+  function restoreScrollPosition() {
+    window.scrollTo(0, previousScrollPosition);
+  }
 
   useEffect(() => {
     showKorCountdown();
