@@ -258,7 +258,9 @@ const GuaranteedMintBox = ({
               <div className="item">
                 <h4>Total Price</h4>
                 <h3>
-                  <span className="total_price">{totalPrice.toFixed(2)}</span>{" "}
+                  <span className="total_price">
+                    {totalPrice ? totalPrice.toFixed(2) : "0.01"}
+                  </span>{" "}
                   ETH + GAS
                 </h3>
               </div>
