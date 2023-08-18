@@ -17,8 +17,8 @@ import Loading from "../src/components/loading/Loading";
 import PageWrapper from "../src/components/PageWrapper";
 import { useAlert } from "react-alert";
 import Cards from "../src/components/Cards";
-import { motion } from "framer-motion";
-import { variantsUp } from "../src/variants";
+import { useMetaMask } from "metamask-react";
+import { toast } from "react-toastify";
 
 const EventPage = () => {
   const alert = useAlert();
@@ -33,6 +33,8 @@ const EventPage = () => {
   const [prize, setPrize] = useState("");
   const [isCompetitiveWhiteList, setIsCompetitiveWhiteList] = useState(false);
   const [isGuaranteeWhiteList, setIsGuaranteeWhiteList] = useState(false);
+  const { status, connect, account, chainId, ethereum, switchChain } =
+    useMetaMask();
 
   // Custom Hook
   const { isOpen, open, close } = useModal();
@@ -104,6 +106,14 @@ const EventPage = () => {
 
   // Join Raffle
   const onClickEnterAndSpin = async (event) => {
+    if (status === "notConnected") {
+      toast.dark("Connect to metamask", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      connect();
+      return;
+    }
+
     event.preventDefault();
 
     const contract = new ethers.Contract(
@@ -229,7 +239,7 @@ const EventPage = () => {
               <img class="leri_ef e-4" src="/img/event/event_img.png" alt="" />
 
               <div class="event_text">
-                <div class="e-dt">09.01.fri</div>
+                <div class="e-dt">~ 09.01.fri</div>
                 <div class="e-tit">
                   KTMF PASS NFT
                   <br />
@@ -238,7 +248,7 @@ const EventPage = () => {
                   <img class="light r-2" src="/img/event/light.png" alt="" />
                 </div>
                 <div class="en-tex">
-                  Discover whats behind the lock.
+                  {"Discover what’s behind the lock."}
                   <br />A whitelist spot awaits!
                 </div>
                 <div class="ko-tex">
@@ -266,7 +276,7 @@ const EventPage = () => {
                   </div>
                   <div class="e-count">
                     <span>참여 가능 횟수</span>
-                    <strong>{isRaffle ? 1 : 0}/1</strong>
+                    <strong>{isRaffle ? 0 : 1}/1</strong>
                   </div>
                 </div>
               </div>

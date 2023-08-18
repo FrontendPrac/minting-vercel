@@ -10,8 +10,8 @@ import { MetaMaskProvider } from "metamask-react";
 // import AlertTemplate from "react-alert-template-oldschool-dark";
 // import AlertTemplate from "react-alert-template-mui";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function MyApp({ Component, pageProps }) {
   // Alert options
@@ -27,6 +27,9 @@ function MyApp({ Component, pageProps }) {
       <MetaMaskProvider>
         <GlobalContextProvider>
           <Head>
+            <meta http-equiv="Cache-Control" content="no-store" />
+            <meta http-equiv="Pragma" content="no-cache" />
+            <meta http-equiv="Expires" content="0" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"
@@ -45,18 +48,27 @@ function MyApp({ Component, pageProps }) {
               href="/css/plugins.css?ver=4.1"
             />
             <link
-              href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'
+              href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+              rel="stylesheet"
+              type="text/css"
             />
             <link
-              href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+              rel="stylesheet"
             />
             <link
-              rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
             />
             <link
-              href="https://fonts.cdnfonts.com/css/copperplate" rel="stylesheet"
+              href="https://fonts.cdnfonts.com/css/copperplate"
+              rel="stylesheet"
             />
-            <link type="text/css" rel="stylesheet" href="/css/style.css?ver=4.1" />
+            <link
+              type="text/css"
+              rel="stylesheet"
+              href="/css/style.css?ver=4.1"
+            />
             {/* Favicon */}
             <link rel="icon" href="/favicon.png" />
           </Head>
@@ -70,7 +82,6 @@ function MyApp({ Component, pageProps }) {
           </AnimatePresence>
           <ToastContainer />
         </GlobalContextProvider>
-
       </MetaMaskProvider>
     </>
   );

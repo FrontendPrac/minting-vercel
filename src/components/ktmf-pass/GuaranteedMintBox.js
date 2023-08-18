@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const GuaranteedMintBox = ({
   provider,
@@ -7,9 +8,10 @@ const GuaranteedMintBox = ({
   guaranteeActive,
   isLoading,
   setIsLoading,
+  previousScrollPosition,
 }) => {
   // State variables for quantity and total price
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
 
   // State variables for guaranteed user
@@ -88,18 +90,20 @@ const GuaranteedMintBox = ({
       console.log("receipt: ", receipt);
 
       setIsLoading(false);
-      alert("NFTs minted successfully!");
-      location.reload();
+      toast.dark("NFTs minted successfully!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     } catch (error) {
       if (error.code === "ACTION_REJECTED") {
         console.error("Error minting NFTs:", error);
         setIsLoading(false);
+        restoreScrollPosition();
       } else {
         setIsLoading(false);
         console.error("Error minting NFTs:", error);
-        alert(
-          "확정 화이트리스트가 있는지 확인하세요. 해당 화이트리스트는 한번만 참여할 수 있어요."
-        );
+        toast.dark("NFTs minted failed!", {
+          position: toast.POSITION.TOP_CENTER,
+        });
       }
     }
   };
@@ -111,7 +115,7 @@ const GuaranteedMintBox = ({
       return;
     }
 
-    if (value > 0) {
+    if (value > 0 && value < 3) {
       setQuantity(value);
       // Calculate total price using the cost value from the smart contract
       const newTotalPrice = value * guaranteePrice;
@@ -188,6 +192,12 @@ const GuaranteedMintBox = ({
       }
     }, 1000);
   };
+
+  // Postion y
+  previousScrollPosition = window.scrollY;
+  function restoreScrollPosition() {
+    window.scrollTo(0, previousScrollPosition);
+  }
 
   useEffect(() => {
     showKorCountdown();

@@ -28,7 +28,8 @@ const NftSingle = () => {
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
-  const { status, connect, account, chainId, ethereum, switchChain } = useMetaMask();
+  const { status, connect, account, chainId, ethereum, switchChain } =
+    useMetaMask();
   // comment
 
   // State variables for user status
@@ -122,6 +123,8 @@ const NftSingle = () => {
     }, 1000);
   };
 
+  const previousScrollPosition = 0;
+
   useEffect(() => {
     initializeEthers();
     showKorCountdown();
@@ -142,7 +145,7 @@ const NftSingle = () => {
                 <div className="f-sub">
                   <span>let’s keep the party rolling</span>
                 </div>
-                <div className="baro">more info on the collection</div>
+                {/* <div className="baro">more info on the collection</div> */}
               </div>
               {/* Count Down */}
               <KSTTimeout
@@ -223,9 +226,11 @@ const NftSingle = () => {
                         COLLECTION
                       </p>
                       <p>
-                        [한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어
-                        메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in
-                        Metaverse]
+                        <em>
+                          {
+                            '"한류 열풍을 주도하는 케이팝(K-POP), 세계를 넘어 메타버스로! 아즈메타와 K-POP이 만납니다, K-POP in Metaverse"'
+                          }
+                        </em>
                         <br />
                         <br />
                         아즈메타가 선보이는 온·오프라인 융합 하이브리드
@@ -296,59 +301,62 @@ const NftSingle = () => {
               {/* /Video Shortcode */}
 
               {/* !Mint Top */}
-              {status==='connected'&&
-              <>
-              {/* Mint Box */}
-              {publicActive === 1 && (
-                <motion.div
-                  whileInView="onscreen"
-                  initial="offscreen"
-                  variants={variantsOpacity}
-                  custom={0.5}
-                >
-                  <PublicMintBox
-                    provider={provider}
-                    contract={contract}
-                    publicActive={publicActive}
-                    isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                  />
-                </motion.div>
+              {status === "connected" && (
+                <>
+                  {/* Mint Box */}
+                  {publicActive === 1 && (
+                    <motion.div
+                      whileInView="onscreen"
+                      initial="offscreen"
+                      variants={variantsOpacity}
+                      custom={0.5}
+                    >
+                      <PublicMintBox
+                        provider={provider}
+                        contract={contract}
+                        publicActive={publicActive}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                        previousScrollPosition={previousScrollPosition}
+                      />
+                    </motion.div>
+                  )}
+                  {guaranteeActive === 1 && (
+                    <motion.div
+                      whileInView="onscreen"
+                      initial="offscreen"
+                      variants={variantsOpacity}
+                      custom={0.5}
+                    >
+                      <GuaranteedMintBox
+                        provider={provider}
+                        contract={contract}
+                        guaranteeActive={guaranteeActive}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                        previousScrollPosition={previousScrollPosition}
+                      />
+                    </motion.div>
+                  )}
+                  {competitiveActive === 1 && (
+                    <motion.div
+                      whileInView="onscreen"
+                      initial="offscreen"
+                      variants={variantsOpacity}
+                      custom={0.5}
+                    >
+                      <CompetitiveMintBox
+                        provider={provider}
+                        contract={contract}
+                        competitiveActive={competitiveActive}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                        previousScrollPosition={previousScrollPosition}
+                      />
+                    </motion.div>
+                  )}
+                </>
               )}
-              {guaranteeActive === 1 && (
-                <motion.div
-                  whileInView="onscreen"
-                  initial="offscreen"
-                  variants={variantsOpacity}
-                  custom={0.5}
-                >
-                  <GuaranteedMintBox
-                    provider={provider}
-                    contract={contract}
-                    guaranteeActive={guaranteeActive}
-                    isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                  />
-                </motion.div>
-              )}
-              {competitiveActive === 1 && (
-                <motion.div
-                  whileInView="onscreen"
-                  initial="offscreen"
-                  variants={variantsOpacity}
-                  custom={0.5}
-                >
-                  <CompetitiveMintBox
-                    provider={provider}
-                    contract={contract}
-                    competitiveActive={competitiveActive}
-                    isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                  />
-                </motion.div>
-              )}
-              </>
-              }
 
               {/* Section Divider */}
               <SectionDivider />
