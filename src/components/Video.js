@@ -37,14 +37,14 @@ const Video = () => {
                 fill="white"
               />
             </svg>
-          </div>
-          <div class="flex_item">
             <div class="modal_text">
               <div class="item_text">
                 <span> get it now </span>
                 <p>OPENSEA</p>
               </div>
             </div>
+          </div>
+          <div class="flex_item">
             <div class="baro">
               <a
                 href="https://testnets.opensea.io/collection/ktmfpassnft"
