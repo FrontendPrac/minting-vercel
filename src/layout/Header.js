@@ -22,27 +22,37 @@ const Header = ({ walletToggle, navigationToggle }) => {
         <div class="flex_ul">
           <ul>
             <li class="h-2">
-              <Link href="/" class="h-3">
-                <img
-                  src="/img/main/main_arzmata_logo.png"
-                  alt=""
-                  style={{ marginRight: 15, marginLeft: 15, cursor: "pointer" }}
-                />
+              <Link href="https://arzmeta.net/" class="h-3">
+                <a target="_blank" rel="noreferrer">
+                  <img
+                    src="/img/main/main_arzmata_logo.png"
+                    alt=""
+                    style={{
+                      marginRight: 15,
+                      marginLeft: 15,
+                      cursor: "pointer",
+                    }}
+                  />
+                </a>
               </Link>
             </li>
+
             <li class="h-2">
               <a href="">WORLD</a>
             </li>
+
             <li class="h-2">
               <a href="ktmf-pass">NFTS</a>
             </li>
+
             <li class="h-2">
               <a href="event">EVENT</a>
             </li>
+
             <li class="h-2">
               <a
                 class="h-3"
-                href="https://www.instagram.com/arzmeta_/"
+                href="https://testnets.opensea.io/collection/ktmfpassnft"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -81,10 +91,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </svg>
               </a>
             </li>
+
             <li class="h-2">
               <a
                 class="h-3"
-                href="https://www.instagram.com/arzmeta_/"
+                href="https://twitter.com/a_rzmeta"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -120,10 +131,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </svg>
               </a>
             </li>
+
             <li class="h-2">
               <a
                 class="h-3"
-                href="https://twitter.com/a_rzmeta"
+                href="https://www.tiktok.com/@arzmeta_official"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -159,6 +171,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </svg>
               </a>
             </li>
+
             <li class="h-2">
               <a
                 class="h-3"
@@ -198,7 +211,8 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </svg>
               </a>
             </li>
-            <li class="h-2">
+
+            {/* <li class="h-2">
               <a
                 class="h-3"
                 href="https://twitter.com/a_rzmeta"
@@ -236,11 +250,12 @@ const Header = ({ walletToggle, navigationToggle }) => {
                   </g>
                 </svg>
               </a>
-            </li>
+            </li> */}
+
             <li class="h-2">
               <a
                 class="h-3"
-                href="https://www.instagram.com/arzmeta_/"
+                href="https://open.kakao.com/o/gda1vbof"
                 target="_blank"
                 rel="noreferrer"
               >
