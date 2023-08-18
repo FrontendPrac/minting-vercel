@@ -16,16 +16,23 @@ const Navigation = ({ navigation, navigationToggle }) => {
         className={`metaportal_fn_leftnav_closer ${navigation ? "active" : ""}`}
       />
       <div className={`metaportal_fn_leftnav ${navigation ? "active" : ""}`}>
-        {/* <a
-          href="#"
-          className="fn__closer"
-          onClick={() => navigationToggle(false)}
-        >
-          <span />
-        </a> */}
+
+
         <div className="navbox">
           <div className="mob_bot" style={{ "block": "none" }}>
             <ul className="mob_ul">
+              <li className="mo_lo_flex">
+                <div class="nav_logo h-2 mo_lo">
+                  <Link href="/">ARZPASS</Link>
+                </div>
+                    <a
+                      href="#"
+                      className="fn__closer"
+                      onClick={() => navigationToggle(false)}
+                    >
+                    <span />
+                    </a>
+              </li>
               <li>
                 <Link href="/#home2">
                   <a>HOME</a>
@@ -148,7 +155,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                   </Link>
                 </span>
               </li>
-              <li className="li-c">
+              <li className="li-c mbli">
                 <Link href="">
                   <a>KAKAOTALK</a>
                 </Link>
@@ -165,14 +172,14 @@ const Navigation = ({ navigation, navigationToggle }) => {
                 </span>
               </li>
 
-              <li className="li-c" style={{marginLeft:'-14px'}}>
+              <li className="li-c">
                 {status === 'unavailable' && <li class="h-2">
                   <a href="https://metamask.io/" target="_blank" rel="noreferrer">
                     <div
 
                       style={{
-                        paddingLeft: 15,
-                        paddingRight: 15,
+                        paddingLeft: 0,
+                        paddingRight: 0,
                         color: "white",
                         cursor: "pointer",
                       }}
@@ -190,8 +197,8 @@ const Navigation = ({ navigation, navigationToggle }) => {
                         <div
                           onClick={connect}
                           style={{
-                            paddingLeft: 15,
-                            paddingRight: 15,
+                            paddingLeft: 0,
+                            paddingRight: 0,
                             color: "white",
                             cursor: "pointer",
                           }}
@@ -204,8 +211,8 @@ const Navigation = ({ navigation, navigationToggle }) => {
                           <div
 
                             style={{
-                              paddingLeft: 15,
-                              paddingRight: 15,
+                              paddingLeft: 0,
+                              paddingRight: 0,
                               color: "white",
                               cursor: "pointer",
                             }}
@@ -222,7 +229,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
               { 
                
                (chainId?.toString() !== "0xaa36a7") &&
-                <li className="li-c" style={{marginLeft:'-14px', marginTop:'10px', backgroundColor:'#313866', width:'20rem',
+                <li className="li-c" style={{marginLeft:'-14px', marginTop:'2rem', backgroundColor:'#313866', width:'20rem',
                 borderRadius:'10px', padding:'8px'}}>
                   <div 
                   style={{
