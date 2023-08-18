@@ -546,7 +546,7 @@ input[type="text"]:focus {
 .metaportal_fn_mobnav {
   display: none;
   overflow: hidden;
-  transition: .2s;
+  transition: 0.2s;
 }
 .metaportal_fn_mobnav .social_trigger {
   display: -webkit-flex;
@@ -8019,7 +8019,7 @@ body {
   align-items: center;
   border-radius: 4px;
   z-index: 9999;
-  transition: .2s;
+  transition: 0.2s;
 }
 #main .fixed_modal .modal_inner {
   display: flex;
@@ -8178,7 +8178,6 @@ body {
   align-items: center;
 }
 
-
 /* mobile nav */
 .navbox .mob_bot ul.mob_ul {
   list-style: none;
@@ -8205,8 +8204,7 @@ body {
   font-size: 1rem;
 }
 .metaportal_fn_leftnav .navbox {
-  background: rgb(0, 0, 0)!important;
-
+  background: rgb(0, 0, 0) !important;
 }
 .navbox .mob_bot ul.mob_ul li {
   width: 100%;
@@ -8250,8 +8248,6 @@ body {
   height: 1rem;
   fill: var(--white-color);
 }
-
-
 
 /* Event */
 .main_sec1 {
@@ -8522,7 +8518,7 @@ body {
   justify-content: space-between;
   position: relative;
   gap: 1rem;
-  transition: .2s;
+  transition: 0.2s;
 }
 .main_sec2 ul.cont li {
   width: 100%;
@@ -8720,12 +8716,39 @@ body {
   padding-bottom: 0;
 }
 
-.metaportal_fn_mintpage .nfts_vd {
+.metaportal_fn_mintpage .nfts_full_vd {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(255, 162, 0) 120%
+  );
+}
+
+.metaportal_fn_mintpage .nfts_full_vd .nfts_vd {
+  background: #000;
   width: 100%;
   height: 100%;
-  border: 1px solid red;
-  position: relative;
-  top: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  /* width: 100%; */
+  /* height: 100vh; */
+  /* border: 1px solid red; */
+  /* position: relative; */
+  /* top: 20px; */
+  /* background: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1; */
 }
 .metaportal_fn_mintpage .nfts_vd video {
   width: 100%;
@@ -8937,7 +8960,7 @@ body {
   right: 40%;
   bottom: 5%;
   transform: rotate(-17deg);
-  transition: .5s;
+  transition: 0.5s;
   /* animation: mintImg 2s ease infinite; */
 }
 @keyframes mintImg {
@@ -8951,17 +8974,12 @@ body {
   width: 30%;
   right: 20%;
   bottom: 0;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .metaportal_fn_mint_top .mint_right {
   width: 48%;
 }
-
-
-
-
-
 
 /* Event Page */
 #event {
@@ -8989,8 +9007,12 @@ body {
   left: 0;
   top: 0;
   overflow: hidden;
-  background: rgb(0,0,0);
-  background: linear-gradient(360deg, rgba(0,0,0,1) -5%, rgba(255,255,255,0) 100%)
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 1) -5%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 #event .event_vd video {
   width: 100%;
@@ -9001,8 +9023,6 @@ body {
   top: 0%;
   z-index: -1;
 }
-
-
 
 /* nav */
 #event .fixed_nav {
@@ -9149,7 +9169,7 @@ body {
   align-items: center;
   position: relative;
   max-width: 100%;
-  transition: .5s;
+  transition: 0.5s;
 }
 #event .event_wrap .leri_ef {
   position: absolute;
@@ -9232,7 +9252,7 @@ body {
   line-height: 3.9rem;
   letter-spacing: -0.25rem;
   position: relative;
-  transition: .5s;
+  transition: 0.5s;
 }
 #event .event_text img.light {
   position: absolute;
@@ -9241,7 +9261,7 @@ body {
   width: 150px;
   left: -8rem;
   top: 2.1rem;
-  transition: .4s;
+  transition: 0.4s;
   transform: rotate(5deg);
   animation: lightE1 1s ease infinite;
   -moz-animation: lightE1 1s ease infinite;
@@ -9267,7 +9287,7 @@ body {
   width: 180px;
   right: -9.5rem;
   top: -2rem;
-  transition: .4s;
+  transition: 0.4s;
   transform: rotate(-20deg);
   animation: lightE2 1s ease infinite;
   -moz-animation: lightE2 1s ease infinite;
@@ -9313,7 +9333,7 @@ body {
   text-align: center;
   flex-direction: column;
   margin-top: 1rem;
-  transition: .5s;
+  transition: 0.5s;
 }
 #event .event_text .ch_bar {
   display: flex;
@@ -9595,9 +9615,6 @@ body {
   backface-visibility: hidden;
 }
 
-
-
-
 /* 반응형 */
 @media (max-width: 1600px) {
   .main_sec1 {
@@ -9641,7 +9658,7 @@ body {
     font-size: 0.85rem;
   }
   .main_sec1 .potext-2 ul.text_ani li {
-  font-size: 0.85rem;
+    font-size: 0.85rem;
   }
   .main_sec2 .sec2_text p {
     font-size: 2.5rem;
@@ -9665,9 +9682,9 @@ body {
   #event-card .card_flex #wrap {
     min-width: 14vw;
     /* height: 15rem; */
-    transition: .6s;
+    transition: 0.6s;
   }
-  
+
   #event-card .card_flex {
     width: 100%;
     padding: 0 23px;
@@ -9711,9 +9728,6 @@ body {
   .metaportal_fn_mintbox .mright {
     margin-left: 0;
   }
-
-
-
 }
 @media (max-width: 1360px) {
   #event .event_text .ch_bar {
@@ -9769,7 +9783,6 @@ body {
     bottom: 60px;
   }
 }
-
 
 @media (max-width: 1100px) {
   #main .main_title h1 {
@@ -9847,7 +9860,6 @@ body {
   .main_sec3 .con_list {
     width: 100%;
   }
-  
 }
 
 @media (max-width: 1100px) {
@@ -9866,7 +9878,8 @@ body {
   .flex_ul {
     display: none;
   }
-  .metaportal_fn_mobnav .mob_mid, .metaportal_fn_mobnav .mob_top {
+  .metaportal_fn_mobnav .mob_mid,
+  .metaportal_fn_mobnav .mob_top {
     justify-content: end;
     padding: 0;
   }
@@ -9899,9 +9912,9 @@ body {
   #main .main_title h1 {
     font-size: 10vw;
     display: block;
-    transition: .6s;
+    transition: 0.6s;
     letter-spacing: 1rem;
-    transition-duration: .5;
+    transition-duration: 0.5;
   }
 
   #main .fixed_modal .modal_text .item_text p {
@@ -10002,7 +10015,6 @@ body {
   #event-card .card_flex #wrap {
     min-width: 25%;
   }
-
 }
 @media (max-width: 1100px) {
   #event .event_wrap {
@@ -10015,8 +10027,7 @@ body {
     min-width: 34%;
   }
 }
-@media (max-width: 900px)  {
-
+@media (max-width: 900px) {
   #event-card .card_flex #wrap {
     height: 12rem;
   }
@@ -10028,7 +10039,13 @@ body {
   #event .box-text {
     font-size: 1.5rem;
   }
-  #event .event_wrap img.e-1,.e-2,.e-3,.e-4,.e-5,.e-6,.e-7 {
+  #event .event_wrap img.e-1,
+  .e-2,
+  .e-3,
+  .e-4,
+  .e-5,
+  .e-6,
+  .e-7 {
     display: none;
   }
   #event .event_text {
@@ -10094,7 +10111,6 @@ body {
   }
 }
 
-
 @media (max-width: 600px) {
   .main_sec2 {
     border-right: 15px solid var(--black-color);
@@ -10102,7 +10118,7 @@ body {
   }
   .main_sec2 ul.cont li .cont_text .cont_title {
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
   }
   .main_sec2 ul.cont li .cont_text .cont_title {
     display: none;
@@ -10121,9 +10137,8 @@ body {
     margin-bottom: 1rem;
   }
   .main_sec3 .sec3_flex .sec3_text p {
-    font-size: 2.5rem;   
+    font-size: 2.5rem;
   }
-
 }
 
 @media (max-width: 550px) {
@@ -10212,7 +10227,6 @@ body {
   .metaportal_fn_mint_top {
     margin-top: -270px;
   }
-
 }
 
 @media (max-width: 385px) {
