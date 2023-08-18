@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const PublicMintBox = ({
   provider,
@@ -9,7 +10,7 @@ const PublicMintBox = ({
   setIsLoading,
 }) => {
   // State variables for quantity and total price
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
 
   // State variables for public user
@@ -81,10 +82,21 @@ const PublicMintBox = ({
       console.log("receipt: ", receipt);
 
       setIsLoading(false);
-      alert("NFTs minted successfully!");
+      toast.dark("NFTs minted successfully!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       location.reload();
     } catch (error) {
-      console.error("Error minting NFTs:", error);
+      if (error.code === "ACTION_REJECTED") {
+        console.error("Error minting NFTs:", error);
+        setIsLoading(false);
+      } else {
+        console.error("Error minting NFTs:", error);
+        toast.dark("NFTs minted failed!", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+
       setIsLoading(false);
     }
   };
@@ -96,7 +108,7 @@ const PublicMintBox = ({
       return;
     }
 
-    if (value > 0) {
+    if (value > 0 && value < 3) {
       setQuantity(value);
       // Calculate total price using the cost value from the smart contract
       const newTotalPrice = value * publicPrice;
