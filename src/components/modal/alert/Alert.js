@@ -18,6 +18,15 @@ const Alert = ({ contract, signerAddress, close }) => {
     close();
   };
 
+  // Random video
+  const videoPaths = [
+    "/img/video/KTMF_PASSNFT_TRANSPARENT.mp4",
+    "/img/video/KTMF_PASSNFT_GOLD.mp4",
+    "/img/video/KTMF_PASSNFT_SILVER.mp4",
+  ];
+
+  const randomIndex = Math.floor(Math.random() * videoPaths.length);
+
   useEffect(() => {
     getMyWhitelist();
   }, []);
@@ -48,7 +57,15 @@ const Alert = ({ contract, signerAddress, close }) => {
               CONGRATULATIONS
             </li>
             <li>
-              <img src="/img/NFT_ALERT.png" alt="img" />
+              {/* <img src="/img/NFT_ALERT.png" alt="img" /> */}
+              <video
+                src={videoPaths[randomIndex]}
+                playsInline
+                autoPlay
+                loop
+                muted
+                style={{ width: "100%", height: "100%" }}
+              />
             </li>
             <li className="pass_name">KTMF PASS NFT</li>
             <li className="pass_nft">

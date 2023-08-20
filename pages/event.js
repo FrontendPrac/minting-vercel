@@ -367,6 +367,7 @@ const EventPage = () => {
           </div>
         </Layout>
       )}
+      <button onClick={() => open()}>버튼</button>
     </PageWrapper>
   );
 };

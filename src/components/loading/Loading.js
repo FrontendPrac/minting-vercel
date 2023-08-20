@@ -42,7 +42,7 @@ const Loading = ({ isLoading, setIsLoading }) => {
           15 ~ 20초 정도의 시간이 걸립니다.
         </div>
       </div>
-      <button onClick={() => setIsLoading(!isLoading)}>버튼</button>
+      {/* <button onClick={() => setIsLoading(!isLoading)}>버튼</button> */}
     </>
   );
 };
