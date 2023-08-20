@@ -10239,6 +10239,19 @@ body {
   }
 }
 
+
+@media (max-width: 530px) {
+  .metaportal_fn_mint_top .mint_left {
+    margin-bottom: 30px;
+  }
+  .metaportal_fn_mint_top .mint_left .img img.i-11 {
+    width: 37vw;
+  }
+  .metaportal_fn_worldpage .world_mainT span {
+    font-size: 1rem;
+  }
+}
+
 /* World page */
 
 .metaportal_fn_worldpage {
@@ -10257,7 +10270,9 @@ body {
   align-items: center;
   gap: 30px;
 }
-.metaportal_fn_worldpage .world_mainT {
+.metaportal_fn_worldpage .world_mainT span {
   color: var(--white-color);
   font-family: var(--mainText);
+  font-size: 2rem;
+  transition: .6s;
 }
