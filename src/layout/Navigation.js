@@ -39,6 +39,12 @@ const Navigation = ({ navigation, navigationToggle }) => {
               </li>
 
               <li>
+                <Link href="/world">
+                  <a>WORLD</a>
+                </Link>
+              </li>
+
+              <li>
                 <Link href="/ktmf-pass">
                   <a>NFTs</a>
                 </Link>
