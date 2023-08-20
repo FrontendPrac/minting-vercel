@@ -26,6 +26,8 @@ const EventPage = () => {
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState("");
   const [contract, setContract] = useState("");
+  const { status, connect, account, chainId, ethereum, switchChain } =
+    useMetaMask();
 
   // State variables for user status
   const [signerAddress, setSignerAddress] = useState("");
@@ -33,8 +35,6 @@ const EventPage = () => {
   const [prize, setPrize] = useState("");
   const [isCompetitiveWhiteList, setIsCompetitiveWhiteList] = useState(false);
   const [isGuaranteeWhiteList, setIsGuaranteeWhiteList] = useState(false);
-  const { status, connect, account, chainId, ethereum, switchChain } =
-    useMetaMask();
 
   // Custom Hook
   const { isOpen, open, close } = useModal();
@@ -45,8 +45,9 @@ const EventPage = () => {
     // Request access to the user's Ethereum account
     // await window.ethereum.request({ method: "eth_requestAccounts" });
     if (
-      typeof window.ethereum !== "undefined" &&
-      window.ethereum.selectedAddress
+      // typeof window.ethereum !== "undefined" &&
+      // window.ethereum.selectedAddress
+      status === "connected"
     ) {
       // Create an ethers provider using the window.ethereum object
       const newProvider = new ethers.providers.Web3Provider(window.ethereum);
@@ -111,6 +112,14 @@ const EventPage = () => {
         position: toast.POSITION.TOP_CENTER,
       });
       connect();
+      return;
+    }
+
+    if (chainId?.toString() !== "0xaa36a7") {
+      toast.dark("Connect to sepholia network", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      switchChain("0xaa36a7");
       return;
     }
 
@@ -219,7 +228,7 @@ const EventPage = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [status]);
 
   return (
     <PageWrapper>
@@ -235,7 +244,13 @@ const EventPage = () => {
             <div className="event_vd">
               <div className="vd_wrap">
                 <div className="over_bg">
-                  <video src="/img/video/arzmeta.mp4" playsInline autoPlay loop muted />
+                  <video
+                    src="/img/video/arzmeta.mp4"
+                    playsInline
+                    autoPlay
+                    loop
+                    muted
+                  />
                 </div>
               </div>
             </div>
@@ -352,6 +367,7 @@ const EventPage = () => {
           </div>
         </Layout>
       )}
+      <button onClick={() => open()}>버튼</button>
     </PageWrapper>
   );
 };
