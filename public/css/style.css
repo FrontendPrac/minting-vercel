@@ -791,8 +791,8 @@ input[type="text"]:focus {
   text-decoration: none;
   position: fixed;
   z-index: 5;
-  right: 30px;
-  bottom: 500px;
+  right: 50px;
+  bottom: 150px;
   color: #bbb;
   font-size: 18px;
   letter-spacing: 0;
