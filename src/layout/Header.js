@@ -22,7 +22,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
         <div class="flex_ul">
           <ul>
             <li class="h-2">
-              <a href="">WORLD</a>
+              <a href="world">WORLD</a>
             </li>
 
             <li class="h-2">
