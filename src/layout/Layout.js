@@ -62,7 +62,7 @@ const Layout = ({ children, pageTitle }) => {
       {/* Main */}
       <div className="metaportal_fn_main">
         {/* Mobile Navigation */}
-        {/* <MobileNavigation /> */}
+        <MobileNavigation />
         {/* !Mobile Navigation */}
         {/* Header */}
         <Header />

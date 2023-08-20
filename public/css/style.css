@@ -3,7 +3,7 @@
 /*	Copyright (c) 2022 Frenify
 /*	Author: Frenify
 /*	This file is made for CURRENT TEMPLATE
-/*
+/* 
 
 
 	List of CSS codes:
@@ -792,7 +792,7 @@ input[type="text"]:focus {
   position: fixed;
   z-index: 5;
   right: 30px;
-  bottom: 30px;
+  bottom: 500px;
   color: #bbb;
   font-size: 18px;
   letter-spacing: 0;
@@ -2348,6 +2348,7 @@ a.metaportal_fn_videobutton:hover .fn__svg,
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background-color: rgba(10, 10, 10, 0.15);
   font-size: 0.75rem;
+  width: 100%;
 }
 #footer .contain {
   padding: 0 50px;
@@ -10236,4 +10237,21 @@ body {
   .metaportal_fn_mint_top .mint_left .img img.i-11 {
     width: 37vw;
   }
+}
+
+/* World page */
+
+.metaportal_fn_worldpage {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
