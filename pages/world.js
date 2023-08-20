@@ -9,8 +9,8 @@ const world = () => {
   return (
     <PageWrapper>
       <Layout pageTitle={"World"}>
-        <div className="metaportal_fn_worldpage" style={{ height: "80vh" }}>
-          <div>
+        <div className="metaportal_fn_worldpage" style={{ height: "100vh" }}>
+          <div className="world_mainT">
             <TypeAnimation
               sequence={options}
               speed={50}
