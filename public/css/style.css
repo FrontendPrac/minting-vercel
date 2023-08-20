@@ -10242,16 +10242,22 @@ body {
 /* World page */
 
 .metaportal_fn_worldpage {
+  background: url(/img/world_main.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   position: relative;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  margin-top: 150px;
-  margin-bottom: 150px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+.metaportal_fn_worldpage .world_mainT {
+  color: var(--white-color);
+  font-family: var(--mainText);
 }
