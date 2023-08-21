@@ -28,10 +28,10 @@ const Navigation = ({ navigation, navigationToggle }) => {
                 <ul className="mob_ul">
                   <li className="mo_lo_flex">
                     <div class="nav_logo h-2 mo_lo">
-                      <Link href="/">ARZPASS</Link>
+                      <Link href="/#home">ARZPASS</Link>
                     </div>
                     <a
-                      href="/#home2"
+                      href=""
                       className="fn__closer"
                       onClick={() => setIsSidebar(false)}
                     >
