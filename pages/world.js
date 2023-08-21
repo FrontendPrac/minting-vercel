@@ -2,14 +2,15 @@ import React, { useEffect } from "react";
 import PageWrapper from "../src/components/PageWrapper";
 import Layout from "../src/layout/Layout";
 import { TypeAnimation } from "react-type-animation";
-import { navigationToggle } from "../src/redux/actions/siteSettings";
-import { connect } from "react-redux";
+import { useGlobalContext } from "../context/GlobalContextProvider";
 
-const World = ({ navigationToggle }) => {
+const World = () => {
   const options = ["COMING SOON ...", 1000, "PLEASE WAIT MOMENT...", 1000];
+  const data = useGlobalContext();
+  const { setIsSidebar } = data;
 
   useEffect(() => {
-    navigationToggle(false);
+    setIsSidebar(false);
   }, []);
 
   return (
@@ -25,10 +26,10 @@ const World = ({ navigationToggle }) => {
   );
 };
 
-// export default world;
+export default World;
 
-const mapStateToProps = (state) => ({
-  navigation: state.site.navigation,
-});
+// const mapStateToProps = (state) => ({
+//   navigation: state.site.navigation,
+// });
 
-export default connect(mapStateToProps, { navigationToggle })(World);
+// export default connect(mapStateToProps, { navigationToggle })(World);

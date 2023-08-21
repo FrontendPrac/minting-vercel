@@ -19,10 +19,11 @@ import { useAlert } from "react-alert";
 import Cards from "../src/components/Cards";
 import { useMetaMask } from "metamask-react";
 import { toast } from "react-toastify";
-import { navigationToggle } from "../src/redux/actions/siteSettings";
-import { connect } from "react-redux";
+import { useGlobalContext } from "../context/GlobalContextProvider";
 
-const EventPage = ({ navigationToggle }) => {
+const EventPage = () => {
+  const data = useGlobalContext();
+  const { setIsSidebar } = data;
   const alert = useAlert();
 
   // State variables for ethers provider and contract
@@ -44,13 +45,7 @@ const EventPage = ({ navigationToggle }) => {
 
   // Get Raffle Data
   const initializeEthers = async () => {
-    // Request access to the user's Ethereum account
-    // await window.ethereum.request({ method: "eth_requestAccounts" });
-    if (
-      // typeof window.ethereum !== "undefined" &&
-      // window.ethereum.selectedAddress
-      status === "connected"
-    ) {
+    if (status === "connected") {
       // Create an ethers provider using the window.ethereum object
       const newProvider = new ethers.providers.Web3Provider(window.ethereum);
       console.log("newProvider: ", newProvider);
@@ -229,7 +224,7 @@ const EventPage = ({ navigationToggle }) => {
 
   useEffect(() => {
     initializeEthers();
-    navigationToggle(false);
+    setIsSidebar(false);
 
     // Add scroll event listener when component mounts
     window.addEventListener("scroll", handleScroll);
@@ -382,10 +377,4 @@ const EventPage = ({ navigationToggle }) => {
   );
 };
 
-// export default EventPage;
-
-const mapStateToProps = (state) => ({
-  navigation: state.site.navigation,
-});
-
-export default connect(mapStateToProps, { navigationToggle })(EventPage);
+export default EventPage;
