@@ -156,7 +156,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
               </a>
             </li>
 
-            <li class="h-2">
+            {/* <li class="h-2">
               <a
                 class="h-3"
                 href="https://www.instagram.com/arzmeta_/"
@@ -194,7 +194,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
                   </g>
                 </svg>
               </a>
-            </li>
+            </li> */}
 
             {/* <li class="h-2">
               <a

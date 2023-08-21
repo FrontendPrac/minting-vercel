@@ -144,7 +144,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                 </span>
               </li>
 
-              <li className="li-c">
+              {/* <li className="li-c">
                 <Link href="https://www.instagram.com/arzmeta_/">
                   <a target="_blank" rel="noreferrer">
                     INSTAGRAM
@@ -185,7 +185,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                     </a>
                   </Link>
                 </span>
-              </li>
+              </li> */}
 
               <li className="li-c">
                 <Link href="https://www.tiktok.com/@arzmeta_official">
