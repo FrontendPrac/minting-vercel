@@ -8519,6 +8519,11 @@ body {
   width: 100%;
   display: flex;
   flex: 1;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   justify-content: space-between;
   position: relative;
   gap: 1rem;
@@ -8539,6 +8544,11 @@ body {
   display: flex;
   flex-direction: column;
   bottom: 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   padding: 1rem;
   gap: 0.3rem;
 }
@@ -8558,6 +8568,11 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   color: var(--white-color);
   gap: 0.38rem;
   white-space: nowrap;
