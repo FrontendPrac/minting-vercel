@@ -31,7 +31,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                       <Link href="/">ARZPASS</Link>
                     </div>
                     <a
-                      href="#"
+                      href="/#home2"
                       className="fn__closer"
                       onClick={() => setIsSidebar(false)}
                     >
@@ -252,12 +252,13 @@ const Navigation = ({ navigation, navigationToggle }) => {
                           <li
                             class="h-2"
                             style={{
-                              marginLeft: "-14px",
+                              // marginLeft: "-14px",
                               marginTop: "10px",
-                              backgroundColor: "#313866",
-                              width: "20rem",
+                              backgroundColor: "#ee9002",
+                              width: "100%",
                               borderRadius: "10px",
-                              padding: "8px",
+                              padding: "6px 8px",
+
                             }}
                           >
                             <div
@@ -265,8 +266,10 @@ const Navigation = ({ navigation, navigationToggle }) => {
                               style={{
                                 paddingLeft: 0,
                                 paddingRight: 0,
-                                color: "white",
+                                color: "var(--black-color)",
                                 cursor: "pointer",
+                                margin: "0 auto",
+                                fontWeight: "600",
                               }}
                             >
                               CONNECT
@@ -278,7 +281,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                               style={{
                                 paddingLeft: 0,
                                 paddingRight: 0,
-                                color: "white",
+                                color: "var(--black-color)",
                                 cursor: "pointer",
                               }}
                             >
@@ -297,10 +300,10 @@ const Navigation = ({ navigation, navigationToggle }) => {
                       <li
                         className="li-c"
                         style={{
-                          marginLeft: "-14px",
+                          // marginLeft: "-14px",
                           marginTop: "2rem",
                           backgroundColor: "#313866",
-                          width: "20rem",
+                          width: "100%",
                           borderRadius: "10px",
                           padding: "8px",
                         }}
