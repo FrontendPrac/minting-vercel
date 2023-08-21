@@ -11,21 +11,19 @@ export const Ul = styled.ul`
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
-  margin-left: -20px;
   align-items: center;
   justify-content: center;
 `;
 
 export const Li = styled.li`
   margin: 0 0 20px 0px;
-  padding-left: 20px;
 `;
 
 export const Item = styled.div`
   width: 140px;
   /* background-color: green; */
-  @media (max-width: 768px) {
-    width: 100%;
+  @media (max-width: 840px) {
+    width: 200px;
   }
 `;
 

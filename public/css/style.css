@@ -6764,6 +6764,7 @@ h3.mintT {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 .fn_cs_roadmap .swiper-wrapper {
   padding: 60px 0 20px;
@@ -7241,12 +7242,11 @@ h3.mintT {
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  margin-left: -60px;
+  /* margin-left: -60px; */
   flex-wrap: wrap;
 }
 .fn_cs_faq .faq_col {
   width: 33.3333%;
-  padding-left: 60px;
   margin-bottom: 60px;
 }
 .fn_cs_faq .fn__maintitle {
@@ -8546,6 +8546,7 @@ body {
   color: var(--white-color);
   font-size: 0.85rem;
   box-sizing: border-box;
+  white-space: nowrap;
 }
 .main_sec2 ul.cont li .cont_text span.texdc {
   color: var(--white-color);
@@ -8728,7 +8729,7 @@ body {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgb(255, 162, 0) 120%
+    rgb(0, 0, 0) 100%
   );
 }
 
@@ -8959,7 +8960,7 @@ body {
   position: absolute;
 }
 .metaportal_fn_mint_top .mint_left .img img.i-11 {
-  width: 45%;
+  width: 50%;
   right: 40%;
   bottom: 5%;
   transform: rotate(-17deg);
@@ -8974,7 +8975,7 @@ body {
   100% {bottom: 5%;} */
 }
 .metaportal_fn_mint_top .mint_left .img img.i-22 {
-  width: 30%;
+  width: 35%;
   right: 20%;
   bottom: 0;
   transition: 0.5s;
@@ -9617,7 +9618,12 @@ body {
   border-radius: 20px;
   backface-visibility: hidden;
 }
-
+.coming-soonstyle__Li-sc-ayi9to-2:nth-child(2) {
+  padding-left: 20px;
+}
+.coming-soonstyle__Li-sc-ayi9to-2:nth-child(4) {
+  padding-left: 20px;
+}
 /* 반응형 */
 @media (max-width: 1600px) {
   .main_sec1 {
@@ -9687,7 +9693,6 @@ body {
     /* height: 15rem; */
     transition: 0.6s;
   }
-
   #event-card .card_flex {
     width: 100%;
     padding: 0 23px;
@@ -9702,12 +9707,12 @@ body {
     flex-basis: 0;
   }
   .metaportal_fn_mint_top {
-    height: 100vh;
+    /* height: 100vh; */
     flex-direction: column;
   }
   .metaportal_fn_mint_top .mint_left {
     width: 100%;
-    height: 100%;
+    height: 50rem;
     margin-top: 0;
   }
   .metaportal_fn_mint_top .mint_right {
@@ -9781,6 +9786,9 @@ body {
   a.metaportal_fn_totop {
     right: 60px;
     bottom: 60px;
+  }
+  .metaportal_fn_mint_top .mint_left {
+    height: 45rem;
   }
 }
 
@@ -9858,6 +9866,9 @@ body {
   }
   .main_sec3 .con_list {
     width: 100%;
+  }
+  .metaportal_fn_mint_top .mint_left {
+    height: 40rem;
   }
 }
 
@@ -9939,7 +9950,7 @@ body {
   #main .fixed_modal .baro a svg {
     display: none;
   }
-  #main .fixed_modal .flex_item {
+  #main .fixed_modal .flex_itemL {
     width: 100%;
   }
   #main .fixed_modal .baro {
@@ -10026,6 +10037,16 @@ body {
     min-width: 34%;
   }
 }
+@media (max-width: 1000px) {
+  .metaportal_fn_mint_top .mint_left {
+    height: 35rem;
+  }
+}
+@media (max-width: 580px) {
+  .metaportal_fn_mint_top .mint_left {
+    height: 40rem;
+  }
+}
 @media (max-width: 900px) {
   #event-card .card_flex #wrap {
     height: 12rem;
@@ -10049,6 +10070,9 @@ body {
   }
   #event .event_text {
     width: 100%;
+  }
+  #roadmap {
+    padding: 100px 0 90px 0;
   }
 }
 @media (max-width: 600px) {
@@ -10227,13 +10251,18 @@ body {
     margin-top: 0;
   }
 }
+@media (max-width: 900px) {
+  .clPdgE {
+    width: 200px;
+  }
+}
 @media (max-width: 779px) {
   .metaportal_fn_mint_top {
     margin-top: -100px;
   }
-  li.kmJmkG {
+  /* li.kmJmkG {
     width: 50%;
-  }
+  } */
 }
 @media (max-width: 580px) {
   .metaportal_fn_mint_top {
@@ -10274,6 +10303,18 @@ body {
   .metaportal_fn_mint_top {
     margin-top: -270px;
   }
+  .small .mint_tit .f-title h3 {
+    font-size: 2rem;
+  }
+  .small .mint_tit .f-sub span {
+    font-size: 0.8rem;
+  }
+  .small ul li .iOexYl {
+    font-size: 2.2rem;
+  }
+  .small .pass_tit h3 {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 400px) {
   .metaportal_fn_mint_top .mint_left {
@@ -10290,6 +10331,7 @@ body {
   .metaportal_fn_mint_top .mint_left .img img.i-11 {
     width: 37vw;
   }
+  
 
 }
 @media (max-width: 450px) {
@@ -10316,6 +10358,17 @@ body {
   #main .main_flex .main_tic img.secpo5 {
     top: 6rem;
     left: 2rem;
+  }
+}
+@media (max-width: 472px) {
+  .coming-soonstyle__Li-sc-ayi9to-2:nth-child(2) {
+    padding-left: 0;
+  }
+  .coming-soonstyle__Li-sc-ayi9to-2:nth-child(4) {
+    padding-left: 0;
+  }
+  .coming-soonstyle__Ul-sc-ayi9to-1 {
+    flex-direction: column;
   }
 }
 
