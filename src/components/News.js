@@ -27,7 +27,7 @@ const News = () => {
                 rel="noreferrer"
               >
                 <div class="cont_text">
-                  <span>MONTHLY HIGHLIGHTS - August 17</span>
+                  <p>MONTHLY HIGHLIGHTS - August 17</p>
                   <div className="cont_title">
                     <p className="n-tit">아즈메타, KTMF K팝 커버 콘테스트 기념 ‘KTMF PASS NFT’ 선보인다</p>
                     <span className="tedc">|</span> 
@@ -46,7 +46,7 @@ const News = () => {
                 rel="noreferrer"
               >
                 <div class="cont_text">
-                  <span>MONTHLY HIGHLIGHTS - July 22</span>
+                  <p>MONTHLY HIGHLIGHTS - July 22</p>
                   <div className="cont_title">
                     <p className="n-tit">KTMF K팝 커버 콘테스트, 전 세계 지원자 몰려들어 흥행 예감</p>
                     <span className="texdc">|</span> 
@@ -65,7 +65,7 @@ const News = () => {
                 rel="noreferrer"
               >
                 <div class="cont_text">
-                  <span>MONTHLY HIGHLIGHTS - July 11</span>
+                  <p>MONTHLY HIGHLIGHTS - July 11</p>
                   <div className="cont_title">
                     <p className="n-tit" maxlength="20">K팝 함성, 시공간 뛰어넘는다 ··· KTMF K팝 커버 콘테스트</p>
                     <span className="texdc">|</span> 

@@ -374,10 +374,10 @@ body:before {
 .replaced-svg {
   opacity: 1;
 }
-p {
+/* p {
   letter-spacing: 0;
   margin-bottom: 20px;
-}
+} */
 h1,
 h2,
 h3,
@@ -8215,6 +8215,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 
 .navbox .mob_bot ul.mob_ul li.li-d {
@@ -8542,7 +8543,7 @@ body {
   padding: 1rem;
   gap: 0.3rem;
 }
-.main_sec2 ul.cont li .cont_text span {
+.main_sec2 ul.cont li .cont_text p {
   display: inline-block;
   font-family: var(--subText);
   color: var(--white-color);
@@ -8550,7 +8551,7 @@ body {
   box-sizing: border-box;
   white-space: nowrap;
 }
-.main_sec2 ul.cont li .cont_text span.texdc {
+.main_sec2 ul.cont li .cont_text span .tedc {
   color: var(--white-color);
 }
 .main_sec2 ul.cont li .cont_text .cont_title {
