@@ -10,11 +10,11 @@ const News = () => {
           <p>Latest Ariticles</p>
           <div class="baro">
             <a
-              href="http://www.koreatimes.com/article/1472541"
+              href="https://m.sedaily.com/NewsView/29TFYMUQMK#cb"
               target="_blank"
               rel="noreferrer"
             >
-              go to latest articles
+              go to new articles
             </a>
           </div>
         </div>
@@ -22,7 +22,7 @@ const News = () => {
           <ul class="cont">
             <li>
               <a
-                href="http://www.koreatimes.com/article/1472541"
+                href="https://m.sedaily.com/NewsView/29TFYMUQMK#cb"
                 target="_blank"
                 rel="noreferrer"
               >
