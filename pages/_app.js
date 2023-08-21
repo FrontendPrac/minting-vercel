@@ -2,22 +2,24 @@ import { Provider } from "react-redux";
 import store from "../src/redux/store";
 import "../styles/globals.css";
 import Head from "next/head";
-import { positions, Provider as AlertProvider } from "react-alert";
 import { AnimatePresence } from "framer-motion";
-import AlertTemplate from "react-alert-template-basic";
 import { GlobalContextProvider } from "../context/GlobalContextProvider";
 import { MetaMaskProvider } from "metamask-react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
+import LoadingSplash from "../src/components/loading/LoadingSplash";
 
 function MyApp({ Component, pageProps }) {
-  // Alert options
-  const options = {
-    timeout: 5000,
-    position: positions.BOTTOM_CENTER,
-    offset: "10px",
-    containerStyle: { zIndex: 1000, marginBottom: "250px" },
-  };
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -67,14 +69,18 @@ function MyApp({ Component, pageProps }) {
             <link rel="icon" href="/favicon.png" />
           </Head>
 
-          <AnimatePresence>
-            <AlertProvider template={AlertTemplate} {...options}>
-              <Provider store={store}>
-                <Component {...pageProps} />
-              </Provider>
-            </AlertProvider>
-          </AnimatePresence>
-          <ToastContainer />
+          {isLoading ? (
+            <LoadingSplash />
+          ) : (
+            <>
+              <AnimatePresence>
+                <Provider store={store}>
+                  <Component {...pageProps} />
+                </Provider>
+              </AnimatePresence>
+              <ToastContainer />
+            </>
+          )}
         </GlobalContextProvider>
       </MetaMaskProvider>
     </>

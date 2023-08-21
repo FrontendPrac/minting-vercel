@@ -3,6 +3,7 @@ import PageWrapper from "../src/components/PageWrapper";
 import Layout from "../src/layout/Layout";
 import { TypeAnimation } from "react-type-animation";
 import { useGlobalContext } from "../context/GlobalContextProvider";
+import LoadingSplash from "../src/components/loading/LoadingSplash";
 
 const World = () => {
   const options = ["COMING SOON ...", 1000, "PLEASE WAIT MOMENT...", 1000];

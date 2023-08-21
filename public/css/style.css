@@ -7854,7 +7854,6 @@ h3.mintT {
   }
 }
 
-
 /* Front */
 .fn_cs_front {
   position: relative;
@@ -10290,7 +10289,9 @@ body {
   .metaportal_fn_mintbox .mint_right {
     padding: 50px 1rem;
   }
-  .main_sec1 img.secpo1,.main_sec1 img.secpo2,.main_sec1 img.secpo3 {
+  .main_sec1 img.secpo1,
+  .main_sec1 img.secpo2,
+  .main_sec1 img.secpo3 {
     display: none;
   }
   .main_sec1 {
@@ -10298,7 +10299,9 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .main_sec1 img.secpo1,.main_sec1 img.secpo2,.main_sec1 img.secpo3 {
+  .main_sec1 img.secpo1,
+  .main_sec1 img.secpo2,
+  .main_sec1 img.secpo3 {
     opacity: 0;
   }
   #main .main_flex .main_tic img.secpo5 {
@@ -10350,8 +10353,6 @@ body {
   .main_sec2 ul.cont li .cont_text span {
     font-size: 0.7rem;
   }
-  
-
 }
 @media (max-width: 450px) {
   #event .event_text .e-fn {
@@ -10407,7 +10408,6 @@ body {
     height: 500px;
   }
 }
-
 
 @media (max-width: 530px) {
   .metaportal_fn_mint_top .mint_left {
@@ -10490,6 +10490,25 @@ body {
   color: var(--white-color);
   font-family: var(--mainText);
   font-size: 1.5rem;
-  transition: .6s;
+  transition: 0.6s;
   text-align: center;
+}
+/* Loading splash */
+.loading-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; /* 로딩 화면의 배경색 */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 로딩 스플래시를 위해 가장 위에 표시 */
+}
+
+.loading-splash span.index-module_type__E-SaG {
+  font-size: 3rem;
+  font-family: var(--mainText);
 }
