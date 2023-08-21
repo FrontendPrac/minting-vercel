@@ -54,7 +54,7 @@ const KtmfFAQ = () => {
 
   return (
     <section id="faq">
-      <div className="container">
+      <div className="contain">
         <div className="fn_cs_faq">
           <div className="faq_col" style={{ width: "100%" }}>
             <div className="fn_cs_accordion">{faqMap(faqs1, "a")}</div>

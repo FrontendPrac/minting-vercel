@@ -297,10 +297,10 @@ const Navigation = ({ navigation, navigationToggle }) => {
                       <li
                         className="li-c"
                         style={{
-                          marginLeft: "-14px",
-                          marginTop: "2rem",
+                          // marginLeft: "-14px",
+                          marginTop: "10px",
                           backgroundColor: "#313866",
-                          width: "20rem",
+                          width: "auto",
                           borderRadius: "10px",
                           padding: "8px",
                         }}
