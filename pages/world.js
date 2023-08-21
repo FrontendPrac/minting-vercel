@@ -14,7 +14,6 @@ const world = () => {
             <TypeAnimation
               sequence={options}
               speed={50}
-              style={{ fontSize: "2em" }}
               repeat={Infinity}
             />
           </div>
