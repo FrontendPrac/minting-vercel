@@ -123,6 +123,13 @@ const EventPage = () => {
       return;
     }
 
+    if (prize != 0) {
+      toast.dark("You've already joined the raffle", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return;
+    }
+
     event.preventDefault();
 
     const contract = new ethers.Contract(

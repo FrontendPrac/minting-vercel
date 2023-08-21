@@ -3,6 +3,7 @@ import * as S from "./Alert.style";
 
 const Alert = ({ contract, signerAddress, close }) => {
   const [prize, setPrize] = useState("");
+  const [randomIndex, setRandomIndex] = useState(0);
 
   // Get Prize
   const getMyWhitelist = async () => {
@@ -25,9 +26,9 @@ const Alert = ({ contract, signerAddress, close }) => {
     "/img/video/KTMF_PASSNFT_SILVER.mp4",
   ];
 
-  const randomIndex = Math.floor(Math.random() * videoPaths.length);
-
   useEffect(() => {
+    // const randomIndex = Math.floor(Math.random() * videoPaths.length);
+    setRandomIndex(Math.floor(Math.random() * videoPaths.length));
     getMyWhitelist();
   }, []);
 
@@ -53,6 +54,7 @@ const Alert = ({ contract, signerAddress, close }) => {
               className="mo_text"
               data-text="CONGRATULATIONS"
               data-align="left"
+              style={{ color: "white" }}
             >
               CONGRATULATIONS
             </li>
@@ -67,7 +69,9 @@ const Alert = ({ contract, signerAddress, close }) => {
                 style={{ width: "100%", height: "100%" }}
               />
             </li>
-            <li className="pass_name">KTMF PASS NFT</li>
+            <li className="pass_name" style={{ color: "white" }}>
+              KTMF PASS NFT
+            </li>
             <li className="pass_nft">
               {prize === 1 && "경쟁 화이트리스트"}{" "}
               {prize === 2 && "확정 화이트리스트"}획득!
