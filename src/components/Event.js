@@ -42,16 +42,18 @@ const Event = () => {
       <div class="potext-1 t-n">
         <div className="animation-text-moving">
           <span className="animation-text">
-            get your whitelist get your whitelist get your whitelist get your
-            whitelist get your whitelist
+            get your whitelist get your whitelist get your whitelist get your whitelist
+            get your whitelist get your whitelist get your whitelist get your whitelist
+            get your whitelist get your whitelist get your whitelist get your whitelist
           </span>
         </div>
       </div>
       <div class="potext-2 t-n">
         <div className="animation-text-moving">
           <span className="animation-text">
-            get your whitelist get your whitelist get your whitelist get your
-            whitelist get your whitelist
+            get your whitelist get your whitelist get your whitelist get your whitelist
+            get your whitelist get your whitelist get your whitelist get your whitelist
+            get your whitelist get your whitelist get your whitelist get your whitelist
           </span>
         </div>
       </div>
