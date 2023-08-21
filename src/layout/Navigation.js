@@ -245,10 +245,10 @@ const Navigation = ({ navigation, navigationToggle }) => {
                       <li
                         class="h-2"
                         style={{
-                          marginLeft: "-14px",
+                          // marginLeft: "-14px",
                           marginTop: "10px",
                           backgroundColor: "#313866",
-                          width: "20rem",
+                          width: "auto",
                           borderRadius: "10px",
                           padding: "8px",
                         }}
