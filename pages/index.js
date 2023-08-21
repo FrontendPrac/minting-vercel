@@ -6,11 +6,14 @@ import Event from "../src/components/Event";
 import News from "../src/components/News";
 import Faq from "../src/components/Faq";
 import Textmoving from "../src/components/Textmoving";
+import { navigationToggle } from "../src/redux/actions/siteSettings";
+import { connect } from "react-redux";
 
-const Index = () => {
+const Index = ({ navigationToggle }) => {
   const [showSecondComponent, setShowSecondComponent] = useState(false);
 
   useEffect(() => {
+    navigationToggle(false);
     const handleScroll = () => {
       console.log("scrollPosition: ", scrollPosition);
       console.log("windowHeight: ", windowHeight);
@@ -94,4 +97,10 @@ const Index = () => {
     </PageWrapper>
   );
 };
-export default Index;
+// export default Index;
+
+const mapStateToProps = (state) => ({
+  navigation: state.site.navigation,
+});
+
+export default connect(mapStateToProps, { navigationToggle })(Index);

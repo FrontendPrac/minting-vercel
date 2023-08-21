@@ -23,8 +23,10 @@ import {
   variantsUp,
 } from "../src/variants";
 import { useMetaMask } from "metamask-react";
+import { navigationToggle } from "../src/redux/actions/siteSettings";
+import { connect } from "react-redux";
 
-const NftSingle = () => {
+const NftSingle = ({ navigationToggle }) => {
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
@@ -128,6 +130,7 @@ const NftSingle = () => {
 
   useEffect(() => {
     initializeEthers();
+    navigationToggle(false);
     showKorCountdown();
   }, [status]);
 
@@ -403,4 +406,10 @@ const NftSingle = () => {
     </PageWrapper>
   );
 };
-export default NftSingle;
+// export default NftSingle;
+
+const mapStateToProps = (state) => ({
+  navigation: state.site.navigation,
+});
+
+export default connect(mapStateToProps, { navigationToggle })(NftSingle);

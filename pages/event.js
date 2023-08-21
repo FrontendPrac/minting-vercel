@@ -19,8 +19,10 @@ import { useAlert } from "react-alert";
 import Cards from "../src/components/Cards";
 import { useMetaMask } from "metamask-react";
 import { toast } from "react-toastify";
+import { navigationToggle } from "../src/redux/actions/siteSettings";
+import { connect } from "react-redux";
 
-const EventPage = () => {
+const EventPage = ({ navigationToggle }) => {
   const alert = useAlert();
 
   // State variables for ethers provider and contract
@@ -227,6 +229,7 @@ const EventPage = () => {
 
   useEffect(() => {
     initializeEthers();
+    navigationToggle(false);
 
     // Add scroll event listener when component mounts
     window.addEventListener("scroll", handleScroll);
@@ -379,4 +382,10 @@ const EventPage = () => {
   );
 };
 
-export default EventPage;
+// export default EventPage;
+
+const mapStateToProps = (state) => ({
+  navigation: state.site.navigation,
+});
+
+export default connect(mapStateToProps, { navigationToggle })(EventPage);
