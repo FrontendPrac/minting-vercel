@@ -1,15 +1,14 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import { useAlert } from "react-alert";
-import { requestConnectWallet } from "../utilits";
 import { connect as connectRedux } from "react-redux";
 import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
 import { useMetaMask } from "metamask-react";
-import { useGlobalContext } from "../../context/GlobalContextProvider";
+import { useGlobalContext } from "../../context/GlobalContextProvider.jsx";
 
-const Header = ({ walletToggle, navigationToggle }) => {
-  const { status, connect, account, chainId, ethereum, switchChain } =
-    useMetaMask();
+const Header = ({ navigationToggle }) => {
+  const { status, connect, account, chainId, switchChain } = useMetaMask();
+  const data = useGlobalContext();
+  const { isSidebar, setIsSidebar } = data;
+  console.log("isSidebar: ", isSidebar);
 
   return (
     <div class="fixed_nav">
@@ -198,6 +197,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </a>
               </Link>
             </li>
+
             {status === "unavailable" && (
               <li class="h-2">
                 <a href="https://metamask.io/" target="_blank" rel="noreferrer">
@@ -269,7 +269,8 @@ const Header = ({ walletToggle, navigationToggle }) => {
           <div className="mob_top">
             {
               <div className="social_trigger">
-                <div className="trigger" onClick={() => navigationToggle(true)}>
+                {/* <div className="trigger" onClick={() => navigationToggle(true)}> */}
+                <div className="trigger" onClick={() => setIsSidebar(true)}>
                   <span />
                 </div>
               </div>
@@ -281,12 +282,13 @@ const Header = ({ walletToggle, navigationToggle }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  navigation: state.site.navigation,
-});
+// const mapStateToProps = (state) => ({
+//   navigation: state.site.navigation,
+// });
 
-//export default Header;
-export default connectRedux(mapStateToProps, {
-  walletToggle,
-  navigationToggle,
-})(Header);
+// export default connectRedux(mapStateToProps, {
+//   walletToggle,
+//   navigationToggle,
+// })(Header);
+
+export default Header;

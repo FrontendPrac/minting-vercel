@@ -2,28 +2,16 @@ import Head from "next/head";
 import { Fragment, useEffect } from "react";
 import ImageView from "../components/popup/ImageView";
 import VideoPopup from "../components/popup/VideoPopup";
-import {
-  checkNetwork,
-  dataBgImg,
-  holdSection,
-  imgToSVG,
-  requestConnectWallet,
-} from "../utilits";
+import { dataBgImg, imgToSVG } from "../utilits";
 import Footer from "./Footer";
-import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
 import PreLoader from "./PreLoader";
 import ScrollTop from "./ScrollTop";
-import Searchbox from "./Searchbox";
-import SearchButton from "./SearchButton";
 import Social from "./Social";
-import WalletPopUp from "./WalletPopUp";
-import { useAlert } from "react-alert";
 import Header from "./Header";
 
 const Layout = ({ children, pageTitle }) => {
   useEffect(() => {
-    // holdSection();
     imgToSVG();
     dataBgImg();
   }, []);
@@ -49,21 +37,11 @@ const Layout = ({ children, pageTitle }) => {
       <ImageView />
       <VideoPopup />
       <PreLoader />
-      {/* !Preloader */}
       {/* Left Navigation */}
       <Navigation />
       {/* !Left Navigation */}
-      {/* Searchbox Popup */}
-      {/* <Searchbox /> */}
-      {/* !Searchbox Popup */}
-      {/* Wallet Popup */}
-      {/* <WalletPopUp /> */}
-      {/* !Wallet Popup */}
       {/* Main */}
       <div className="metaportal_fn_main">
-        {/* Mobile Navigation */}
-        <MobileNavigation />
-        {/* !Mobile Navigation */}
         {/* Header */}
         <Header />
         {/* !Header */}
@@ -81,9 +59,6 @@ const Layout = ({ children, pageTitle }) => {
         {/* Totop */}
         <ScrollTop />
         {/* /Totop */}
-        {/* Search Button */}
-        {/* <SearchButton /> */}
-        {/* !Search Button */}
       </div>
     </Fragment>
   );

@@ -7,10 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import AlertTemplate from "react-alert-template-basic";
 import { GlobalContextProvider } from "../context/GlobalContextProvider";
 import { MetaMaskProvider } from "metamask-react";
-// import AlertTemplate from "react-alert-template-oldschool-dark";
-// import AlertTemplate from "react-alert-template-mui";
-
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function MyApp({ Component, pageProps }) {
@@ -27,9 +24,6 @@ function MyApp({ Component, pageProps }) {
       <MetaMaskProvider>
         <GlobalContextProvider>
           <Head>
-            {/* <meta http-equiv="Cache-Control" content="no-store" />
-            <meta http-equiv="Pragma" content="no-cache" />
-            <meta http-equiv="Expires" content="0" /> */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"
