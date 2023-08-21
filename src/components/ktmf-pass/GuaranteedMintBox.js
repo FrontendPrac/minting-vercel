@@ -12,7 +12,7 @@ const GuaranteedMintBox = ({
 }) => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0.01);
 
   // State variables for guaranteed user
   const [guaranteePrice, setGuaranteePrice] = useState(0);

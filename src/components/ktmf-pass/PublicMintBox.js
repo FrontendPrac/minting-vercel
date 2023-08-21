@@ -12,7 +12,7 @@ const PublicMintBox = ({
 }) => {
   // State variables for quantity and total price
   const [quantity, setQuantity] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0.02);
 
   // State variables for public user
   const [publicPrice, setPublicPrice] = useState(0);
