@@ -297,10 +297,10 @@ const Navigation = ({ navigation, navigationToggle }) => {
                       <li
                         className="li-c"
                         style={{
-                          // marginLeft: "-14px",
-                          marginTop: "10px",
+                          marginLeft: "-14px",
+                          marginTop: "2rem",
                           backgroundColor: "#313866",
-                          width: "auto",
+                          width: "20rem",
                           borderRadius: "10px",
                           padding: "8px",
                         }}
@@ -314,6 +314,7 @@ const Navigation = ({ navigation, navigationToggle }) => {
                             textAlign: "center",
                             justifyItems: "center",
                             display: "flex",
+                            margin: "0 auto",
                           }}
                           onClick={() => switchChain("0xaa36a7")}
                         >
