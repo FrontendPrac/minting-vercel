@@ -15,7 +15,6 @@ import useModal from "../src/hooks/useModal";
 import useLoading from "../src/hooks/useLoading";
 import Loading from "../src/components/loading/Loading";
 import PageWrapper from "../src/components/PageWrapper";
-import { useAlert } from "react-alert";
 import Cards from "../src/components/Cards";
 import { useMetaMask } from "metamask-react";
 import { toast } from "react-toastify";
@@ -24,7 +23,6 @@ import { useGlobalContext } from "../context/GlobalContextProvider";
 const EventPage = () => {
   const data = useGlobalContext();
   const { setIsSidebar } = data;
-  const alert = useAlert();
 
   // State variables for ethers provider and contract
   const [provider, setProvider] = useState("");
